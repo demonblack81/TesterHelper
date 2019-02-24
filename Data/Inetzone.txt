@@ -1,0 +1,7 @@
+.com
+.net
+.ua
+.ru
+.us
+.uk
+.by

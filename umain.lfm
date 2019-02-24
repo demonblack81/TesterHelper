@@ -1,0 +1,690 @@
+object MainForm: TMainForm
+  Left = 472
+  Height = 600
+  Top = 111
+  Width = 800
+  BorderStyle = bsSingle
+  Caption = 'TesterHelper'
+  ClientHeight = 580
+  ClientWidth = 800
+  Menu = MainMenu1
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  LCLVersion = '0.9.30'
+  object MainStatBar: TStatusBar
+    Left = 0
+    Height = 23
+    Top = 557
+    Width = 800
+    Panels = <>
+  end
+  object PageControl: TPageControl
+    Left = 0
+    Height = 560
+    Top = 0
+    Width = 800
+    ActivePage = TabGeneration
+    Align = alTop
+    TabIndex = 0
+    TabOrder = 1
+    object TabGeneration: TTabSheet
+      Caption = 'Генерация строк'
+      ClientHeight = 534
+      ClientWidth = 792
+      object SymbolGroup: TGroupBox
+        Left = 0
+        Height = 154
+        Top = 0
+        Width = 792
+        Align = alTop
+        Caption = 'Символы'
+        ClientHeight = 136
+        ClientWidth = 788
+        TabOrder = 0
+        object EngSymbolGroup: TGroupBox
+          Left = 2
+          Height = 129
+          Top = 2
+          Width = 185
+          Caption = 'Английские Символы'
+          ClientHeight = 111
+          ClientWidth = 181
+          TabOrder = 0
+          object EnAllRadio: TRadioButton
+            Left = 18
+            Height = 17
+            Top = 42
+            Width = 109
+            Caption = 'Все EN [A..Z, a..z]'
+            Enabled = False
+            OnChange = EnAllRadioChange
+            TabOrder = 0
+          end
+          object EnLowRadio: TRadioButton
+            Left = 18
+            Height = 17
+            Top = 66
+            Width = 119
+            Caption = ' Малинкие En  [a..z]'
+            Enabled = False
+            OnChange = EnLowRadioChange
+            TabOrder = 1
+          end
+          object EnHighRadio: TRadioButton
+            Left = 18
+            Height = 17
+            Top = 88
+            Width = 113
+            Caption = 'Большие EN  [A..Z]'
+            TabOrder = 2
+          end
+          object EngSymbolCheck: TCheckBox
+            Left = 38
+            Height = 17
+            Top = 8
+            Width = 84
+            Caption = 'Alphabetic EN'
+            OnChange = EngSymbolCheckChange
+            TabOrder = 3
+          end
+        end
+        object RUSymbolGroup: TGroupBox
+          Left = 194
+          Height = 129
+          Top = 2
+          Width = 185
+          Caption = 'Русские Символы'
+          ClientHeight = 111
+          ClientWidth = 181
+          TabOrder = 1
+          object RuAllRadio: TRadioButton
+            Left = 18
+            Height = 17
+            Top = 42
+            Width = 112
+            Caption = 'Все RU [А..Я, а..я]'
+            Enabled = False
+            OnChange = RuAllRadioChange
+            TabOrder = 0
+          end
+          object RuLowRadio: TRadioButton
+            Left = 18
+            Height = 17
+            Top = 66
+            Width = 118
+            Caption = ' Малинкие Ru [а..я]'
+            Enabled = False
+            OnChange = RuLowRadioChange
+            TabOrder = 1
+          end
+          object RuSymbolCheck: TCheckBox
+            Left = 38
+            Height = 17
+            Top = 8
+            Width = 88
+            Caption = 'Alphabetic RU '
+            OnChange = RuSymbolCheckChange
+            TabOrder = 2
+          end
+          object RuHighRadio: TRadioButton
+            Left = 18
+            Height = 17
+            Top = 90
+            Width = 112
+            Caption = 'Большие RU [А..Я]'
+            Enabled = False
+            OnChange = RuHighRadioChange
+            TabOrder = 3
+          end
+        end
+        object SpecCheck: TCheckBox
+          Left = 402
+          Height = 17
+          Top = 26
+          Width = 162
+          Caption = 'Special Symbols [! . , @ # { }]'
+          OnChange = SpecCheckChange
+          TabOrder = 2
+        end
+        object NumberCheck: TCheckBox
+          Left = 402
+          Height = 17
+          Top = 82
+          Width = 86
+          Caption = 'Number [1..9]'
+          OnChange = NumberCheckChange
+          TabOrder = 3
+        end
+        object AllCheck: TCheckBox
+          Left = 586
+          Height = 17
+          Top = 58
+          Width = 66
+          Caption = 'All Symbol'
+          OnChange = AllCheckChange
+          TabOrder = 4
+        end
+      end
+      object TypeFieldGroup: TGroupBox
+        Left = 0
+        Height = 108
+        Top = 154
+        Width = 792
+        Align = alTop
+        Caption = 'Тип Поля'
+        ClientHeight = 90
+        ClientWidth = 788
+        TabOrder = 1
+        object StringRBtn: TRadioButton
+          Left = 2
+          Height = 17
+          Top = 24
+          Width = 104
+          Caption = 'Строковое Поле '
+          Checked = True
+          OnChange = StringRBtnChange
+          TabOrder = 2
+          TabStop = True
+        end
+        object EMailRBtn: TRadioButton
+          Left = 130
+          Height = 17
+          Top = 24
+          Width = 46
+          Caption = 'E-Mail'
+          OnChange = EMailRBtnChange
+          TabOrder = 0
+        end
+        object PathRBtn: TRadioButton
+          Left = 514
+          Height = 17
+          Top = 24
+          Width = 71
+          Caption = 'Path String'
+          OnChange = PathRBtnChange
+          TabOrder = 1
+        end
+        object URLRBtn: TRadioButton
+          Left = 194
+          Height = 17
+          Top = 24
+          Width = 37
+          Caption = 'URL'
+          OnChange = URLRBtnChange
+          TabOrder = 3
+        end
+        object ZipRBtn: TRadioButton
+          Left = 242
+          Height = 17
+          Top = 24
+          Width = 134
+          Caption = 'Zip (Почтовый Индекс)'
+          OnChange = ZipRBtnChange
+          TabOrder = 4
+        end
+        object PhoneRBtn: TRadioButton
+          Left = 394
+          Height = 17
+          Top = 24
+          Width = 103
+          Caption = 'Phone (Телефон)'
+          OnChange = PhoneRBtnChange
+          TabOrder = 5
+        end
+        object PhonePlusCheck: TCheckBox
+          Left = 394
+          Height = 17
+          Top = 52
+          Width = 90
+          Caption = 'Плюс спереди'
+          OnChange = PhonePlusCheckChange
+          TabOrder = 6
+          Visible = False
+        end
+        object ExistsFileCheck: TCheckBox
+          Left = 514
+          Height = 17
+          Top = 54
+          Width = 117
+          Caption = 'Файл пресутствует'
+          OnChange = ExistsFileCheckChange
+          TabOrder = 7
+          Visible = False
+        end
+      end
+      object GenerationGroup: TGroupBox
+        Left = 0
+        Height = 272
+        Top = 262
+        Width = 792
+        Align = alClient
+        Caption = 'Генерация'
+        ClientHeight = 254
+        ClientWidth = 788
+        TabOrder = 2
+        object MaxSymbolSpin: TSpinEdit
+          Left = 2
+          Height = 21
+          Top = 20
+          Width = 66
+          MaxValue = 65534
+          MinValue = 1
+          TabOrder = 0
+          Value = 30
+        end
+        object MaxSymbolLabel: TLabel
+          Left = 2
+          Height = 14
+          Top = 4
+          Width = 114
+          Caption = 'Макс. число Символов'
+          ParentColor = False
+        end
+        object GenerationMemo: TMemo
+          Left = 2
+          Height = 146
+          Top = 68
+          Width = 776
+          ReadOnly = True
+          ScrollBars = ssAutoVertical
+          TabOrder = 1
+        end
+        object GenerationBtn: TButton
+          Left = 322
+          Height = 25
+          Top = 220
+          Width = 104
+          Caption = 'Генерация'
+          OnClick = GenerationBtnClick
+          TabOrder = 2
+        end
+        object SaveGenerationBtn: TButton
+          Left = 703
+          Height = 25
+          Top = 220
+          Width = 75
+          Caption = 'Сохранить'
+          Enabled = False
+          OnClick = SaveGenerationBtnClick
+          TabOrder = 3
+        end
+        object OpenGenerationBtn: TButton
+          Left = 2
+          Height = 25
+          Top = 220
+          Width = 96
+          Caption = 'Открыть'
+          OnClick = OpenGenerationBtnClick
+          TabOrder = 4
+        end
+      end
+    end
+    object TabTestCases: TTabSheet
+      Caption = 'Тест Кейсы'
+      ClientHeight = 534
+      ClientWidth = 792
+      object ProgramGroupBox: TGroupBox
+        Left = 5
+        Height = 104
+        Top = 8
+        Width = 115
+        Caption = 'Program'
+        ClientHeight = 86
+        ClientWidth = 111
+        TabOrder = 0
+        object OpenRBtn: TRadioButton
+          Left = 29
+          Height = 17
+          Top = 8
+          Width = 44
+          Caption = 'Open'
+          TabOrder = 0
+        end
+        object CloseBtn: TRadioButton
+          Left = 29
+          Height = 17
+          Top = 32
+          Width = 44
+          Caption = 'Close'
+          TabOrder = 1
+        end
+        object WindowBtn: TButton
+          Left = 29
+          Height = 25
+          Top = 56
+          Width = 50
+          Caption = 'Add'
+          TabOrder = 2
+        end
+      end
+      object StringGrid1: TStringGrid
+        Left = 5
+        Height = 100
+        Top = 400
+        Width = 775
+        ColCount = 2
+        FixedCols = 0
+        TabOrder = 1
+        ColWidths = (
+          327
+          410
+        )
+      end
+      object ButtonGroupBox: TGroupBox
+        Left = 124
+        Height = 104
+        Top = 8
+        Width = 115
+        Caption = 'Button'
+        ClientHeight = 86
+        ClientWidth = 111
+        TabOrder = 2
+        object BtnNameEdit: TLabeledEdit
+          Left = 6
+          Height = 21
+          Top = 24
+          Width = 100
+          EditLabel.AnchorSideLeft.Control = BtnNameEdit
+          EditLabel.AnchorSideBottom.Control = BtnNameEdit
+          EditLabel.Left = 6
+          EditLabel.Height = 14
+          EditLabel.Top = 7
+          EditLabel.Width = 62
+          EditLabel.Caption = 'Button name'
+          EditLabel.ParentColor = False
+          MaxLength = 25
+          TabOrder = 0
+        end
+        object ButtonBtn: TButton
+          Left = 22
+          Height = 25
+          Top = 56
+          Width = 50
+          Caption = 'Add'
+          TabOrder = 1
+        end
+      end
+      object TextGroupBox: TGroupBox
+        Left = 244
+        Height = 104
+        Top = 8
+        Width = 115
+        Caption = 'Type Text'
+        ClientHeight = 86
+        ClientWidth = 111
+        TabOrder = 3
+        object EditBtn: TButton
+          Left = 22
+          Height = 25
+          Top = 56
+          Width = 50
+          Caption = 'Add'
+          TabOrder = 0
+        end
+        object EditTextEdit: TLabeledEdit
+          Left = 6
+          Height = 21
+          Top = 24
+          Width = 100
+          EditLabel.AnchorSideLeft.Control = BtnNameEdit
+          EditLabel.AnchorSideBottom.Control = BtnNameEdit
+          EditLabel.Left = 6
+          EditLabel.Height = 14
+          EditLabel.Top = 7
+          EditLabel.Width = 56
+          EditLabel.Caption = 'Typed Text'
+          EditLabel.ParentColor = False
+          MaxLength = 25
+          TabOrder = 1
+        end
+      end
+      object CheckGroupBox: TGroupBox
+        Left = 364
+        Height = 104
+        Top = 8
+        Width = 115
+        Caption = 'Check'
+        ClientHeight = 86
+        ClientWidth = 111
+        TabOrder = 4
+        object CheckRBtn1: TRadioButton
+          Left = 29
+          Height = 17
+          Top = 8
+          Width = 47
+          Caption = 'Check'
+          TabOrder = 0
+        end
+        object UncheckBtn1: TRadioButton
+          Left = 29
+          Height = 17
+          Top = 32
+          Width = 58
+          Caption = 'Uncheck'
+          TabOrder = 1
+        end
+        object CheckBtn: TButton
+          Left = 29
+          Height = 25
+          Top = 56
+          Width = 50
+          Caption = 'Add'
+          TabOrder = 2
+        end
+      end
+      object MenuGroupBox: TGroupBox
+        Left = 4
+        Height = 136
+        Top = 112
+        Width = 115
+        Caption = 'Menu Click'
+        ClientHeight = 118
+        ClientWidth = 111
+        TabOrder = 5
+        object EditBtn1: TButton
+          Left = 28
+          Height = 25
+          Top = 88
+          Width = 50
+          Caption = 'Add'
+          TabOrder = 0
+        end
+        object MenuEdit: TLabeledEdit
+          Left = 5
+          Height = 21
+          Top = 20
+          Width = 100
+          EditLabel.AnchorSideLeft.Control = MenuEdit
+          EditLabel.AnchorSideBottom.Control = MenuEdit
+          EditLabel.Left = 5
+          EditLabel.Height = 14
+          EditLabel.Top = 3
+          EditLabel.Width = 57
+          EditLabel.Caption = 'Menu Name'
+          EditLabel.ParentColor = False
+          TabOrder = 1
+        end
+        object SubMenuEdit: TLabeledEdit
+          Left = 5
+          Height = 21
+          Top = 64
+          Width = 100
+          EditLabel.AnchorSideLeft.Control = SubMenuEdit
+          EditLabel.AnchorSideBottom.Control = SubMenuEdit
+          EditLabel.Left = 5
+          EditLabel.Height = 14
+          EditLabel.Top = 47
+          EditLabel.Width = 75
+          EditLabel.Caption = 'SubMenu Name'
+          EditLabel.ParentColor = False
+          TabOrder = 2
+        end
+      end
+    end
+    object TabRaznoe: TTabSheet
+      Caption = 'Разное'
+      ClientHeight = 534
+      ClientWidth = 792
+      object TimerSecGroup: TGroupBox
+        Left = 460
+        Height = 160
+        Top = 0
+        Width = 320
+        Caption = 'Секундомер'
+        ClientHeight = 142
+        ClientWidth = 316
+        TabOrder = 0
+        object TimeLabel: TLabel
+          Left = 62
+          Height = 73
+          Top = 16
+          Width = 235
+          Caption = '0:00:00'
+          Font.Height = 72
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object StartStopBtn: TSpeedButton
+          Left = 46
+          Height = 25
+          Top = 109
+          Width = 95
+          Caption = 'Старт'
+          NumGlyphs = 0
+          OnClick = StartStopBtnClick
+        end
+        object ResetTimeBtn: TButton
+          Left = 190
+          Height = 25
+          Top = 109
+          Width = 75
+          Caption = 'Сброс'
+          OnClick = ResetTimeBtnClick
+          TabOrder = 0
+        end
+      end
+      object ProcesInfoGroupBox: TGroupBox
+        Left = 4
+        Height = 528
+        Top = 0
+        Width = 448
+        Caption = 'Proces Info'
+        ClientHeight = 510
+        ClientWidth = 444
+        TabOrder = 1
+        object ProcesInfoView: TListView
+          Left = 6
+          Height = 336
+          Top = 0
+          Width = 432
+          Columns = <          
+            item
+              AutoSize = True
+              Caption = 'Process Name'
+              ImageIndex = 0
+              Width = 428
+            end          
+            item
+              Caption = 'PID'
+              Width = 40
+            end          
+            item
+              Caption = 'Memory'
+              Width = 60
+            end          
+            item
+              Caption = 'Priority'
+            end          
+            item
+              Caption = 'Threads'
+              Width = 60
+            end>
+          ReadOnly = True
+          RowSelect = True
+          ScrollBars = ssAutoVertical
+          TabOrder = 0
+          ViewStyle = vsReport
+          OnDblClick = ProcesInfoViewDblClick
+        end
+        object UpdateProcessBtn: TButton
+          Left = 166
+          Height = 25
+          Top = 346
+          Width = 75
+          Caption = 'Обнавить'
+          OnClick = UpdateProcessBtnClick
+          TabOrder = 1
+        end
+        object ProcessWatcherMemo: TMemo
+          Left = 6
+          Height = 86
+          Top = 416
+          Width = 432
+          ScrollBars = ssAutoVertical
+          TabOrder = 2
+        end
+        object ProcessWatchLabel: TLabel
+          Left = 150
+          Height = 14
+          Top = 392
+          Width = 125
+          Caption = 'Слежение за процессом:'
+          ParentColor = False
+        end
+        object StopWatchSBtn: TSpeedButton
+          Left = 6
+          Height = 25
+          Top = 383
+          Width = 136
+          Caption = 'Остановить слежение'
+          Flat = True
+          NumGlyphs = 0
+          OnClick = StopWatchSBtnClick
+        end
+        object SaveWatcherLogBtn: TButton
+          Left = 310
+          Height = 25
+          Top = 383
+          Width = 128
+          Caption = 'Сохранить Слежение'
+          Enabled = False
+          OnClick = SaveWatcherLogBtnClick
+          TabOrder = 3
+        end
+        object CloseProcessBtn: TButton
+          Left = 323
+          Height = 25
+          Top = 346
+          Width = 115
+          Caption = 'Закрыть Процесс'
+          Enabled = False
+          OnClick = CloseProcessBtnClick
+          TabOrder = 4
+        end
+      end
+    end
+  end
+  object MainMenu1: TMainMenu
+    left = 736
+    object MenuItem1: TMenuItem
+      Caption = 'Файл'
+      object MenuClose: TMenuItem
+        Caption = 'Выход'
+        ShortCut = 32883
+        OnClick = MenuCloseClick
+      end
+    end
+  end
+  object TimerForTime: TTimer
+    Enabled = False
+    Interval = 100
+    OnTimer = TimerForTimeTimer
+    left = 672
+  end
+  object ProcessWatchwerTimer: TTimer
+    Enabled = False
+    OnTimer = ProcessWatchwerTimerTimer
+    left = 576
+  end
+end
