@@ -24,6 +24,7 @@ type
     ProcessWatcherMemo: TMemo;
     ProcessWatchwerTimer: TTimer;
     StopWatchSBtn: TSpeedButton;
+    TabSheet1: TTabSheet;
     UpdateProcessBtn: TButton;
     ProcesInfoGroupBox: TGroupBox;
     ProcesInfoView: TListView;
