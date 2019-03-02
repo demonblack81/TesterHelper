@@ -14,7 +14,7 @@ type
 
   TStringsParamForm = class(TForm)
     AddNameBitBtn: TBitBtn;
-    BitBtn4: TBitBtn;
+    DelNameBitBtn: TBitBtn;
     AddListBtn: TButton;
     DelListBtn: TButton;
     NameListComboBox: TComboBox;
@@ -23,13 +23,14 @@ type
     UpDown1: TUpDown;
     procedure FormCreate(Sender: TObject);
   private
-
+    ListDir: string;
   public
 
   end;
 
 var
   StringsParamForm: TStringsParamForm;
+
 
 implementation
 
@@ -40,7 +41,11 @@ implementation
 procedure TStringsParamForm.FormCreate(Sender: TObject);
 begin
   //Добавляем в NameListComboBox название листов по именам файлов в папке ./List
-
+  ListDir := ExtractFileDir(ParamStr(0));
+  if ListDir[Length(ListDir)] <> '\' then begin
+   ListDir := ListDir + '\';
+ end;
+  ListDir :=  ListDir +  'List\';
 end;
 
 end.

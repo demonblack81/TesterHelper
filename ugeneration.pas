@@ -2,7 +2,7 @@
 
 interface
 
-uses Windows, Classes, SysUtils, Math, FileUtil;
+uses Windows, Classes, SysUtils, Math, FileUtil, LazUTF8;
 
 const c_NUMERIC       = '0123456789';
       c_ENGALLSYMBOL  = 'qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM';

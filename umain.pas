@@ -8,7 +8,7 @@ uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, Menus,
   ComCtrls, StdCtrls, Spin, ExtCtrls, Grids, Buttons, LCLType,
 
-  uGeneration, uProcInfo;
+  uGeneration, uProcInfo, uEditStringsParam;
 
 type
 
@@ -131,6 +131,7 @@ type
     LastProcessMemory : integer;
   public
     { public declarations }
+
   end; 
 
 var

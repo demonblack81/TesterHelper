@@ -49,10 +49,10 @@ object StringsParamForm: TStringsParamForm
     TabOrder = 3
   end
   object AddNameBitBtn: TBitBtn
-    Left = 448
-    Height = 32
-    Top = 152
-    Width = 33
+    Left = 450
+    Height = 25
+    Top = 150
+    Width = 25
     Glyph.Data = {
       42020000424D4202000000000000420000002800000010000000100000000100
       1000030000000002000000000000000000000000000000000000007C0000E003
@@ -74,13 +74,14 @@ object StringsParamForm: TStringsParamForm
       00001F7C1F7C1F7C1F7C1F7C00001F7C1F7C0000000000000000000000000000
       1F7C1F7C1F7C
     }
+    Layout = blGlyphTop
     TabOrder = 4
   end
-  object BitBtn4: TBitBtn
-    Left = 448
-    Height = 38
+  object DelNameBitBtn: TBitBtn
+    Left = 450
+    Height = 25
     Top = 288
-    Width = 33
+    Width = 25
     Glyph.Data = {
       42020000424D4202000000000000420000002800000010000000100000000100
       1000030000000002000000000000000000000000000000000000007C0000E003
@@ -102,13 +103,14 @@ object StringsParamForm: TStringsParamForm
       1F7C1F7C1F7C1F7C1F7C1F7C1F7C1F7C1F7C1F7C1F7C1F7C1F7C1F7C1F7C1F7C
       1F7C1F7C1F7C
     }
+    Layout = blGlyphTop
     TabOrder = 5
   end
   object UpDown1: TUpDown
-    Left = 448
+    Left = 450
     Height = 72
     Top = 200
-    Width = 33
+    Width = 25
     Min = 0
     Position = 0
     TabOrder = 6
