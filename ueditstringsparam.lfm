@@ -3,17 +3,21 @@ object StringsParamForm: TStringsParamForm
   Height = 464
   Top = 132
   Width = 517
+  BorderStyle = bsSingle
   Caption = 'Редактирование имен фраз'
   ClientHeight = 464
   ClientWidth = 517
   OnCreate = FormCreate
-  LCLVersion = '1.8.0.6'
+  Position = poOwnerFormCenter
+  LCLVersion = '2.0.0.4'
   object NameListComboBox: TComboBox
     Left = 16
     Height = 23
     Top = 48
     Width = 296
     ItemHeight = 15
+    OnChange = NameListComboBoxChange
+    OnCloseUp = NameListComboBoxCloseUp
     TabOrder = 0
   end
   object Label1: TLabel
@@ -40,7 +44,7 @@ object StringsParamForm: TStringsParamForm
     Caption = 'Удл. лист'
     TabOrder = 2
   end
-  object ListBox1: TListBox
+  object WordListBox: TListBox
     Left = 16
     Height = 320
     Top = 104
@@ -114,6 +118,5 @@ object StringsParamForm: TStringsParamForm
     Min = 0
     Position = 0
     TabOrder = 6
-    Wrap = False
   end
 end

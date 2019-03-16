@@ -16,6 +16,9 @@ type
 
   TMainForm = class(TForm)
     AllCheck: TCheckBox;
+    BtnWord: TButton;
+    BtnFrase: TButton;
+    LabelSettings: TLabel;
     OpenGenerationBtn: TButton;
     SaveGenerationBtn: TButton;
     CloseProcessBtn: TButton;
@@ -88,6 +91,7 @@ type
     TabGeneration: TTabSheet;
     TabTestCases: TTabSheet;
     procedure AllCheckChange(Sender: TObject);
+    procedure BtnWordClick(Sender: TObject);
     procedure CloseProcessBtnClick(Sender: TObject);
     procedure EMailRBtnChange(Sender: TObject);
     procedure EnAllRadioChange(Sender: TObject);
@@ -342,6 +346,11 @@ begin
     NumberCheck.Enabled := True;
     UsingSymbol := 0;
   end;
+end;
+
+procedure TMainForm.BtnWordClick(Sender: TObject);
+begin
+  StringsParamForm.ShowModal;
 end;
 
 procedure TMainForm.CloseProcessBtnClick(Sender: TObject);

@@ -10,7 +10,7 @@ object MainForm: TMainForm
   Menu = MainMenu1
   OnCreate = FormCreate
   Position = poScreenCenter
-  LCLVersion = '1.8.0.6'
+  LCLVersion = '2.0.0.4'
   object MainStatBar: TStatusBar
     Left = 0
     Height = 23
@@ -384,13 +384,7 @@ object MainForm: TMainForm
           Height = 23
           Top = 24
           Width = 100
-          EditLabel.AnchorSideLeft.Control = BtnNameEdit
-          EditLabel.AnchorSideRight.Control = BtnNameEdit
-          EditLabel.AnchorSideRight.Side = asrBottom
-          EditLabel.AnchorSideBottom.Control = BtnNameEdit
-          EditLabel.Left = 6
           EditLabel.Height = 15
-          EditLabel.Top = 6
           EditLabel.Width = 100
           EditLabel.Caption = 'Button name'
           EditLabel.ParentColor = False
@@ -428,13 +422,7 @@ object MainForm: TMainForm
           Height = 23
           Top = 24
           Width = 100
-          EditLabel.AnchorSideLeft.Control = EditTextEdit
-          EditLabel.AnchorSideRight.Control = EditTextEdit
-          EditLabel.AnchorSideRight.Side = asrBottom
-          EditLabel.AnchorSideBottom.Control = EditTextEdit
-          EditLabel.Left = 6
           EditLabel.Height = 15
-          EditLabel.Top = 6
           EditLabel.Width = 100
           EditLabel.Caption = 'Typed Text'
           EditLabel.ParentColor = False
@@ -498,13 +486,7 @@ object MainForm: TMainForm
           Height = 23
           Top = 20
           Width = 100
-          EditLabel.AnchorSideLeft.Control = MenuEdit
-          EditLabel.AnchorSideRight.Control = MenuEdit
-          EditLabel.AnchorSideRight.Side = asrBottom
-          EditLabel.AnchorSideBottom.Control = MenuEdit
-          EditLabel.Left = 5
           EditLabel.Height = 15
-          EditLabel.Top = 2
           EditLabel.Width = 100
           EditLabel.Caption = 'Menu Name'
           EditLabel.ParentColor = False
@@ -515,13 +497,7 @@ object MainForm: TMainForm
           Height = 23
           Top = 64
           Width = 100
-          EditLabel.AnchorSideLeft.Control = SubMenuEdit
-          EditLabel.AnchorSideRight.Control = SubMenuEdit
-          EditLabel.AnchorSideRight.Side = asrBottom
-          EditLabel.AnchorSideBottom.Control = SubMenuEdit
-          EditLabel.Left = 5
           EditLabel.Height = 15
-          EditLabel.Top = 46
           EditLabel.Width = 100
           EditLabel.Caption = 'SubMenu Name'
           EditLabel.ParentColor = False
@@ -672,10 +648,37 @@ object MainForm: TMainForm
     end
     object TabSheet1: TTabSheet
       Caption = 'TabSheet1'
+      ClientHeight = 532
+      ClientWidth = 792
+      object BtnWord: TButton
+        Left = 680
+        Height = 25
+        Top = 41
+        Width = 75
+        Caption = 'Слова'
+        OnClick = BtnWordClick
+        TabOrder = 0
+      end
+      object BtnFrase: TButton
+        Left = 592
+        Height = 25
+        Top = 41
+        Width = 75
+        Caption = 'Фразы'
+        TabOrder = 1
+      end
+      object LabelSettings: TLabel
+        Left = 648
+        Height = 15
+        Top = 24
+        Width = 60
+        Caption = 'Настройки'
+        ParentColor = False
+      end
     end
   end
   object MainMenu1: TMainMenu
-    left = 736
+    left = 624
     object MenuItem1: TMenuItem
       Caption = 'Файл'
       object MenuClose: TMenuItem
@@ -689,11 +692,11 @@ object MainForm: TMainForm
     Enabled = False
     Interval = 100
     OnTimer = TimerForTimeTimer
-    left = 656
+    left = 576
   end
   object ProcessWatchwerTimer: TTimer
     Enabled = False
     OnTimer = ProcessWatchwerTimerTimer
-    left = 552
+    left = 536
   end
 end
