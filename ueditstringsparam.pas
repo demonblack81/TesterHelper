@@ -16,6 +16,8 @@ type
 
   TStringsParamForm = class(TForm)
     AddNameBitBtn: TBitBtn;
+    UpWordBitBtn: TBitBtn;
+    DownWordBitBtn: TBitBtn;
     BtnClose: TButton;
     BtnSave: TButton;
     DelNameBitBtn: TBitBtn;
@@ -25,13 +27,14 @@ type
     NameListComboBox: TComboBox;
     Label1: TLabel;
     WordListBox: TListBox;
-    UpDown1: TUpDown;
     procedure AddListBtnClick(Sender: TObject);
     procedure AddNameBitBtnClick(Sender: TObject);
     procedure BtnCloseClick(Sender: TObject);
     procedure BtnSaveClick(Sender: TObject);
+    procedure DownWordBitBtnClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure NameListComboBoxCloseUp(Sender: TObject);
+    procedure UpWordBitBtnClick(Sender: TObject);
   private
     ListDir: string;
   public
@@ -77,6 +80,22 @@ begin
   WordListBox.Items.SaveToFile(ListDir+NameListComboBox.items[NameListComboBox.ItemIndex]);
 end;
 
+procedure TStringsParamForm.DownWordBitBtnClick(Sender: TObject);
+var CurSel, i: integer;
+begin
+  if WordListBox.SelCount <> 1 then exit;
+  CurSel := 0;
+  for i:= 0 to (WordListBox.Items.Count -1 ) do begin
+    if WordListBox.Selected[i] then begin
+      CurSel := i;
+      break;
+    end;
+  end;
+  if CurSel < (WordListBox.Items.Count-1) then begin
+   WordListBox.Items.Move(CurSel, (CurSel+1));
+  end;
+end;
+
 procedure TStringsParamForm.AddListBtnClick(Sender: TObject);
 var NewName: string;
 begin
@@ -108,6 +127,22 @@ begin
       end;
     end;
     FindClose(FileSearch);
+  end;
+end;
+
+procedure TStringsParamForm.UpWordBitBtnClick(Sender: TObject);
+var CurSel, i: integer;
+begin
+  if WordListBox.SelCount <> 1 then exit;
+  CurSel := 0;
+  for i:= 0 to (WordListBox.Items.Count -1) do begin
+    if WordListBox.Selected[i] then begin
+      CurSel := i;
+      break;
+    end;
+  end;
+  if CurSel > 0 then begin
+   WordListBox.Items.Move(CurSel, (CurSel-1));
   end;
 end;
 
