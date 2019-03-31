@@ -8,12 +8,12 @@ object StringsParamForm: TStringsParamForm
   ClientHeight = 426
   ClientWidth = 516
   OnCreate = FormCreate
-  Position = poOwnerFormCenter
-  LCLVersion = '1.8.0.6'
+  Position = poMainFormCenter
+  LCLVersion = '2.0.0.4'
   object NameListComboBox: TComboBox
     Left = 9
     Height = 23
-    Top = 32
+    Top = 24
     Width = 296
     ItemHeight = 15
     OnCloseUp = NameListComboBoxCloseUp
@@ -30,7 +30,7 @@ object StringsParamForm: TStringsParamForm
   object AddListBtn: TButton
     Left = 328
     Height = 25
-    Top = 32
+    Top = 22
     Width = 91
     Caption = 'Добавить лист'
     OnClick = AddListBtnClick
@@ -39,17 +39,19 @@ object StringsParamForm: TStringsParamForm
   object DelListBtn: TButton
     Left = 432
     Height = 25
-    Top = 32
+    Top = 24
     Width = 75
     Caption = 'Удл. лист'
+    OnClick = DelListBtnClick
     TabOrder = 2
   end
   object WordListBox: TListBox
     Left = 9
-    Height = 320
-    Top = 96
+    Height = 344
+    Top = 72
     Width = 410
     ItemHeight = 0
+    OnDblClick = WordListBoxDblClick
     TabOrder = 3
   end
   object AddNameBitBtn: TBitBtn
@@ -142,24 +144,16 @@ object StringsParamForm: TStringsParamForm
       1F7C1F7C1F7C
     }
     Layout = blGlyphTop
+    OnClick = DelNameBitBtnClick
     TabOrder = 5
   end
   object Label2: TLabel
     Left = 9
     Height = 15
-    Top = 72
+    Top = 56
     Width = 84
     Caption = 'Фраза в листах:'
     ParentColor = False
-  end
-  object BtnClose: TButton
-    Left = 432
-    Height = 25
-    Top = 391
-    Width = 75
-    Caption = 'Закрыть'
-    OnClick = BtnCloseClick
-    TabOrder = 6
   end
   object BtnSave: TButton
     Left = 432
@@ -168,7 +162,7 @@ object StringsParamForm: TStringsParamForm
     Width = 75
     Caption = 'Сохранить'
     OnClick = BtnSaveClick
-    TabOrder = 7
+    TabOrder = 6
   end
   object UpWordBitBtn: TBitBtn
     Left = 456
@@ -276,7 +270,7 @@ object StringsParamForm: TStringsParamForm
       0000000000000000000000000000000000000000000000000000
     }
     OnClick = UpWordBitBtnClick
-    TabOrder = 8
+    TabOrder = 7
   end
   object DownWordBitBtn: TBitBtn
     Left = 456
@@ -384,6 +378,17 @@ object StringsParamForm: TStringsParamForm
       0000000000000000000000000000000000000000000000000000
     }
     OnClick = DownWordBitBtnClick
+    TabOrder = 8
+  end
+  object CloseBitBtn: TBitBtn
+    Left = 432
+    Height = 30
+    Top = 386
+    Width = 75
+    Default = True
+    DefaultCaption = True
+    Kind = bkOK
+    ModalResult = 1
     TabOrder = 9
   end
 end

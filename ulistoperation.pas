@@ -5,34 +5,46 @@ unit uListOperation;
 interface
 
 uses
-  Classes, SysUtils;
+  Classes, SysUtils, StdCtrls;
 
-function LoadNameListInString(Path:string; var NameList: TStringList): integer;
+function LoadNameListInString(Path:string; Combobox: TComboBox): integer;
+function GetCurentSelectedItemLB(ListBox: TListBox):integer;
 
 implementation
 
-function LoadNameListInString(Path: string; var NameList: TStringList): integer;
+function LoadNameListInString(Path:string; Combobox: TComboBox): integer;
 var FileSearch: TSearchRec;
     Attr : integer;
 begin
    Result := 0;
-   if (NameList = nil) then  NameList := TStringList.Create;
-   NameList.Clear;
+   if ComboBox.Items.Count > 0 then ComboBox.Items.Clear;
    Attr := faAnyFile - faDirectory;
    if FindFirst(Path, Attr, FileSearch) = 0 then begin
      if FileSearch.Name <> '' then begin
-       NameList.Add(ExtractFileName(FileSearch.Name));
+       ComboBox.Items.Add(ExtractFileName(FileSearch.Name));
      end;
      while FindNext(FileSearch) = 0 do begin
        if FileSearch.Name <> '' then begin
-           NameList.Add(ExtractFileName(FileSearch.Name));
+        ComboBox.Items.Add(ExtractFileName(FileSearch.Name));
        end;
      end;
-     Result := NameList.Count;
+     Result := ComboBox.Items.Count;
    end else begin
      Result := -1; // Файлы в коталоге не найдены
    end;
    FindClose(FileSearch);
+end;
+
+function GetCurentSelectedItemLB(ListBox: TListBox): integer;
+var i: integer;
+begin
+  Result := -1;
+  for i:= 0 to (ListBox.Items.Count -1 ) do begin
+    if ListBox.Selected[i] then begin
+      Result := i;
+      break;
+    end;
+  end;
 end;
 
 end.

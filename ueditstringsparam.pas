@@ -16,9 +16,9 @@ type
 
   TStringsParamForm = class(TForm)
     AddNameBitBtn: TBitBtn;
+    CloseBitBtn: TBitBtn;
     UpWordBitBtn: TBitBtn;
     DownWordBitBtn: TBitBtn;
-    BtnClose: TButton;
     BtnSave: TButton;
     DelNameBitBtn: TBitBtn;
     AddListBtn: TButton;
@@ -29,21 +29,25 @@ type
     WordListBox: TListBox;
     procedure AddListBtnClick(Sender: TObject);
     procedure AddNameBitBtnClick(Sender: TObject);
-    procedure BtnCloseClick(Sender: TObject);
     procedure BtnSaveClick(Sender: TObject);
+    procedure DelListBtnClick(Sender: TObject);
+    procedure DelNameBitBtnClick(Sender: TObject);
     procedure DownWordBitBtnClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure NameListComboBoxCloseUp(Sender: TObject);
     procedure UpWordBitBtnClick(Sender: TObject);
+    procedure WordListBoxDblClick(Sender: TObject);
   private
-    ListDir: string;
+
   public
 
   end;
 
 var
   StringsParamForm: TStringsParamForm;
-  NameList, WordList: TStringList;
+  WordList: TStringList;
+  ListDir: string;
+
 implementation
 
 {$R *.lfm}
@@ -60,19 +64,11 @@ begin
   end else begin
    ListDir :=  ListDir +  'List\';
   end;
-  NameList := TStringList.Create;
   WordList := TStringList.Create;
-  err := LoadNameListInString((ListDir + '*.*'), NameList);
-  if (err >= 0) then begin
-   NameListComboBox.Items := NameList;
-  end else begin
-    // Произошла ошибка нужна выводить мисагу что случилось
+  err := LoadNameListInString((ListDir + '*.*'), NameListComboBox); //NameList);
+  if (err < 0) then begin
+   ShowMessage('LoadNameListInString. Файлы в коталоге не найдены');
   end;
-end;
-
-procedure TStringsParamForm.BtnCloseClick(Sender: TObject);
-begin
-  StringsParamForm.Close;
 end;
 
 procedure TStringsParamForm.BtnSaveClick(Sender: TObject);
@@ -80,17 +76,25 @@ begin
   WordListBox.Items.SaveToFile(ListDir+NameListComboBox.items[NameListComboBox.ItemIndex]);
 end;
 
+procedure TStringsParamForm.DelListBtnClick(Sender: TObject);
+begin
+  if NameListComboBox.Text = '' then exit;
+  WordListBox.Items.Clear;
+  DeleteFile(ListDir+NameListComboBox.items[NameListComboBox.ItemIndex]);
+  NameListComboBox.items.Delete(NameListComboBox.ItemIndex);
+  NameListComboBox.Text:= '';
+end;
+
+procedure TStringsParamForm.DelNameBitBtnClick(Sender: TObject);
+begin
+
+end;
+
 procedure TStringsParamForm.DownWordBitBtnClick(Sender: TObject);
-var CurSel, i: integer;
+var CurSel: integer;
 begin
   if WordListBox.SelCount <> 1 then exit;
-  CurSel := 0;
-  for i:= 0 to (WordListBox.Items.Count -1 ) do begin
-    if WordListBox.Selected[i] then begin
-      CurSel := i;
-      break;
-    end;
-  end;
+  CurSel := GetCurentSelectedItemLB(WordListBox);
   if CurSel < (WordListBox.Items.Count-1) then begin
    WordListBox.Items.Move(CurSel, (CurSel+1));
   end;
@@ -100,7 +104,7 @@ procedure TStringsParamForm.AddListBtnClick(Sender: TObject);
 var NewName: string;
 begin
   NewName := '';
-  if not InputQuery('Название листа фраз:', 'Введите имя для листа фраз', NewName ) then exit;
+  if not InputQuery('Название листа фраз', 'Введите имя для листа фраз:', NewName) then exit;
   if NewName <> '' then NameListComboBox.Items.Add(NewName);
   FileCreate(ListDir+NewName);
 end;
@@ -109,7 +113,7 @@ procedure TStringsParamForm.AddNameBitBtnClick(Sender: TObject);
 var NewWord: string;
 begin
   NewWord := '';
-  if not InputQuery('Веведите слово:', 'Введите слова для листа фраз', NewWord) then exit;
+  if not InputQuery('Веведите слово', 'Введите слово для листа фраз:', NewWord) then exit;
   if NewWord <> '' then WordListBox.Items.Add(NewWord);
 end;
 
@@ -119,6 +123,7 @@ var FileSearch: TSearchRec;
 begin
   If NameListComboBox.ItemIndex <> -1 then begin
     WordListBox.Items.Clear;
+    Attr := faAnyFile - faDirectory;
     if FindFirst(ListDir + NameListComboBox.items[NameListComboBox.ItemIndex], Attr, FileSearch) = 0 then begin
       if FileSearch.Size > 0 then begin
         WordListBox.Items.LoadFromFile(ListDir + NameListComboBox.items[NameListComboBox.ItemIndex]);
@@ -131,18 +136,26 @@ begin
 end;
 
 procedure TStringsParamForm.UpWordBitBtnClick(Sender: TObject);
-var CurSel, i: integer;
+var CurSel: integer;
 begin
   if WordListBox.SelCount <> 1 then exit;
-  CurSel := 0;
-  for i:= 0 to (WordListBox.Items.Count -1) do begin
-    if WordListBox.Selected[i] then begin
-      CurSel := i;
-      break;
-    end;
-  end;
+  CurSel := GetCurentSelectedItemLB(WordListBox);
   if CurSel > 0 then begin
    WordListBox.Items.Move(CurSel, (CurSel-1));
+  end;
+end;
+
+procedure TStringsParamForm.WordListBoxDblClick(Sender: TObject);
+var CurSel: integer;
+    TempStr: string;
+begin
+  if WordListBox.SelCount <> 1 then exit;
+  CurSel := GetCurentSelectedItemLB(WordListBox);
+  if CurSel < 0 then exit;
+  TempStr := WordListBox.Items[CurSel];
+  TempStr := InputBox('Изменение слова','Введите новое слово для листа фраз:',TempStr);
+  if TempStr <> WordListBox.Items[CurSel] then begin
+    WordListBox.Items[CurSel] := TempStr;
   end;
 end;
 

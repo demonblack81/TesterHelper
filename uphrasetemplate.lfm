@@ -1,0 +1,165 @@
+object PhraseTemplateForm: TPhraseTemplateForm
+  Left = 256
+  Height = 468
+  Top = 145
+  Width = 631
+  Caption = 'PhraseTemplateForm'
+  ClientHeight = 468
+  ClientWidth = 631
+  OnCreate = FormCreate
+  Position = poOwnerFormCenter
+  LCLVersion = '2.0.0.4'
+  object TamplatePhrasesComboBox: TComboBox
+    Left = 10
+    Height = 23
+    Top = 24
+    Width = 438
+    ItemHeight = 15
+    OnCloseUp = TamplatePhrasesComboBoxCloseUp
+    TabOrder = 0
+  end
+  object AddTemplateBtn: TButton
+    Left = 464
+    Height = 25
+    Top = 24
+    Width = 75
+    Caption = 'Добавить'
+    OnClick = AddTemplateBtnClick
+    TabOrder = 1
+  end
+  object Label1: TLabel
+    Left = 10
+    Height = 15
+    Top = 8
+    Width = 135
+    Caption = 'Список шаблонов фраз:'
+    ParentColor = False
+  end
+  object Label2: TLabel
+    Left = 10
+    Height = 15
+    Top = 94
+    Width = 87
+    Caption = 'Шаблон фразы:'
+    ParentColor = False
+  end
+  object Button1: TButton
+    Left = 552
+    Height = 25
+    Top = 22
+    Width = 75
+    Caption = 'Удалить'
+    TabOrder = 2
+  end
+  object PhraseTemplateMemo: TMemo
+    Left = 10
+    Height = 90
+    Top = 112
+    Width = 617
+    TabOrder = 3
+  end
+  object AddWordBtn: TButton
+    Left = 464
+    Height = 25
+    Top = 312
+    Width = 75
+    Caption = 'Доб. Слово'
+    OnClick = AddWordBtnClick
+    TabOrder = 4
+  end
+  object SaveTemplateBtn: TButton
+    Left = 464
+    Height = 25
+    Top = 216
+    Width = 75
+    Caption = 'Сохранить'
+    OnClick = SaveTemplateBtnClick
+    TabOrder = 5
+  end
+  object ClearTemplateBtn: TButton
+    Left = 552
+    Height = 25
+    Top = 216
+    Width = 75
+    Caption = 'Очистить'
+    OnClick = ClearTemplateBtnClick
+    TabOrder = 6
+  end
+  object AddListPhrBtn: TButton
+    Left = 464
+    Height = 25
+    Top = 264
+    Width = 75
+    Caption = 'Доб. Список'
+    OnClick = AddListPhrBtnClick
+    TabOrder = 7
+  end
+  object Label3: TLabel
+    Left = 10
+    Height = 15
+    Top = 50
+    Width = 97
+    Caption = 'Описание фразы:'
+    ParentColor = False
+  end
+  object PhraseInfoEdit: TEdit
+    Left = 10
+    Height = 23
+    Top = 64
+    Width = 617
+    TabOrder = 8
+  end
+  object NameListComboBox: TComboBox
+    Left = 10
+    Height = 23
+    Top = 264
+    Width = 440
+    ItemHeight = 15
+    OnCloseUp = NameListComboBoxCloseUp
+    TabOrder = 9
+  end
+  object WordListBox: TListBox
+    Left = 13
+    Height = 112
+    Top = 312
+    Width = 437
+    ItemHeight = 0
+    TabOrder = 10
+  end
+  object Label4: TLabel
+    Left = 8
+    Height = 15
+    Top = 248
+    Width = 96
+    Caption = 'Название листов:'
+    ParentColor = False
+  end
+  object Label5: TLabel
+    Left = 12
+    Height = 15
+    Top = 291
+    Width = 84
+    Caption = 'Фраза в листах:'
+    ParentColor = False
+  end
+  object UpdWordListBtn: TButton
+    Left = 192
+    Height = 25
+    Top = 432
+    Width = 75
+    Caption = 'Обновить'
+    OnClick = UpdWordListBtnClick
+    TabOrder = 11
+  end
+  object ClloseBitBtn: TBitBtn
+    Left = 552
+    Height = 30
+    Top = 432
+    Width = 75
+    Default = True
+    DefaultCaption = True
+    Kind = bkOK
+    ModalResult = 1
+    TabOrder = 12
+  end
+end

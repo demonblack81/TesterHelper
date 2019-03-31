@@ -8,7 +8,7 @@ uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, Menus,
   ComCtrls, StdCtrls, Spin, ExtCtrls, Grids, Buttons, LCLType,
 
-  uGeneration, uProcInfo, uEditStringsParam;
+  uGeneration, uProcInfo, uEditStringsParam, uPhraseTemplate;
 
 type
 
@@ -18,6 +18,8 @@ type
     AllCheck: TCheckBox;
     BtnWord: TButton;
     BtnFrase: TButton;
+    ComboBox1: TComboBox;
+    Label1: TLabel;
     LabelSettings: TLabel;
     OpenGenerationBtn: TButton;
     SaveGenerationBtn: TButton;
@@ -91,6 +93,7 @@ type
     TabGeneration: TTabSheet;
     TabTestCases: TTabSheet;
     procedure AllCheckChange(Sender: TObject);
+    procedure BtnFraseClick(Sender: TObject);
     procedure BtnWordClick(Sender: TObject);
     procedure CloseProcessBtnClick(Sender: TObject);
     procedure EMailRBtnChange(Sender: TObject);
@@ -346,6 +349,11 @@ begin
     NumberCheck.Enabled := True;
     UsingSymbol := 0;
   end;
+end;
+
+procedure TMainForm.BtnFraseClick(Sender: TObject);
+begin
+  PhraseTemplateForm.ShowModal;
 end;
 
 procedure TMainForm.BtnWordClick(Sender: TObject);

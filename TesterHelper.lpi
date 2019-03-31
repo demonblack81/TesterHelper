@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CONFIG>
   <ProjectOptions>
-    <Version Value="10"/>
+    <Version Value="11"/>
     <PathDelim Value="\"/>
     <General>
       <MainUnit Value="0"/>
@@ -19,21 +19,22 @@
       <Version Value="2"/>
     </PublishOptions>
     <RunParams>
-      <local>
-        <FormatVersion Value="1"/>
-      </local>
+      <FormatVersion Value="2"/>
+      <Modes Count="1">
+        <Mode0 Name="default"/>
+      </Modes>
     </RunParams>
     <RequiredPackages Count="1">
       <Item1>
         <PackageName Value="LCL"/>
       </Item1>
     </RequiredPackages>
-    <Units Count="9">
+    <Units Count="10">
       <Unit0>
         <Filename Value="TesterHelper.lpr"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="3"/>
-        <CursorPos X="70" Y="10"/>
+        <EditorIndex Value="4"/>
+        <CursorPos X="87" Y="10"/>
         <UsageCount Value="442"/>
         <Loaded Value="True"/>
       </Unit0>
@@ -44,8 +45,8 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="UMain"/>
-        <TopLine Value="233"/>
-        <CursorPos X="19" Y="353"/>
+        <TopLine Value="215"/>
+        <CursorPos X="46" Y="242"/>
         <UsageCount Value="442"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -54,7 +55,7 @@
         <Filename Value="ugeneration.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="uGeneration"/>
-        <EditorIndex Value="4"/>
+        <EditorIndex Value="5"/>
         <TopLine Value="568"/>
         <CursorPos X="50" Y="5"/>
         <UsageCount Value="442"/>
@@ -70,7 +71,7 @@
       <Unit4>
         <Filename Value="uProcInfo.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="5"/>
+        <EditorIndex Value="6"/>
         <TopLine Value="169"/>
         <CursorPos X="21" Y="206"/>
         <UsageCount Value="371"/>
@@ -80,8 +81,7 @@
         <Filename Value="D:\Soft\lazarus\lcl\forms.pp"/>
         <UnitName Value="Forms"/>
         <EditorIndex Value="-1"/>
-        <CursorPos X="38" Y="202"/>
-        <UsageCount Value="3"/>
+        <UsageCount Value="10"/>
       </Unit5>
       <Unit6>
         <Filename Value="ueditstringsparam.pas"/>
@@ -92,8 +92,8 @@
         <UnitName Value="uEditStringsParam"/>
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="116"/>
-        <CursorPos X="45" Y="145"/>
+        <TopLine Value="110"/>
+        <CursorPos X="18" Y="115"/>
         <UsageCount Value="332"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -102,9 +102,8 @@
         <Filename Value="ulistoperation.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="uListOperation"/>
-        <EditorIndex Value="2"/>
-        <TopLine Value="4"/>
-        <CursorPos X="26" Y="35"/>
+        <EditorIndex Value="3"/>
+        <CursorPos X="33" Y="11"/>
         <UsageCount Value="279"/>
         <Loaded Value="True"/>
       </Unit7>
@@ -115,127 +114,141 @@
         <CursorPos X="3" Y="97"/>
         <UsageCount Value="9"/>
       </Unit8>
+      <Unit9>
+        <Filename Value="uphrasetemplate.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="PhraseTemplateForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uPhraseTemplate"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="79"/>
+        <CursorPos X="11" Y="95"/>
+        <UsageCount Value="31"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit9>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
-        <Filename Value="ueditstringsparam.pas"/>
-        <Caret Line="59" Column="106" TopLine="34"/>
+        <Filename Value="uphrasetemplate.pas"/>
+        <Caret Line="122" Column="3" TopLine="122"/>
       </Position1>
       <Position2>
-        <Filename Value="ueditstringsparam.pas"/>
-        <Caret Line="66" Column="3" TopLine="40"/>
+        <Filename Value="uphrasetemplate.pas"/>
+        <Caret Line="44" Column="28" TopLine="18"/>
       </Position2>
       <Position3>
-        <Filename Value="ueditstringsparam.pas"/>
-        <Caret Line="74" Column="45" TopLine="49"/>
+        <Filename Value="uphrasetemplate.pas"/>
+        <Caret Line="196" Column="26" TopLine="173"/>
       </Position3>
       <Position4>
-        <Filename Value="ueditstringsparam.pas"/>
-        <Caret Line="72" Column="54" TopLine="49"/>
+        <Filename Value="uphrasetemplate.pas"/>
+        <Caret Line="127" Column="17" TopLine="125"/>
       </Position4>
       <Position5>
-        <Filename Value="ueditstringsparam.pas"/>
-        <Caret Line="73" Column="76" TopLine="49"/>
+        <Filename Value="uphrasetemplate.pas"/>
+        <Caret Line="182" Column="19" TopLine="176"/>
       </Position5>
       <Position6>
-        <Filename Value="ueditstringsparam.pas"/>
-        <Caret Line="58" Column="40" TopLine="42"/>
+        <Filename Value="umain.pas"/>
+        <Caret Line="240" Column="46" TopLine="213"/>
       </Position6>
       <Position7>
-        <Filename Value="ueditstringsparam.pas"/>
-        <Caret Line="65" Column="5" TopLine="51"/>
+        <Filename Value="umain.pas"/>
+        <Caret Line="241" Column="46" TopLine="214"/>
       </Position7>
       <Position8>
         <Filename Value="ueditstringsparam.pas"/>
-        <Caret Line="57" Column="40" TopLine="46"/>
+        <Caret Line="109" Column="42" TopLine="103"/>
       </Position8>
       <Position9>
         <Filename Value="ueditstringsparam.pas"/>
-        <Caret Line="58" Column="40" TopLine="47"/>
+        <Caret Line="85" Column="3" TopLine="83"/>
       </Position9>
       <Position10>
         <Filename Value="ueditstringsparam.pas"/>
-        <Caret Line="59" Column="40" TopLine="48"/>
+        <Caret Line="59" Column="3" TopLine="53"/>
       </Position10>
       <Position11>
         <Filename Value="ueditstringsparam.pas"/>
-        <Caret Line="29" Column="43" TopLine="12"/>
+        <Caret Line="33" Column="22" TopLine="27"/>
       </Position11>
       <Position12>
         <Filename Value="ueditstringsparam.pas"/>
-        <Caret Line="71" Column="17" TopLine="42"/>
+        <Caret Line="100" Column="24" TopLine="72"/>
       </Position12>
       <Position13>
-        <Filename Value="ueditstringsparam.pas"/>
-        <Caret Line="66" Column="29" TopLine="48"/>
+        <Filename Value="ulistoperation.pas"/>
+        <Caret Line="11" Column="46"/>
       </Position13>
       <Position14>
         <Filename Value="ueditstringsparam.pas"/>
-        <Caret Line="80" Column="9" TopLine="61"/>
+        <Caret Line="92" Column="35" TopLine="78"/>
       </Position14>
       <Position15>
         <Filename Value="ueditstringsparam.pas"/>
-        <Caret Line="94" Column="56" TopLine="73"/>
+        <Caret Line="35" Column="21" TopLine="11"/>
       </Position15>
       <Position16>
         <Filename Value="ueditstringsparam.pas"/>
-        <Caret Line="77" Column="90" TopLine="57"/>
+        <Caret Line="97" Column="3" TopLine="92"/>
       </Position16>
       <Position17>
         <Filename Value="ueditstringsparam.pas"/>
-        <Caret Line="93" Column="116" TopLine="76"/>
+        <Caret Line="35" Column="15" TopLine="21"/>
       </Position17>
       <Position18>
         <Filename Value="ueditstringsparam.pas"/>
-        <Caret Line="94" Column="54" TopLine="81"/>
+        <Caret Line="92" Column="40" TopLine="82"/>
       </Position18>
       <Position19>
         <Filename Value="ueditstringsparam.pas"/>
-        <Caret Line="93" Column="54" TopLine="80"/>
+        <Caret Line="38" Column="21" TopLine="21"/>
       </Position19>
       <Position20>
         <Filename Value="ueditstringsparam.pas"/>
-        <Caret Line="94" Column="54" TopLine="81"/>
+        <Caret Line="141" Column="6" TopLine="118"/>
       </Position20>
       <Position21>
-        <Filename Value="ueditstringsparam.pas"/>
-        <Caret Line="96" Column="54" TopLine="83"/>
+        <Filename Value="uphrasetemplate.pas"/>
+        <Caret Line="143" Column="40" TopLine="128"/>
       </Position21>
       <Position22>
-        <Filename Value="ueditstringsparam.pas"/>
-        <Caret Line="139" Column="19" TopLine="105"/>
+        <Filename Value="uphrasetemplate.pas"/>
+        <Caret Line="39" Column="22" TopLine="24"/>
       </Position22>
       <Position23>
-        <Filename Value="ueditstringsparam.pas"/>
-        <Caret Line="93" Column="7" TopLine="69"/>
+        <Filename Value="uphrasetemplate.pas"/>
+        <Caret Line="130" Column="34" TopLine="129"/>
       </Position23>
       <Position24>
-        <Filename Value="ueditstringsparam.pas"/>
-        <Caret Line="94" Column="16" TopLine="70"/>
+        <Filename Value="uphrasetemplate.pas"/>
+        <Caret Line="37" Column="15" TopLine="25"/>
       </Position24>
       <Position25>
-        <Filename Value="ueditstringsparam.pas"/>
-        <Caret Line="88" Column="45" TopLine="74"/>
+        <Filename Value="uphrasetemplate.pas"/>
+        <Caret Line="151" Column="21" TopLine="142"/>
       </Position25>
       <Position26>
         <Filename Value="ueditstringsparam.pas"/>
-        <Caret Line="89" Column="24" TopLine="68"/>
+        <Caret Line="140" Column="40" TopLine="119"/>
       </Position26>
       <Position27>
         <Filename Value="ueditstringsparam.pas"/>
-        <Caret Line="84" Column="14" TopLine="71"/>
+        <Caret Line="151" Column="3" TopLine="125"/>
       </Position27>
       <Position28>
         <Filename Value="ueditstringsparam.pas"/>
-        <Caret Line="94" Column="42" TopLine="77"/>
+        <Caret Line="147" Column="5" TopLine="125"/>
       </Position28>
       <Position29>
         <Filename Value="ueditstringsparam.pas"/>
-        <Caret Line="95" Column="36" TopLine="78"/>
+        <Caret Line="38" Column="50" TopLine="20"/>
       </Position29>
       <Position30>
         <Filename Value="ueditstringsparam.pas"/>
-        <Caret Line="145" Column="45" TopLine="116"/>
+        <Caret Line="107" Column="111" TopLine="89"/>
       </Position30>
     </JumpHistory>
   </ProjectOptions>
