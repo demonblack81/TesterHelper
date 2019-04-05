@@ -8,7 +8,7 @@ uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, Menus,
   ComCtrls, StdCtrls, Spin, ExtCtrls, Grids, Buttons, LCLType,
 
-  uGeneration, uProcInfo, uEditStringsParam, uPhraseTemplate;
+  uGeneration, uProcInfo, uEditStringsParam, uPhraseTemplate, uListOperation;
 
 type
 
@@ -16,11 +16,31 @@ type
 
   TMainForm = class(TForm)
     AllCheck: TCheckBox;
+    MakePhraseBitBtn: TBitBtn;
+    CopyToClipBitBtn: TBitBtn;
     BtnWord: TButton;
-    BtnFrase: TButton;
-    ComboBox1: TComboBox;
+    BtnPhrase: TButton;
+    TemplateComboBox: TComboBox;
+    FirstTempCB: TComboBox;
+    SecondTempCB: TComboBox;
+    ThirdTempCB: TComboBox;
+    FourthTempCB: TComboBox;
+    FifthTempCB: TComboBox;
+    SixthTempCB: TComboBox;
+    SeventhTempCB: TComboBox;
+    EigthTempCB: TComboBox;
     Label1: TLabel;
+    EigthCBTemplLabel: TLabel;
+    PhraseMemoLabel: TLabel;
+    FirstCBTemplLabel: TLabel;
+    SecondCBTemplLabel: TLabel;
+    ThirdCBTemplLabel: TLabel;
+    FourthCBTemplLabel: TLabel;
+    FifthCBTemplLabel: TLabel;
+    SixthCBTemplLabel: TLabel;
+    SeventhCBTemplLabel: TLabel;
     LabelSettings: TLabel;
+    PhraseMemo: TMemo;
     OpenGenerationBtn: TButton;
     SaveGenerationBtn: TButton;
     CloseProcessBtn: TButton;
@@ -93,7 +113,7 @@ type
     TabGeneration: TTabSheet;
     TabTestCases: TTabSheet;
     procedure AllCheckChange(Sender: TObject);
-    procedure BtnFraseClick(Sender: TObject);
+    procedure BtnPhraseClick(Sender: TObject);
     procedure BtnWordClick(Sender: TObject);
     procedure CloseProcessBtnClick(Sender: TObject);
     procedure EMailRBtnChange(Sender: TObject);
@@ -112,6 +132,7 @@ type
     procedure SaveWatcherLogBtnClick(Sender: TObject);
     procedure StartStopBtnClick(Sender: TObject);
     procedure StopWatchSBtnClick(Sender: TObject);
+    procedure TemplateComboBoxCloseUp(Sender: TObject);
     procedure TimerForTimeTimer(Sender: TObject);
     procedure UpdateProcessBtnClick(Sender: TObject);
     procedure MenuCloseClick(Sender: TObject);
@@ -136,6 +157,8 @@ type
     WatcherProcessName,
     StartPath         : string;
     LastProcessMemory : integer;
+    TempArray: Array [0..15] of integer;
+    TempStr: string;
   public
     { public declarations }
 
@@ -151,6 +174,7 @@ implementation
 { TMainForm }
 
 procedure TMainForm.FormCreate(Sender: TObject);
+var err: integer;
 begin
  StartPath := ExtractFileDir(ParamStr(0)); // определяем  путь к программе
  if StartPath[Length(StartPath)] <> '\' then begin
@@ -165,6 +189,10 @@ begin
  PageControl.TabIndex := 0;
  WatcherProcessName := '';
  LastProcessMemory := 0;
+ err := LoadDiscriptionInCB((StartPath + 'Phrases\' + '*.*'), TemplateComboBox);
+  if (err < 0) then begin
+   ShowMessage('LoadNameListInString. Файлы в коталоге не найдены');
+  end;
 end;
 
 
@@ -287,6 +315,252 @@ begin
  end;
 end;
 
+procedure TMainForm.TemplateComboBoxCloseUp(Sender: TObject);
+var i, CountVisibleCB, j, PosI, ArrPos: integer;
+    PosStr: string;
+    FileSearch: TSearchRec;
+    Attr : integer;
+    TempList: TStringList;
+begin
+  if TemplateComboBox.ItemIndex <> -1 then begin
+    CountVisibleCB := 0;
+    if TempList = nil then begin
+      TempList := TStringList.Create;
+    end else begin
+      TempList.Clear;
+    end;
+    //Скрываем все комбобоксы
+    FirstCBTemplLabel.Visible := false;
+    FirstTempCB.Visible := false;
+    FirstTempCB.Clear;
+    SecondCBTemplLabel.Visible := false;
+    SecondTempCB.Visible := false;
+    SecondTempCB.Clear;
+    ThirdCBTemplLabel.Visible := false;
+    ThirdTempCB.Visible := false;
+    ThirdTempCB.Clear;
+    FourthCBTemplLabel.Visible := false;
+    FourthTempCB.Visible := false;
+    FourthTempCB.Clear;
+    FifthCBTemplLabel.Visible := false;
+    FifthTempCB.Visible := false;
+    FifthTempCB.Clear;
+    SixthCBTemplLabel.Visible := false;
+    SixthTempCB.Visible := false;
+    SixthTempCB.Clear;
+    SeventhCBTemplLabel.Visible := false;
+    SeventhTempCB.Visible := false;
+    SeventhTempCB.Clear;
+    EigthCBTemplLabel.Visible := false;
+    EigthTempCB.Visible := false;
+    EigthTempCB.Clear;
+    Attr := faAnyFile - faDirectory;
+    // Загрузить шаблон из файла
+    PosStr := StartPath + 'Phrases\' +  PhraseTemplateForm.TamplatePhrasesComboBox.items[TemplateComboBox.ItemIndex];
+    if FindFirst(PosStr, Attr, FileSearch) = 0 then begin
+      if FileSearch.Size > 0 then begin
+         TempList.LoadFromFile((StartPath + 'Phrases\' + PhraseTemplateForm.TamplatePhrasesComboBox.items[TemplateComboBox.ItemIndex]));
+         if TempList.Count > 0 then begin
+           TempList.Delete(0);
+           TempStr := TempList.Text;
+         end;
+      end else begin
+       ShowMessage('Выбранный файл пуст.');
+      end;
+    end;
+    FindClose(FileSearch);
+    if Length(TempStr) > 2 then begin
+      PosStr := '';
+      for i:= 0 to 7 do begin
+        TempArray[i] := 0;
+      end;
+      j := 0; ArrPos :=  8;
+      for i:= 0 to StringsParamForm.NameListComboBox.Items.Count do begin
+         PosI := -1;
+         PosStr := '<PhTemp' +IntToStr(i)+ '/>';
+         PosI := pos(PosStr,TempStr);
+         if PosI > 0 then begin
+           TempArray[j] := i;
+           TempArray[ArrPos] := PosI;
+           Inc(CountVisibleCB);
+           Inc(j);
+           Inc(ArrPos);
+         end;
+      end;
+      case CountVisibleCB of
+        1: begin
+         FirstCBTemplLabel.Visible := true;
+         FirstTempCB.Visible := true;
+         FirstCBTemplLabel.Caption := StringsParamForm.NameListComboBox.Items[TempArray[0]];
+         FirstTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[0]]);
+        end;
+        2: begin
+         FirstCBTemplLabel.Visible := true;
+         FirstTempCB.Visible := true;
+         SecondCBTemplLabel.Visible := true;
+         SecondTempCB.Visible := true;
+         FirstCBTemplLabel.Caption := StringsParamForm.NameListComboBox.Items[TempArray[0]];
+         FirstTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[0]]);
+         SecondCBTemplLabel.Caption := StringsParamForm.NameListComboBox.Items[TempArray[1]];
+         SecondTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[1]]);
+        end;
+        3: begin
+         FirstCBTemplLabel.Visible := true;
+         FirstTempCB.Visible := true;
+         SecondCBTemplLabel.Visible := true;
+         SecondTempCB.Visible := true;
+         ThirdCBTemplLabel.Visible := true;
+         ThirdTempCB.Visible := true;
+         FirstCBTemplLabel.Caption := StringsParamForm.NameListComboBox.Items[TempArray[0]];
+         FirstTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[0]]);
+         SecondCBTemplLabel.Caption := StringsParamForm.NameListComboBox.Items[TempArray[1]];
+         SecondTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[1]]);
+         ThirdCBTemplLabel.Caption := StringsParamForm.NameListComboBox.Items[TempArray[2]];
+         ThirdTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[2]]);
+        end;
+        4: begin
+         FirstCBTemplLabel.Visible := true;
+         FirstTempCB.Visible := true;
+         SecondCBTemplLabel.Visible := true;
+         SecondTempCB.Visible := true;
+         ThirdCBTemplLabel.Visible := true;
+         ThirdTempCB.Visible := true;
+         FourthCBTemplLabel.Visible := true;
+         FourthTempCB.Visible := true;
+         FirstCBTemplLabel.Caption := StringsParamForm.NameListComboBox.Items[TempArray[0]];
+         FirstTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[0]]);
+         SecondCBTemplLabel.Caption := StringsParamForm.NameListComboBox.Items[TempArray[1]];
+         SecondTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[1]]);
+         ThirdCBTemplLabel.Caption := StringsParamForm.NameListComboBox.Items[TempArray[2]];
+         ThirdTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[2]]);
+         FourthCBTemplLabel.Caption := StringsParamForm.NameListComboBox.Items[TempArray[3]];
+         FourthTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[3]]);
+        end;
+        5: begin
+         FirstCBTemplLabel.Visible := true;
+         FirstTempCB.Visible := true;
+         SecondCBTemplLabel.Visible := true;
+         SecondTempCB.Visible := true;
+         ThirdCBTemplLabel.Visible := true;
+         ThirdTempCB.Visible := true;
+         FourthCBTemplLabel.Visible := true;
+         FourthTempCB.Visible := true;
+         FifthCBTemplLabel.Visible := true;
+         FifthTempCB.Visible := true;
+         FirstCBTemplLabel.Caption := StringsParamForm.NameListComboBox.Items[TempArray[0]];
+         FirstTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[0]]);
+         SecondCBTemplLabel.Caption := StringsParamForm.NameListComboBox.Items[TempArray[1]];
+         SecondTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[1]]);
+         ThirdCBTemplLabel.Caption := StringsParamForm.NameListComboBox.Items[TempArray[2]];
+         ThirdTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[2]]);
+         FourthCBTemplLabel.Caption := StringsParamForm.NameListComboBox.Items[TempArray[3]];
+         FourthTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[3]]);
+         FifthCBTemplLabel.Caption := StringsParamForm.NameListComboBox.Items[TempArray[4]];
+         FifthTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[4]]);
+        end;
+        6: begin
+         FirstCBTemplLabel.Visible := true;
+         FirstTempCB.Visible := true;
+         SecondCBTemplLabel.Visible := true;
+         SecondTempCB.Visible := true;
+         ThirdCBTemplLabel.Visible := true;
+         ThirdTempCB.Visible := true;
+         FourthCBTemplLabel.Visible := true;
+         FourthTempCB.Visible := true;
+         FifthCBTemplLabel.Visible := true;
+         FifthTempCB.Visible := true;
+         SixthCBTemplLabel.Visible := true;
+         SixthTempCB.Visible := true;
+         FirstCBTemplLabel.Caption := StringsParamForm.NameListComboBox.Items[TempArray[0]];
+         FirstTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[0]]);
+         SecondCBTemplLabel.Caption := StringsParamForm.NameListComboBox.Items[TempArray[1]];
+         SecondTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[1]]);
+         ThirdCBTemplLabel.Caption := StringsParamForm.NameListComboBox.Items[TempArray[2]];
+         ThirdTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[2]]);
+         FourthCBTemplLabel.Caption := StringsParamForm.NameListComboBox.Items[TempArray[3]];
+         FourthTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[3]]);
+         FifthCBTemplLabel.Caption := StringsParamForm.NameListComboBox.Items[TempArray[4]];
+         FifthTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[4]]);
+         SixthCBTemplLabel.Caption := StringsParamForm.NameListComboBox.Items[TempArray[5]];
+         SixthTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[5]]);
+        end;
+        7: begin
+         FirstCBTemplLabel.Visible := true;
+         FirstTempCB.Visible := true;
+         SecondCBTemplLabel.Visible := true;
+         SecondTempCB.Visible := true;
+         ThirdCBTemplLabel.Visible := true;
+         ThirdTempCB.Visible := true;
+         FourthCBTemplLabel.Visible := true;
+         FourthTempCB.Visible := true;
+         FifthCBTemplLabel.Visible := true;
+         FifthTempCB.Visible := true;
+         SixthCBTemplLabel.Visible := true;
+         SixthTempCB.Visible := true;
+         SeventhCBTemplLabel.Visible := true;
+         SeventhTempCB.Visible := true;
+         FirstCBTemplLabel.Caption := StringsParamForm.NameListComboBox.Items[TempArray[0]];
+         FirstTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[0]]);
+         SecondCBTemplLabel.Caption := StringsParamForm.NameListComboBox.Items[TempArray[1]];
+         SecondTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[1]]);
+         ThirdCBTemplLabel.Caption := StringsParamForm.NameListComboBox.Items[TempArray[2]];
+         ThirdTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[2]]);
+         FourthCBTemplLabel.Caption := StringsParamForm.NameListComboBox.Items[TempArray[3]];
+         FourthTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[3]]);
+         FifthCBTemplLabel.Caption := StringsParamForm.NameListComboBox.Items[TempArray[4]];
+         FifthTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[4]]);
+         SixthCBTemplLabel.Caption := StringsParamForm.NameListComboBox.Items[TempArray[5]];
+         SixthTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[5]]);
+         SeventhCBTemplLabel.Caption := StringsParamForm.NameListComboBox.Items[TempArray[6]];
+         SeventhTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[6]]);
+        end;
+        8: begin
+         FirstCBTemplLabel.Visible := true;
+         FirstTempCB.Visible := true;
+         SecondCBTemplLabel.Visible := true;
+         SecondTempCB.Visible := true;
+         ThirdCBTemplLabel.Visible := true;
+         ThirdTempCB.Visible := true;
+         FourthCBTemplLabel.Visible := true;
+         FourthTempCB.Visible := true;
+         FifthCBTemplLabel.Visible := true;
+         FifthTempCB.Visible := true;
+         SixthCBTemplLabel.Visible := true;
+         SixthTempCB.Visible := true;
+         SeventhCBTemplLabel.Visible := true;
+         SeventhTempCB.Visible := true;
+         EigthCBTemplLabel.Visible := true;
+         EigthTempCB.Visible := true;
+         FirstCBTemplLabel.Caption := StringsParamForm.NameListComboBox.Items[TempArray[0]];
+         FirstTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[0]]);
+         SecondCBTemplLabel.Caption := StringsParamForm.NameListComboBox.Items[TempArray[1]];
+         SecondTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[1]]);
+         ThirdCBTemplLabel.Caption := StringsParamForm.NameListComboBox.Items[TempArray[2]];
+         ThirdTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[2]]);
+         FourthCBTemplLabel.Caption := StringsParamForm.NameListComboBox.Items[TempArray[3]];
+         FourthTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[3]]);
+         FifthCBTemplLabel.Caption := StringsParamForm.NameListComboBox.Items[TempArray[4]];
+         FifthTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[4]]);
+         SixthCBTemplLabel.Caption := StringsParamForm.NameListComboBox.Items[TempArray[5]];
+         SixthTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[5]]);
+         SeventhCBTemplLabel.Caption := StringsParamForm.NameListComboBox.Items[TempArray[6]];
+         SeventhTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[6]]);
+         EigthCBTemplLabel.Caption := StringsParamForm.NameListComboBox.Items[TempArray[7]];
+         EigthTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[7]]);
+        end;
+        else begin
+          PhraseMemo.Lines.Add(TempStr);
+          PhraseMemo.CopyToClipboard;
+        end;
+      end;
+
+    end else begin
+      PhraseMemo.Lines.Add(TempStr);
+      ShowMessage('Строка шаблона очень маленькая: ' + TempStr);
+    end;
+  end;
+end;
+
 procedure TMainForm.TimerForTimeTimer(Sender: TObject);
 begin
   Secondomer := Secondomer + EncodeTime(00,00,00,TimerForTime.Interval);
@@ -351,9 +625,16 @@ begin
   end;
 end;
 
-procedure TMainForm.BtnFraseClick(Sender: TObject);
+procedure TMainForm.BtnPhraseClick(Sender: TObject);
+var err: integer;
 begin
-  PhraseTemplateForm.ShowModal;
+  if PhraseTemplateForm.ShowModal = mrOK then begin
+   TemplateComboBox.Items.Clear;
+   err := LoadDiscriptionInCB((StartPath + 'Phrases\*.*'), TemplateComboBox);
+   if (err < 0) then begin
+     ShowMessage('LoadNameListInString. Файлы в коталоге не найдены');
+   end;
+  end;
 end;
 
 procedure TMainForm.BtnWordClick(Sender: TObject);

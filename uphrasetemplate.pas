@@ -72,11 +72,11 @@ begin
   end;
   WordList := TStringList.Create;
   PhraseTamplateList := TStringList.Create;
-  err := LoadNameListInString((TamplateDir + '*.*'), TamplatePhrasesComboBox); //NameList);
+  err := LoadNameListInString((TamplateDir + '*.*'), TamplatePhrasesComboBox);
   if (err < 0) then begin
    ShowMessage('LoadNameListInString. Файлы в коталоге не найдены');
   end;
-  err := LoadNameListInString((ListDir + '*.*'), NameListComboBox); //NameList);
+  err := LoadNameListInString((ListDir + '*.*'), NameListComboBox);
   if (err < 0) then begin
    ShowMessage('LoadNameListInString. Файлы в коталоге не найдены');
   end;
