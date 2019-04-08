@@ -49,7 +49,7 @@ type
     ProcessWatcherMemo: TMemo;
     ProcessWatchwerTimer: TTimer;
     StopWatchSBtn: TSpeedButton;
-    TabSheet1: TTabSheet;
+    TempPhraseTab: TTabSheet;
     UpdateProcessBtn: TButton;
     ProcesInfoGroupBox: TGroupBox;
     ProcesInfoView: TListView;
@@ -116,6 +116,7 @@ type
     procedure BtnPhraseClick(Sender: TObject);
     procedure BtnWordClick(Sender: TObject);
     procedure CloseProcessBtnClick(Sender: TObject);
+    procedure CopyToClipBitBtnClick(Sender: TObject);
     procedure EMailRBtnChange(Sender: TObject);
     procedure EnAllRadioChange(Sender: TObject);
     procedure EngSymbolCheckChange(Sender: TObject);
@@ -124,6 +125,7 @@ type
     procedure ExistsFileCheckChange(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure GenerationBtnClick(Sender: TObject);
+    procedure MakePhraseBitBtnClick(Sender: TObject);
     procedure OpenGenerationBtnClick(Sender: TObject);
     procedure ProcesInfoViewDblClick(Sender: TObject);
     procedure ProcessWatchwerTimerTimer(Sender: TObject);
@@ -155,10 +157,10 @@ type
     Secondomer        : TTime;
     HH,MM,SS,MS       : Word;
     WatcherProcessName,
-    StartPath         : string;
+    StartPath, TempStr: string;
     LastProcessMemory : integer;
     TempArray: Array [0..15] of integer;
-    TempStr: string;
+    CountVisibleCB : integer;
   public
     { public declarations }
 
@@ -242,6 +244,181 @@ begin
  end;
 end;
 
+procedure TMainForm.MakePhraseBitBtnClick(Sender: TObject);
+begin
+  if CountVisibleCB > 0 then begin
+    case CountVisibleCB of
+      1: begin
+        if FirstTempCB.Text = '' then exit;
+        if TempArray[0] < 10 then Delete(TempStr,TempArray[8],10)
+        else Delete(TempStr,TempArray[8],11);
+        Insert(FirstTempCB.Text, TempStr, TempArray[8]);
+      end;
+      2: begin
+        if FirstTempCB.Text = '' then exit;
+        if SecondTempCB.Text = '' then exit;
+        if TempArray[0] < 10 then Delete(TempStr,TempArray[8],10)
+        else Delete(TempStr,TempArray[8],11);
+        Insert(FirstTempCB.Text, TempStr, TempArray[8]);
+        if TempArray[1] < 10 then Delete(TempStr,TempArray[9],10)
+        else Delete(TempStr,TempArray[9],11);
+        Insert(SecondTempCB.Text, TempStr, TempArray[9]);
+      end;
+      3: begin
+        if FirstTempCB.Text = '' then exit;
+        if SecondTempCB.Text = '' then exit;
+        if ThirdTempCB.Text = '' then exit;
+        if TempArray[0] < 10 then Delete(TempStr,TempArray[8],10)
+        else Delete(TempStr,TempArray[8],11);
+        Insert(FirstTempCB.Text, TempStr, TempArray[8]);
+        if TempArray[1] < 10 then Delete(TempStr,TempArray[9],10)
+        else Delete(TempStr,TempArray[9],11);
+        Insert(SecondTempCB.Text, TempStr, TempArray[9]);
+        if TempArray[2] < 10 then Delete(TempStr,TempArray[10],10)
+        else Delete(TempStr,TempArray[10],11);
+        Insert(ThirdTempCB.Text, TempStr, TempArray[10]);
+      end;
+      4: begin
+        if FirstTempCB.Text = '' then exit;
+        if SecondTempCB.Text = '' then exit;
+        if ThirdTempCB.Text = '' then exit;
+        if FourthTempCB.Text = '' then exit;
+        if TempArray[0] < 10 then Delete(TempStr,TempArray[8],10)
+        else Delete(TempStr,TempArray[8],11);
+        Insert(FirstTempCB.Text, TempStr, TempArray[8]);
+        if TempArray[1] < 10 then Delete(TempStr,TempArray[9],10)
+        else Delete(TempStr,TempArray[9],11);
+        Insert(SecondTempCB.Text, TempStr, TempArray[9]);
+        if TempArray[2] < 10 then Delete(TempStr,TempArray[10],10)
+        else Delete(TempStr,TempArray[10],11);
+        Insert(ThirdTempCB.Text, TempStr, TempArray[10]);
+        if TempArray[3] < 10 then Delete(TempStr,TempArray[11],10)
+        else Delete(TempStr,TempArray[11],11);
+        Insert(ThirdTempCB.Text, TempStr, TempArray[11]);
+      end;
+      5: begin
+        if FirstTempCB.Text = '' then exit;
+        if SecondTempCB.Text = '' then exit;
+        if ThirdTempCB.Text = '' then exit;
+        if FourthTempCB.Text = '' then exit;
+        if FifthTempCB.Text = '' then exit;
+        if TempArray[0] < 10 then Delete(TempStr,TempArray[8],10)
+        else Delete(TempStr,TempArray[8],11);
+        Insert(FirstTempCB.Text, TempStr, TempArray[8]);
+        if TempArray[1] < 10 then Delete(TempStr,TempArray[9],10)
+        else Delete(TempStr,TempArray[9],11);
+        Insert(SecondTempCB.Text, TempStr, TempArray[9]);
+        if TempArray[2] < 10 then Delete(TempStr,TempArray[10],10)
+        else Delete(TempStr,TempArray[10],11);
+        Insert(ThirdTempCB.Text, TempStr, TempArray[10]);
+        if TempArray[3] < 10 then Delete(TempStr,TempArray[11],10)
+        else Delete(TempStr,TempArray[11],11);
+        Insert(ThirdTempCB.Text, TempStr, TempArray[11]);
+        if TempArray[4] < 10 then Delete(TempStr,TempArray[12],10)
+        else Delete(TempStr,TempArray[12],11);
+        Insert(ThirdTempCB.Text, TempStr, TempArray[12]);
+      end;
+      6: begin
+        if FirstTempCB.Text = '' then exit;
+        if SecondTempCB.Text = '' then exit;
+        if ThirdTempCB.Text = '' then exit;
+        if FourthTempCB.Text = '' then exit;
+        if FifthTempCB.Text = '' then exit;
+        if SixthTempCB.Text = '' then exit;
+        if TempArray[0] < 10 then Delete(TempStr,TempArray[8],10)
+        else Delete(TempStr,TempArray[8],11);
+        Insert(FirstTempCB.Text, TempStr, TempArray[8]);
+        if TempArray[1] < 10 then Delete(TempStr,TempArray[9],10)
+        else Delete(TempStr,TempArray[9],11);
+        Insert(SecondTempCB.Text, TempStr, TempArray[9]);
+        if TempArray[2] < 10 then Delete(TempStr,TempArray[10],10)
+        else Delete(TempStr,TempArray[10],11);
+        Insert(ThirdTempCB.Text, TempStr, TempArray[10]);
+        if TempArray[3] < 10 then Delete(TempStr,TempArray[11],10)
+        else Delete(TempStr,TempArray[11],11);
+        Insert(ThirdTempCB.Text, TempStr, TempArray[11]);
+        if TempArray[4] < 10 then Delete(TempStr,TempArray[12],10)
+        else Delete(TempStr,TempArray[12],11);
+        Insert(ThirdTempCB.Text, TempStr, TempArray[12]);
+        if TempArray[5] < 10 then Delete(TempStr,TempArray[13],10)
+        else Delete(TempStr,TempArray[13],11);
+        Insert(ThirdTempCB.Text, TempStr, TempArray[13]);
+      end;
+      7: begin
+        if FirstTempCB.Text = '' then exit;
+        if SecondTempCB.Text = '' then exit;
+        if ThirdTempCB.Text = '' then exit;
+        if FourthTempCB.Text = '' then exit;
+        if FifthTempCB.Text = '' then exit;
+        if SixthTempCB.Text = '' then exit;
+        if SeventhTempCB.Text = '' then exit;
+        if TempArray[0] < 10 then Delete(TempStr,TempArray[8],10)
+        else Delete(TempStr,TempArray[8],11);
+        Insert(FirstTempCB.Text, TempStr, TempArray[8]);
+        if TempArray[1] < 10 then Delete(TempStr,TempArray[9],10)
+        else Delete(TempStr,TempArray[9],11);
+        Insert(SecondTempCB.Text, TempStr, TempArray[9]);
+        if TempArray[2] < 10 then Delete(TempStr,TempArray[10],10)
+        else Delete(TempStr,TempArray[10],11);
+        Insert(ThirdTempCB.Text, TempStr, TempArray[10]);
+        if TempArray[3] < 10 then Delete(TempStr,TempArray[11],10)
+        else Delete(TempStr,TempArray[11],11);
+        Insert(ThirdTempCB.Text, TempStr, TempArray[11]);
+        if TempArray[4] < 10 then Delete(TempStr,TempArray[12],10)
+        else Delete(TempStr,TempArray[12],11);
+        Insert(ThirdTempCB.Text, TempStr, TempArray[12]);
+        if TempArray[5] < 10 then Delete(TempStr,TempArray[13],10)
+        else Delete(TempStr,TempArray[13],11);
+        Insert(ThirdTempCB.Text, TempStr, TempArray[13]);
+        if TempArray[6] < 10 then Delete(TempStr,TempArray[14],10)
+        else Delete(TempStr,TempArray[14],11);
+        Insert(ThirdTempCB.Text, TempStr, TempArray[14]);
+      end;
+      8: begin
+        if FirstTempCB.Text = '' then exit;
+        if SecondTempCB.Text = '' then exit;
+        if ThirdTempCB.Text = '' then exit;
+        if FourthTempCB.Text = '' then exit;
+        if FifthTempCB.Text = '' then exit;
+        if SixthTempCB.Text = '' then exit;
+        if SeventhTempCB.Text = '' then exit;
+        if EigthTempCB.Text = '' then exit;
+        if TempArray[0] < 10 then Delete(TempStr,TempArray[8],10)
+        else Delete(TempStr,TempArray[8],11);
+        Insert(FirstTempCB.Text, TempStr, TempArray[8]);
+        if TempArray[1] < 10 then Delete(TempStr,TempArray[9],10)
+        else Delete(TempStr,TempArray[9],11);
+        Insert(SecondTempCB.Text, TempStr, TempArray[9]);
+        if TempArray[2] < 10 then Delete(TempStr,TempArray[10],10)
+        else Delete(TempStr,TempArray[10],11);
+        Insert(ThirdTempCB.Text, TempStr, TempArray[10]);
+        if TempArray[3] < 10 then Delete(TempStr,TempArray[11],10)
+        else Delete(TempStr,TempArray[11],11);
+        Insert(ThirdTempCB.Text, TempStr, TempArray[11]);
+        if TempArray[4] < 10 then Delete(TempStr,TempArray[12],10)
+        else Delete(TempStr,TempArray[12],11);
+        Insert(ThirdTempCB.Text, TempStr, TempArray[12]);
+        if TempArray[5] < 10 then Delete(TempStr,TempArray[13],10)
+        else Delete(TempStr,TempArray[13],11);
+        Insert(ThirdTempCB.Text, TempStr, TempArray[13]);
+        if TempArray[6] < 10 then Delete(TempStr,TempArray[14],10)
+        else Delete(TempStr,TempArray[14],11);
+        Insert(ThirdTempCB.Text, TempStr, TempArray[14]);
+        if TempArray[7] < 10 then Delete(TempStr,TempArray[15],10)
+        else Delete(TempStr,TempArray[15],11);
+        Insert(ThirdTempCB.Text, TempStr, TempArray[15]);
+      end;
+      else begin
+        ShowMessage('MakePhraseBitBtnClick. Неправльное количество CountVisibleCB: ' + IntToStr(CountVisibleCB));
+      end;
+    end;
+    PhraseMemo.Lines.Clear;
+    PhraseMemo.Lines.Add(TempStr);
+    PhraseMemo.SelectAll;
+    PhraseMemo.CopyToClipboard;
+  end;
+end;
+
 procedure TMainForm.OpenGenerationBtnClick(Sender: TObject);
 begin
   GenerationMemo.Lines.LoadFromFile(StartPath+ '\Generation\genstr.txt');
@@ -316,7 +493,7 @@ begin
 end;
 
 procedure TMainForm.TemplateComboBoxCloseUp(Sender: TObject);
-var i, CountVisibleCB, j, PosI, ArrPos: integer;
+var i, j, PosI, ArrPos: integer;
     PosStr: string;
     FileSearch: TSearchRec;
     Attr : integer;
@@ -375,7 +552,7 @@ begin
         TempArray[i] := 0;
       end;
       j := 0; ArrPos :=  8;
-      for i:= 0 to StringsParamForm.NameListComboBox.Items.Count do begin
+      for i:= 0 to (StringsParamForm.NameListComboBox.Items.Count - 1) do begin
          PosI := -1;
          PosStr := '<PhTemp' +IntToStr(i)+ '/>';
          PosI := pos(PosStr,TempStr);
@@ -550,12 +727,14 @@ begin
         end;
         else begin
           PhraseMemo.Lines.Add(TempStr);
-          PhraseMemo.CopyToClipboard;
+
         end;
       end;
 
     end else begin
       PhraseMemo.Lines.Add(TempStr);
+      PhraseMemo.SelectAll;
+      PhraseMemo.CopyToClipboard;
       ShowMessage('Строка шаблона очень маленькая: ' + TempStr);
     end;
   end;
@@ -661,6 +840,14 @@ begin
   end;
  end else begin
   ShowMessage('Не Выбран Процесс!');
+ end;
+end;
+
+procedure TMainForm.CopyToClipBitBtnClick(Sender: TObject);
+begin
+ if PhraseMemo.Lines.Count > 0 then begin
+  PhraseMemo.SelectAll;
+  PhraseMemo.CopyToClipboard;
  end;
 end;
 

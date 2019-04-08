@@ -23,7 +23,7 @@ object MainForm: TMainForm
     Height = 560
     Top = 0
     Width = 840
-    ActivePage = TabSheet1
+    ActivePage = TempPhraseTab
     Align = alTop
     TabIndex = 3
     TabOrder = 1
@@ -646,8 +646,8 @@ object MainForm: TMainForm
         end
       end
     end
-    object TabSheet1: TTabSheet
-      Caption = 'TabSheet1'
+    object TempPhraseTab: TTabSheet
+      Caption = 'Шаблоны фраз'
       ClientHeight = 532
       ClientWidth = 832
       object BtnWord: TButton
@@ -845,19 +845,21 @@ object MainForm: TMainForm
         Text = 'EigthTempCB'
       end
       object MakePhraseBitBtn: TBitBtn
-        Left = 326
+        Left = 340
         Height = 30
         Top = 184
-        Width = 163
+        Width = 160
         Caption = 'Сформировать Фразу'
+        OnClick = MakePhraseBitBtnClick
         TabOrder = 12
       end
       object CopyToClipBitBtn: TBitBtn
-        Left = 320
+        Left = 335
         Height = 30
         Top = 464
-        Width = 169
+        Width = 170
         Caption = 'Копировать в Буфер обмена'
+        OnClick = CopyToClipBitBtnClick
         TabOrder = 13
       end
     end

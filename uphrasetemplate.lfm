@@ -49,6 +49,7 @@ object PhraseTemplateForm: TPhraseTemplateForm
     Top = 22
     Width = 75
     Caption = 'Удалить'
+    OnClick = Button1Click
     TabOrder = 2
   end
   object PhraseTemplateMemo: TMemo

@@ -35,6 +35,7 @@ type
     procedure AddTemplateBtnClick(Sender: TObject);
     procedure AddWordBtnClick(Sender: TObject);
     procedure AddListPhrBtnClick(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
     procedure ClearTemplateBtnClick(Sender: TObject);
     procedure UpdWordListBtnClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -115,6 +116,16 @@ begin
      Insert('<PhTemp' + IntToStr(NameListComboBox.ItemIndex) + '/>', TempStr, CurPosInMemo.x);
      PhraseTemplateMemo.Lines[CurPosInMemo.y] := TempStr;
    end;
+end;
+
+procedure TPhraseTemplateForm.Button1Click(Sender: TObject);
+begin
+  if TamplatePhrasesComboBox.Text = '' then exit;
+  PhraseInfoEdit.Text := '';
+  PhraseTemplateMemo.Lines.Clear;
+  DeleteFile(TamplateDir+TamplatePhrasesComboBox.Items[TamplatePhrasesComboBox.ItemIndex]);
+  TamplatePhrasesComboBox.Items.Delete(TamplatePhrasesComboBox.ItemIndex);
+  TamplatePhrasesComboBox.Text := '';
 end;
 
 procedure TPhraseTemplateForm.ClearTemplateBtnClick(Sender: TObject);
