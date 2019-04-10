@@ -11,11 +11,18 @@ object PhraseTemplateForm: TPhraseTemplateForm
   LCLVersion = '2.0.0.4'
   object TamplatePhrasesComboBox: TComboBox
     Left = 10
-    Height = 23
+    Height = 25
     Top = 24
     Width = 438
-    ItemHeight = 15
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Segoe UI'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ItemHeight = 17
     OnCloseUp = TamplatePhrasesComboBoxCloseUp
+    ParentFont = False
     TabOrder = 0
   end
   object AddTemplateBtn: TButton
@@ -57,6 +64,13 @@ object PhraseTemplateForm: TPhraseTemplateForm
     Height = 90
     Top = 112
     Width = 617
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Color = clBlack
+    Font.Height = -15
+    Font.Name = 'Segoe UI'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
     TabOrder = 3
   end
   object AddWordBtn: TButton
@@ -105,18 +119,32 @@ object PhraseTemplateForm: TPhraseTemplateForm
   end
   object PhraseInfoEdit: TEdit
     Left = 10
-    Height = 23
+    Height = 25
     Top = 64
     Width = 617
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Segoe UI'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
     TabOrder = 8
   end
   object NameListComboBox: TComboBox
     Left = 10
-    Height = 23
+    Height = 28
     Top = 264
     Width = 440
-    ItemHeight = 15
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Color = clBlack
+    Font.Height = -15
+    Font.Name = 'Segoe UI'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ItemHeight = 20
     OnCloseUp = NameListComboBoxCloseUp
+    ParentFont = False
     TabOrder = 9
   end
   object WordListBox: TListBox
@@ -124,7 +152,14 @@ object PhraseTemplateForm: TPhraseTemplateForm
     Height = 112
     Top = 312
     Width = 437
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Color = clBlack
+    Font.Height = -15
+    Font.Name = 'Segoe UI'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
     ItemHeight = 0
+    ParentFont = False
     TabOrder = 10
   end
   object Label4: TLabel

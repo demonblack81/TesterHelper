@@ -85,11 +85,13 @@ end;
 
 procedure TPhraseTemplateForm.AddTemplateBtnClick(Sender: TObject);
 var NewName: string;
+    FileHandle:  Longint;
 begin
   NewName := '';
   if not InputQuery('Название шаблона фразы', 'Введите название шаблона фразы:', NewName) then exit;
   if NewName <> '' then TamplatePhrasesComboBox.Items.Add(NewName);
-  FileCreate(TamplateDir+NewName);
+  FileHandle := FileCreate(TamplateDir+NewName);
+  FileClose(FileHandle);
 end;
 
 procedure TPhraseTemplateForm.AddWordBtnClick(Sender: TObject);

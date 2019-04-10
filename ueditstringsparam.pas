@@ -87,7 +87,8 @@ end;
 
 procedure TStringsParamForm.DelNameBitBtnClick(Sender: TObject);
 begin
-
+  if WordListBox.SelCount <> 1 then exit;
+  WordListBox.DeleteSelected;
 end;
 
 procedure TStringsParamForm.DownWordBitBtnClick(Sender: TObject);
@@ -97,16 +98,19 @@ begin
   CurSel := GetCurentSelectedItemLB(WordListBox);
   if CurSel < (WordListBox.Items.Count-1) then begin
    WordListBox.Items.Move(CurSel, (CurSel+1));
+   WordListBox.Selected[CurSel+1] := true;
   end;
 end;
 
 procedure TStringsParamForm.AddListBtnClick(Sender: TObject);
 var NewName: string;
+    FileHandle:  Longint;
 begin
   NewName := '';
   if not InputQuery('Название листа фраз', 'Введите имя для листа фраз:', NewName) then exit;
   if NewName <> '' then NameListComboBox.Items.Add(NewName);
-  FileCreate(ListDir+NewName);
+  FileHandle := FileCreate(ListDir+NewName);
+  FileClose(FileHandle);
 end;
 
 procedure TStringsParamForm.AddNameBitBtnClick(Sender: TObject);
@@ -142,6 +146,7 @@ begin
   CurSel := GetCurentSelectedItemLB(WordListBox);
   if CurSel > 0 then begin
    WordListBox.Items.Move(CurSel, (CurSel-1));
+   WordListBox.Selected[CurSel-1] := true;
   end;
 end;
 

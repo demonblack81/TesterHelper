@@ -12,11 +12,18 @@ object StringsParamForm: TStringsParamForm
   LCLVersion = '2.0.0.4'
   object NameListComboBox: TComboBox
     Left = 9
-    Height = 23
+    Height = 25
     Top = 24
     Width = 296
-    ItemHeight = 15
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Segoe UI'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ItemHeight = 17
     OnCloseUp = NameListComboBoxCloseUp
+    ParentFont = False
     TabOrder = 0
   end
   object Label1: TLabel
@@ -50,8 +57,15 @@ object StringsParamForm: TStringsParamForm
     Height = 344
     Top = 72
     Width = 410
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Color = clBlack
+    Font.Height = -15
+    Font.Name = 'Segoe UI'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
     ItemHeight = 0
     OnDblClick = WordListBoxDblClick
+    ParentFont = False
     TabOrder = 3
   end
   object AddNameBitBtn: TBitBtn
