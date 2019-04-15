@@ -501,12 +501,8 @@ var i, j, PosI, ArrPos: integer;
 begin
   if TemplateComboBox.ItemIndex <> -1 then begin
     CountVisibleCB := 0;
-    if TempList = nil then begin
-      TempList := TStringList.Create;
-    end else begin
-      TempList.Clear;
-    end;
-    //Скрываем все комбобоксы
+    TempList := TStringList.Create;
+    //Скрываем все комбобоксы и очищаем их
     FirstCBTemplLabel.Visible := false;
     FirstTempCB.Visible := false;
     FirstTempCB.Clear;
@@ -548,7 +544,7 @@ begin
     FindClose(FileSearch);
     if Length(TempStr) > 2 then begin
       PosStr := '';
-      for i:= 0 to 7 do begin
+      for i:= 0 to 15 do begin
         TempArray[i] := 0;
       end;
       j := 0; ArrPos :=  8;
@@ -737,6 +733,7 @@ begin
       PhraseMemo.CopyToClipboard;
       ShowMessage('Строка шаблона очень маленькая: ' + TempStr);
     end;
+    TempList.Free;
   end;
 end;
 
