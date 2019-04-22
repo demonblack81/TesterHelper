@@ -111,6 +111,8 @@ begin
   if NewName <> '' then NameListComboBox.Items.Add(NewName);
   FileHandle := FileCreate(ListDir+NewName);
   FileClose(FileHandle);
+  NameListComboBox.Text := NewName;
+  NameListComboBox.ItemIndex := NameListComboBox.Items.Count -1;
 end;
 
 procedure TStringsParamForm.AddNameBitBtnClick(Sender: TObject);

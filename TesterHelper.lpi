@@ -38,7 +38,7 @@
         <PackageName Value="LCL"/>
       </Item1>
     </RequiredPackages>
-    <Units Count="10">
+    <Units Count="11">
       <Unit0>
         <Filename Value="TesterHelper.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -55,8 +55,8 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="UMain"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="528"/>
-        <CursorPos Y="555"/>
+        <TopLine Value="687"/>
+        <CursorPos Y="715"/>
         <UsageCount Value="442"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -91,7 +91,7 @@
         <Filename Value="D:\Soft\lazarus\lcl\forms.pp"/>
         <UnitName Value="Forms"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="9"/>
       </Unit5>
       <Unit6>
         <Filename Value="ueditstringsparam.pas"/>
@@ -101,8 +101,8 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uEditStringsParam"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="77"/>
-        <CursorPos X="18" Y="91"/>
+        <TopLine Value="109"/>
+        <CursorPos X="29" Y="115"/>
         <UsageCount Value="332"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -113,7 +113,7 @@
         <UnitName Value="uListOperation"/>
         <EditorIndex Value="3"/>
         <TopLine Value="47"/>
-        <CursorPos X="43" Y="70"/>
+        <CursorPos X="43" Y="75"/>
         <UsageCount Value="279"/>
         <Loaded Value="True"/>
       </Unit7>
@@ -122,7 +122,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="76"/>
         <CursorPos X="3" Y="97"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="8"/>
       </Unit8>
       <Unit9>
         <Filename Value="uphrasetemplate.pas"/>
@@ -132,133 +132,140 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uPhraseTemplate"/>
         <EditorIndex Value="2"/>
-        <TopLine Value="86"/>
-        <CursorPos X="66" Y="97"/>
-        <UsageCount Value="51"/>
+        <TopLine Value="122"/>
+        <CursorPos X="17" Y="126"/>
+        <UsageCount Value="70"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit9>
+      <Unit10>
+        <Filename Value="D:\Soft\lazarus\lcl\interfaces\win32\win32memostrings.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="55"/>
+        <CursorPos Y="78"/>
+        <UsageCount Value="10"/>
+      </Unit10>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="umain.pas"/>
-        <Caret Line="255" Column="31" TopLine="234"/>
+        <Caret Line="446" Column="33" TopLine="446"/>
       </Position1>
       <Position2>
         <Filename Value="umain.pas"/>
-        <Caret Line="392" Column="21" TopLine="376"/>
+        <Caret Line="465" TopLine="446"/>
       </Position2>
       <Position3>
         <Filename Value="umain.pas"/>
-        <Caret Line="254" Column="10" TopLine="246"/>
+        <Caret Line="467" TopLine="446"/>
       </Position3>
       <Position4>
         <Filename Value="umain.pas"/>
-        <Caret Line="161" Column="5" TopLine="147"/>
+        <Caret Line="482" TopLine="467"/>
       </Position4>
       <Position5>
         <Filename Value="umain.pas"/>
-        <Caret Line="253" Column="23" TopLine="235"/>
+        <Caret Line="486" TopLine="467"/>
       </Position5>
       <Position6>
         <Filename Value="umain.pas"/>
-        <Caret Line="270" Column="14" TopLine="252"/>
+        <Caret Line="492" TopLine="468"/>
       </Position6>
       <Position7>
         <Filename Value="umain.pas"/>
-        <Caret Line="197" Column="30" TopLine="178"/>
+        <Caret Line="501" TopLine="486"/>
       </Position7>
       <Position8>
         <Filename Value="umain.pas"/>
-        <Caret Line="201" Column="29" TopLine="190"/>
+        <Caret Line="492" TopLine="486"/>
       </Position8>
       <Position9>
         <Filename Value="umain.pas"/>
-        <Caret Line="162" Column="12" TopLine="128"/>
+        <Caret Line="518" TopLine="503"/>
       </Position9>
       <Position10>
         <Filename Value="umain.pas"/>
-        <Caret Line="416" Column="2" TopLine="399"/>
+        <Caret Line="480" Column="22" TopLine="451"/>
       </Position10>
       <Position11>
         <Filename Value="umain.pas"/>
-        <Caret Line="353" Column="19" TopLine="339"/>
+        <Caret Line="477" Column="22" TopLine="462"/>
       </Position11>
       <Position12>
         <Filename Value="umain.pas"/>
-        <Caret Line="383" Column="19" TopLine="368"/>
+        <Caret Line="261" Column="24" TopLine="242"/>
       </Position12>
       <Position13>
         <Filename Value="umain.pas"/>
-        <Caret Line="415" Column="23" TopLine="397"/>
+        <Caret Line="371" TopLine="368"/>
       </Position13>
       <Position14>
         <Filename Value="umain.pas"/>
-        <Caret Line="846" Column="3" TopLine="810"/>
+        <Caret Line="4"/>
       </Position14>
       <Position15>
         <Filename Value="umain.pas"/>
-        <Caret Line="418" Column="33" TopLine="404"/>
+        <Caret Line="255" Column="3" TopLine="247"/>
       </Position15>
       <Position16>
         <Filename Value="umain.pas"/>
-        <Caret Line="849" Column="3" TopLine="843"/>
+        <Caret Line="467" TopLine="453"/>
       </Position16>
       <Position17>
         <Filename Value="umain.pas"/>
-        <Caret Line="119" Column="15" TopLine="105"/>
+        <Caret Line="465" TopLine="453"/>
       </Position17>
       <Position18>
         <Filename Value="umain.pas"/>
-        <Caret Line="845" Column="6" TopLine="828"/>
+        <Caret Line="467" TopLine="458"/>
       </Position18>
       <Position19>
-        <Filename Value="uphrasetemplate.pas"/>
-        <Caret Line="188" Column="19" TopLine="171"/>
+        <Filename Value="umain.pas"/>
+        <Caret Line="492" TopLine="477"/>
       </Position19>
       <Position20>
-        <Filename Value="ueditstringsparam.pas"/>
-        <Caret Line="27" Column="21" TopLine="17"/>
+        <Filename Value="umain.pas"/>
+        <Caret Line="493" TopLine="477"/>
       </Position20>
       <Position21>
-        <Filename Value="ueditstringsparam.pas"/>
-        <Caret Line="83" Column="14" TopLine="76"/>
+        <Filename Value="umain.pas"/>
+        <Caret Line="499" TopLine="477"/>
       </Position21>
       <Position22>
-        <Filename Value="ueditstringsparam.pas"/>
-        <Caret Line="146" Column="7" TopLine="133"/>
+        <Filename Value="umain.pas"/>
+        <Caret Line="516" TopLine="501"/>
       </Position22>
       <Position23>
-        <Filename Value="ueditstringsparam.pas"/>
-        <Caret Line="100" TopLine="87"/>
+        <Filename Value="umain.pas"/>
+        <Caret Line="533" TopLine="518"/>
       </Position23>
       <Position24>
-        <Filename Value="ueditstringsparam.pas"/>
-        <Caret Line="143" Column="28" TopLine="117"/>
+        <Filename Value="umain.pas"/>
+        <Caret Line="534" TopLine="518"/>
       </Position24>
       <Position25>
-        <Filename Value="ueditstringsparam.pas"/>
-        <Caret Line="88" Column="65" TopLine="64"/>
+        <Filename Value="umain.pas"/>
+        <Caret Line="535" TopLine="518"/>
       </Position25>
       <Position26>
-        <Filename Value="uphrasetemplate.pas"/>
-        <Caret Line="128" Column="38" TopLine="121"/>
+        <Filename Value="umain.pas"/>
+        <Caret Line="536" TopLine="518"/>
       </Position26>
       <Position27>
         <Filename Value="umain.pas"/>
-        <Caret Line="500" Column="13" TopLine="483"/>
+        <Caret Line="267" Column="31" TopLine="257"/>
       </Position27>
       <Position28>
         <Filename Value="umain.pas"/>
-        <Caret TopLine="217"/>
+        <Caret Line="291" Column="31" TopLine="267"/>
       </Position28>
       <Position29>
         <Filename Value="umain.pas"/>
-        <Caret Line="555" Column="19" TopLine="540"/>
+        <Caret Line="307" Column="31" TopLine="283"/>
       </Position29>
       <Position30>
         <Filename Value="umain.pas"/>
-        <Caret Line="556" Column="18" TopLine="540"/>
+        <Caret Line="332" Column="31" TopLine="308"/>
       </Position30>
     </JumpHistory>
   </ProjectOptions>
@@ -273,13 +280,24 @@
       <OtherUnitFiles Value="..\Test"/>
       <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
+    <Parsing>
+      <SyntaxOptions>
+        <IncludeAssertionCode Value="True"/>
+      </SyntaxOptions>
+    </Parsing>
     <CodeGeneration>
       <SmartLinkUnit Value="True"/>
+      <Checks>
+        <IOChecks Value="True"/>
+        <RangeChecks Value="True"/>
+        <OverflowChecks Value="True"/>
+        <StackChecks Value="True"/>
+      </Checks>
+      <VerifyObjMethodCallValidity Value="True"/>
       <SmallerCode Value="True"/>
     </CodeGeneration>
     <Linking>
       <Debugging>
-        <GenerateDebugInfo Value="False"/>
         <StripSymbols Value="True"/>
         <UseExternalDbgSyms Value="True"/>
       </Debugging>
@@ -292,6 +310,43 @@
     </Linking>
   </CompilerOptions>
   <Debugging>
+    <BreakPoints Count="5">
+      <Item1>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="umain.pas"/>
+        <Line Value="465"/>
+      </Item1>
+      <Item2>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="umain.pas"/>
+        <Line Value="482"/>
+      </Item2>
+      <Item3>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="umain.pas"/>
+        <Line Value="499"/>
+      </Item3>
+      <Item4>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="umain.pas"/>
+        <Line Value="516"/>
+      </Item4>
+      <Item5>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="umain.pas"/>
+        <Line Value="533"/>
+      </Item5>
+    </BreakPoints>
     <Watches Count="1">
       <Item1>
         <Expression Value="PosStr"/>

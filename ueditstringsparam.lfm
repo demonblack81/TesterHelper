@@ -1,7 +1,7 @@
 object StringsParamForm: TStringsParamForm
-  Left = 322
+  Left = 324
   Height = 426
-  Top = 132
+  Top = 133
   Width = 516
   BorderStyle = bsSingle
   Caption = 'Редактирование имен фраз'

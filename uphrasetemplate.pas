@@ -92,6 +92,8 @@ begin
   if NewName <> '' then TamplatePhrasesComboBox.Items.Add(NewName);
   FileHandle := FileCreate(TamplateDir+NewName);
   FileClose(FileHandle);
+  TamplatePhrasesComboBox.Text := NewName;
+  TamplatePhrasesComboBox.ItemIndex := TamplatePhrasesComboBox.Items.Count -1;
 end;
 
 procedure TPhraseTemplateForm.AddWordBtnClick(Sender: TObject);
@@ -110,13 +112,44 @@ end;
 
 procedure TPhraseTemplateForm.AddListPhrBtnClick(Sender: TObject);
 var CurPosInMemo: TPoint;
-    TempStr: String;
+    TempStr, PosStr: String;
+    PosI, iDoubleTemp, i, iMoreOneLines: integer;
 begin
    if NameListComboBox.Text <> '' then begin
      CurPosInMemo := PhraseTemplateMemo.CaretPos;
-     TempStr := PhraseTemplateMemo.Lines[CurPosInMemo.y];
-     Insert('<PhTemp' + IntToStr(NameListComboBox.ItemIndex) + '/>', TempStr, CurPosInMemo.x);
-     PhraseTemplateMemo.Lines[CurPosInMemo.y] := TempStr;
+     TempStr := PhraseTemplateMemo.Lines.Text;
+     PosI := -1;
+     PosStr := '<PhTemp' + IntToStr(NameListComboBox.ItemIndex) + '/>';
+     PosI := Pos(PosStr, TempStr);
+     if PosI > 0 then begin
+       iDoubleTemp :=0;
+       while PosI > 0 do begin
+         Inc(iDoubleTemp);
+         PosStr := '<PhTemp' + IntToStr(NameListComboBox.ItemIndex) + '_' + IntToStr(iDoubleTemp) + '/>';
+         PosI := Pos(PosStr, TempStr);
+       end;
+
+       if CurPosInMemo.y < 1 then begin
+         Insert('<PhTemp' + IntToStr(NameListComboBox.ItemIndex) + '_' + IntToStr(iDoubleTemp) +'/>', TempStr, CurPosInMemo.x);
+       end else begin
+         iMoreOneLines := 0;
+         for i := 0 to (CurPosInMemo.y-1) do  begin
+            iMoreOneLines := iMoreOneLines + PhraseTemplateMemo.Lines[i].Length + 2;
+         end;
+         Insert('<PhTemp' + IntToStr(NameListComboBox.ItemIndex) + '_' + IntToStr(iDoubleTemp) +'/>', TempStr, (iMoreOneLines+CurPosInMemo.x));
+       end;
+     end else begin
+       if CurPosInMemo.y < 1 then begin
+         Insert('<PhTemp' + IntToStr(NameListComboBox.ItemIndex) + '/>', TempStr, CurPosInMemo.x);
+       end else begin
+         iMoreOneLines := 0;
+         for i := 0 to (CurPosInMemo.y-1) do  begin
+            iMoreOneLines := iMoreOneLines + PhraseTemplateMemo.Lines[i].Length + 2;
+         end;
+         Insert('<PhTemp' + IntToStr(NameListComboBox.ItemIndex) + '/>', TempStr, (iMoreOneLines+CurPosInMemo.x));
+       end;
+     end;
+     PhraseTemplateMemo.Lines.Text := TempStr;
    end;
 end;
 
