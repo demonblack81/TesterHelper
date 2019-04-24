@@ -862,6 +862,15 @@ object MainForm: TMainForm
         OnClick = CopyToClipBitBtnClick
         TabOrder = 13
       end
+      object ClearBitBtn: TBitBtn
+        Left = 752
+        Height = 30
+        Top = 448
+        Width = 75
+        Caption = 'Очистить'
+        OnClick = ClearBitBtnClick
+        TabOrder = 14
+      end
     end
   end
   object MainMenu1: TMainMenu

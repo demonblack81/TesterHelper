@@ -16,6 +16,7 @@ type
 
   TMainForm = class(TForm)
     AllCheck: TCheckBox;
+    ClearBitBtn: TBitBtn;
     MakePhraseBitBtn: TBitBtn;
     CopyToClipBitBtn: TBitBtn;
     BtnWord: TButton;
@@ -115,6 +116,7 @@ type
     procedure AllCheckChange(Sender: TObject);
     procedure BtnPhraseClick(Sender: TObject);
     procedure BtnWordClick(Sender: TObject);
+    procedure ClearBitBtnClick(Sender: TObject);
     procedure CloseProcessBtnClick(Sender: TObject);
     procedure CopyToClipBitBtnClick(Sender: TObject);
     procedure EMailRBtnChange(Sender: TObject);
@@ -1186,6 +1188,12 @@ end;
 procedure TMainForm.BtnWordClick(Sender: TObject);
 begin
   StringsParamForm.ShowModal;
+end;
+
+procedure TMainForm.ClearBitBtnClick(Sender: TObject);
+begin
+  if PhraseMemo.Lines.Count = 0 then exit;
+  PhraseMemo.Lines.Clear;
 end;
 
 procedure TMainForm.CloseProcessBtnClick(Sender: TObject);
