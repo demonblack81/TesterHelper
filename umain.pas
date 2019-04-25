@@ -375,7 +375,7 @@ begin
         end;
         if PosI <> TempArray[11] then TempArray[11] := PosI;
         Delete(TempStr,TempArray[11],Length(PosStr));
-        Insert(ThirdTempCB.Text, TempStr, TempArray[11]);
+        Insert(FourthTempCB.Text, TempStr, TempArray[11]);
       end;
       5: begin
         if FirstTempCB.Text = '' then exit;
@@ -433,7 +433,7 @@ begin
         end;
         if PosI <> TempArray[11] then TempArray[11] := PosI;
         Delete(TempStr,TempArray[11],Length(PosStr));
-        Insert(ThirdTempCB.Text, TempStr, TempArray[11]);
+        Insert(FourthTempCB.Text, TempStr, TempArray[11]);
 
         PosStr := '<PhTemp' + IntToStr(TempArray[4]) + '/>';
         PosI := Pos(PosStr,TempStr);
@@ -449,7 +449,7 @@ begin
         end;
         if PosI <> TempArray[12] then TempArray[12] := PosI;
         Delete(TempStr,TempArray[12],Length(PosStr));
-        Insert(ThirdTempCB.Text, TempStr, TempArray[12]);
+        Insert(FifthTempCB.Text, TempStr, TempArray[12]);
       end;
       6: begin
         if FirstTempCB.Text = '' then exit;
@@ -510,7 +510,7 @@ begin
         end;
         if PosI <> TempArray[11] then TempArray[11] := PosI;
         Delete(TempStr,TempArray[11],Length(PosStr));
-        Insert(ThirdTempCB.Text, TempStr, TempArray[11]);
+        Insert(FourthTempCB.Text, TempStr, TempArray[11]);
 
         PosI := -1;
         PosStr := '<PhTemp' + IntToStr(TempArray[4]) + '/>';
@@ -527,7 +527,7 @@ begin
         end;
         if PosI <> TempArray[12] then TempArray[12] := PosI;
         Delete(TempStr,TempArray[12],Length(PosStr));
-        Insert(ThirdTempCB.Text, TempStr, TempArray[12]);
+        Insert(FifthTempCB.Text, TempStr, TempArray[12]);
 
         PosI := -1;
         PosStr := '<PhTemp' + IntToStr(TempArray[5]) + '/>';
@@ -544,7 +544,7 @@ begin
         end;
         if PosI <> TempArray[13] then TempArray[13] := PosI;
         Delete(TempStr,TempArray[13],Length(PosStr));
-        Insert(ThirdTempCB.Text, TempStr, TempArray[13]);
+        Insert(SixthTempCB.Text, TempStr, TempArray[13]);
       end;
       7: begin
         if FirstTempCB.Text = '' then exit;
@@ -601,7 +601,7 @@ begin
         end;
         if PosI <> TempArray[11] then TempArray[11] := PosI;
         Delete(TempStr,TempArray[11],Length(PosStr));
-        Insert(ThirdTempCB.Text, TempStr, TempArray[11]);
+        Insert(FourthTempCB.Text, TempStr, TempArray[11]);
 
         PosStr := '<PhTemp' + IntToStr(TempArray[4]) + '/>';
         PosI := Pos(PosStr,TempStr);
@@ -616,7 +616,7 @@ begin
         end;
         if PosI <> TempArray[12] then TempArray[12] := PosI;
         Delete(TempStr,TempArray[12],Length(PosStr));
-        Insert(ThirdTempCB.Text, TempStr, TempArray[12]);
+        Insert(FifthTempCB.Text, TempStr, TempArray[12]);
 
         PosStr := '<PhTemp' + IntToStr(TempArray[5]) + '/>';
         PosI := Pos(PosStr,TempStr);
@@ -631,7 +631,7 @@ begin
         end;
         if PosI <> TempArray[13] then TempArray[13] := PosI;
         Delete(TempStr,TempArray[13],Length(PosStr));
-        Insert(ThirdTempCB.Text, TempStr, TempArray[13]);
+        Insert(SixthTempCB.Text, TempStr, TempArray[13]);
 
         PosStr := '<PhTemp' + IntToStr(TempArray[6]) + '/>';
         PosI := Pos(PosStr,TempStr);
@@ -646,7 +646,7 @@ begin
         end;
         if PosI <> TempArray[14] then TempArray[14] := PosI;
         Delete(TempStr,TempArray[14],Length(PosStr));
-        Insert(ThirdTempCB.Text, TempStr, TempArray[14]);
+        Insert(SeventhTempCB.Text, TempStr, TempArray[14]);
       end;
       8: begin
         if FirstTempCB.Text = '' then exit;
@@ -704,7 +704,7 @@ begin
         end;
         if PosI <> TempArray[11] then TempArray[11] := PosI;
         Delete(TempStr,TempArray[11],Length(PosStr));
-        Insert(ThirdTempCB.Text, TempStr, TempArray[11]);
+        Insert(FourthTempCB.Text, TempStr, TempArray[11]);
 
         PosStr := '<PhTemp' + IntToStr(TempArray[4]) + '/>';
         PosI := Pos(PosStr,TempStr);
@@ -719,7 +719,7 @@ begin
         end;
         if PosI <> TempArray[12] then TempArray[12] := PosI;
         Delete(TempStr,TempArray[12],Length(PosStr));
-        Insert(ThirdTempCB.Text, TempStr, TempArray[12]);
+        Insert(FifthTempCB.Text, TempStr, TempArray[12]);
 
         PosStr := '<PhTemp' + IntToStr(TempArray[5]) + '/>';
         PosI := Pos(PosStr,TempStr);
@@ -734,7 +734,7 @@ begin
         end;
         if PosI <> TempArray[13] then TempArray[13] := PosI;
         Delete(TempStr,TempArray[13],Length(PosStr));
-        Insert(ThirdTempCB.Text, TempStr, TempArray[13]);
+        Insert(SixthTempCB.Text, TempStr, TempArray[13]);
 
         PosStr := '<PhTemp' + IntToStr(TempArray[6]) + '/>';
         PosI := Pos(PosStr,TempStr);
@@ -749,7 +749,7 @@ begin
         end;
         if PosI <> TempArray[14] then TempArray[14] := PosI;
         Delete(TempStr,TempArray[14],Length(PosStr));
-        Insert(ThirdTempCB.Text, TempStr, TempArray[14]);
+        Insert(SeventhTempCB.Text, TempStr, TempArray[14]);
 
         PosStr := '<PhTemp' + IntToStr(TempArray[7]) + '/>';
         PosI := Pos(PosStr,TempStr);
@@ -764,7 +764,7 @@ begin
         end;
         if PosI <> TempArray[15] then TempArray[15] := PosI;
         Delete(TempStr,TempArray[15],Length(PosStr));
-        Insert(ThirdTempCB.Text, TempStr, TempArray[15]);
+        Insert(EigthTempCB.Text, TempStr, TempArray[15]);
       end;
       else begin
         ShowMessage('MakePhraseBitBtnClick. Неправльное количество CountVisibleCB: ' + IntToStr(CountVisibleCB));
