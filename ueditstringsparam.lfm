@@ -172,7 +172,7 @@ object StringsParamForm: TStringsParamForm
   object BtnSave: TButton
     Left = 432
     Height = 25
-    Top = 352
+    Top = 72
     Width = 75
     Caption = 'Сохранить'
     OnClick = BtnSaveClick

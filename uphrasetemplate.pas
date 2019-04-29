@@ -7,7 +7,7 @@ interface
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, Buttons,
 
-  uListOperation, uEditStringsParam;
+  uListOperation, uEditStringsParam, lazutf8;
 
 type
 
@@ -128,25 +128,24 @@ begin
          PosStr := '<PhTemp' + IntToStr(NameListComboBox.ItemIndex) + '_' + IntToStr(iDoubleTemp) + '/>';
          PosI := Pos(PosStr, TempStr);
        end;
-
        if CurPosInMemo.y < 1 then begin
-         Insert('<PhTemp' + IntToStr(NameListComboBox.ItemIndex) + '_' + IntToStr(iDoubleTemp) +'/>', TempStr, CurPosInMemo.x);
+         UTF8Insert('<PhTemp' + IntToStr(NameListComboBox.ItemIndex) + '_' + IntToStr(iDoubleTemp) +'/>', TempStr, CurPosInMemo.x);
        end else begin
          iMoreOneLines := 0;
          for i := 0 to (CurPosInMemo.y-1) do  begin
             iMoreOneLines := iMoreOneLines + PhraseTemplateMemo.Lines[i].Length + 2;
          end;
-         Insert('<PhTemp' + IntToStr(NameListComboBox.ItemIndex) + '_' + IntToStr(iDoubleTemp) +'/>', TempStr, (iMoreOneLines+CurPosInMemo.x));
+         UTF8Insert('<PhTemp' + IntToStr(NameListComboBox.ItemIndex) + '_' + IntToStr(iDoubleTemp) +'/>', TempStr, (iMoreOneLines+CurPosInMemo.x));
        end;
      end else begin
        if CurPosInMemo.y < 1 then begin
-         Insert('<PhTemp' + IntToStr(NameListComboBox.ItemIndex) + '/>', TempStr, CurPosInMemo.x);
+         UTF8Insert('<PhTemp' + IntToStr(NameListComboBox.ItemIndex) + '/>', TempStr, CurPosInMemo.x);
        end else begin
          iMoreOneLines := 0;
          for i := 0 to (CurPosInMemo.y-1) do  begin
             iMoreOneLines := iMoreOneLines + PhraseTemplateMemo.Lines[i].Length + 2;
          end;
-         Insert('<PhTemp' + IntToStr(NameListComboBox.ItemIndex) + '/>', TempStr, (iMoreOneLines+CurPosInMemo.x));
+         UTF8Insert('<PhTemp' + IntToStr(NameListComboBox.ItemIndex) + '/>', TempStr, (iMoreOneLines+CurPosInMemo.x));
        end;
      end;
      PhraseTemplateMemo.Lines.Text := TempStr;
