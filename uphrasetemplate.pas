@@ -94,6 +94,10 @@ begin
   FileClose(FileHandle);
   TamplatePhrasesComboBox.Text := NewName;
   TamplatePhrasesComboBox.ItemIndex := TamplatePhrasesComboBox.Items.Count -1;
+  PhraseInfoEdit.Text:= 'Описание Фразы';
+  PhraseTamplateList.Clear;
+  PhraseTamplateList.Add(PhraseInfoEdit.Text);
+  PhraseTamplateList.SaveToFile(TamplateDir + TamplatePhrasesComboBox.Text);
 end;
 
 procedure TPhraseTemplateForm.AddWordBtnClick(Sender: TObject);
@@ -106,18 +110,19 @@ begin
   if CurSel < 0 then exit;
   CurPosInMemo := PhraseTemplateMemo.CaretPos;
   TempStr := PhraseTemplateMemo.Lines[CurPosInMemo.y];
-  Insert(WordListBox.Items[CurSel], TempStr, CurPosInMemo.x);
+  UTF8Insert(WordListBox.Items[CurSel], TempStr, (CurPosInMemo.x + 1));
   PhraseTemplateMemo.Lines[CurPosInMemo.y] := TempStr;
 end;
 
 procedure TPhraseTemplateForm.AddListPhrBtnClick(Sender: TObject);
 var CurPosInMemo: TPoint;
-    TempStr, PosStr: String;
-    PosI, iDoubleTemp, i, iMoreOneLines: integer;
+    InsertStr, TempStr, PosStr: String;
+    PosI, iDoubleTemp: integer;
 begin
    if NameListComboBox.Text <> '' then begin
      CurPosInMemo := PhraseTemplateMemo.CaretPos;
      TempStr := PhraseTemplateMemo.Lines.Text;
+     InsertStr := PhraseTemplateMemo.Lines[CurPosInMemo.y];
      PosI := -1;
      PosStr := '<PhTemp' + IntToStr(NameListComboBox.ItemIndex) + '/>';
      PosI := Pos(PosStr, TempStr);
@@ -128,27 +133,12 @@ begin
          PosStr := '<PhTemp' + IntToStr(NameListComboBox.ItemIndex) + '_' + IntToStr(iDoubleTemp) + '/>';
          PosI := Pos(PosStr, TempStr);
        end;
-       if CurPosInMemo.y < 1 then begin
-         UTF8Insert('<PhTemp' + IntToStr(NameListComboBox.ItemIndex) + '_' + IntToStr(iDoubleTemp) +'/>', TempStr, CurPosInMemo.x);
-       end else begin
-         iMoreOneLines := 0;
-         for i := 0 to (CurPosInMemo.y-1) do  begin
-            iMoreOneLines := iMoreOneLines + PhraseTemplateMemo.Lines[i].Length + 2;
-         end;
-         UTF8Insert('<PhTemp' + IntToStr(NameListComboBox.ItemIndex) + '_' + IntToStr(iDoubleTemp) +'/>', TempStr, (iMoreOneLines+CurPosInMemo.x));
-       end;
+       UTF8Insert(PosStr, InsertStr, (CurPosInMemo.x+1));
      end else begin
-       if CurPosInMemo.y < 1 then begin
-         UTF8Insert('<PhTemp' + IntToStr(NameListComboBox.ItemIndex) + '/>', TempStr, CurPosInMemo.x);
-       end else begin
-         iMoreOneLines := 0;
-         for i := 0 to (CurPosInMemo.y-1) do  begin
-            iMoreOneLines := iMoreOneLines + PhraseTemplateMemo.Lines[i].Length + 2;
-         end;
-         UTF8Insert('<PhTemp' + IntToStr(NameListComboBox.ItemIndex) + '/>', TempStr, (iMoreOneLines+CurPosInMemo.x));
-       end;
+       PosStr := '<PhTemp' + IntToStr(NameListComboBox.ItemIndex) + '/>';
+       UTF8Insert(PosStr, InsertStr, (CurPosInMemo.x+1));
      end;
-     PhraseTemplateMemo.Lines.Text := TempStr;
+     PhraseTemplateMemo.Lines[CurPosInMemo.y] := InsertStr;
    end;
 end;
 

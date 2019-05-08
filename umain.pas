@@ -1100,6 +1100,7 @@ begin
       end;
 
     end else begin
+      PhraseMemo.Lines.Clear;
       PhraseMemo.Lines.Add(TempStr);
       PhraseMemo.SelectAll;
       PhraseMemo.CopyToClipboard;
