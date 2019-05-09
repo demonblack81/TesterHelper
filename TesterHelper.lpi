@@ -16,7 +16,7 @@
       <UseVersionInfo Value="True"/>
       <MinorVersionNr Value="3"/>
       <RevisionNr Value="1"/>
-      <BuildNr Value="4"/>
+      <BuildNr Value="5"/>
       <Language Value="0419"/>
       <CharSet Value="04B0"/>
       <Attributes pvaPreRelease="True"/>
@@ -38,11 +38,11 @@
         <PackageName Value="LCL"/>
       </Item1>
     </RequiredPackages>
-    <Units Count="11">
+    <Units Count="15">
       <Unit0>
         <Filename Value="TesterHelper.lpr"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="4"/>
+        <EditorIndex Value="8"/>
         <CursorPos X="87" Y="10"/>
         <UsageCount Value="442"/>
         <Loaded Value="True"/>
@@ -54,9 +54,8 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="UMain"/>
-        <IsVisibleTab Value="True"/>
-        <TopLine Value="1193"/>
-        <CursorPos X="26" Y="1197"/>
+        <TopLine Value="115"/>
+        <CursorPos X="43" Y="128"/>
         <UsageCount Value="442"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -65,7 +64,7 @@
         <Filename Value="ugeneration.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="uGeneration"/>
-        <EditorIndex Value="5"/>
+        <EditorIndex Value="9"/>
         <TopLine Value="568"/>
         <CursorPos X="50" Y="5"/>
         <UsageCount Value="442"/>
@@ -90,7 +89,7 @@
         <Filename Value="D:\Soft\lazarus\lcl\forms.pp"/>
         <UnitName Value="Forms"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="7"/>
       </Unit5>
       <Unit6>
         <Filename Value="ueditstringsparam.pas"/>
@@ -99,9 +98,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uEditStringsParam"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="61"/>
-        <CursorPos X="3" Y="76"/>
+        <TopLine Value="115"/>
+        <CursorPos X="97" Y="117"/>
         <UsageCount Value="332"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -110,7 +110,7 @@
         <Filename Value="ulistoperation.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="uListOperation"/>
-        <EditorIndex Value="3"/>
+        <EditorIndex Value="7"/>
         <TopLine Value="47"/>
         <CursorPos X="23" Y="63"/>
         <UsageCount Value="279"/>
@@ -121,7 +121,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="76"/>
         <CursorPos X="3" Y="97"/>
-        <UsageCount Value="8"/>
+        <UsageCount Value="6"/>
       </Unit8>
       <Unit9>
         <Filename Value="uphrasetemplate.pas"/>
@@ -130,10 +130,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uPhraseTemplate"/>
-        <EditorIndex Value="2"/>
+        <EditorIndex Value="6"/>
         <TopLine Value="117"/>
         <CursorPos X="100" Y="119"/>
-        <UsageCount Value="79"/>
+        <UsageCount Value="104"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit9>
@@ -142,129 +142,162 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="55"/>
         <CursorPos Y="78"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="8"/>
       </Unit10>
+      <Unit11>
+        <Filename Value="D:\Soft\lazarus\lcl\include\wincontrol.inc"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="5406"/>
+        <CursorPos Y="5420"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="D:\Soft\lazarus\lcl\include\control.inc"/>
+        <EditorIndex Value="5"/>
+        <TopLine Value="2230"/>
+        <CursorPos Y="2244"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="D:\Soft\lazarus\lcl\lclmessageglue.pas"/>
+        <UnitName Value="LCLMessageGlue"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="105"/>
+        <CursorPos Y="123"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit13>
+      <Unit14>
+        <Filename Value="D:\Soft\lazarus\lcl\interfaces\win32\win32callback.inc"/>
+        <EditorIndex Value="4"/>
+        <TopLine Value="2585"/>
+        <CursorPos Y="2609"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit14>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
-        <Filename Value="uphrasetemplate.pas"/>
-        <Caret Line="122" TopLine="107"/>
+        <Filename Value="D:\Soft\lazarus\lcl\include\wincontrol.inc"/>
+        <Caret Line="5420" TopLine="5406"/>
       </Position1>
       <Position2>
-        <Filename Value="uphrasetemplate.pas"/>
-        <Caret Line="152" TopLine="138"/>
+        <Filename Value="D:\Soft\lazarus\lcl\lclmessageglue.pas"/>
+        <Caret Line="119" TopLine="105"/>
       </Position2>
       <Position3>
-        <Filename Value="uphrasetemplate.pas"/>
-        <Caret Line="144" Column="70" TopLine="129"/>
+        <Filename Value="D:\Soft\lazarus\lcl\lclmessageglue.pas"/>
+        <Caret Line="120" TopLine="105"/>
       </Position3>
       <Position4>
-        <Filename Value="uphrasetemplate.pas"/>
-        <Caret Line="122" TopLine="106"/>
+        <Filename Value="D:\Soft\lazarus\lcl\lclmessageglue.pas"/>
+        <Caret Line="122" TopLine="105"/>
       </Position4>
       <Position5>
-        <Filename Value="uphrasetemplate.pas"/>
-        <Caret Line="152" TopLine="138"/>
+        <Filename Value="D:\Soft\lazarus\lcl\lclmessageglue.pas"/>
+        <Caret Line="123" TopLine="105"/>
       </Position5>
       <Position6>
-        <Filename Value="uphrasetemplate.pas"/>
-        <Caret Line="155" TopLine="138"/>
+        <Filename Value="D:\Soft\lazarus\lcl\interfaces\win32\win32callback.inc"/>
+        <Caret Line="2514" TopLine="2500"/>
       </Position6>
       <Position7>
-        <Filename Value="uphrasetemplate.pas"/>
-        <Caret Line="122" TopLine="106"/>
+        <Filename Value="D:\Soft\lazarus\lcl\interfaces\win32\win32callback.inc"/>
+        <Caret Line="2536" TopLine="2521"/>
       </Position7>
       <Position8>
-        <Filename Value="uphrasetemplate.pas"/>
-        <Caret Line="152" Column="10" TopLine="138"/>
+        <Filename Value="D:\Soft\lazarus\lcl\interfaces\win32\win32callback.inc"/>
+        <Caret Line="2537" TopLine="2521"/>
       </Position8>
       <Position9>
-        <Filename Value="uphrasetemplate.pas"/>
-        <Caret Line="122" TopLine="106"/>
+        <Filename Value="D:\Soft\lazarus\lcl\interfaces\win32\win32callback.inc"/>
+        <Caret Line="2569" TopLine="2554"/>
       </Position9>
       <Position10>
-        <Filename Value="uphrasetemplate.pas"/>
-        <Caret Line="153" TopLine="139"/>
+        <Filename Value="D:\Soft\lazarus\lcl\interfaces\win32\win32callback.inc"/>
+        <Caret Line="2571" TopLine="2554"/>
       </Position10>
       <Position11>
-        <Filename Value="uphrasetemplate.pas"/>
-        <Caret Line="152" Column="26" TopLine="139"/>
+        <Filename Value="D:\Soft\lazarus\lcl\interfaces\win32\win32callback.inc"/>
+        <Caret Line="2575" TopLine="2554"/>
       </Position11>
       <Position12>
-        <Filename Value="uphrasetemplate.pas"/>
-        <Caret Line="122" TopLine="106"/>
+        <Filename Value="D:\Soft\lazarus\lcl\interfaces\win32\win32callback.inc"/>
+        <Caret Line="2579" TopLine="2555"/>
       </Position12>
       <Position13>
-        <Filename Value="uphrasetemplate.pas"/>
-        <Caret Line="123" TopLine="106"/>
+        <Filename Value="D:\Soft\lazarus\lcl\interfaces\win32\win32callback.inc"/>
+        <Caret Line="2581" TopLine="2557"/>
       </Position13>
       <Position14>
-        <Filename Value="uphrasetemplate.pas"/>
-        <Caret Line="124" TopLine="106"/>
+        <Filename Value="D:\Soft\lazarus\lcl\interfaces\win32\win32callback.inc"/>
+        <Caret Line="2585" TopLine="2561"/>
       </Position14>
       <Position15>
-        <Filename Value="uphrasetemplate.pas"/>
-        <Caret Line="125" TopLine="106"/>
+        <Filename Value="D:\Soft\lazarus\lcl\interfaces\win32\win32callback.inc"/>
+        <Caret Line="2586" TopLine="2562"/>
       </Position15>
       <Position16>
-        <Filename Value="uphrasetemplate.pas"/>
-        <Caret Line="152" Column="12" TopLine="132"/>
+        <Filename Value="D:\Soft\lazarus\lcl\interfaces\win32\win32callback.inc"/>
+        <Caret Line="2595" TopLine="2580"/>
       </Position16>
       <Position17>
-        <Filename Value="uphrasetemplate.pas"/>
-        <Caret Line="156" TopLine="132"/>
+        <Filename Value="D:\Soft\lazarus\lcl\interfaces\win32\win32callback.inc"/>
+        <Caret Line="2600" TopLine="2580"/>
       </Position17>
       <Position18>
-        <Filename Value="uphrasetemplate.pas"/>
-        <Caret Line="122" TopLine="106"/>
+        <Filename Value="D:\Soft\lazarus\lcl\interfaces\win32\win32callback.inc"/>
+        <Caret Line="2604" TopLine="2580"/>
       </Position18>
       <Position19>
-        <Filename Value="uphrasetemplate.pas"/>
-        <Caret Line="152" TopLine="139"/>
+        <Filename Value="D:\Soft\lazarus\lcl\interfaces\win32\win32callback.inc"/>
+        <Caret Line="2609" TopLine="2585"/>
       </Position19>
       <Position20>
-        <Filename Value="uphrasetemplate.pas"/>
-        <Caret Line="122" TopLine="106"/>
+        <Filename Value="ueditstringsparam.pas"/>
+        <Caret Line="79" TopLine="56"/>
       </Position20>
       <Position21>
-        <Filename Value="uphrasetemplate.pas"/>
-        <Caret Line="152" TopLine="138"/>
+        <Filename Value="ueditstringsparam.pas"/>
+        <Caret Line="84" TopLine="59"/>
       </Position21>
       <Position22>
-        <Filename Value="uphrasetemplate.pas"/>
-        <Caret Line="153" TopLine="138"/>
+        <Filename Value="ueditstringsparam.pas"/>
+        <Caret Line="85" TopLine="60"/>
       </Position22>
       <Position23>
-        <Filename Value="uphrasetemplate.pas"/>
-        <Caret Line="158" TopLine="130"/>
+        <Filename Value="ueditstringsparam.pas"/>
+        <Caret Line="87" TopLine="62"/>
       </Position23>
       <Position24>
-        <Filename Value="uphrasetemplate.pas"/>
-        <Caret Line="139" Column="10" TopLine="129"/>
+        <Filename Value="ueditstringsparam.pas"/>
+        <Caret Line="139" Column="3" TopLine="137"/>
       </Position24>
       <Position25>
-        <Filename Value="umain.pas"/>
-        <Caret Line="734" Column="32" TopLine="719"/>
+        <Filename Value="ueditstringsparam.pas"/>
+        <Caret Line="138" Column="3" TopLine="136"/>
       </Position25>
       <Position26>
-        <Filename Value="umain.pas"/>
-        <Caret Line="1198" Column="5" TopLine="1193"/>
+        <Filename Value="ueditstringsparam.pas"/>
+        <Caret Line="108" Column="60" TopLine="107"/>
       </Position26>
       <Position27>
-        <Filename Value="umain.pas"/>
-        <Caret Line="232" Column="22" TopLine="232"/>
+        <Filename Value="ueditstringsparam.pas"/>
+        <Caret Line="87" Column="3" TopLine="84"/>
       </Position27>
       <Position28>
-        <Filename Value="umain.pas"/>
-        <Caret Line="896" Column="37" TopLine="889"/>
+        <Filename Value="ueditstringsparam.pas"/>
+        <Caret Line="162" Column="92" TopLine="160"/>
       </Position28>
       <Position29>
-        <Filename Value="umain.pas"/>
-        <Caret Line="1198" Column="17" TopLine="1183"/>
+        <Filename Value="ueditstringsparam.pas"/>
+        <Caret Line="161" Column="92" TopLine="159"/>
       </Position29>
       <Position30>
-        <Filename Value="umain.pas"/>
-        <Caret Line="896" Column="19" TopLine="878"/>
+        <Filename Value="ueditstringsparam.pas"/>
+        <Caret Line="70" Column="5" TopLine="40"/>
       </Position30>
     </JumpHistory>
   </ProjectOptions>

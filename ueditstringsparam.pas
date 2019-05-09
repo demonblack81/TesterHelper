@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
-  Buttons, ComCtrls,
+  Buttons, ComCtrls, LCLType,
 
   uListOperation;
 
@@ -16,10 +16,10 @@ type
 
   TStringsParamForm = class(TForm)
     AddNameBitBtn: TBitBtn;
+    SaveBitBtn: TBitBtn;
     CloseBitBtn: TBitBtn;
     UpWordBitBtn: TBitBtn;
     DownWordBitBtn: TBitBtn;
-    BtnSave: TButton;
     DelNameBitBtn: TBitBtn;
     AddListBtn: TButton;
     DelListBtn: TButton;
@@ -29,12 +29,13 @@ type
     WordListBox: TListBox;
     procedure AddListBtnClick(Sender: TObject);
     procedure AddNameBitBtnClick(Sender: TObject);
-    procedure BtnSaveClick(Sender: TObject);
     procedure DelListBtnClick(Sender: TObject);
     procedure DelNameBitBtnClick(Sender: TObject);
     procedure DownWordBitBtnClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure FormKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure NameListComboBoxCloseUp(Sender: TObject);
+    procedure SaveBitBtnClick(Sender: TObject);
     procedure UpWordBitBtnClick(Sender: TObject);
     procedure WordListBoxDblClick(Sender: TObject);
   private
@@ -71,9 +72,11 @@ begin
   end;
 end;
 
-procedure TStringsParamForm.BtnSaveClick(Sender: TObject);
+procedure TStringsParamForm.FormKeyUp(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
 begin
-  WordListBox.Items.SaveToFile(ListDir+NameListComboBox.items[NameListComboBox.ItemIndex]);
+   if (ssCtrl in Shift) and (chr(Key) in ['N', 'n']) then AddNameBitBtn.Click;
+   if (ssCtrl in Shift) and (chr(Key) in ['S', 's']) then SaveBitBtn.Click;
 end;
 
 procedure TStringsParamForm.DelListBtnClick(Sender: TObject);
@@ -139,6 +142,11 @@ begin
     end;
     FindClose(FileSearch);
   end;
+end;
+
+procedure TStringsParamForm.SaveBitBtnClick(Sender: TObject);
+begin
+  WordListBox.Items.SaveToFile(ListDir+NameListComboBox.items[NameListComboBox.ItemIndex]);
 end;
 
 procedure TStringsParamForm.UpWordBitBtnClick(Sender: TObject);

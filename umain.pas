@@ -199,7 +199,6 @@ begin
   end;
 end;
 
-
 procedure TMainForm.MenuCloseClick(Sender: TObject);
 begin
  FinilazeSymbol;
