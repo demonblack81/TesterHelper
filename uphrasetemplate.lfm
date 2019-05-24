@@ -1,7 +1,7 @@
 object PhraseTemplateForm: TPhraseTemplateForm
-  Left = 258
+  Left = 260
   Height = 468
-  Top = 146
+  Top = 147
   Width = 631
   Caption = 'PhraseTemplateForm'
   ClientHeight = 468
