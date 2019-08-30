@@ -1,11 +1,11 @@
 object PhraseTemplateForm: TPhraseTemplateForm
-  Left = 260
+  Left = 411
   Height = 468
-  Top = 147
-  Width = 631
+  Top = 188
+  Width = 900
   Caption = 'PhraseTemplateForm'
   ClientHeight = 468
-  ClientWidth = 631
+  ClientWidth = 900
   OnCreate = FormCreate
   Position = poOwnerFormCenter
   LCLVersion = '2.0.0.4'
@@ -13,7 +13,7 @@ object PhraseTemplateForm: TPhraseTemplateForm
     Left = 10
     Height = 25
     Top = 24
-    Width = 438
+    Width = 700
     Font.CharSet = RUSSIAN_CHARSET
     Font.Color = clBlack
     Font.Height = -13
@@ -26,7 +26,7 @@ object PhraseTemplateForm: TPhraseTemplateForm
     TabOrder = 0
   end
   object AddTemplateBtn: TButton
-    Left = 464
+    Left = 720
     Height = 25
     Top = 24
     Width = 75
@@ -51,9 +51,9 @@ object PhraseTemplateForm: TPhraseTemplateForm
     ParentColor = False
   end
   object Button1: TButton
-    Left = 552
+    Left = 815
     Height = 25
-    Top = 22
+    Top = 24
     Width = 75
     Caption = 'Удалить'
     OnClick = Button1Click
@@ -63,7 +63,7 @@ object PhraseTemplateForm: TPhraseTemplateForm
     Left = 10
     Height = 90
     Top = 112
-    Width = 617
+    Width = 880
     Font.CharSet = RUSSIAN_CHARSET
     Font.Color = clBlack
     Font.Height = -15
@@ -74,7 +74,7 @@ object PhraseTemplateForm: TPhraseTemplateForm
     TabOrder = 3
   end
   object AddWordBtn: TButton
-    Left = 464
+    Left = 720
     Height = 25
     Top = 312
     Width = 75
@@ -83,7 +83,7 @@ object PhraseTemplateForm: TPhraseTemplateForm
     TabOrder = 4
   end
   object SaveTemplateBtn: TButton
-    Left = 464
+    Left = 720
     Height = 25
     Top = 216
     Width = 75
@@ -92,7 +92,7 @@ object PhraseTemplateForm: TPhraseTemplateForm
     TabOrder = 5
   end
   object ClearTemplateBtn: TButton
-    Left = 552
+    Left = 815
     Height = 25
     Top = 216
     Width = 75
@@ -101,7 +101,7 @@ object PhraseTemplateForm: TPhraseTemplateForm
     TabOrder = 6
   end
   object AddListPhrBtn: TButton
-    Left = 464
+    Left = 720
     Height = 25
     Top = 264
     Width = 75
@@ -121,7 +121,7 @@ object PhraseTemplateForm: TPhraseTemplateForm
     Left = 10
     Height = 25
     Top = 64
-    Width = 617
+    Width = 880
     Font.CharSet = RUSSIAN_CHARSET
     Font.Color = clBlack
     Font.Height = -13
@@ -135,7 +135,7 @@ object PhraseTemplateForm: TPhraseTemplateForm
     Left = 10
     Height = 28
     Top = 264
-    Width = 440
+    Width = 700
     Font.CharSet = RUSSIAN_CHARSET
     Font.Color = clBlack
     Font.Height = -15
@@ -148,10 +148,10 @@ object PhraseTemplateForm: TPhraseTemplateForm
     TabOrder = 9
   end
   object WordListBox: TListBox
-    Left = 13
+    Left = 10
     Height = 112
     Top = 312
-    Width = 437
+    Width = 700
     Font.CharSet = RUSSIAN_CHARSET
     Font.Color = clBlack
     Font.Height = -15
@@ -171,7 +171,7 @@ object PhraseTemplateForm: TPhraseTemplateForm
     ParentColor = False
   end
   object Label5: TLabel
-    Left = 12
+    Left = 10
     Height = 15
     Top = 291
     Width = 84
@@ -179,8 +179,8 @@ object PhraseTemplateForm: TPhraseTemplateForm
     ParentColor = False
   end
   object UpdWordListBtn: TButton
-    Left = 192
-    Height = 25
+    Left = 322
+    Height = 28
     Top = 432
     Width = 75
     Caption = 'Обновить'
@@ -188,7 +188,7 @@ object PhraseTemplateForm: TPhraseTemplateForm
     TabOrder = 11
   end
   object ClloseBitBtn: TBitBtn
-    Left = 552
+    Left = 815
     Height = 30
     Top = 432
     Width = 75

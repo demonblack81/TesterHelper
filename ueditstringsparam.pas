@@ -124,6 +124,7 @@ begin
   NewWord := '';
   if not InputQuery('Веведите слово', 'Введите слово для листа фраз:', NewWord) then exit;
   if NewWord <> '' then WordListBox.Items.Add(NewWord);
+  WordListBox.Selected[(WordListBox.Count -1)] := true;
 end;
 
 procedure TStringsParamForm.NameListComboBoxCloseUp(Sender: TObject);

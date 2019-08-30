@@ -42,7 +42,7 @@
       <Unit0>
         <Filename Value="TesterHelper.lpr"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="8"/>
+        <EditorIndex Value="4"/>
         <CursorPos X="87" Y="10"/>
         <UsageCount Value="442"/>
         <Loaded Value="True"/>
@@ -54,8 +54,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="UMain"/>
-        <TopLine Value="115"/>
-        <CursorPos X="43" Y="128"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="96"/>
+        <CursorPos X="27" Y="104"/>
         <UsageCount Value="442"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -64,7 +65,7 @@
         <Filename Value="ugeneration.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="uGeneration"/>
-        <EditorIndex Value="9"/>
+        <EditorIndex Value="5"/>
         <TopLine Value="568"/>
         <CursorPos X="50" Y="5"/>
         <UsageCount Value="442"/>
@@ -98,10 +99,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uEditStringsParam"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="115"/>
-        <CursorPos X="30" Y="117"/>
+        <TopLine Value="146"/>
+        <CursorPos X="3" Y="156"/>
         <UsageCount Value="332"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -110,8 +110,8 @@
         <Filename Value="ulistoperation.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="uListOperation"/>
-        <EditorIndex Value="7"/>
-        <TopLine Value="47"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="35"/>
         <CursorPos X="23" Y="63"/>
         <UsageCount Value="279"/>
         <Loaded Value="True"/>
@@ -130,10 +130,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uPhraseTemplate"/>
-        <EditorIndex Value="6"/>
-        <TopLine Value="117"/>
-        <CursorPos X="100" Y="119"/>
-        <UsageCount Value="140"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="86"/>
+        <CursorPos X="24" Y="94"/>
+        <UsageCount Value="141"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit9>
@@ -146,158 +146,154 @@
       </Unit10>
       <Unit11>
         <Filename Value="D:\Soft\lazarus\lcl\include\wincontrol.inc"/>
-        <EditorIndex Value="2"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="5406"/>
         <CursorPos Y="5420"/>
         <UsageCount Value="29"/>
-        <Loaded Value="True"/>
       </Unit11>
       <Unit12>
         <Filename Value="D:\Soft\lazarus\lcl\include\control.inc"/>
-        <EditorIndex Value="5"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="2230"/>
         <CursorPos Y="2244"/>
         <UsageCount Value="29"/>
-        <Loaded Value="True"/>
       </Unit12>
       <Unit13>
         <Filename Value="D:\Soft\lazarus\lcl\lclmessageglue.pas"/>
         <UnitName Value="LCLMessageGlue"/>
-        <EditorIndex Value="3"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="105"/>
         <CursorPos Y="123"/>
         <UsageCount Value="29"/>
-        <Loaded Value="True"/>
       </Unit13>
       <Unit14>
         <Filename Value="D:\Soft\lazarus\lcl\interfaces\win32\win32callback.inc"/>
-        <EditorIndex Value="4"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="2585"/>
         <CursorPos Y="2609"/>
         <UsageCount Value="29"/>
-        <Loaded Value="True"/>
       </Unit14>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
-        <Filename Value="D:\Soft\lazarus\lcl\include\wincontrol.inc"/>
-        <Caret Line="5420" TopLine="5406"/>
-      </Position1>
-      <Position2>
-        <Filename Value="D:\Soft\lazarus\lcl\lclmessageglue.pas"/>
-        <Caret Line="119" TopLine="105"/>
-      </Position2>
-      <Position3>
-        <Filename Value="D:\Soft\lazarus\lcl\lclmessageglue.pas"/>
-        <Caret Line="120" TopLine="105"/>
-      </Position3>
-      <Position4>
-        <Filename Value="D:\Soft\lazarus\lcl\lclmessageglue.pas"/>
-        <Caret Line="122" TopLine="105"/>
-      </Position4>
-      <Position5>
-        <Filename Value="D:\Soft\lazarus\lcl\lclmessageglue.pas"/>
-        <Caret Line="123" TopLine="105"/>
-      </Position5>
-      <Position6>
-        <Filename Value="D:\Soft\lazarus\lcl\interfaces\win32\win32callback.inc"/>
-        <Caret Line="2514" TopLine="2500"/>
-      </Position6>
-      <Position7>
-        <Filename Value="D:\Soft\lazarus\lcl\interfaces\win32\win32callback.inc"/>
-        <Caret Line="2536" TopLine="2521"/>
-      </Position7>
-      <Position8>
-        <Filename Value="D:\Soft\lazarus\lcl\interfaces\win32\win32callback.inc"/>
-        <Caret Line="2537" TopLine="2521"/>
-      </Position8>
-      <Position9>
-        <Filename Value="D:\Soft\lazarus\lcl\interfaces\win32\win32callback.inc"/>
-        <Caret Line="2569" TopLine="2554"/>
-      </Position9>
-      <Position10>
-        <Filename Value="D:\Soft\lazarus\lcl\interfaces\win32\win32callback.inc"/>
-        <Caret Line="2571" TopLine="2554"/>
-      </Position10>
-      <Position11>
-        <Filename Value="D:\Soft\lazarus\lcl\interfaces\win32\win32callback.inc"/>
-        <Caret Line="2575" TopLine="2554"/>
-      </Position11>
-      <Position12>
-        <Filename Value="D:\Soft\lazarus\lcl\interfaces\win32\win32callback.inc"/>
-        <Caret Line="2579" TopLine="2555"/>
-      </Position12>
-      <Position13>
-        <Filename Value="D:\Soft\lazarus\lcl\interfaces\win32\win32callback.inc"/>
-        <Caret Line="2581" TopLine="2557"/>
-      </Position13>
-      <Position14>
-        <Filename Value="D:\Soft\lazarus\lcl\interfaces\win32\win32callback.inc"/>
-        <Caret Line="2585" TopLine="2561"/>
-      </Position14>
-      <Position15>
-        <Filename Value="D:\Soft\lazarus\lcl\interfaces\win32\win32callback.inc"/>
-        <Caret Line="2586" TopLine="2562"/>
-      </Position15>
-      <Position16>
-        <Filename Value="D:\Soft\lazarus\lcl\interfaces\win32\win32callback.inc"/>
-        <Caret Line="2595" TopLine="2580"/>
-      </Position16>
-      <Position17>
-        <Filename Value="D:\Soft\lazarus\lcl\interfaces\win32\win32callback.inc"/>
-        <Caret Line="2600" TopLine="2580"/>
-      </Position17>
-      <Position18>
-        <Filename Value="D:\Soft\lazarus\lcl\interfaces\win32\win32callback.inc"/>
-        <Caret Line="2604" TopLine="2580"/>
-      </Position18>
-      <Position19>
-        <Filename Value="D:\Soft\lazarus\lcl\interfaces\win32\win32callback.inc"/>
-        <Caret Line="2609" TopLine="2585"/>
-      </Position19>
-      <Position20>
-        <Filename Value="ueditstringsparam.pas"/>
-        <Caret Line="79" TopLine="56"/>
-      </Position20>
-      <Position21>
-        <Filename Value="ueditstringsparam.pas"/>
-        <Caret Line="84" TopLine="59"/>
-      </Position21>
-      <Position22>
-        <Filename Value="ueditstringsparam.pas"/>
-        <Caret Line="85" TopLine="60"/>
-      </Position22>
-      <Position23>
-        <Filename Value="ueditstringsparam.pas"/>
-        <Caret Line="87" TopLine="62"/>
-      </Position23>
-      <Position24>
-        <Filename Value="ueditstringsparam.pas"/>
-        <Caret Line="139" Column="3" TopLine="137"/>
-      </Position24>
-      <Position25>
         <Filename Value="ueditstringsparam.pas"/>
         <Caret Line="138" Column="3" TopLine="136"/>
-      </Position25>
-      <Position26>
+      </Position1>
+      <Position2>
         <Filename Value="ueditstringsparam.pas"/>
         <Caret Line="108" Column="60" TopLine="107"/>
-      </Position26>
-      <Position27>
+      </Position2>
+      <Position3>
         <Filename Value="ueditstringsparam.pas"/>
         <Caret Line="87" Column="3" TopLine="84"/>
-      </Position27>
-      <Position28>
+      </Position3>
+      <Position4>
         <Filename Value="ueditstringsparam.pas"/>
         <Caret Line="162" Column="92" TopLine="160"/>
-      </Position28>
-      <Position29>
+      </Position4>
+      <Position5>
         <Filename Value="ueditstringsparam.pas"/>
         <Caret Line="161" Column="92" TopLine="159"/>
+      </Position5>
+      <Position6>
+        <Filename Value="ueditstringsparam.pas"/>
+        <Caret Line="70" Column="5" TopLine="40"/>
+      </Position6>
+      <Position7>
+        <Filename Value="uphrasetemplate.pas"/>
+        <Caret Line="119" Column="100" TopLine="117"/>
+      </Position7>
+      <Position8>
+        <Filename Value="ueditstringsparam.pas"/>
+        <Caret Line="117" Column="30" TopLine="115"/>
+      </Position8>
+      <Position9>
+        <Filename Value="umain.pas"/>
+        <Caret Line="128" Column="43" TopLine="115"/>
+      </Position9>
+      <Position10>
+        <Filename Value="umain.pas"/>
+        <Caret Line="127" Column="43" TopLine="114"/>
+      </Position10>
+      <Position11>
+        <Filename Value="umain.pas"/>
+        <Caret Line="126" Column="43" TopLine="113"/>
+      </Position11>
+      <Position12>
+        <Filename Value="umain.pas"/>
+        <Caret Line="125" Column="43" TopLine="112"/>
+      </Position12>
+      <Position13>
+        <Filename Value="umain.pas"/>
+        <Caret Line="124" Column="43" TopLine="111"/>
+      </Position13>
+      <Position14>
+        <Filename Value="umain.pas"/>
+        <Caret Line="123" Column="43" TopLine="110"/>
+      </Position14>
+      <Position15>
+        <Filename Value="umain.pas"/>
+        <Caret Line="122" Column="43" TopLine="109"/>
+      </Position15>
+      <Position16>
+        <Filename Value="umain.pas"/>
+        <Caret Line="121" Column="43" TopLine="108"/>
+      </Position16>
+      <Position17>
+        <Filename Value="umain.pas"/>
+        <Caret Line="120" Column="43" TopLine="107"/>
+      </Position17>
+      <Position18>
+        <Filename Value="umain.pas"/>
+        <Caret Line="119" Column="43" TopLine="106"/>
+      </Position18>
+      <Position19>
+        <Filename Value="umain.pas"/>
+        <Caret Line="118" Column="43" TopLine="105"/>
+      </Position19>
+      <Position20>
+        <Filename Value="umain.pas"/>
+        <Caret Line="117" Column="43" TopLine="104"/>
+      </Position20>
+      <Position21>
+        <Filename Value="umain.pas"/>
+        <Caret Line="116" Column="43" TopLine="103"/>
+      </Position21>
+      <Position22>
+        <Filename Value="umain.pas"/>
+        <Caret Line="115" Column="43" TopLine="102"/>
+      </Position22>
+      <Position23>
+        <Filename Value="umain.pas"/>
+        <Caret Line="114" Column="43" TopLine="101"/>
+      </Position23>
+      <Position24>
+        <Filename Value="umain.pas"/>
+        <Caret Line="113" Column="43" TopLine="100"/>
+      </Position24>
+      <Position25>
+        <Filename Value="umain.pas"/>
+        <Caret Line="112" Column="43" TopLine="99"/>
+      </Position25>
+      <Position26>
+        <Filename Value="umain.pas"/>
+        <Caret Line="111" Column="43" TopLine="98"/>
+      </Position26>
+      <Position27>
+        <Filename Value="umain.pas"/>
+        <Caret Line="110" Column="43" TopLine="97"/>
+      </Position27>
+      <Position28>
+        <Filename Value="umain.pas"/>
+        <Caret Line="109" Column="43" TopLine="96"/>
+      </Position28>
+      <Position29>
+        <Filename Value="umain.pas"/>
+        <Caret Line="108" Column="43" TopLine="96"/>
       </Position29>
       <Position30>
         <Filename Value="ueditstringsparam.pas"/>
-        <Caret Line="70" Column="5" TopLine="40"/>
+        <Caret Line="128" Column="49" TopLine="108"/>
       </Position30>
     </JumpHistory>
   </ProjectOptions>
@@ -312,16 +308,24 @@
       <OtherUnitFiles Value="..\Test"/>
       <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
+    <Parsing>
+      <SyntaxOptions>
+        <IncludeAssertionCode Value="True"/>
+      </SyntaxOptions>
+    </Parsing>
     <CodeGeneration>
       <SmartLinkUnit Value="True"/>
-      <Optimizations>
-        <OptimizationLevel Value="3"/>
-      </Optimizations>
+      <Checks>
+        <IOChecks Value="True"/>
+        <RangeChecks Value="True"/>
+        <OverflowChecks Value="True"/>
+        <StackChecks Value="True"/>
+      </Checks>
+      <VerifyObjMethodCallValidity Value="True"/>
       <SmallerCode Value="True"/>
     </CodeGeneration>
     <Linking>
       <Debugging>
-        <GenerateDebugInfo Value="False"/>
         <StripSymbols Value="True"/>
         <UseExternalDbgSyms Value="True"/>
       </Debugging>
