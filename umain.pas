@@ -779,7 +779,9 @@ end;
 procedure TMainForm.ProcessWatchwerTimerTimer(Sender: TObject);
 var LogStr: string;
 begin
-  LogStr := ProcessWatcherLog(LastProcessMemory, WatcherProcessName);
+  {$IFDEF WINDOWS}
+    LogStr := ProcessWatcherLog(LastProcessMemory, WatcherProcessName);
+  {$ENDIF}
   if LogStr <> '' then ProcessWatcherMemo.Lines.Add(LogStr);
 end;
 
@@ -1102,9 +1104,11 @@ end;
 
 procedure TMainForm.UpdateProcessBtnClick(Sender: TObject);
 begin
- if not FillProcessesList() then begin // Заполняем список процессов
-  ShowMessage('Ошибка. Не могу получить список процессов.');
- end;
+ {$IFDEF WINDOWS}
+  if not FillProcessesList() then begin // Заполняем список процессов
+   ShowMessage('Ошибка. Не могу получить список процессов.');
+  end;
+ {$ENDIF}
  CloseProcessBtn.Enabled := True;
 end;
 
@@ -1180,19 +1184,23 @@ procedure TMainForm.CloseProcessBtnClick(Sender: TObject);
 Var iKillErr: integer;
 begin
  if ProcesInfoView.Selected <> nil then begin
+  {$IFDEF WINDOWS}
   if Application.MessageBox(PChar('Вы уверены что хотите завершить процесс' +
                                     ProcesInfoView.Selected.Caption + '?'),
                            'Внимание!', MB_YESNO) = id_Yes then begin
+
    iKillErr := Close_Process_By_Pid(StrToInt(ProcesInfoView.Selected.SubItems[0]));
    if (iKillErr <> 0) then begin
     ShowMessage('Не могу закрыть процесс нет прав для завершения');
    end else begin
     ShowMessage('Процесс ' + ProcesInfoView.Selected.Caption + ' завершен.')
    end;
+
    if not FillProcessesList() then begin // Заполняем список процессов
     ShowMessage('Ошибка. Не могу получить список процессов.');
    end;
   end;
+  {$ENDIF}
  end else begin
   ShowMessage('Не Выбран Процесс!');
  end;

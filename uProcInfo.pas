@@ -3,7 +3,8 @@ unit uProcInfo;
 {$H+}
 
 interface
-uses Windows, Classes, SysUtils, ComCtrls;
+uses {$IFDEF WINDOWS}Windows, {$ENDIF}
+  Classes, SysUtils, ComCtrls;
 type
  NTSTATUS = Cardinal;
 const
@@ -44,7 +45,7 @@ type
     PagefileUsage,
     PeakPagefileUsage: dword;
  end;
-
+ {$IFDEF WINDOWS}
  PIO_COUNTERS = ^IO_COUNTERS;
  IO_COUNTERS = packed record
    ReadOperationCount,
@@ -93,15 +94,19 @@ type
   Threads: array [0..0] of SYSTEM_THREADS;
  end;
 
+{$ENDIF}
+
+{$IFDEF WINDOWS}
 function FillProcessesList(): Boolean;
 function ProcessWatcher(ProcName:string):integer;
 function ProcessWatcherLog(var OldMemory: Integer; WatcherProcessName: string): string;
 function Close_Process_By_Pid(pid : longint) : integer;
+{$ENDIF}
 
 implementation
 
 uses UMain;
-
+{$IFDEF WINDOWS}
 function ZwQuerySystemInformation(dwSystemInformationClass: DWORD;
                                   pSystemInformation: Pointer;
                                   dwSystemInformationLength: DWORD;
@@ -266,6 +271,7 @@ begin
    Result := KILL_ERR_OPENPROCESS;
   end;
 end;
+{$ENDIF}
 
 end.
 

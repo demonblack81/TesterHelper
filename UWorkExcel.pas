@@ -1,7 +1,7 @@
 unit UWorkExcel;
 
 interface
-uses ComObj, Classes, Variants, SysUtils;
+uses {$IFDEF WINDOWS}ComObj, {$ENDIF} Classes, Variants, SysUtils;
 
 Function CreateExcel:boolean; // Создание обьекта Excel
 Function VisibleExcel(visible:boolean): boolean; // Показать/свернуть Excel
@@ -26,11 +26,13 @@ var E:variant;
 Function CreateExcel:boolean;
 begin
  CreateExcel:=true;
+ {$IFDEF WINDOWS}
  try
   E:=CreateOleObject('Excel.Application');
  except
   CreateExcel:=false;
  end;
+ {$ENDIF}
 end;
 
 Function VisibleExcel(visible:boolean): boolean;

@@ -2,7 +2,7 @@
 
 interface
 
-uses Windows, Classes, SysUtils, Math, FileUtil, LazUTF8;
+uses {$IFDEF WINDOWS}Windows,{$ENDIF} Classes, SysUtils, Math, FileUtil, LazUTF8;
 
 const c_NUMERIC       = '0123456789';
       c_ENGALLSYMBOL  = 'qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM';
@@ -66,38 +66,71 @@ procedure InitilzationSymbol;
 var i : integer;
     DriveLetter: TStringList;
     Drives : array [0..255] of Char;
-    p_DriveLetter: PChar;  
+    p_DriveLetter: PChar;
+    TempStr: String;
 begin
 
  RuSymbol := TStringList.Create;
- Rusymbol.LoadFromFile(ExtractFileDir(ParamStr(0)) + '\Data\RussionSymbol.txt');
+ {$IFDEF WINDOWS}
+  Rusymbol.LoadFromFile(ExtractFileDir(ParamStr(0)) + '\Data\RussionSymbol.txt');
+ {$ELSE}
+  TempStr := ParamStr(0);
+  i := Pos('TesterHelper.app', TempStr);
+  Delete(TempStr, i, (Length(TempStr) - i + 2) );
+
+  Rusymbol.LoadFromFile(TempStr + 'Data/RussionSymbol.txt');
+ {$ENDIF}
  For i := 0 to (RuSymbol.Count-1) do begin
   Rusymbol.Strings[i] :=  SysToUTF8(Rusymbol.Strings[i]);
  end;
 
  Inetzone := TStringList.Create;
- Inetzone.LoadFromFile(ExtractFileDir(ParamStr(0)) + '\Data\Inetzone.txt');
+ {$IFDEF WINDOWS}
+  Inetzone.LoadFromFile(ExtractFileDir(ParamStr(0)) + '\Data\Inetzone.txt');
+ {$ELSE}
+  TempStr := ParamStr(0);
+  i := Pos('TesterHelper.app', TempStr);
+  Delete(TempStr, i, (Length(TempStr) - i + 2) );
+
+  Inetzone.LoadFromFile(TempStr + 'Data/RussionSymbol.txt');
+ {$ENDIF}
  For i := 0 to (Inetzone.Count-1) do begin
   Inetzone.Strings[i] :=  SysToUTF8(Inetzone.Strings[i]);
  end;
 
  
  InetScheme := TStringList.Create;
- InetScheme.LoadFromFile(ExtractFileDir(ParamStr(0)) + '\Data\InetScheme.txt');
+ {$IFDEF WINDOWS}
+  InetScheme.LoadFromFile(ExtractFileDir(ParamStr(0)) + '\Data\InetScheme.txt');
+ {$ELSE}
+  TempStr := ParamStr(0);
+  i := Pos('TesterHelper.app', TempStr);
+  Delete(TempStr, i, (Length(TempStr) - i + 2) );
+
+  InetScheme.LoadFromFile(TempStr + 'Data/RussionSymbol.txt');
+ {$ENDIF}
  For i := 0 to (InetScheme.Count-1) do begin
   InetScheme.Strings[i] :=  SysToUTF8(InetScheme.Strings[i]);
  end;
 
  SpecialSimbol := TStringList.Create;
- SpecialSimbol.LoadFromFile(ExtractFileDir(ParamStr(0)) + '\Data\SpecialSimbol.txt');
+ {$IFDEF WINDOWS}
+  SpecialSimbol.LoadFromFile(ExtractFileDir(ParamStr(0)) + '\Data\SpecialSimbol.txt');
+ {$ELSE}
+  TempStr := ParamStr(0);
+  i := Pos('TesterHelper.app', TempStr);
+  Delete(TempStr, i, (Length(TempStr) - i + 2) );
+
+  SpecialSimbol.LoadFromFile(TempStr + 'Data/RussionSymbol.txt');
+ {$ENDIF}
  For i := 0 to (SpecialSimbol.Count-1) do begin
   SpecialSimbol.Strings[i] :=  SysToUTF8(SpecialSimbol.Strings[i]);
  end;
- 
+
+ {$IFDEF WINDOWS}
  FilesOnDrive := TStringList.Create;
  DirectoryOnDrive := TStringList.Create;
- 
- {$IFDEF WINDOWS}
+
  // Проверяем сколько есть разделов жестких дисков
  DriveLetter := TStringList.Create;
  if GetLogicalDriveStrings(256,Drives) > 256 then begin
