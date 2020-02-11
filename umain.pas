@@ -161,9 +161,16 @@ procedure TMainForm.FormCreate(Sender: TObject);
 var err: integer;
 begin
  StartPath := ExtractFileDir(ParamStr(0)); // определяем  путь к программе
+ {$IFDEF WINDOWS}
  if StartPath[Length(StartPath)] <> '\' then begin
    StartPath := StartPath + '\';
  end; // проверяем есть ли на конце строки "\"
+ {$ELSE}
+   StartPath := ParamStr(0);
+   err := Pos('TesterHelper.app', StartPath);
+   Delete(StartPath, err, (Length(StartPath) - err + 2));
+   err := 0;
+ {$ENDIF}
  Randomize;
  InitilzationSymbol;
  UsingSymbol := 0;
@@ -173,7 +180,11 @@ begin
  PageControl.TabIndex := 0;
  WatcherProcessName := '';
  LastProcessMemory := 0;
- err := LoadDiscriptionInCB((StartPath + 'Phrases\' + '*.*'), TemplateComboBox);
+ {$IFDEF WINDOWS}
+  err := LoadDiscriptionInCB((StartPath + 'Phrases\' + '*.*'), TemplateComboBox);
+ {$ELSE}
+  err := LoadDiscriptionInCB((StartPath + 'Phrases/' + '*'), TemplateComboBox);
+ {$ENDIF}
   if (err < 0) then begin
    ShowMessage('LoadNameListInString. Файлы в коталоге не найдены');
   end;
@@ -758,7 +769,11 @@ end;
 
 procedure TMainForm.OpenGenerationBtnClick(Sender: TObject);
 begin
+ {$IFDEF WINDOWS}
   GenerationMemo.Lines.LoadFromFile(StartPath+ '\Generation\genstr.txt');
+ {$ELSE}
+   GenerationMemo.Lines.LoadFromFile(StartPath+ '/Generation/genstr.txt');
+ {$ENDIF}
 end;
 
 procedure TMainForm.ProcesInfoViewDblClick(Sender: TObject);
@@ -793,15 +808,24 @@ end;
 
 procedure TMainForm.SaveGenerationBtnClick(Sender: TObject);
 begin
+ {$IFDEF WINDOWS}
   GenerationMemo.Lines.SaveToFile(StartPath+ '\Generation\genstr.txt');
+ {$ELSE}
+   GenerationMemo.Lines.SaveToFile(StartPath+ '/Generation/genstr.txt');
+ {$ENDIF}
   SaveGenerationBtn.Enabled := False;
 end;
 
 procedure TMainForm.SaveWatcherLogBtnClick(Sender: TObject);
 begin
  if ProcessWatcherMemo.Lines.Count > 0 then begin
-  ProcessWatcherMemo.Lines.SaveToFile(StartPath + '\Watch\' +
+  {$IFDEF WINDOWS}
+    ProcessWatcherMemo.Lines.SaveToFile(StartPath + '\Watch\' +
                                                 WatcherProcessName + '.txt');
+  {$ELSE}
+    ProcessWatcherMemo.Lines.SaveToFile(StartPath + '/Watch/' +
+                                                WatcherProcessName + '.txt');
+  {$ENDIF}
   SaveWatcherLogBtn.Enabled := False;
  end;
 end;
@@ -868,11 +892,19 @@ begin
     EigthTempCB.Clear;
     Attr := faAnyFile - faDirectory;
     // Загрузить шаблон из файла
-    PosStr := StartPath + 'Phrases\' +  PhraseTemplateForm.TamplatePhrasesComboBox.items[TemplateComboBox.ItemIndex];
+    {$IFDEF WINDOWS}
+      PosStr := StartPath + 'Phrases\' +  PhraseTemplateForm.TamplatePhrasesComboBox.items[TemplateComboBox.ItemIndex];
+    {$ELSE}
+      PosStr := StartPath + 'Phrases/' +  PhraseTemplateForm.TamplatePhrasesComboBox.items[TemplateComboBox.ItemIndex];
+    {$ENDIF}
     if FindFirst(PosStr, Attr, FileSearch) = 0 then begin
       if FileSearch.Size > 0 then begin
-         TempList.LoadFromFile((StartPath + 'Phrases\' + PhraseTemplateForm.TamplatePhrasesComboBox.items[TemplateComboBox.ItemIndex]));
-         if TempList.Count > 0 then begin
+        {$IFDEF WINDOWS}
+          TempList.LoadFromFile((StartPath + 'Phrases\' + PhraseTemplateForm.TamplatePhrasesComboBox.items[TemplateComboBox.ItemIndex]));
+        {$ELSE}
+          TempList.LoadFromFile((StartPath + 'Phrases/' + PhraseTemplateForm.TamplatePhrasesComboBox.items[TemplateComboBox.ItemIndex]));
+        {$ENDIF}
+        if TempList.Count > 0 then begin
            TempList.Delete(0);
            TempStr := TempList.Text;
          end;
@@ -918,7 +950,11 @@ begin
          FirstCBTemplLabel.Visible := true;
          FirstTempCB.Visible := true;
          FirstCBTemplLabel.Caption := StringsParamForm.NameListComboBox.Items[TempArray[0]];
-         FirstTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[0]]);
+         {$IFDEF WINDOWS}
+           FirstTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[0]]);
+         {$ELSE}
+           FirstTempCB.Items.LoadFromFile(StartPath + 'List/' + StringsParamForm.NameListComboBox.Items[TempArray[0]]);
+         {$ENDIF}
         end;
         2: begin
          FirstCBTemplLabel.Visible := true;
@@ -926,9 +962,17 @@ begin
          SecondCBTemplLabel.Visible := true;
          SecondTempCB.Visible := true;
          FirstCBTemplLabel.Caption := StringsParamForm.NameListComboBox.Items[TempArray[0]];
-         FirstTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[0]]);
+         {$IFDEF MSWINDOWS}
+          FirstTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[0]]);
+         {$ELSE}
+           FirstTempCB.Items.LoadFromFile(StartPath + 'List/' + StringsParamForm.NameListComboBox.Items[TempArray[0]]);
+         {$ENDIF}
          SecondCBTemplLabel.Caption := StringsParamForm.NameListComboBox.Items[TempArray[1]];
-         SecondTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[1]]);
+         {$IFDEF MSWINDOWS}
+           SecondTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[1]]);
+         {$ELSE}
+           SecondTempCB.Items.LoadFromFile(StartPath + 'List/' + StringsParamForm.NameListComboBox.Items[TempArray[1]]);
+         {$ENDIF}
         end;
         3: begin
          FirstCBTemplLabel.Visible := true;
@@ -938,11 +982,23 @@ begin
          ThirdCBTemplLabel.Visible := true;
          ThirdTempCB.Visible := true;
          FirstCBTemplLabel.Caption := StringsParamForm.NameListComboBox.Items[TempArray[0]];
-         FirstTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[0]]);
+         {$IFDEF MSWINDOWS}
+           FirstTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[0]]);
+         {$ELSE}
+           FirstTempCB.Items.LoadFromFile(StartPath + 'List/' + StringsParamForm.NameListComboBox.Items[TempArray[0]]);
+         {$ENDIF}
          SecondCBTemplLabel.Caption := StringsParamForm.NameListComboBox.Items[TempArray[1]];
-         SecondTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[1]]);
+         {$IFDEF MSWINDOWS}
+           SecondTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[1]]);
+         {$ELSE}
+           SecondTempCB.Items.LoadFromFile(StartPath + 'List/' + StringsParamForm.NameListComboBox.Items[TempArray[1]]);
+         {$ENDIF}
          ThirdCBTemplLabel.Caption := StringsParamForm.NameListComboBox.Items[TempArray[2]];
-         ThirdTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[2]]);
+         {$IFDEF MSWINDOWS}
+           ThirdTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[2]]);
+         {$ELSE}
+           ThirdTempCB.Items.LoadFromFile(StartPath + 'List/' + StringsParamForm.NameListComboBox.Items[TempArray[2]]);
+         {$ENDIF}
         end;
         4: begin
          FirstCBTemplLabel.Visible := true;
