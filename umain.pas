@@ -104,7 +104,6 @@ type
     procedure EngSymbolCheckChange(Sender: TObject);
     procedure EnHighRadioChange(Sender: TObject);
     procedure EnLowRadioChange(Sender: TObject);
-    procedure ExistsFileCheckChange(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure GenerationBtnClick(Sender: TObject);
     procedure MakePhraseBitBtnClick(Sender: TObject);
@@ -1114,21 +1113,53 @@ begin
          EigthCBTemplLabel.Visible := true;
          EigthTempCB.Visible := true;
          FirstCBTemplLabel.Caption := StringsParamForm.NameListComboBox.Items[TempArray[0]];
-         FirstTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[0]]);
-         SecondCBTemplLabel.Caption := StringsParamForm.NameListComboBox.Items[TempArray[1]];
-         SecondTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[1]]);
+         {$IFDEF MSWINDOWS}
+           FirstTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[0]]);
+         {$ELSE}
+           FirstTempCB.Items.LoadFromFile(StartPath + 'List/' + StringsParamForm.NameListComboBox.Items[TempArray[0]]);
+         {$ENDIF}
+           SecondCBTemplLabel.Caption := StringsParamForm.NameListComboBox.Items[TempArray[1]];
+         {$IFDEF MSWINDOWS}
+           SecondTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[1]]);
+         {$ELSE}
+           SecondTempCB.Items.LoadFromFile(StartPath + 'List/' + StringsParamForm.NameListComboBox.Items[TempArray[1]]);
+         {$ENDIF}
          ThirdCBTemplLabel.Caption := StringsParamForm.NameListComboBox.Items[TempArray[2]];
-         ThirdTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[2]]);
+         {$IFDEF MSWINDOWS}
+           ThirdTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[2]]);
+         {$ELSE}
+           ThirdTempCB.Items.LoadFromFile(StartPath + 'List/' + StringsParamForm.NameListComboBox.Items[TempArray[2]]);
+         {$ENDIF}
          FourthCBTemplLabel.Caption := StringsParamForm.NameListComboBox.Items[TempArray[3]];
-         FourthTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[3]]);
+         {$IFDEF MSWINDOWS}
+           FourthTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[3]]);
+         {$ELSE}
+           FourthTempCB.Items.LoadFromFile(StartPath + 'List/' + StringsParamForm.NameListComboBox.Items[TempArray[3]]);
+         {$ENDIF}
          FifthCBTemplLabel.Caption := StringsParamForm.NameListComboBox.Items[TempArray[4]];
-         FifthTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[4]]);
+         {$IFDEF MSWINDOWS}
+           FifthTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[4]]);
+         {$ELSE}
+           FifthTempCB.Items.LoadFromFile(StartPath + 'List/' + StringsParamForm.NameListComboBox.Items[TempArray[4]]);
+         {$ENDIF}
          SixthCBTemplLabel.Caption := StringsParamForm.NameListComboBox.Items[TempArray[5]];
-         SixthTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[5]]);
+         {$IFDEF MSWINDOWS}
+           SixthTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[5]]);
+         {$ELSE}
+           SixthTempCB.Items.LoadFromFile(StartPath + 'List/' + StringsParamForm.NameListComboBox.Items[TempArray[5]]);
+         {$ENDIF}
          SeventhCBTemplLabel.Caption := StringsParamForm.NameListComboBox.Items[TempArray[6]];
-         SeventhTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[6]]);
+         {$IFDEF MSWINDOWS}
+           SeventhTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[6]]);
+         {$ELSE}
+           SeventhTempCB.Items.LoadFromFile(StartPath + 'List/' + StringsParamForm.NameListComboBox.Items[TempArray[6]]);
+         {$ENDIF}
          EigthCBTemplLabel.Caption := StringsParamForm.NameListComboBox.Items[TempArray[7]];
-         EigthTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[7]]);
+         {$IFDEF MSWINDOWS}
+           EigthTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[7]]);
+         {$ELSE}
+           EigthTempCB.Items.LoadFromFile(StartPath + 'List/' + StringsParamForm.NameListComboBox.Items[TempArray[7]]);
+         {$ENDIF}
         end;
         else begin
           PhraseMemo.Lines.Add(TempStr);
@@ -1218,7 +1249,12 @@ var err: integer;
 begin
   if PhraseTemplateForm.ShowModal = mrOK then begin
    TemplateComboBox.Items.Clear;
-   err := LoadDiscriptionInCB((StartPath + 'Phrases\*.*'), TemplateComboBox);
+   {$IFDEF MSWINDOWS}
+     err := LoadDiscriptionInCB((StartPath + 'Phrases\*.*'), TemplateComboBox);
+   {$ELSE}
+     err := LoadDiscriptionInCB((StartPath + 'Phrases/*'), TemplateComboBox);
+   {$ENDIF}
+
    if (err < 0) then begin
      ShowMessage('LoadNameListInString. Файлы в коталоге не найдены');
    end;
@@ -1332,11 +1368,6 @@ begin
  end else begin
    UsingSymbol := UsingSymbol - 10;
  end;
-end;
-
-procedure TMainForm.ExistsFileCheckChange(Sender: TObject);
-begin
-
 end;
 
 procedure TMainForm.RuSymbolCheckChange(Sender: TObject);
