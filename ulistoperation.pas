@@ -58,7 +58,11 @@ begin
    if ComboBox.Items.Count > 0 then ComboBox.Items.Clear;
    Attr := faAnyFile - faDirectory;
    TempList := TStringList.Create;
-   TempPath := Copy(Path, 0, (Length(Path)-3));
+   {$IFDEF MSWINDOWS}
+     TempPath := Copy(Path, 0, (Length(Path)-3));
+   {$ELSE}
+     TempPath := Copy(Path, 0, (Length(Path)-1));
+   {$ENDIF}
    if FindFirst(Path, Attr, FileSearch) = 0 then begin
      if FileSearch.Name <> '' then begin
         TempList.LoadFromFile(TempPath + FileSearch.Name);

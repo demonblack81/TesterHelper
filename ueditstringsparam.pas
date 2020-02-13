@@ -59,14 +59,26 @@ procedure TStringsParamForm.FormCreate(Sender: TObject);
 var err: integer;
 begin
   //Добавляем в NameListComboBox название листов по именам файлов в папке ./List
-  ListDir := ExtractFileDir(ParamStr(0));
-  if ListDir[Length(ListDir)] <> '\' then begin
-   ListDir := ListDir + '\List\';
-  end else begin
-   ListDir :=  ListDir +  'List\';
-  end;
+  {$IFDEF MSWINDOWS}
+     ListDir := ExtractFileDir(ParamStr(0));
+     if ListDir[Length(ListDir)] <> '\' then begin
+       ListDir := ListDir + '\List\';
+     end else begin
+       ListDir :=  ListDir +  'List\';
+     end;
+  {$ELSE}
+   ListDir := ParamStr(0);
+   err := Pos('TesterHelper.app', ListDir);
+   Delete(ListDir, err, (Length(ListDir) - err + 2));
+   err := 0;
+   ListDir := ListDir + 'List/';
+  {$ENDIF}
   WordList := TStringList.Create;
-  err := LoadNameListInString((ListDir + '*.*'), NameListComboBox); //NameList);
+  {$IFDEF MSWINDOWS}
+    err := LoadNameListInString((ListDir + '*.*'), NameListComboBox);
+  {$ELSE}
+    err := LoadNameListInString((ListDir + '*'), NameListComboBox);
+  {$ENDIF}
   if (err < 0) then begin
    ShowMessage('LoadNameListInString. Файлы в коталоге не найдены');
   end;

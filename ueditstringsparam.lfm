@@ -11,10 +11,10 @@ object StringsParamForm: TStringsParamForm
   OnCreate = FormCreate
   OnKeyUp = FormKeyUp
   Position = poMainFormCenter
-  LCLVersion = '2.0.0.4'
+  LCLVersion = '2.0.6.0'
   object NameListComboBox: TComboBox
     Left = 9
-    Height = 25
+    Height = 20
     Top = 24
     Width = 296
     Font.CharSet = RUSSIAN_CHARSET
@@ -23,16 +23,16 @@ object StringsParamForm: TStringsParamForm
     Font.Name = 'Segoe UI'
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
-    ItemHeight = 17
+    ItemHeight = 19
     OnCloseUp = NameListComboBoxCloseUp
     ParentFont = False
     TabOrder = 0
   end
   object Label1: TLabel
     Left = 9
-    Height = 15
+    Height = 16
     Top = 5
-    Width = 96
+    Width = 112
     Caption = 'Название листов:'
     ParentColor = False
   end
@@ -165,9 +165,9 @@ object StringsParamForm: TStringsParamForm
   end
   object Label2: TLabel
     Left = 9
-    Height = 15
+    Height = 16
     Top = 56
-    Width = 84
+    Width = 101
     Caption = 'Фраза в листах:'
     ParentColor = False
   end

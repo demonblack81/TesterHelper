@@ -63,21 +63,38 @@ implementation
 procedure TPhraseTemplateForm.FormCreate(Sender: TObject);
 var err: integer;
 begin
-  TamplateDir := ExtractFileDir(ParamStr(0));
-  if TamplateDir[Length(TamplateDir)] <> '\' then begin
-   ListDir := TamplateDir + '\List\';
-   TamplateDir := TamplateDir + '\Phrases\';
-  end else begin
-   ListDir := TamplateDir + 'List\';
-   TamplateDir :=  TamplateDir + 'Phrases\';
-  end;
+  {$IFDEF MSWINDOWS}
+    TamplateDir := ExtractFileDir(ParamStr(0));
+    if TamplateDir[Length(TamplateDir)] <> '\' then begin
+      ListDir := TamplateDir + '\List\';
+      TamplateDir := TamplateDir + '\Phrases\';
+    end else begin
+      ListDir := TamplateDir + 'List\';
+      TamplateDir :=  TamplateDir + 'Phrases\';
+    end;
+  {$ELSE}
+    TamplateDir :=  ParamStr(0);
+    err := Pos('TesterHelper.app', TamplateDir);
+    Delete(TamplateDir, err, (Length(TamplateDir) - err + 2));
+    ListDir := TamplateDir + 'List/';
+    TamplateDir := TamplateDir + 'Phrases/';
+    err := 0;
+  {$ENDIF}
   WordList := TStringList.Create;
   PhraseTamplateList := TStringList.Create;
-  err := LoadNameListInString((TamplateDir + '*.*'), TamplatePhrasesComboBox);
+  {$IFDEF MSWINDOWS}
+    err := LoadNameListInString((TamplateDir + '*.*'), TamplatePhrasesComboBox);
+  {$ELSE}
+    err := LoadNameListInString((TamplateDir + '*'), TamplatePhrasesComboBox);
+  {$ENDIF}
   if (err < 0) then begin
    ShowMessage('LoadNameListInString. Файлы в коталоге не найдены');
   end;
-  err := LoadNameListInString((ListDir + '*.*'), NameListComboBox);
+  {$IFDEF MSWINDOWS}
+    err := LoadNameListInString((ListDir + '*.*'), NameListComboBox);
+  {$ELSE}
+    err := LoadNameListInString((ListDir + '*'), NameListComboBox);
+  {$ENDIF}
   if (err < 0) then begin
    ShowMessage('LoadNameListInString. Файлы в коталоге не найдены');
   end;
