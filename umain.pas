@@ -759,6 +759,7 @@ begin
         ShowMessage('MakePhraseBitBtnClick. Неправльное количество CountVisibleCB: ' + IntToStr(CountVisibleCB));
       end;
     end;
+    TempStr := Trim(TempStr);
     PhraseMemo.Lines.Clear;
     PhraseMemo.Lines.Add(TempStr);
     PhraseMemo.SelectAll;

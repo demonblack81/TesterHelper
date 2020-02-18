@@ -180,7 +180,11 @@ begin
   if StringsParamForm.ShowModal = mrOK then begin
     NameListComboBox.Items.Clear;
     WordListBox.Items.Clear;
-    err := LoadNameListInString((ListDir + '*.*'), NameListComboBox); //NameList);
+    {$IFDEF MSWINDOWS}
+      err := LoadNameListInString((ListDir + '*.*'), NameListComboBox);
+    {$ELSE}
+      err := LoadNameListInString((ListDir + '*'), NameListComboBox);
+    {$ENDIF}
     if (err < 0) then begin
     ShowMessage('LoadNameListInString. Файлы в коталоге не найдены');
     end;
