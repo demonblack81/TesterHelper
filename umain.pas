@@ -16,6 +16,7 @@ type
 
   TMainForm = class(TForm)
     AllCheck: TCheckBox;
+    BtnPasteFromClipboard: TButton;
     ClearBitBtn: TBitBtn;
     MakePhraseBitBtn: TBitBtn;
     CopyToClipBitBtn: TBitBtn;
@@ -94,6 +95,7 @@ type
     MainStatBar: TStatusBar;
     TabGeneration: TTabSheet;
     procedure AllCheckChange(Sender: TObject);
+    procedure BtnPasteFromClipboardClick(Sender: TObject);
     procedure BtnPhraseClick(Sender: TObject);
     procedure BtnWordClick(Sender: TObject);
     procedure ClearBitBtnClick(Sender: TObject);
@@ -1242,6 +1244,17 @@ begin
     NumberCheck.Checked := False;
     NumberCheck.Enabled := True;
     UsingSymbol := 0;
+  end;
+end;
+
+procedure TMainForm.BtnPasteFromClipboardClick(Sender: TObject);
+begin
+  //Кнопка вставки из буфера обмена
+  if PhraseMemo.Lines.Count > 0 then begin
+    PhraseMemo.SelectAll;
+    PhraseMemo.PasteFromClipboard;
+  end else begin
+    PhraseMemo.PasteFromClipboard;
   end;
 end;
 
