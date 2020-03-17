@@ -5,16 +5,16 @@ object MainForm: TMainForm
   Width = 840
   BorderStyle = bsSingle
   Caption = 'TesterHelper'
-  ClientHeight = 580
+  ClientHeight = 600
   ClientWidth = 840
   Menu = MainMenu1
   OnCreate = FormCreate
   Position = poScreenCenter
-  LCLVersion = '2.0.4.0'
+  LCLVersion = '2.0.6.0'
   object MainStatBar: TStatusBar
     Left = 0
-    Height = 23
-    Top = 557
+    Height = 18
+    Top = 582
     Width = 840
     Panels = <>
   end
@@ -38,8 +38,8 @@ object MainForm: TMainForm
         Width = 843
         Align = alTop
         Caption = 'Символы'
-        ClientHeight = 134
-        ClientWidth = 839
+        ClientHeight = 135
+        ClientWidth = 833
         TabOrder = 0
         object EngSymbolGroup: TGroupBox
           Left = 2
@@ -47,8 +47,8 @@ object MainForm: TMainForm
           Top = 2
           Width = 185
           Caption = 'Английские Символы'
-          ClientHeight = 109
-          ClientWidth = 181
+          ClientHeight = 110
+          ClientWidth = 175
           TabOrder = 0
           object EnAllRadio: TRadioButton
             Left = 18
@@ -94,8 +94,8 @@ object MainForm: TMainForm
           Top = 2
           Width = 185
           Caption = 'Русские Символы'
-          ClientHeight = 109
-          ClientWidth = 181
+          ClientHeight = 110
+          ClientWidth = 175
           TabOrder = 1
           object RuAllRadio: TRadioButton
             Left = 18
@@ -172,8 +172,8 @@ object MainForm: TMainForm
         Width = 843
         Align = alTop
         Caption = 'Тип Поля'
-        ClientHeight = 88
-        ClientWidth = 839
+        ClientHeight = 89
+        ClientWidth = 833
         TabOrder = 1
         object StringRBtn: TRadioButton
           Left = 2
@@ -258,8 +258,8 @@ object MainForm: TMainForm
         Width = 843
         Align = alClient
         Caption = 'Генерация'
-        ClientHeight = 250
-        ClientWidth = 839
+        ClientHeight = 251
+        ClientWidth = 833
         TabOrder = 2
         object MaxSymbolSpin: TSpinEdit
           Left = 2
@@ -284,6 +284,7 @@ object MainForm: TMainForm
           Height = 146
           Top = 68
           Width = 776
+          Lines.Strings = (          )
           ReadOnly = True
           ScrollBars = ssAutoVertical
           TabOrder = 1
@@ -328,8 +329,8 @@ object MainForm: TMainForm
         Top = 0
         Width = 320
         Caption = 'Секундомер'
-        ClientHeight = 140
-        ClientWidth = 316
+        ClientHeight = 141
+        ClientWidth = 310
         TabOrder = 0
         object TimeLabel: TLabel
           Left = 62
@@ -366,8 +367,8 @@ object MainForm: TMainForm
         Top = 0
         Width = 448
         Caption = 'Proces Info'
-        ClientHeight = 508
-        ClientWidth = 444
+        ClientHeight = 509
+        ClientWidth = 438
         TabOrder = 1
         object ProcesInfoView: TListView
           Left = 6
@@ -379,7 +380,7 @@ object MainForm: TMainForm
               AutoSize = True
               Caption = 'Process Name'
               ImageIndex = 0
-              Width = 90
+              Width = 100
             end          
             item
               Caption = 'PID'
@@ -417,6 +418,7 @@ object MainForm: TMainForm
           Height = 86
           Top = 416
           Width = 432
+          Lines.Strings = (          )
           ScrollBars = ssAutoVertical
           TabOrder = 2
         end
@@ -461,8 +463,8 @@ object MainForm: TMainForm
     end
     object TempPhraseTab: TTabSheet
       Caption = 'Шаблоны фраз'
-      ClientHeight = 532
-      ClientWidth = 832
+      ClientHeight = 530
+      ClientWidth = 834
       object BtnWord: TButton
         Left = 750
         Height = 25
@@ -483,34 +485,34 @@ object MainForm: TMainForm
       end
       object LabelSettings: TLabel
         Left = 709
-        Height = 15
+        Height = 16
         Top = 11
-        Width = 63
+        Width = 72
         Caption = 'Настройки:'
         ParentColor = False
       end
       object Label1: TLabel
         Left = 5
-        Height = 15
+        Height = 16
         Top = 11
-        Width = 87
+        Width = 99
         Caption = 'Шаблоны Фраз:'
         ParentColor = False
       end
       object TemplateComboBox: TComboBox
         Left = 5
-        Height = 23
+        Height = 20
         Top = 29
         Width = 627
-        ItemHeight = 15
+        ItemHeight = 19
         OnCloseUp = TemplateComboBoxCloseUp
         TabOrder = 2
       end
       object PhraseMemoLabel: TLabel
         Left = 5
-        Height = 15
+        Height = 16
         Top = 237
-        Width = 131
+        Width = 151
         Caption = 'Сформированая Фраза:'
         ParentColor = False
       end
@@ -519,146 +521,147 @@ object MainForm: TMainForm
         Height = 184
         Top = 256
         Width = 820
+        Lines.Strings = (        )
         TabOrder = 3
       end
       object FirstTempCB: TComboBox
         Left = 5
-        Height = 23
+        Height = 20
         Top = 88
         Width = 200
-        ItemHeight = 15
+        ItemHeight = 19
         TabOrder = 4
         Text = 'FirstTempCB'
       end
       object FirstCBTemplLabel: TLabel
         Left = 5
-        Height = 15
+        Height = 16
         Top = 72
-        Width = 96
+        Width = 114
         Caption = 'FirstCBTemplLabel'
         ParentColor = False
       end
       object SecondCBTemplLabel: TLabel
         Left = 215
-        Height = 15
+        Height = 16
         Top = 69
-        Width = 113
+        Width = 133
         Caption = 'SecondCBTemplLabel'
         ParentColor = False
       end
       object SecondTempCB: TComboBox
         Left = 215
-        Height = 23
+        Height = 20
         Top = 88
         Width = 200
-        ItemHeight = 15
+        ItemHeight = 19
         TabOrder = 5
         Text = 'SecondTempCB'
       end
       object ThirdCBTemplLabel: TLabel
         Left = 420
-        Height = 15
+        Height = 16
         Top = 72
-        Width = 101
+        Width = 119
         Caption = 'ThirdCBTemplLabel'
         ParentColor = False
       end
       object ThirdTempCB: TComboBox
         Left = 420
-        Height = 23
+        Height = 20
         Top = 88
         Width = 200
-        ItemHeight = 15
+        ItemHeight = 19
         TabOrder = 6
         Text = 'ThirdTempCB'
       end
       object FourthCBTemplLabel: TLabel
         Left = 625
-        Height = 15
+        Height = 16
         Top = 69
-        Width = 109
+        Width = 127
         Caption = 'FourthCBTemplLabel'
         ParentColor = False
       end
       object FourthTempCB: TComboBox
         Left = 625
-        Height = 23
+        Height = 20
         Top = 88
         Width = 200
-        ItemHeight = 15
+        ItemHeight = 19
         TabOrder = 7
         Text = 'FourthTempCB'
       end
       object FifthCBTemplLabel: TLabel
         Left = 5
-        Height = 15
+        Height = 16
         Top = 121
-        Width = 98
+        Width = 114
         Caption = 'FifthCBTemplLabel'
         ParentColor = False
       end
       object FifthTempCB: TComboBox
         Left = 5
-        Height = 23
+        Height = 20
         Top = 141
         Width = 200
-        ItemHeight = 15
+        ItemHeight = 19
         TabOrder = 8
         Text = 'FifthTempCB'
       end
       object SixthCBTemplLabel: TLabel
         Left = 215
-        Height = 15
+        Height = 16
         Top = 121
-        Width = 100
+        Width = 117
         Caption = 'SixthCBTemplLabel'
         ParentColor = False
       end
       object SixthTempCB: TComboBox
         Left = 215
-        Height = 23
+        Height = 20
         Top = 141
         Width = 200
-        ItemHeight = 15
+        ItemHeight = 19
         TabOrder = 9
         Text = 'SixthTempCB'
       end
       object SeventhCBTemplLabel: TLabel
         Left = 420
-        Height = 15
+        Height = 16
         Top = 121
-        Width = 116
+        Width = 136
         Caption = 'SeventhCBTemplLabel'
         ParentColor = False
       end
       object SeventhTempCB: TComboBox
         Left = 420
-        Height = 23
+        Height = 20
         Top = 141
         Width = 200
-        ItemHeight = 15
+        ItemHeight = 19
         TabOrder = 10
         Text = 'SeventhTempCB'
       end
       object EigthCBTemplLabel: TLabel
         Left = 625
-        Height = 15
+        Height = 16
         Top = 121
-        Width = 101
+        Width = 118
         Caption = 'EigthCBTemplLabel'
         ParentColor = False
       end
       object EigthTempCB: TComboBox
         Left = 625
-        Height = 23
+        Height = 20
         Top = 141
         Width = 200
-        ItemHeight = 15
+        ItemHeight = 19
         TabOrder = 11
         Text = 'EigthTempCB'
       end
       object MakePhraseBitBtn: TBitBtn
-        Left = 340
+        Left = 335
         Height = 30
         Top = 184
         Width = 160
@@ -670,16 +673,16 @@ object MainForm: TMainForm
         Left = 335
         Height = 30
         Top = 464
-        Width = 170
+        Width = 194
         Caption = 'Копировать в Буфер обмена'
         OnClick = CopyToClipBitBtnClick
         TabOrder = 13
       end
       object ClearBitBtn: TBitBtn
-        Left = 752
+        Left = 734
         Height = 30
         Top = 448
-        Width = 75
+        Width = 91
         Caption = 'Очистить'
         OnClick = ClearBitBtnClick
         TabOrder = 14
@@ -688,7 +691,7 @@ object MainForm: TMainForm
         Left = 5
         Height = 25
         Top = 448
-        Width = 179
+        Width = 203
         Caption = 'Вставить из буфера обмена'
         OnClick = BtnPasteFromClipboardClick
         TabOrder = 15

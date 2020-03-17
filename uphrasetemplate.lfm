@@ -11,7 +11,7 @@ object PhraseTemplateForm: TPhraseTemplateForm
   LCLVersion = '2.0.6.0'
   object TamplatePhrasesComboBox: TComboBox
     Left = 10
-    Height = 21
+    Height = 20
     Top = 24
     Width = 700
     Font.CharSet = RUSSIAN_CHARSET
@@ -20,7 +20,7 @@ object PhraseTemplateForm: TPhraseTemplateForm
     Font.Name = 'Segoe UI'
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
-    ItemHeight = 0
+    ItemHeight = 19
     OnCloseUp = TamplatePhrasesComboBoxCloseUp
     ParentFont = False
     TabOrder = 0
@@ -38,7 +38,7 @@ object PhraseTemplateForm: TPhraseTemplateForm
     Left = 10
     Height = 16
     Top = 8
-    Width = 156
+    Width = 152
     Caption = 'Список шаблонов фраз:'
     ParentColor = False
   end
@@ -46,7 +46,7 @@ object PhraseTemplateForm: TPhraseTemplateForm
     Left = 10
     Height = 16
     Top = 94
-    Width = 100
+    Width = 98
     Caption = 'Шаблон фразы:'
     ParentColor = False
   end
@@ -65,11 +65,12 @@ object PhraseTemplateForm: TPhraseTemplateForm
     Top = 112
     Width = 880
     Font.CharSet = RUSSIAN_CHARSET
-    Font.Color = clBlack
+    Font.Color = clNone
     Font.Height = -13
     Font.Name = 'Segoe UI'
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
+    Lines.Strings = (    )
     ParentFont = False
     TabOrder = 3
   end
@@ -86,7 +87,7 @@ object PhraseTemplateForm: TPhraseTemplateForm
     Left = 720
     Height = 25
     Top = 216
-    Width = 75
+    Width = 83
     Caption = 'Сохранить'
     OnClick = SaveTemplateBtnClick
     TabOrder = 5
@@ -113,7 +114,7 @@ object PhraseTemplateForm: TPhraseTemplateForm
     Left = 10
     Height = 16
     Top = 50
-    Width = 113
+    Width = 111
     Caption = 'Описание фразы:'
     ParentColor = False
   end
@@ -133,7 +134,7 @@ object PhraseTemplateForm: TPhraseTemplateForm
   end
   object NameListComboBox: TComboBox
     Left = 10
-    Height = 21
+    Height = 20
     Top = 264
     Width = 700
     Font.CharSet = RUSSIAN_CHARSET
@@ -142,7 +143,7 @@ object PhraseTemplateForm: TPhraseTemplateForm
     Font.Name = 'Segoe UI'
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
-    ItemHeight = 0
+    ItemHeight = 21
     OnCloseUp = NameListComboBoxCloseUp
     ParentFont = False
     TabOrder = 9
@@ -153,7 +154,7 @@ object PhraseTemplateForm: TPhraseTemplateForm
     Top = 312
     Width = 700
     Font.CharSet = RUSSIAN_CHARSET
-    Font.Color = clBlack
+    Font.Color = clNone
     Font.Height = -15
     Font.Name = 'Segoe UI'
     Font.Pitch = fpVariable
