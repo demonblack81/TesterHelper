@@ -766,6 +766,7 @@ begin
     PhraseMemo.Lines.Add(TempStr);
     PhraseMemo.SelectAll;
     PhraseMemo.CopyToClipboard;
+    PhraseMemo.SetFocus;
   end;
 end;
 
