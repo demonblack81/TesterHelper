@@ -55,7 +55,7 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="UMain"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="735"/>
+        <TopLine Value="733"/>
         <CursorPos X="24" Y="767"/>
         <UsageCount Value="442"/>
         <Loaded Value="True"/>

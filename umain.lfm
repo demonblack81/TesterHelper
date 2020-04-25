@@ -1,12 +1,12 @@
 object MainForm: TMainForm
   Left = 411
   Height = 600
-  Top = 113
-  Width = 840
+  Top = 239
+  Width = 899
   BorderStyle = bsSingle
   Caption = 'TesterHelper'
   ClientHeight = 600
-  ClientWidth = 840
+  ClientWidth = 899
   Menu = MainMenu1
   OnCreate = FormCreate
   Position = poScreenCenter
@@ -15,14 +15,14 @@ object MainForm: TMainForm
     Left = 0
     Height = 18
     Top = 582
-    Width = 840
+    Width = 899
     Panels = <>
   end
   object PageControl: TPageControl
     Left = 0
     Height = 560
     Top = 0
-    Width = 840
+    Width = 899
     ActivePage = TempPhraseTab
     Align = alTop
     TabIndex = 2
@@ -464,9 +464,9 @@ object MainForm: TMainForm
     object TempPhraseTab: TTabSheet
       Caption = 'Шаблоны фраз'
       ClientHeight = 530
-      ClientWidth = 834
+      ClientWidth = 893
       object BtnWord: TButton
-        Left = 750
+        Left = 813
         Height = 25
         Top = 29
         Width = 75
@@ -475,7 +475,7 @@ object MainForm: TMainForm
         TabOrder = 0
       end
       object BtnPhrase: TButton
-        Left = 663
+        Left = 728
         Height = 25
         Top = 29
         Width = 75
@@ -484,7 +484,7 @@ object MainForm: TMainForm
         TabOrder = 1
       end
       object LabelSettings: TLabel
-        Left = 709
+        Left = 768
         Height = 16
         Top = 11
         Width = 72
@@ -511,16 +511,16 @@ object MainForm: TMainForm
       object PhraseMemoLabel: TLabel
         Left = 5
         Height = 16
-        Top = 237
+        Top = 216
         Width = 151
         Caption = 'Сформированая Фраза:'
         ParentColor = False
       end
       object PhraseMemo: TMemo
         Left = 5
-        Height = 184
-        Top = 256
-        Width = 820
+        Height = 210
+        Top = 232
+        Width = 883
         Lines.Strings = (        )
         TabOrder = 3
       end
@@ -542,7 +542,7 @@ object MainForm: TMainForm
         ParentColor = False
       end
       object SecondCBTemplLabel: TLabel
-        Left = 215
+        Left = 232
         Height = 16
         Top = 69
         Width = 133
@@ -550,7 +550,7 @@ object MainForm: TMainForm
         ParentColor = False
       end
       object SecondTempCB: TComboBox
-        Left = 215
+        Left = 232
         Height = 20
         Top = 88
         Width = 200
@@ -559,7 +559,7 @@ object MainForm: TMainForm
         Text = 'SecondTempCB'
       end
       object ThirdCBTemplLabel: TLabel
-        Left = 420
+        Left = 456
         Height = 16
         Top = 72
         Width = 119
@@ -567,7 +567,7 @@ object MainForm: TMainForm
         ParentColor = False
       end
       object ThirdTempCB: TComboBox
-        Left = 420
+        Left = 456
         Height = 20
         Top = 88
         Width = 200
@@ -576,7 +576,7 @@ object MainForm: TMainForm
         Text = 'ThirdTempCB'
       end
       object FourthCBTemplLabel: TLabel
-        Left = 625
+        Left = 680
         Height = 16
         Top = 69
         Width = 127
@@ -584,7 +584,7 @@ object MainForm: TMainForm
         ParentColor = False
       end
       object FourthTempCB: TComboBox
-        Left = 625
+        Left = 680
         Height = 20
         Top = 88
         Width = 200
@@ -610,7 +610,7 @@ object MainForm: TMainForm
         Text = 'FifthTempCB'
       end
       object SixthCBTemplLabel: TLabel
-        Left = 215
+        Left = 232
         Height = 16
         Top = 121
         Width = 117
@@ -618,7 +618,7 @@ object MainForm: TMainForm
         ParentColor = False
       end
       object SixthTempCB: TComboBox
-        Left = 215
+        Left = 232
         Height = 20
         Top = 141
         Width = 200
@@ -627,7 +627,7 @@ object MainForm: TMainForm
         Text = 'SixthTempCB'
       end
       object SeventhCBTemplLabel: TLabel
-        Left = 420
+        Left = 456
         Height = 16
         Top = 121
         Width = 136
@@ -635,7 +635,7 @@ object MainForm: TMainForm
         ParentColor = False
       end
       object SeventhTempCB: TComboBox
-        Left = 420
+        Left = 456
         Height = 20
         Top = 141
         Width = 200
@@ -644,7 +644,7 @@ object MainForm: TMainForm
         Text = 'SeventhTempCB'
       end
       object EigthCBTemplLabel: TLabel
-        Left = 625
+        Left = 680
         Height = 16
         Top = 121
         Width = 118
@@ -652,7 +652,7 @@ object MainForm: TMainForm
         ParentColor = False
       end
       object EigthTempCB: TComboBox
-        Left = 625
+        Left = 680
         Height = 20
         Top = 141
         Width = 200
@@ -661,7 +661,7 @@ object MainForm: TMainForm
         Text = 'EigthTempCB'
       end
       object MakePhraseBitBtn: TBitBtn
-        Left = 335
+        Left = 376
         Height = 30
         Top = 184
         Width = 160
@@ -670,7 +670,7 @@ object MainForm: TMainForm
         TabOrder = 12
       end
       object CopyToClipBitBtn: TBitBtn
-        Left = 335
+        Left = 384
         Height = 30
         Top = 464
         Width = 194
@@ -679,7 +679,7 @@ object MainForm: TMainForm
         TabOrder = 13
       end
       object ClearBitBtn: TBitBtn
-        Left = 734
+        Left = 797
         Height = 30
         Top = 448
         Width = 91
