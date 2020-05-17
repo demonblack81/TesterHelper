@@ -7,7 +7,8 @@ uses
   cthreads,
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, UMain, uGeneration, UWorkExcel, uProcInfo, uEditStringsParam, uPhraseTemplate;
+  Forms, UMain, uGeneration, UWorkExcel, uProcInfo, uEditStringsParam,
+  uPhraseTemplate, uFastPhrases;
 
 {$R *.res}
 
@@ -16,6 +17,7 @@ begin
   Application.CreateForm(TMainForm, MainForm);
   Application.CreateForm(TStringsParamForm, StringsParamForm);
   Application.CreateForm(TPhraseTemplateForm, PhraseTemplateForm);
+  Application.CreateForm(TFastPhrasesForm, FastPhrasesForm);
   Application.Run;
 end.
 

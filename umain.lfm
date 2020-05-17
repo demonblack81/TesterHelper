@@ -1,12 +1,13 @@
 object MainForm: TMainForm
-  Left = 411
+  Left = 395
   Height = 600
-  Top = 239
-  Width = 924
+  Top = 236
+  Width = 930
+  BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
   Caption = 'TesterHelper'
   ClientHeight = 580
-  ClientWidth = 924
+  ClientWidth = 930
   Menu = MainMenu1
   OnClose = FormClose
   OnCreate = FormCreate
@@ -16,14 +17,14 @@ object MainForm: TMainForm
     Left = 0
     Height = 23
     Top = 557
-    Width = 924
+    Width = 930
     Panels = <>
   end
   object PageControl: TPageControl
     Left = 0
     Height = 560
     Top = 0
-    Width = 924
+    Width = 930
     ActivePage = TempPhraseTab
     Align = alTop
     TabIndex = 2
@@ -31,16 +32,16 @@ object MainForm: TMainForm
     object TabGeneration: TTabSheet
       Caption = 'Генерация строк'
       ClientHeight = 532
-      ClientWidth = 891
+      ClientWidth = 922
       object SymbolGroup: TGroupBox
         Left = 0
         Height = 154
         Top = 0
-        Width = 891
+        Width = 922
         Align = alTop
         Caption = 'Символы'
         ClientHeight = 134
-        ClientWidth = 887
+        ClientWidth = 918
         TabOrder = 0
         object EngSymbolGroup: TGroupBox
           Left = 2
@@ -170,11 +171,11 @@ object MainForm: TMainForm
         Left = 0
         Height = 108
         Top = 154
-        Width = 891
+        Width = 922
         Align = alTop
         Caption = 'Тип Поля'
         ClientHeight = 88
-        ClientWidth = 887
+        ClientWidth = 918
         TabOrder = 1
         object StringRBtn: TRadioButton
           Left = 2
@@ -256,11 +257,11 @@ object MainForm: TMainForm
         Left = 0
         Height = 270
         Top = 262
-        Width = 891
+        Width = 922
         Align = alClient
         Caption = 'Генерация'
         ClientHeight = 250
-        ClientWidth = 887
+        ClientWidth = 918
         TabOrder = 2
         object MaxSymbolSpin: TSpinEdit
           Left = 2
@@ -322,7 +323,7 @@ object MainForm: TMainForm
     object TabRaznoe: TTabSheet
       Caption = 'Разное'
       ClientHeight = 532
-      ClientWidth = 891
+      ClientWidth = 922
       object TimerSecGroup: TGroupBox
         Left = 460
         Height = 160
@@ -463,7 +464,7 @@ object MainForm: TMainForm
     object TempPhraseTab: TTabSheet
       Caption = 'Шаблоны фраз'
       ClientHeight = 532
-      ClientWidth = 916
+      ClientWidth = 922
       object BtnWord: TButton
         Left = 813
         Height = 25
@@ -516,7 +517,7 @@ object MainForm: TMainForm
         ParentColor = False
       end
       object PhraseMemo: TMemo
-        Left = 5
+        Left = 8
         Height = 210
         Top = 232
         Width = 883
@@ -670,7 +671,7 @@ object MainForm: TMainForm
       object CopyToClipBitBtn: TBitBtn
         Left = 384
         Height = 30
-        Top = 464
+        Top = 488
         Width = 194
         Caption = 'Копировать в Буфер обмена'
         OnClick = CopyToClipBitBtnClick
@@ -693,6 +694,15 @@ object MainForm: TMainForm
         Caption = 'Вставить из буфера обмена'
         OnClick = BtnPasteFromClipboardClick
         TabOrder = 15
+      end
+      object FastPhraseBitBtn: TBitBtn
+        Left = 896
+        Height = 507
+        Top = 11
+        Width = 24
+        Caption = '>>'
+        OnClick = FastPhraseBitBtnClick
+        TabOrder = 16
       end
     end
   end

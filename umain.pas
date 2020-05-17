@@ -8,7 +8,7 @@ uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, Menus,
   ComCtrls, StdCtrls, Spin, ExtCtrls, Buttons, LCLType,
 
-  uGeneration, uProcInfo, uEditStringsParam, uPhraseTemplate, uListOperation;
+  uGeneration, uProcInfo, uEditStringsParam, uPhraseTemplate, uListOperation, uFastPhrases;
 
 type
 
@@ -16,6 +16,7 @@ type
 
   TMainForm = class(TForm)
     AllCheck: TCheckBox;
+    FastPhraseBitBtn: TBitBtn;
     BtnPasteFromClipboard: TButton;
     ClearBitBtn: TBitBtn;
     MakePhraseBitBtn: TBitBtn;
@@ -95,6 +96,7 @@ type
     MainStatBar: TStatusBar;
     TabGeneration: TTabSheet;
     procedure AllCheckChange(Sender: TObject);
+    procedure FastPhraseBitBtnClick(Sender: TObject);
     procedure BtnPasteFromClipboardClick(Sender: TObject);
     procedure BtnPhraseClick(Sender: TObject);
     procedure BtnWordClick(Sender: TObject);
@@ -1471,6 +1473,19 @@ begin
   end;
 end;
 
+procedure TMainForm.FastPhraseBitBtnClick(Sender: TObject);
+begin
+  //Открытие формы с быстрыми фразами
+  if FastPhraseBitBtn.Caption = '>>' then begin
+    FastPhrasesForm.Show;
+    FastPhraseBitBtn.Caption := '<<';
+  end else begin
+    FastPhrasesForm.Close;
+    FastPhraseBitBtn.Caption := '>>';
+  end;
+
+end;
+
 procedure TMainForm.BtnPasteFromClipboardClick(Sender: TObject);
 begin
   //Кнопка вставки из буфера обмена
@@ -1610,7 +1625,7 @@ end;
 
 procedure TMainForm.FormClose(Sender: TObject; var CloseAction: TCloseAction);
 begin
-  {$IFDEF WINDOWS}
+ {$IFDEF WINDOWS}
    LastWordInPhrases.SaveToFile(StartPath + 'Data\LastWordInPhrases.txt');
  {$ELSE}
    LastWordInPhrases.SaveToFile(StartPath + 'Data/LastWordInPhrases.txt');
