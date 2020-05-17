@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, Menus,
-  ComCtrls, StdCtrls, Spin, ExtCtrls, Grids, Buttons, LCLType,
+  ComCtrls, StdCtrls, Spin, ExtCtrls, Buttons, LCLType,
 
   uGeneration, uProcInfo, uEditStringsParam, uPhraseTemplate, uListOperation;
 
@@ -106,6 +106,7 @@ type
     procedure EngSymbolCheckChange(Sender: TObject);
     procedure EnHighRadioChange(Sender: TObject);
     procedure EnLowRadioChange(Sender: TObject);
+    procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure GenerationBtnClick(Sender: TObject);
     procedure MakePhraseBitBtnClick(Sender: TObject);
@@ -144,6 +145,7 @@ type
     LastProcessMemory : integer;
     TempArray: Array [0..15] of integer;
     CountVisibleCB : integer;
+    LastWordInPhrases : TStringList;
   public
     { public declarations }
 
@@ -159,7 +161,7 @@ implementation
 { TMainForm }
 
 procedure TMainForm.FormCreate(Sender: TObject);
-var err: integer;
+var err, i: integer;
 begin
  StartPath := ExtractFileDir(ParamStr(0)); // определяем  путь к программе
  {$IFDEF WINDOWS}
@@ -187,7 +189,18 @@ begin
   err := LoadDiscriptionInCB((StartPath + 'Phrases/' + '*'), TemplateComboBox);
  {$ENDIF}
   if (err < 0) then begin
-   ShowMessage('LoadNameListInString. Файлы в коталоге не найдены');
+   ShowMessage('LoadDiscriptionInCB. Файлы в коталоге не найдены');
+  end;
+  LastWordInPhrases := TStringList.Create;
+  {$IFDEF WINDOWS}
+    LastWordInPhrases.LoadFromFile(StartPath + 'Data\LastWordInPhrases.txt');
+  {$ELSE}
+    LastWordInPhrases.LoadFromFile(StartPath + 'Data/LastWordInPhrases.txt');
+  {$ENDIF}
+  if LastWordInPhrases.Count <> TemplateComboBox.Items.Count then begin
+    for i := LastWordInPhrases.Count to  TemplateComboBox.Items.Count do begin
+     LastWordInPhrases.Add(IntToStr(i));
+    end;
   end;
 end;
 
@@ -248,6 +261,7 @@ begin
         if TempArray[0] < 10 then Delete(TempStr,TempArray[8],10)
         else Delete(TempStr,TempArray[8],11);
         Insert(FirstTempCB.Text, TempStr, TempArray[8]);
+        LastWordInPhrases[TemplateComboBox.ItemIndex] := FirstTempCB.Text;
       end;
       2: begin
         if FirstTempCB.Text = '' then exit;
@@ -270,6 +284,7 @@ begin
         if PosI <> TempArray[9] then TempArray[9] := PosI;
         Delete(TempStr,TempArray[9],Length(PosStr));
         Insert(SecondTempCB.Text, TempStr, TempArray[9]);
+        LastWordInPhrases[TemplateComboBox.ItemIndex] := FirstTempCB.Text + '<1>' + SecondTempCB.Text + '<2>';
       end;
       3: begin
         if FirstTempCB.Text = '' then exit;
@@ -310,6 +325,7 @@ begin
         if PosI <> TempArray[10] then TempArray[10] := PosI;
         Delete(TempStr,TempArray[10],Length(PosStr));
         Insert(ThirdTempCB.Text, TempStr, TempArray[10]);
+        LastWordInPhrases[TemplateComboBox.ItemIndex] := FirstTempCB.Text + '<1>' + SecondTempCB.Text + '<2>' + ThirdTempCB.Text + '<3>';
       end;
       4: begin
         if FirstTempCB.Text = '' then exit;
@@ -367,6 +383,7 @@ begin
         if PosI <> TempArray[11] then TempArray[11] := PosI;
         Delete(TempStr,TempArray[11],Length(PosStr));
         Insert(FourthTempCB.Text, TempStr, TempArray[11]);
+        LastWordInPhrases[TemplateComboBox.ItemIndex] := FirstTempCB.Text + '<1>' + SecondTempCB.Text + '<2>' + ThirdTempCB.Text + '<3>'  + FourthTempCB.Text + '<4>';
       end;
       5: begin
         if FirstTempCB.Text = '' then exit;
@@ -441,6 +458,7 @@ begin
         if PosI <> TempArray[12] then TempArray[12] := PosI;
         Delete(TempStr,TempArray[12],Length(PosStr));
         Insert(FifthTempCB.Text, TempStr, TempArray[12]);
+        LastWordInPhrases[TemplateComboBox.ItemIndex] := FirstTempCB.Text + '<1>' + SecondTempCB.Text + '<2>' + ThirdTempCB.Text + '<3>'  + FourthTempCB.Text + '<4>' + FifthTempCB.Text + '<5>';
       end;
       6: begin
         if FirstTempCB.Text = '' then exit;
@@ -536,6 +554,7 @@ begin
         if PosI <> TempArray[13] then TempArray[13] := PosI;
         Delete(TempStr,TempArray[13],Length(PosStr));
         Insert(SixthTempCB.Text, TempStr, TempArray[13]);
+        LastWordInPhrases[TemplateComboBox.ItemIndex] := FirstTempCB.Text + '<1>' + SecondTempCB.Text + '<2>' + ThirdTempCB.Text + '<3>'  + FourthTempCB.Text + '<4>' + FifthTempCB.Text + '<5>' + SixthTempCB.Text + '<6>';
       end;
       7: begin
         if FirstTempCB.Text = '' then exit;
@@ -638,6 +657,7 @@ begin
         if PosI <> TempArray[14] then TempArray[14] := PosI;
         Delete(TempStr,TempArray[14],Length(PosStr));
         Insert(SeventhTempCB.Text, TempStr, TempArray[14]);
+        LastWordInPhrases[TemplateComboBox.ItemIndex] := FirstTempCB.Text + '<1>' + SecondTempCB.Text + '<2>' + ThirdTempCB.Text + '<3>'  + FourthTempCB.Text + '<4>' + FifthTempCB.Text + '<5>' + SixthTempCB.Text + '<6>' + SeventhTempCB.Text +'<7>';
       end;
       8: begin
         if FirstTempCB.Text = '' then exit;
@@ -756,6 +776,7 @@ begin
         if PosI <> TempArray[15] then TempArray[15] := PosI;
         Delete(TempStr,TempArray[15],Length(PosStr));
         Insert(EigthTempCB.Text, TempStr, TempArray[15]);
+        LastWordInPhrases[TemplateComboBox.ItemIndex] := FirstTempCB.Text + '<1>' + SecondTempCB.Text + '<2>' + ThirdTempCB.Text + '<3>'  + FourthTempCB.Text + '<4>' + FifthTempCB.Text + '<5>' + SixthTempCB.Text + '<6>' + SeventhTempCB.Text +'<7>'+ EigthTempCB.Text + '<8>';
       end;
       else begin
         ShowMessage('MakePhraseBitBtnClick. Неправльное количество CountVisibleCB: ' + IntToStr(CountVisibleCB));
@@ -953,6 +974,9 @@ begin
          FirstCBTemplLabel.Visible := true;
          FirstTempCB.Visible := true;
          FirstCBTemplLabel.Caption := StringsParamForm.NameListComboBox.Items[TempArray[0]];
+         if LastWordInPhrases[TemplateComboBox.ItemIndex].Length > 2 then begin
+           FirstTempCB.Text:= LastWordInPhrases[TemplateComboBox.ItemIndex];
+         end;
          {$IFDEF MSWINDOWS}
            FirstTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[0]]);
          {$ELSE}
@@ -965,6 +989,14 @@ begin
          SecondCBTemplLabel.Visible := true;
          SecondTempCB.Visible := true;
          FirstCBTemplLabel.Caption := StringsParamForm.NameListComboBox.Items[TempArray[0]];
+         if LastWordInPhrases[TemplateComboBox.ItemIndex].Length > 2 then begin
+           PosI := Pos('<1>', LastWordInPhrases[TemplateComboBox.ItemIndex]);
+           PosStr := Copy(LastWordInPhrases[TemplateComboBox.ItemIndex], 0, (PosI-1));
+           FirstTempCB.Text:= PosStr;
+           i := Pos('<2>', LastWordInPhrases[TemplateComboBox.ItemIndex]);
+           PosStr := Copy(LastWordInPhrases[TemplateComboBox.ItemIndex], (PosI + 3), (i-(PosI+3)));
+           SecondTempCB.Text:= PosStr;
+         end;
          {$IFDEF MSWINDOWS}
           FirstTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[0]]);
          {$ELSE}
@@ -985,6 +1017,18 @@ begin
          ThirdCBTemplLabel.Visible := true;
          ThirdTempCB.Visible := true;
          FirstCBTemplLabel.Caption := StringsParamForm.NameListComboBox.Items[TempArray[0]];
+         if LastWordInPhrases[TemplateComboBox.ItemIndex].Length > 2 then begin
+           PosI := Pos('<1>', LastWordInPhrases[TemplateComboBox.ItemIndex]);
+           PosStr := Copy(LastWordInPhrases[TemplateComboBox.ItemIndex], 0, (PosI-1));
+           FirstTempCB.Text:= PosStr;
+           i := Pos('<2>', LastWordInPhrases[TemplateComboBox.ItemIndex]);
+           PosStr := Copy(LastWordInPhrases[TemplateComboBox.ItemIndex], (PosI + 3), (i-(PosI+3)));
+           SecondTempCB.Text:= PosStr;
+           PosI := Pos('<2>', LastWordInPhrases[TemplateComboBox.ItemIndex]);
+           i := Pos('<3>', LastWordInPhrases[TemplateComboBox.ItemIndex]);
+           PosStr := Copy(LastWordInPhrases[TemplateComboBox.ItemIndex], (PosI + 3), (i-(PosI+3)));
+           ThirdTempCB.Text:= PosStr;
+         end;
          {$IFDEF MSWINDOWS}
            FirstTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[0]]);
          {$ELSE}
@@ -1013,6 +1057,22 @@ begin
          FourthCBTemplLabel.Visible := true;
          FourthTempCB.Visible := true;
          FirstCBTemplLabel.Caption := StringsParamForm.NameListComboBox.Items[TempArray[0]];
+         if LastWordInPhrases[TemplateComboBox.ItemIndex].Length > 2 then begin
+           PosI := Pos('<1>', LastWordInPhrases[TemplateComboBox.ItemIndex]);
+           PosStr := Copy(LastWordInPhrases[TemplateComboBox.ItemIndex], 0, (PosI-1));
+           FirstTempCB.Text:= PosStr;
+           i := Pos('<2>', LastWordInPhrases[TemplateComboBox.ItemIndex]);
+           PosStr := Copy(LastWordInPhrases[TemplateComboBox.ItemIndex], (PosI + 3), (i-(PosI+3)));
+           SecondTempCB.Text:= PosStr;
+           PosI := Pos('<2>', LastWordInPhrases[TemplateComboBox.ItemIndex]);
+           i := Pos('<3>', LastWordInPhrases[TemplateComboBox.ItemIndex]);
+           PosStr := Copy(LastWordInPhrases[TemplateComboBox.ItemIndex], (PosI + 3), (i-(PosI+3)));
+           ThirdTempCB.Text:= PosStr;
+           PosI := Pos('<3>', LastWordInPhrases[TemplateComboBox.ItemIndex]);
+           i := Pos('<4>', LastWordInPhrases[TemplateComboBox.ItemIndex]);
+           PosStr := Copy(LastWordInPhrases[TemplateComboBox.ItemIndex], (PosI + 3), (i-(PosI+3)));
+           FourthTempCB.Text:= PosStr;
+         end;
          {$IFDEF MSWINDOWS}
            FirstTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[0]]);
          {$ELSE}
@@ -1049,6 +1109,26 @@ begin
          FifthCBTemplLabel.Visible := true;
          FifthTempCB.Visible := true;
          FirstCBTemplLabel.Caption := StringsParamForm.NameListComboBox.Items[TempArray[0]];
+         if LastWordInPhrases[TemplateComboBox.ItemIndex].Length > 2 then begin
+           PosI := Pos('<1>', LastWordInPhrases[TemplateComboBox.ItemIndex]);
+           PosStr := Copy(LastWordInPhrases[TemplateComboBox.ItemIndex], 0, (PosI-1));
+           FirstTempCB.Text:= PosStr;
+           i := Pos('<2>', LastWordInPhrases[TemplateComboBox.ItemIndex]);
+           PosStr := Copy(LastWordInPhrases[TemplateComboBox.ItemIndex], (PosI + 3), (i-(PosI+3)));
+           SecondTempCB.Text:= PosStr;
+           PosI := Pos('<2>', LastWordInPhrases[TemplateComboBox.ItemIndex]);
+           i := Pos('<3>', LastWordInPhrases[TemplateComboBox.ItemIndex]);
+           PosStr := Copy(LastWordInPhrases[TemplateComboBox.ItemIndex], (PosI + 3), (i-(PosI+3)));
+           ThirdTempCB.Text:= PosStr;
+           PosI := Pos('<3>', LastWordInPhrases[TemplateComboBox.ItemIndex]);
+           i := Pos('<4>', LastWordInPhrases[TemplateComboBox.ItemIndex]);
+           PosStr := Copy(LastWordInPhrases[TemplateComboBox.ItemIndex], (PosI + 3), (i-(PosI+3)));
+           FourthTempCB.Text:= PosStr;
+           PosI := Pos('<4>', LastWordInPhrases[TemplateComboBox.ItemIndex]);
+           i := Pos('<5>', LastWordInPhrases[TemplateComboBox.ItemIndex]);
+           PosStr := Copy(LastWordInPhrases[TemplateComboBox.ItemIndex], (PosI + 3), (i-(PosI+3)));
+           FifthTempCB.Text:= PosStr;
+         end;
          {$IFDEF MSWINDOWS}
            FirstTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[0]]);
          {$ELSE}
@@ -1093,6 +1173,30 @@ begin
          SixthCBTemplLabel.Visible := true;
          SixthTempCB.Visible := true;
          FirstCBTemplLabel.Caption := StringsParamForm.NameListComboBox.Items[TempArray[0]];
+         if LastWordInPhrases[TemplateComboBox.ItemIndex].Length > 2 then begin
+           PosI := Pos('<1>', LastWordInPhrases[TemplateComboBox.ItemIndex]);
+           PosStr := Copy(LastWordInPhrases[TemplateComboBox.ItemIndex], 0, (PosI-1));
+           FirstTempCB.Text:= PosStr;
+           i := Pos('<2>', LastWordInPhrases[TemplateComboBox.ItemIndex]);
+           PosStr := Copy(LastWordInPhrases[TemplateComboBox.ItemIndex], (PosI + 3), (i-(PosI+3)));
+           SecondTempCB.Text:= PosStr;
+           PosI := Pos('<2>', LastWordInPhrases[TemplateComboBox.ItemIndex]);
+           i := Pos('<3>', LastWordInPhrases[TemplateComboBox.ItemIndex]);
+           PosStr := Copy(LastWordInPhrases[TemplateComboBox.ItemIndex], (PosI + 3), (i-(PosI+3)));
+           ThirdTempCB.Text:= PosStr;
+           PosI := Pos('<3>', LastWordInPhrases[TemplateComboBox.ItemIndex]);
+           i := Pos('<4>', LastWordInPhrases[TemplateComboBox.ItemIndex]);
+           PosStr := Copy(LastWordInPhrases[TemplateComboBox.ItemIndex], (PosI + 3), (i-(PosI+3)));
+           FourthTempCB.Text:= PosStr;
+           PosI := Pos('<4>', LastWordInPhrases[TemplateComboBox.ItemIndex]);
+           i := Pos('<5>', LastWordInPhrases[TemplateComboBox.ItemIndex]);
+           PosStr := Copy(LastWordInPhrases[TemplateComboBox.ItemIndex], (PosI + 3), (i-(PosI+3)));
+           FifthTempCB.Text:= PosStr;
+           PosI := Pos('<5>', LastWordInPhrases[TemplateComboBox.ItemIndex]);
+           i := Pos('<6>', LastWordInPhrases[TemplateComboBox.ItemIndex]);
+           PosStr := Copy(LastWordInPhrases[TemplateComboBox.ItemIndex], (PosI + 3), (i-(PosI+3)));
+           SixthTempCB.Text:= PosStr;
+         end;
          {$IFDEF MSWINDOWS}
            FirstTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[0]]);
          {$ELSE}
@@ -1158,6 +1262,34 @@ begin
          SixthTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[5]]);
          SeventhCBTemplLabel.Caption := StringsParamForm.NameListComboBox.Items[TempArray[6]];
          SeventhTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[6]]);
+         if LastWordInPhrases[TemplateComboBox.ItemIndex].Length > 2 then begin
+           PosI := Pos('<1>', LastWordInPhrases[TemplateComboBox.ItemIndex]);
+           PosStr := Copy(LastWordInPhrases[TemplateComboBox.ItemIndex], 0, (PosI-1));
+           FirstTempCB.Text:= PosStr;
+           i := Pos('<2>', LastWordInPhrases[TemplateComboBox.ItemIndex]);
+           PosStr := Copy(LastWordInPhrases[TemplateComboBox.ItemIndex], (PosI + 3), (i-(PosI+3)));
+           SecondTempCB.Text:= PosStr;
+           PosI := Pos('<2>', LastWordInPhrases[TemplateComboBox.ItemIndex]);
+           i := Pos('<3>', LastWordInPhrases[TemplateComboBox.ItemIndex]);
+           PosStr := Copy(LastWordInPhrases[TemplateComboBox.ItemIndex], (PosI + 3), (i-(PosI+3)));
+           ThirdTempCB.Text:= PosStr;
+           PosI := Pos('<3>', LastWordInPhrases[TemplateComboBox.ItemIndex]);
+           i := Pos('<4>', LastWordInPhrases[TemplateComboBox.ItemIndex]);
+           PosStr := Copy(LastWordInPhrases[TemplateComboBox.ItemIndex], (PosI + 3), (i-(PosI+3)));
+           FourthTempCB.Text:= PosStr;
+           PosI := Pos('<4>', LastWordInPhrases[TemplateComboBox.ItemIndex]);
+           i := Pos('<5>', LastWordInPhrases[TemplateComboBox.ItemIndex]);
+           PosStr := Copy(LastWordInPhrases[TemplateComboBox.ItemIndex], (PosI + 3), (i-(PosI+3)));
+           FifthTempCB.Text:= PosStr;
+           PosI := Pos('<5>', LastWordInPhrases[TemplateComboBox.ItemIndex]);
+           i := Pos('<6>', LastWordInPhrases[TemplateComboBox.ItemIndex]);
+           PosStr := Copy(LastWordInPhrases[TemplateComboBox.ItemIndex], (PosI + 3), (i-(PosI+3)));
+           SixthTempCB.Text:= PosStr;
+           PosI := Pos('<6>', LastWordInPhrases[TemplateComboBox.ItemIndex]);
+           i := Pos('<7>', LastWordInPhrases[TemplateComboBox.ItemIndex]);
+           PosStr := Copy(LastWordInPhrases[TemplateComboBox.ItemIndex], (PosI + 3), (i-(PosI+3)));
+           SeventhTempCB.Text:= PosStr;
+         end;
         end;
         8: begin
          FirstCBTemplLabel.Visible := true;
@@ -1177,6 +1309,38 @@ begin
          EigthCBTemplLabel.Visible := true;
          EigthTempCB.Visible := true;
          FirstCBTemplLabel.Caption := StringsParamForm.NameListComboBox.Items[TempArray[0]];
+         if LastWordInPhrases[TemplateComboBox.ItemIndex].Length > 2 then begin
+           PosI := Pos('<1>', LastWordInPhrases[TemplateComboBox.ItemIndex]);
+           PosStr := Copy(LastWordInPhrases[TemplateComboBox.ItemIndex], 0, (PosI-1));
+           FirstTempCB.Text:= PosStr;
+           i := Pos('<2>', LastWordInPhrases[TemplateComboBox.ItemIndex]);
+           PosStr := Copy(LastWordInPhrases[TemplateComboBox.ItemIndex], (PosI + 3), (i-(PosI+3)));
+           SecondTempCB.Text:= PosStr;
+           PosI := Pos('<2>', LastWordInPhrases[TemplateComboBox.ItemIndex]);
+           i := Pos('<3>', LastWordInPhrases[TemplateComboBox.ItemIndex]);
+           PosStr := Copy(LastWordInPhrases[TemplateComboBox.ItemIndex], (PosI + 3), (i-(PosI+3)));
+           ThirdTempCB.Text:= PosStr;
+           PosI := Pos('<3>', LastWordInPhrases[TemplateComboBox.ItemIndex]);
+           i := Pos('<4>', LastWordInPhrases[TemplateComboBox.ItemIndex]);
+           PosStr := Copy(LastWordInPhrases[TemplateComboBox.ItemIndex], (PosI + 3), (i-(PosI+3)));
+           FourthTempCB.Text:= PosStr;
+           PosI := Pos('<4>', LastWordInPhrases[TemplateComboBox.ItemIndex]);
+           i := Pos('<5>', LastWordInPhrases[TemplateComboBox.ItemIndex]);
+           PosStr := Copy(LastWordInPhrases[TemplateComboBox.ItemIndex], (PosI + 3), (i-(PosI+3)));
+           FifthTempCB.Text:= PosStr;
+           PosI := Pos('<5>', LastWordInPhrases[TemplateComboBox.ItemIndex]);
+           i := Pos('<6>', LastWordInPhrases[TemplateComboBox.ItemIndex]);
+           PosStr := Copy(LastWordInPhrases[TemplateComboBox.ItemIndex], (PosI + 3), (i-(PosI+3)));
+           SixthTempCB.Text:= PosStr;
+           PosI := Pos('<6>', LastWordInPhrases[TemplateComboBox.ItemIndex]);
+           i := Pos('<7>', LastWordInPhrases[TemplateComboBox.ItemIndex]);
+           PosStr := Copy(LastWordInPhrases[TemplateComboBox.ItemIndex], (PosI + 3), (i-(PosI+3)));
+           SeventhTempCB.Text:= PosStr;
+           PosI := Pos('<7>', LastWordInPhrases[TemplateComboBox.ItemIndex]);
+           i := Pos('<8>', LastWordInPhrases[TemplateComboBox.ItemIndex]);
+           PosStr := Copy(LastWordInPhrases[TemplateComboBox.ItemIndex], (PosI + 3), (i-(PosI+3)));
+           EigthTempCB.Text:= PosStr;
+         end;
          {$IFDEF MSWINDOWS}
            FirstTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[0]]);
          {$ELSE}
@@ -1227,7 +1391,6 @@ begin
         end;
         else begin
           PhraseMemo.Lines.Add(TempStr);
-
         end;
       end;
 
@@ -1443,6 +1606,15 @@ begin
  end else begin
    UsingSymbol := UsingSymbol - 10;
  end;
+end;
+
+procedure TMainForm.FormClose(Sender: TObject; var CloseAction: TCloseAction);
+begin
+  {$IFDEF WINDOWS}
+   LastWordInPhrases.SaveToFile(StartPath + 'Data\LastWordInPhrases.txt');
+ {$ELSE}
+   LastWordInPhrases.SaveToFile(StartPath + 'Data/LastWordInPhrases.txt');
+ {$ENDIF}
 end;
 
 procedure TMainForm.RuSymbolCheckChange(Sender: TObject);
