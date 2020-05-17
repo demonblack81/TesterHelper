@@ -1,0 +1,41 @@
+object FastPhrasesForm: TFastPhrasesForm
+  Left = 1386
+  Height = 600
+  Top = 237
+  Width = 164
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsSingle
+  Caption = 'Быстрые Фразы '
+  ClientHeight = 600
+  ClientWidth = 164
+  OnClose = FormClose
+  OnCreate = FormCreate
+  Position = poDefault
+  LCLVersion = '2.0.4.0'
+  object BitBtn1: TBitBtn
+    Left = 5
+    Height = 30
+    Top = 560
+    Width = 154
+    Caption = 'BitBtn1'
+    TabOrder = 0
+    Visible = False
+  end
+  object FastPhrasesBtnPanel: TPanel
+    Left = 5
+    Height = 546
+    Top = 5
+    Width = 154
+    TabOrder = 1
+  end
+  object TempMemo: TMemo
+    Left = 168
+    Height = 90
+    Top = 8
+    Width = 150
+    Lines.Strings = (
+      'TempMemo'
+    )
+    TabOrder = 2
+  end
+end
