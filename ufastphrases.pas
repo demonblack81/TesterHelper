@@ -91,6 +91,7 @@ begin
   with (Sender as TButton) do begin
     TempMemo.Text := Caption;
     if TempMemo.Lines.Count > 0 then begin
+     TempMemo.SetFocus;
      TempMemo.SelectAll;
      TempMemo.CopyToClipboard;
     end;

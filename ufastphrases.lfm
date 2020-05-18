@@ -2,12 +2,12 @@ object FastPhrasesForm: TFastPhrasesForm
   Left = 1386
   Height = 600
   Top = 237
-  Width = 232
+  Width = 230
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
   Caption = 'Быстрые Фразы '
   ClientHeight = 600
-  ClientWidth = 232
+  ClientWidth = 230
   OnClose = FormClose
   OnCreate = FormCreate
   Position = poDefault
