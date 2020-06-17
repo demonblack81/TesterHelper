@@ -189,8 +189,8 @@
         <UnitName Value="uFastPhrases"/>
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="42"/>
-        <CursorPos X="25" Y="95"/>
+        <TopLine Value="39"/>
+        <CursorPos X="29" Y="75"/>
         <UsageCount Value="29"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -224,7 +224,7 @@
         <UsageCount Value="10"/>
       </Unit20>
     </Units>
-    <JumpHistory Count="24" HistoryIndex="23">
+    <JumpHistory Count="25" HistoryIndex="24">
       <Position1>
         <Filename Value="ufastphrases.pas"/>
         <Caret Line="92" Column="6" TopLine="65"/>
@@ -321,6 +321,10 @@
         <Filename Value="ufastphrases.pas"/>
         <Caret Line="92" TopLine="44"/>
       </Position24>
+      <Position25>
+        <Filename Value="ufastphrases.pas"/>
+        <Caret Line="68" Column="27" TopLine="48"/>
+      </Position25>
     </JumpHistory>
   </ProjectOptions>
   <CompilerOptions>

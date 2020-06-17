@@ -62,13 +62,17 @@ begin
   if FastPhrasesList.Count > 0 then begin
     for i := 0 to (FastPhrasesList.Count -1) do begin
       SetLength(aFastBtn, (Length(aFastBtn) + 1));
-      NewTop := 5 + i*40;
+      {$IFDEF WINDOWS}
+        NewTop := 5 + i*40;
+      {$ELSE}
+        NewTop := 5 + i*25;
+      {$ENDIF}
       aFastBtn[i] :=  TButton.Create(FastPhrasesBtnPanel);
       aFastBtn[i].Parent:=FastPhrasesBtnPanel;            // Компонент - родитель
       aFastBtn[i].Left:=5;                 // задаем параметр left
       aFastBtn[i].Top:=NewTop;                  // задаем параметр top
       aFastBtn[i].Caption:=FastPhrasesList[i];        // задаем caption
-      aFastBtn[i].Height:=40; // задаем высоту
+      aFastBtn[i].Height:=25; // задаем высоту
       aFastBtn[i].Width:=200;
       aFastBtn[i].OnClick:=@Clicks;
     end;
