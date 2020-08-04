@@ -176,7 +176,7 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uFastPhrases"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="137"/>
+        <TopLine Value="35"/>
         <CursorPos X="26" Y="150"/>
         <UsageCount Value="86"/>
         <Loaded Value="True"/>
