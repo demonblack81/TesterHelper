@@ -707,13 +707,31 @@ object MainForm: TMainForm
     end
   end
   object MainMenu1: TMainMenu
-    left = 624
+    left = 616
     object MenuItem1: TMenuItem
       Caption = 'Файл'
       object MenuClose: TMenuItem
         Caption = 'Выход'
         ShortCut = 32883
         OnClick = MenuCloseClick
+      end
+    end
+    object MenuItem2: TMenuItem
+      Caption = 'Шаблоны фраз'
+      object FastPhrasesMenuItem: TMenuItem
+        Caption = 'Быстрые фразы'
+        ShortCut = 16454
+        OnClick = FastPhrasesMenuItemClick
+      end
+      object WordsMenuItem: TMenuItem
+        Caption = 'Слова'
+        ShortCut = 16471
+        OnClick = WordsMenuItemClick
+      end
+      object PhrasesMenuItem: TMenuItem
+        Caption = 'Фразы'
+        ShortCut = 16465
+        OnClick = PhrasesMenuItemClick
       end
     end
   end
