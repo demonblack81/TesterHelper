@@ -23,6 +23,10 @@ type
     CopyToClipBitBtn: TBitBtn;
     BtnWord: TButton;
     BtnPhrase: TButton;
+    MenuItem2: TMenuItem;
+    FastPhrasesMenuItem: TMenuItem;
+    PhrasesMenuItem: TMenuItem;
+    WordsMenuItem: TMenuItem;
     TemplateComboBox: TComboBox;
     FirstTempCB: TComboBox;
     SecondTempCB: TComboBox;
@@ -108,11 +112,13 @@ type
     procedure EngSymbolCheckChange(Sender: TObject);
     procedure EnHighRadioChange(Sender: TObject);
     procedure EnLowRadioChange(Sender: TObject);
+    procedure FastPhrasesMenuItemClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure GenerationBtnClick(Sender: TObject);
     procedure MakePhraseBitBtnClick(Sender: TObject);
     procedure OpenGenerationBtnClick(Sender: TObject);
+    procedure PhrasesMenuItemClick(Sender: TObject);
     procedure ProcesInfoViewDblClick(Sender: TObject);
     procedure ProcessWatchwerTimerTimer(Sender: TObject);
     procedure ResetTimeBtnClick(Sender: TObject);
@@ -135,6 +141,7 @@ type
     procedure SpecCheckChange(Sender: TObject);
     procedure StringRBtnChange(Sender: TObject);
     procedure URLRBtnChange(Sender: TObject);
+    procedure WordsMenuItemClick(Sender: TObject);
     procedure ZipRBtnChange(Sender: TObject);
   private
     { private declarations }
@@ -800,6 +807,11 @@ begin
  {$ELSE}
    GenerationMemo.Lines.LoadFromFile(StartPath+ '/Generation/genstr.txt');
  {$ENDIF}
+end;
+
+procedure TMainForm.PhrasesMenuItemClick(Sender: TObject);
+begin
+  MainForm.BtnPhraseClick(Self);
 end;
 
 procedure TMainForm.ProcesInfoViewDblClick(Sender: TObject);
@@ -1623,6 +1635,11 @@ begin
  end;
 end;
 
+procedure TMainForm.FastPhrasesMenuItemClick(Sender: TObject);
+begin
+  MainForm.FastPhraseBitBtnClick(Self);
+end;
+
 procedure TMainForm.FormClose(Sender: TObject; var CloseAction: TCloseAction);
 begin
  {$IFDEF WINDOWS}
@@ -1701,6 +1718,11 @@ begin
  end else begin
   UsingType := 0;
  end;
+end;
+
+procedure TMainForm.WordsMenuItemClick(Sender: TObject);
+begin
+  MainForm.BtnWordClick(Self);
 end;
 
 procedure TMainForm.ZipRBtnChange(Sender: TObject);
