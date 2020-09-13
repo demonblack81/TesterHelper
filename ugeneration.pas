@@ -75,8 +75,16 @@ begin
   Rusymbol.LoadFromFile(ExtractFileDir(ParamStr(0)) + '\Data\RussionSymbol.txt');
  {$ELSE}
   TempStr := ParamStr(0);
-  i := Pos('TesterHelper.app', TempStr);
-  Delete(TempStr, i, (Length(TempStr) - i + 2) );
+  {$IFDEF MACOS}
+   i := Pos('TesterHelper.app', TempStr);
+   Delete(TempStr, i, (Length(TempStr) - i + 2) );
+  {$ENDIF}
+  {$IFDEF LINUX}
+   i := Pos('TesterHelper/', TempStr);
+   i := i + 13;
+   Delete(TempStr, i, 12 );
+  {$ENDIF}
+
 
   Rusymbol.LoadFromFile(TempStr + 'Data/RussionSymbol.txt');
  {$ENDIF}
@@ -89,8 +97,15 @@ begin
   Inetzone.LoadFromFile(ExtractFileDir(ParamStr(0)) + '\Data\Inetzone.txt');
  {$ELSE}
   TempStr := ParamStr(0);
-  i := Pos('TesterHelper.app', TempStr);
-  Delete(TempStr, i, (Length(TempStr) - i + 2) );
+  {$IFDEF MACOS}
+   i := Pos('TesterHelper.app', TempStr);
+   Delete(TempStr, i, (Length(TempStr) - i + 2) );
+  {$ENDIF}
+  {$IFDEF LINUX}
+   i := Pos('TesterHelper/', TempStr);
+   i := i + 13;
+   Delete(TempStr, i, 12 );
+  {$ENDIF}  ;
 
   Inetzone.LoadFromFile(TempStr + 'Data/RussionSymbol.txt');
  {$ENDIF}
@@ -104,8 +119,15 @@ begin
   InetScheme.LoadFromFile(ExtractFileDir(ParamStr(0)) + '\Data\InetScheme.txt');
  {$ELSE}
   TempStr := ParamStr(0);
-  i := Pos('TesterHelper.app', TempStr);
-  Delete(TempStr, i, (Length(TempStr) - i + 2) );
+  {$IFDEF MACOS}
+   i := Pos('TesterHelper.app', TempStr);
+   Delete(TempStr, i, (Length(TempStr) - i + 2) );
+  {$ENDIF}
+  {$IFDEF LINUX}
+   i := Pos('TesterHelper/', TempStr);
+   i := i + 13;
+   Delete(TempStr, i, 12 );
+  {$ENDIF}
 
   InetScheme.LoadFromFile(TempStr + 'Data/RussionSymbol.txt');
  {$ENDIF}
@@ -118,8 +140,15 @@ begin
   SpecialSimbol.LoadFromFile(ExtractFileDir(ParamStr(0)) + '\Data\SpecialSimbol.txt');
  {$ELSE}
   TempStr := ParamStr(0);
-  i := Pos('TesterHelper.app', TempStr);
-  Delete(TempStr, i, (Length(TempStr) - i + 2) );
+  {$IFDEF MACOS}
+   i := Pos('TesterHelper.app', TempStr);
+   Delete(TempStr, i, (Length(TempStr) - i + 2) );
+  {$ENDIF}
+  {$IFDEF LINUX}
+   i := Pos('TesterHelper/', TempStr);
+   i := i + 13;
+   Delete(TempStr, i, 12 );
+  {$ENDIF}
 
   SpecialSimbol.LoadFromFile(TempStr + 'Data/RussionSymbol.txt');
  {$ENDIF}

@@ -68,8 +68,15 @@ begin
      end;
   {$ELSE}
    ListDir := ParamStr(0);
+   {$IFDEF MACOS}
    err := Pos('TesterHelper.app', ListDir);
-   Delete(ListDir, err, (Length(ListDir) - err + 2));
+   Delete(ListDir, err, (Length(ListDir) - err + 2) );
+  {$ENDIF}
+  {$IFDEF LINUX}
+   err := Pos('TesterHelper/', ListDir);
+   err := err+ 13;
+   Delete(ListDir, err, 12 );
+  {$ENDIF}
    err := 0;
    ListDir := ListDir + 'List/';
   {$ENDIF}
