@@ -1669,15 +1669,11 @@ begin
  end;
 end;
 
-<<<<<<<
 procedure TMainForm.FastPhrasesMenuItemClick(Sender: TObject);
 begin
   MainForm.FastPhraseBitBtnClick(Self);
 end;
 
-=======
-
->>>>>>>
 procedure TMainForm.FormClose(Sender: TObject; var CloseAction: TCloseAction);
 begin
  {$IFDEF WINDOWS}
@@ -1758,28 +1754,11 @@ begin
  end;
 end;
 
-<<<<<<<
-procedure TMainForm.WordsMenuItemClick(Sender: TObject);
-begin
-<<<<<<< refs/remotes/origin/master
-  MainForm.BtnWordClick(self);
-=======
-  MainForm.BtnWordClick(Self);
->>>>>>> Версия 0.3.1.8: Вернул пункты Main Menu по шаблонам фраз в проект
-end;
-
-=======
 procedure TMainForm.WordsMenuItemClick(Sender: TObject);
 begin
   MainForm.BtnWordClick(Self);
 end;
 
-<<<<<<< Updated upstream
-=======
-=======
-
->>>>>>> Stashed changes
->>>>>>>
 procedure TMainForm.ZipRBtnChange(Sender: TObject);
 begin
  if ZipRBtn.Checked then begin
