@@ -54,13 +54,8 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="UMain"/>
         <IsVisibleTab Value="True"/>
-<<<<<<< refs/remotes/origin/master
-        <TopLine Value="1616"/>
-        <CursorPos X="7" Y="1633"/>
-=======
         <TopLine Value="264"/>
         <CursorPos X="43" Y="290"/>
->>>>>>> Версия 0.3.1.8: Вернул пункты Main Menu по шаблонам фраз в проект
         <UsageCount Value="442"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -225,81 +220,169 @@
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="ufastphrases.pas"/>
+<<<<<<<
 <<<<<<< refs/remotes/origin/master
         <Caret Line="11" Column="3"/>
+=======
+        <Caret Line="103" Column="43" TopLine="89"/>
+>>>>>>>
       </Position1>
       <Position2>
+<<<<<<<
         <Filename Value="ufastphrases.pas"/>
         <Caret Line="161" Column="34" TopLine="144"/>
+=======
+        <Filename Value="ufastphrases.pas"/>
+        <Caret Line="113" Column="14" TopLine="93"/>
+>>>>>>>
       </Position2>
       <Position3>
         <Filename Value="ufastphrases.pas"/>
+<<<<<<<
         <Caret Line="175" Column="40" TopLine="157"/>
+=======
+        <Caret Line="126" Column="22" TopLine="103"/>
+>>>>>>>
       </Position3>
       <Position4>
+<<<<<<<
         <Filename Value="ufastphrases.pas"/>
         <Caret Line="41" Column="34" TopLine="29"/>
+=======
+        <Filename Value="ueditstringsparam.pas"/>
+        <Caret Line="117" Column="7" TopLine="97"/>
+>>>>>>>
       </Position4>
       <Position5>
         <Filename Value="ufastphrases.pas"/>
+<<<<<<<
         <Caret Line="42" Column="26" TopLine="30"/>
+=======
+        <Caret Line="126" Column="25" TopLine="126"/>
+>>>>>>>
       </Position5>
       <Position6>
+<<<<<<<
         <Filename Value="umain.pas"/>
         <Caret Line="1485" Column="63" TopLine="852"/>
+=======
+        <Filename Value="ufastphrases.pas"/>
+        <Caret Line="168" Column="21" TopLine="149"/>
+>>>>>>>
       </Position6>
       <Position7>
+<<<<<<<
         <Filename Value="umain.pas"/>
+=======
+        <Filename Value="ufastphrases.pas"/>
+        <Caret Line="173" Column="46" TopLine="152"/>
+>>>>>>>
       </Position7>
       <Position8>
+<<<<<<<
         <Filename Value="ufastphrases.pas"/>
         <Caret Line="171" Column="40" TopLine="150"/>
+=======
+        <Filename Value="ueditstringsparam.pas"/>
+        <Caret Line="113" Column="28" TopLine="100"/>
+>>>>>>>
       </Position8>
       <Position9>
         <Filename Value="ufastphrases.pas"/>
+<<<<<<<
         <Caret Line="165" TopLine="99"/>
+=======
+        <Caret Line="11" Column="3"/>
+>>>>>>>
       </Position9>
       <Position10>
         <Filename Value="ufastphrases.pas"/>
+<<<<<<<
         <Caret Line="64" Column="5" TopLine="53"/>
+=======
+        <Caret Line="161" Column="34" TopLine="144"/>
+>>>>>>>
       </Position10>
       <Position11>
+<<<<<<<
         <Filename Value="ugeneration.pas"/>
         <Caret Line="661" Column="51" TopLine="644"/>
+=======
+        <Filename Value="ufastphrases.pas"/>
+        <Caret Line="175" Column="40" TopLine="157"/>
+>>>>>>>
       </Position11>
       <Position12>
+<<<<<<<
         <Filename Value="ugeneration.pas"/>
         <Caret Line="642" Column="39" TopLine="626"/>
+=======
+        <Filename Value="ufastphrases.pas"/>
+        <Caret Line="41" Column="34" TopLine="29"/>
+>>>>>>>
       </Position12>
       <Position13>
         <Filename Value="ufastphrases.pas"/>
+<<<<<<<
         <Caret Line="164" TopLine="143"/>
+=======
+        <Caret Line="42" Column="26" TopLine="30"/>
+>>>>>>>
       </Position13>
       <Position14>
+<<<<<<<
         <Filename Value="ufastphrases.pas"/>
         <Caret Line="165" TopLine="143"/>
+=======
+        <Filename Value="umain.pas"/>
+        <Caret Line="1485" Column="63" TopLine="852"/>
+>>>>>>>
       </Position14>
       <Position15>
+<<<<<<<
         <Filename Value="ufastphrases.pas"/>
         <Caret Line="166" TopLine="143"/>
+=======
+        <Filename Value="umain.pas"/>
+>>>>>>>
       </Position15>
       <Position16>
         <Filename Value="ufastphrases.pas"/>
+<<<<<<<
         <Caret Line="167" TopLine="143"/>
+=======
+        <Caret Line="171" Column="40" TopLine="150"/>
+>>>>>>>
       </Position16>
       <Position17>
+<<<<<<<
         <Filename Value="ufastphrases.pas"/>
         <Caret Line="144" TopLine="137"/>
+=======
+        <Filename Value="ufastphrases.pas"/>
+        <Caret Line="165" TopLine="99"/>
+>>>>>>>
       </Position17>
       <Position18>
+<<<<<<<
         <Filename Value="ufastphrases.pas"/>
         <Caret Line="145" TopLine="137"/>
+=======
+        <Filename Value="ufastphrases.pas"/>
+        <Caret Line="64" Column="5" TopLine="53"/>
+>>>>>>>
       </Position18>
       <Position19>
+<<<<<<<
         <Filename Value="ufastphrases.pas"/>
         <Caret Line="146" TopLine="137"/>
+=======
+        <Filename Value="ugeneration.pas"/>
+        <Caret Line="661" Column="51" TopLine="644"/>
+>>>>>>>
       </Position19>
       <Position20>
+<<<<<<<
         <Filename Value="umain.pas"/>
         <Caret Line="287" Column="42" TopLine="261"/>
       </Position20>
@@ -419,6 +502,10 @@
       <Position20>
         <Filename Value="ugeneration.pas"/>
         <Caret Line="642" Column="39" TopLine="626"/>
+=======
+        <Filename Value="ugeneration.pas"/>
+        <Caret Line="642" Column="39" TopLine="626"/>
+>>>>>>>
       </Position20>
       <Position21>
         <Filename Value="ufastphrases.pas"/>
@@ -457,9 +544,14 @@
         <Caret Line="288" Column="43" TopLine="262"/>
       </Position29>
       <Position30>
+<<<<<<<
         <Filename Value="umain.pas"/>
         <Caret Line="289" Column="43" TopLine="263"/>
 >>>>>>> Версия 0.3.1.8: Вернул пункты Main Menu по шаблонам фраз в проект
+=======
+        <Filename Value="umain.pas"/>
+        <Caret Line="289" Column="43" TopLine="263"/>
+>>>>>>>
       </Position30>
     </JumpHistory>
   </ProjectOptions>
