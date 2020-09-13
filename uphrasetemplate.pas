@@ -74,8 +74,15 @@ begin
     end;
   {$ELSE}
     TamplateDir :=  ParamStr(0);
-    err := Pos('TesterHelper.app', TamplateDir);
-    Delete(TamplateDir, err, (Length(TamplateDir) - err + 2));
+    {$IFDEF MACOS}
+      err := Pos('TesterHelper.app', TamplateDir);
+      Delete(TamplateDir, err, (TamplateDir(ListDir) - err + 2) );
+    {$ENDIF}
+    {$IFDEF LINUX}
+      err := Pos('TesterHelper/', TamplateDir);
+      err := err+ 13;
+      Delete(TamplateDir, err, 12 );
+    {$ENDIF}
     ListDir := TamplateDir + 'List/';
     TamplateDir := TamplateDir + 'Phrases/';
     err := 0;

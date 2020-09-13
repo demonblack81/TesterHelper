@@ -179,8 +179,15 @@ begin
  end; // проверяем есть ли на конце строки "\"
  {$ELSE}
    StartPath := ParamStr(0);
+   {$IFDEF MACOS}
    err := Pos('TesterHelper.app', StartPath);
-   Delete(StartPath, err, (Length(StartPath) - err + 2));
+   Delete(StartPath, err, (Length(StartPath) - err + 2) );
+  {$ENDIF}
+  {$IFDEF LINUX}
+   err := Pos('TesterHelper/', StartPath);
+   err := err+ 13;
+   Delete(StartPath, err, 12 );
+  {$ENDIF}
    err := 0;
  {$ENDIF}
  Randomize;
