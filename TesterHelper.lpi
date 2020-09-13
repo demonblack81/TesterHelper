@@ -53,9 +53,14 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="UMain"/>
+<<<<<<< Updated upstream
         <IsVisibleTab Value="True"/>
         <TopLine Value="264"/>
         <CursorPos X="43" Y="290"/>
+=======
+        <TopLine Value="261"/>
+        <CursorPos X="43" Y="287"/>
+>>>>>>> Stashed changes
         <UsageCount Value="442"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -221,6 +226,7 @@
       <Position1>
         <Filename Value="ufastphrases.pas"/>
 <<<<<<<
+<<<<<<< Updated upstream
 <<<<<<< refs/remotes/origin/master
         <Caret Line="11" Column="3"/>
 =======
@@ -243,10 +249,25 @@
 =======
         <Caret Line="126" Column="22" TopLine="103"/>
 >>>>>>>
+=======
+        <Caret Line="11" Column="3"/>
+=======
+        <Caret Line="105" Column="40" TopLine="92"/>
+>>>>>>>
+      </Position1>
+      <Position2>
+        <Filename Value="ueditstringsparam.pas"/>
+        <Caret Line="70" Column="32" TopLine="52"/>
+      </Position2>
+      <Position3>
+        <Filename Value="ufastphrases.pas"/>
+        <Caret Line="115" Column="40" TopLine="94"/>
+>>>>>>> Stashed changes
       </Position3>
       <Position4>
 <<<<<<<
         <Filename Value="ufastphrases.pas"/>
+<<<<<<< Updated upstream
         <Caret Line="41" Column="34" TopLine="29"/>
 =======
         <Filename Value="ueditstringsparam.pas"/>
@@ -277,10 +298,26 @@
         <Filename Value="ufastphrases.pas"/>
         <Caret Line="173" Column="46" TopLine="152"/>
 >>>>>>>
+=======
+        <Caret Line="103" Column="43" TopLine="89"/>
+      </Position4>
+      <Position5>
+        <Filename Value="ufastphrases.pas"/>
+        <Caret Line="113" Column="14" TopLine="93"/>
+      </Position5>
+      <Position6>
+        <Filename Value="ufastphrases.pas"/>
+        <Caret Line="126" Column="22" TopLine="103"/>
+      </Position6>
+      <Position7>
+        <Filename Value="ueditstringsparam.pas"/>
+        <Caret Line="117" Column="7" TopLine="97"/>
+>>>>>>> Stashed changes
       </Position7>
       <Position8>
 <<<<<<<
         <Filename Value="ufastphrases.pas"/>
+<<<<<<< Updated upstream
         <Caret Line="171" Column="40" TopLine="150"/>
 =======
         <Filename Value="ueditstringsparam.pas"/>
@@ -328,19 +365,47 @@
 =======
         <Caret Line="42" Column="26" TopLine="30"/>
 >>>>>>>
+=======
+        <Caret Line="126" Column="25" TopLine="126"/>
+      </Position8>
+      <Position9>
+        <Filename Value="ufastphrases.pas"/>
+        <Caret Line="168" Column="21" TopLine="149"/>
+      </Position9>
+      <Position10>
+        <Filename Value="ufastphrases.pas"/>
+        <Caret Line="173" Column="46" TopLine="152"/>
+      </Position10>
+      <Position11>
+        <Filename Value="ueditstringsparam.pas"/>
+        <Caret Line="113" Column="28" TopLine="100"/>
+      </Position11>
+      <Position12>
+        <Filename Value="ufastphrases.pas"/>
+        <Caret Line="11" Column="3"/>
+      </Position12>
+      <Position13>
+        <Filename Value="ufastphrases.pas"/>
+        <Caret Line="161" Column="34" TopLine="144"/>
+>>>>>>> Stashed changes
       </Position13>
       <Position14>
 <<<<<<<
         <Filename Value="ufastphrases.pas"/>
+<<<<<<< Updated upstream
         <Caret Line="165" TopLine="143"/>
 =======
         <Filename Value="umain.pas"/>
         <Caret Line="1485" Column="63" TopLine="852"/>
 >>>>>>>
+=======
+        <Caret Line="175" Column="40" TopLine="157"/>
+>>>>>>> Stashed changes
       </Position14>
       <Position15>
 <<<<<<<
         <Filename Value="ufastphrases.pas"/>
+<<<<<<< Updated upstream
         <Caret Line="166" TopLine="143"/>
 =======
         <Filename Value="umain.pas"/>
@@ -371,15 +436,33 @@
         <Filename Value="ufastphrases.pas"/>
         <Caret Line="64" Column="5" TopLine="53"/>
 >>>>>>>
+=======
+        <Caret Line="41" Column="34" TopLine="29"/>
+      </Position15>
+      <Position16>
+        <Filename Value="ufastphrases.pas"/>
+        <Caret Line="42" Column="26" TopLine="30"/>
+      </Position16>
+      <Position17>
+        <Filename Value="umain.pas"/>
+        <Caret Line="1485" Column="63" TopLine="852"/>
+      </Position17>
+      <Position18>
+        <Filename Value="umain.pas"/>
+>>>>>>> Stashed changes
       </Position18>
       <Position19>
 <<<<<<<
         <Filename Value="ufastphrases.pas"/>
+<<<<<<< Updated upstream
         <Caret Line="146" TopLine="137"/>
 =======
         <Filename Value="ugeneration.pas"/>
         <Caret Line="661" Column="51" TopLine="644"/>
 >>>>>>>
+=======
+        <Caret Line="171" Column="40" TopLine="150"/>
+>>>>>>> Stashed changes
       </Position19>
       <Position20>
 <<<<<<<
@@ -426,6 +509,7 @@
         <Filename Value="umain.pas"/>
         <Caret Line="1633" Column="40" TopLine="1616"/>
 =======
+<<<<<<< Updated upstream
         <Caret Line="103" Column="43" TopLine="89"/>
       </Position1>
       <Position2>
@@ -506,6 +590,10 @@
         <Filename Value="ugeneration.pas"/>
         <Caret Line="642" Column="39" TopLine="626"/>
 >>>>>>>
+=======
+        <Filename Value="ufastphrases.pas"/>
+        <Caret Line="165" TopLine="99"/>
+>>>>>>> Stashed changes
       </Position20>
       <Position21>
         <Filename Value="ufastphrases.pas"/>
@@ -544,6 +632,7 @@
         <Caret Line="288" Column="43" TopLine="262"/>
       </Position29>
       <Position30>
+<<<<<<< Updated upstream
 <<<<<<<
         <Filename Value="umain.pas"/>
         <Caret Line="289" Column="43" TopLine="263"/>
@@ -551,6 +640,10 @@
 =======
         <Filename Value="umain.pas"/>
         <Caret Line="289" Column="43" TopLine="263"/>
+=======
+        <Filename Value="ufastphrases.pas"/>
+        <Caret Line="146" TopLine="137"/>
+>>>>>>> Stashed changes
 >>>>>>>
       </Position30>
     </JumpHistory>
