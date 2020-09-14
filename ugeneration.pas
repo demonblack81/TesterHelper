@@ -75,7 +75,7 @@ begin
   Rusymbol.LoadFromFile(ExtractFileDir(ParamStr(0)) + '\Data\RussionSymbol.txt');
  {$ELSE}
   TempStr := ParamStr(0);
-  {$IFDEF MACOS}
+  {$IFDEF UNIX}
    i := Pos('TesterHelper.app', TempStr);
    Delete(TempStr, i, (Length(TempStr) - i + 2) );
   {$ENDIF}
@@ -97,7 +97,7 @@ begin
   Inetzone.LoadFromFile(ExtractFileDir(ParamStr(0)) + '\Data\Inetzone.txt');
  {$ELSE}
   TempStr := ParamStr(0);
-  {$IFDEF MACOS}
+  {$IFDEF UNIX}
    i := Pos('TesterHelper.app', TempStr);
    Delete(TempStr, i, (Length(TempStr) - i + 2) );
   {$ENDIF}
@@ -119,7 +119,7 @@ begin
   InetScheme.LoadFromFile(ExtractFileDir(ParamStr(0)) + '\Data\InetScheme.txt');
  {$ELSE}
   TempStr := ParamStr(0);
-  {$IFDEF MACOS}
+  {$IFDEF UNIX}
    i := Pos('TesterHelper.app', TempStr);
    Delete(TempStr, i, (Length(TempStr) - i + 2) );
   {$ENDIF}
@@ -140,7 +140,7 @@ begin
   SpecialSimbol.LoadFromFile(ExtractFileDir(ParamStr(0)) + '\Data\SpecialSimbol.txt');
  {$ELSE}
   TempStr := ParamStr(0);
-  {$IFDEF MACOS}
+  {$IFDEF UNIX}
    i := Pos('TesterHelper.app', TempStr);
    Delete(TempStr, i, (Length(TempStr) - i + 2) );
   {$ENDIF}

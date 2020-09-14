@@ -70,7 +70,7 @@ begin
  end; // проверяем есть ли на конце строки "\"
  {$ELSE}
    StartPath := ParamStr(0);
-   {$IFDEF MACOS}
+   {$IFDEF UNIX}
    err := Pos('TesterHelper.app', StartPath);
    Delete(StartPath, err, (Length(StartPath) - err + 2) );
   {$ENDIF}
