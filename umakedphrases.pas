@@ -19,7 +19,7 @@ type
   private
 
   public
-
+    SL_MakedPhrases : TStringList;
   end;
 
 var
