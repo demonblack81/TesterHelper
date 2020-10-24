@@ -1,11 +1,15 @@
-object Form1: TForm1
+object MakedPhrasesForm: TMakedPhrasesForm
   Left = 1520
   Height = 493
   Top = 250
   Width = 810
-  Caption = 'Form1'
+  Caption = 'Созданные Фразы'
   ClientHeight = 493
   ClientWidth = 810
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnShow = FormShow
+  Position = poMainFormCenter
   object MakedPrasesListBox: TListBox
     Left = 5
     Height = 420
@@ -21,7 +25,6 @@ object Form1: TForm1
     Height = 30
     Top = 440
     Width = 75
-    Default = True
     DefaultCaption = True
     Kind = bkOK
     ModalResult = 1
@@ -33,6 +36,7 @@ object Form1: TForm1
     Top = 440
     Width = 138
     Caption = 'Копировать фразу'
+    OnClick = CopySelectedPraseBitBtnClick
     TabOrder = 2
   end
   object AddPhraseFromClipboardBitBtn: TBitBtn
@@ -41,6 +45,7 @@ object Form1: TForm1
     Top = 440
     Width = 200
     Caption = 'Вставить фразу из буфера'
+    OnClick = AddPhraseFromClipboardBitBtnClick
     TabOrder = 3
   end
 end

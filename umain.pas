@@ -8,7 +8,7 @@ uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, Menus,
   ComCtrls, StdCtrls, Spin, ExtCtrls, Buttons, LCLType,
 
-  uGeneration, uProcInfo, uEditStringsParam, uPhraseTemplate, uListOperation, uFastPhrases;
+  uGeneration, uProcInfo, uEditStringsParam, uPhraseTemplate, uListOperation, uFastPhrases, uMakedPhrases;
 
 type
 
@@ -25,6 +25,7 @@ type
     BtnPhrase: TButton;
     MenuItem2: TMenuItem;
     FastPhrasesMenuItem: TMenuItem;
+    MakedPhrMenuItem: TMenuItem;
     PhrasesMenuItem: TMenuItem;
     WordsMenuItem: TMenuItem;
     TemplateComboBox: TComboBox;
@@ -116,6 +117,7 @@ type
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure GenerationBtnClick(Sender: TObject);
+    procedure MakedPhrMenuItemClick(Sender: TObject);
     procedure MakePhraseBitBtnClick(Sender: TObject);
     procedure OpenGenerationBtnClick(Sender: TObject);
     procedure PhrasesMenuItemClick(Sender: TObject);
@@ -264,6 +266,11 @@ begin
        GenerationMemo.Lines.Add('Неизвестный тип Строки!!!');
       end;
  end;
+end;
+
+procedure TMainForm.MakedPhrMenuItemClick(Sender: TObject);
+begin
+  MakedPhrasesForm.ShowModal;
 end;
 
 procedure TMainForm.MakePhraseBitBtnClick(Sender: TObject);
@@ -803,6 +810,7 @@ begin
     PhraseMemo.Lines.Add(TempStr);
     PhraseMemo.SelectAll;
     PhraseMemo.CopyToClipboard;
+    MakedPhrasesForm.SL_MakedPhrases.AddStrings(PhraseMemo.Lines);
     PhraseMemo.SetFocus;
   end;
 end;
@@ -1602,6 +1610,9 @@ begin
  if PhraseMemo.Lines.Count > 0 then begin
   PhraseMemo.SelectAll;
   PhraseMemo.CopyToClipboard;
+  if PhraseMemo.Lines[PhraseMemo.Lines.Count-1] <> MakedPhrasesForm.SL_MakedPhrases[MakedPhrasesForm.SL_MakedPhrases.Count-1] then begin
+   MakedPhrasesForm.SL_MakedPhrases.AddStrings(PhraseMemo.Lines);
+  end;
  end;
 end;
 
