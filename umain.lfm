@@ -736,6 +736,11 @@ object MainForm: TMainForm
         ShortCut = 16465
         OnClick = PhrasesMenuItemClick
       end
+      object MakedPhrMenuItem: TMenuItem
+        Caption = 'MakedPhrMenuItem'
+        ShortCut = 16453
+        OnClick = MakedPhrMenuItemClick
+      end
     end
   end
   object TimerForTime: TTimer
