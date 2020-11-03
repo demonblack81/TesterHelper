@@ -38,7 +38,7 @@
         <PackageName Value="LCL"/>
       </Item1>
     </RequiredPackages>
-    <Units Count="20">
+    <Units Count="22">
       <Unit0>
         <Filename Value="TesterHelper.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -53,9 +53,8 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="UMain"/>
-        <IsVisibleTab Value="True"/>
-        <TopLine Value="263"/>
-        <CursorPos X="31" Y="274"/>
+        <TopLine Value="129"/>
+        <CursorPos X="22" Y="134"/>
         <UsageCount Value="442"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -115,7 +114,7 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uPhraseTemplate"/>
         <EditorIndex Value="4"/>
-        <TopLine Value="48"/>
+        <TopLine Value="82"/>
         <CursorPos Y="87"/>
         <UsageCount Value="236"/>
         <Loaded Value="True"/>
@@ -126,14 +125,14 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="5406"/>
         <CursorPos Y="5420"/>
-        <UsageCount Value="8"/>
+        <UsageCount Value="6"/>
       </Unit8>
       <Unit9>
         <Filename Value="D:\Soft\lazarus\lcl\include\control.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="2230"/>
         <CursorPos Y="2244"/>
-        <UsageCount Value="8"/>
+        <UsageCount Value="6"/>
       </Unit9>
       <Unit10>
         <Filename Value="D:\Soft\lazarus\lcl\lclmessageglue.pas"/>
@@ -141,14 +140,14 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="105"/>
         <CursorPos Y="123"/>
-        <UsageCount Value="8"/>
+        <UsageCount Value="6"/>
       </Unit10>
       <Unit11>
         <Filename Value="D:\Soft\lazarus\lcl\interfaces\win32\win32callback.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="2585"/>
         <CursorPos Y="2609"/>
-        <UsageCount Value="8"/>
+        <UsageCount Value="6"/>
       </Unit11>
       <Unit12>
         <Filename Value="D:\Soft\Lazarus\lcl\stdctrls.pp"/>
@@ -156,7 +155,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="479"/>
         <CursorPos X="14" Y="488"/>
-        <UsageCount Value="2"/>
+        <UsageCount Value="0"/>
       </Unit12>
       <Unit13>
         <Filename Value="umain.lfm"/>
@@ -164,7 +163,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="3"/>
+        <UsageCount Value="1"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit13>
       <Unit14>
@@ -175,9 +174,8 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uFastPhrases"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="7"/>
-        <CursorPos X="16" Y="73"/>
-        <UsageCount Value="86"/>
+        <CursorPos X="27" Y="155"/>
+        <UsageCount Value="100"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit14>
@@ -186,156 +184,176 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="2216"/>
         <CursorPos Y="2244"/>
-        <UsageCount Value="4"/>
+        <UsageCount Value="2"/>
       </Unit15>
       <Unit16>
         <Filename Value="D:\Library\Lazarus\lcl\include\buttoncontrol.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="6"/>
         <CursorPos Y="22"/>
-        <UsageCount Value="4"/>
+        <UsageCount Value="2"/>
       </Unit16>
       <Unit17>
         <Filename Value="D:\Library\Lazarus\lcl\include\buttons.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="141"/>
         <CursorPos Y="170"/>
-        <UsageCount Value="4"/>
+        <UsageCount Value="2"/>
       </Unit17>
       <Unit18>
         <Filename Value="D:\Library\Lazarus\lcl\include\wincontrol.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="5384"/>
         <CursorPos Y="5412"/>
-        <UsageCount Value="4"/>
+        <UsageCount Value="2"/>
       </Unit18>
       <Unit19>
         <Filename Value="..\..\Delphi\FinishedProject\CdInfo\DobDel.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="4"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="8"/>
       </Unit19>
+      <Unit20>
+        <Filename Value="umakedphrases.pas"/>
+        <ComponentName Value="MakedPhrasesForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uMakedPhrases"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="6"/>
+        <CursorPos X="92" Y="117"/>
+        <UsageCount Value="18"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit20>
+      <Unit21>
+        <Filename Value="..\..\..\..\..\Library\Lazarus\lcl\include\control.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="2886"/>
+        <CursorPos Y="2915"/>
+        <UsageCount Value="10"/>
+      </Unit21>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
-        <Filename Value="ugeneration.pas"/>
-        <Caret Line="661" Column="51" TopLine="644"/>
+        <Filename Value="umakedphrases.pas"/>
+        <Caret Line="91" TopLine="70"/>
       </Position1>
       <Position2>
-        <Filename Value="ugeneration.pas"/>
-        <Caret Line="642" Column="39" TopLine="626"/>
+        <Filename Value="umakedphrases.pas"/>
+        <Caret Line="92" TopLine="70"/>
       </Position2>
       <Position3>
-        <Filename Value="ufastphrases.pas"/>
-        <Caret Line="164" TopLine="143"/>
+        <Filename Value="umakedphrases.pas"/>
+        <Caret Line="93" TopLine="70"/>
       </Position3>
       <Position4>
-        <Filename Value="ufastphrases.pas"/>
-        <Caret Line="165" TopLine="143"/>
+        <Filename Value="umakedphrases.pas"/>
+        <Caret Line="94" TopLine="70"/>
       </Position4>
       <Position5>
-        <Filename Value="ufastphrases.pas"/>
-        <Caret Line="166" TopLine="143"/>
+        <Filename Value="umakedphrases.pas"/>
+        <Caret Line="119" Column="80" TopLine="74"/>
       </Position5>
       <Position6>
-        <Filename Value="ufastphrases.pas"/>
-        <Caret Line="167" TopLine="143"/>
+        <Filename Value="umakedphrases.pas"/>
+        <Caret Line="121" TopLine="74"/>
       </Position6>
       <Position7>
-        <Filename Value="ufastphrases.pas"/>
-        <Caret Line="144" TopLine="137"/>
+        <Filename Value="umakedphrases.pas"/>
+        <Caret Line="122" TopLine="74"/>
       </Position7>
       <Position8>
-        <Filename Value="ufastphrases.pas"/>
-        <Caret Line="145" TopLine="137"/>
+        <Filename Value="umakedphrases.pas"/>
+        <Caret Line="124" TopLine="79"/>
       </Position8>
       <Position9>
-        <Filename Value="ufastphrases.pas"/>
-        <Caret Line="146" TopLine="137"/>
+        <Filename Value="umakedphrases.pas"/>
+        <Caret Line="129" Column="11" TopLine="79"/>
       </Position9>
       <Position10>
-        <Filename Value="umain.pas"/>
-        <Caret Line="287" Column="42" TopLine="261"/>
+        <Filename Value="umakedphrases.pas"/>
+        <Caret Line="133" TopLine="77"/>
       </Position10>
       <Position11>
-        <Filename Value="umain.pas"/>
-        <Caret Line="289" Column="42" TopLine="263"/>
+        <Filename Value="umakedphrases.pas"/>
+        <Caret Line="126" TopLine="82"/>
       </Position11>
       <Position12>
-        <Filename Value="umain.pas"/>
-        <Caret Line="288" Column="42" TopLine="237"/>
+        <Filename Value="umakedphrases.pas"/>
+        <Caret Line="127" TopLine="82"/>
       </Position12>
       <Position13>
-        <Filename Value="umain.pas"/>
-        <Caret Line="289" Column="42" TopLine="255"/>
+        <Filename Value="umakedphrases.pas"/>
+        <Caret Line="128" TopLine="82"/>
       </Position13>
       <Position14>
-        <Filename Value="umain.pas"/>
-        <Caret Line="290" Column="42" TopLine="256"/>
+        <Filename Value="umakedphrases.pas"/>
+        <Caret Line="130" Column="29" TopLine="82"/>
       </Position14>
       <Position15>
-        <Filename Value="umain.pas"/>
-        <Caret Line="292" Column="42" TopLine="258"/>
+        <Filename Value="umakedphrases.pas"/>
+        <Caret Line="126" TopLine="82"/>
       </Position15>
       <Position16>
-        <Filename Value="umain.pas"/>
-        <Caret Line="1633" Column="9" TopLine="1622"/>
+        <Filename Value="umakedphrases.pas"/>
+        <Caret Line="127" TopLine="82"/>
       </Position16>
       <Position17>
-        <Filename Value="umain.pas"/>
-        <Caret Line="1481" Column="42" TopLine="1481"/>
+        <Filename Value="umakedphrases.pas"/>
+        <Caret Line="128" TopLine="82"/>
       </Position17>
       <Position18>
-        <Filename Value="umain.pas"/>
-        <Caret Line="1633" Column="27" TopLine="1631"/>
+        <Filename Value="umakedphrases.pas"/>
+        <Caret Line="94" Column="104" TopLine="82"/>
       </Position18>
       <Position19>
-        <Filename Value="umain.pas"/>
-        <Caret Line="292" Column="43" TopLine="276"/>
+        <Filename Value="umakedphrases.pas"/>
+        <Caret Line="126" TopLine="82"/>
       </Position19>
       <Position20>
-        <Filename Value="umain.pas"/>
-        <Caret Line="1633" Column="40" TopLine="1616"/>
+        <Filename Value="umakedphrases.pas"/>
+        <Caret Line="127" TopLine="82"/>
       </Position20>
       <Position21>
-        <Filename Value="umain.pas"/>
-        <Caret Line="290" Column="43" TopLine="264"/>
+        <Filename Value="umakedphrases.pas"/>
+        <Caret Line="128" TopLine="82"/>
       </Position21>
       <Position22>
-        <Filename Value="umain.pas"/>
-        <Caret Line="1676" TopLine="1652"/>
+        <Filename Value="umakedphrases.pas"/>
+        <Caret Line="132" Column="33" TopLine="82"/>
       </Position22>
       <Position23>
-        <Filename Value="umain.pas"/>
-        <Caret Line="1766" TopLine="1764"/>
+        <Filename Value="umakedphrases.pas"/>
+        <Caret Line="126" TopLine="82"/>
       </Position23>
       <Position24>
-        <Filename Value="uphrasetemplate.pas"/>
-        <Caret Line="77" Column="17" TopLine="11"/>
+        <Filename Value="umakedphrases.pas"/>
+        <Caret Line="127" TopLine="82"/>
       </Position24>
       <Position25>
-        <Filename Value="uphrasetemplate.pas"/>
-        <Caret Line="80" Column="24" TopLine="50"/>
+        <Filename Value="umakedphrases.pas"/>
+        <Caret Line="128" TopLine="82"/>
       </Position25>
       <Position26>
-        <Filename Value="uphrasetemplate.pas"/>
-        <Caret Line="79" Column="50" TopLine="52"/>
+        <Filename Value="umakedphrases.pas"/>
+        <Caret Line="129" TopLine="82"/>
       </Position26>
       <Position27>
-        <Filename Value="umain.pas"/>
-        <Caret Line="196" Column="26" TopLine="146"/>
+        <Filename Value="umakedphrases.pas"/>
+        <Caret Line="130" TopLine="82"/>
       </Position27>
       <Position28>
-        <Filename Value="umain.pas"/>
-        <Caret Line="120" Column="19" TopLine="87"/>
+        <Filename Value="umakedphrases.pas"/>
+        <Caret Line="131" TopLine="82"/>
       </Position28>
       <Position29>
-        <Filename Value="umain.pas"/>
-        <Caret Line="13" Column="22"/>
+        <Filename Value="umakedphrases.pas"/>
+        <Caret Line="132" TopLine="82"/>
       </Position29>
       <Position30>
-        <Filename Value="umain.pas"/>
-        <Caret Line="28" Column="21"/>
+        <Filename Value="umakedphrases.pas"/>
+        <Caret Line="133" TopLine="83"/>
       </Position30>
     </JumpHistory>
   </ProjectOptions>
@@ -387,16 +405,16 @@
   <Debugging>
     <Watches Count="4">
       <Item1>
-        <Expression Value="TempStr"/>
+        <Expression Value="SelText"/>
       </Item1>
       <Item2>
-        <Expression Value="PosI"/>
+        <Expression Value="s"/>
       </Item2>
       <Item3>
-        <Expression Value="TempMemo.Text"/>
+        <Expression Value="fromMemo"/>
       </Item3>
       <Item4>
-        <Expression Value="Sender.Caption"/>
+        <Expression Value="i"/>
       </Item4>
     </Watches>
     <Exceptions Count="3">
