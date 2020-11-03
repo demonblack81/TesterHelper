@@ -16,7 +16,7 @@
       <UseVersionInfo Value="True"/>
       <MinorVersionNr Value="3"/>
       <RevisionNr Value="1"/>
-      <BuildNr Value="7"/>
+      <BuildNr Value="8"/>
       <Language Value="0419"/>
       <CharSet Value="04B0"/>
       <Attributes pvaPreRelease="True"/>
@@ -173,9 +173,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uFastPhrases"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="20"/>
         <CursorPos X="12" Y="59"/>
         <UsageCount Value="100"/>
         <Loaded Value="True"/>
@@ -221,9 +219,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uMakedPhrases"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="6"/>
-        <TopLine Value="10"/>
-        <CursorPos X="8" Y="31"/>
+        <CursorPos X="3" Y="31"/>
         <UsageCount Value="18"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
