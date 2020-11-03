@@ -31,17 +31,17 @@ object MainForm: TMainForm
     TabOrder = 1
     object TabGeneration: TTabSheet
       Caption = 'Генерация строк'
-      ClientHeight = 532
-      ClientWidth = 922
+      ClientHeight = 530
+      ClientWidth = 935
       object SymbolGroup: TGroupBox
         Left = 0
         Height = 154
         Top = 0
-        Width = 922
+        Width = 935
         Align = alTop
         Caption = 'Символы'
         ClientHeight = 135
-        ClientWidth = 912
+        ClientWidth = 925
         TabOrder = 0
         object EngSymbolGroup: TGroupBox
           Left = 2
@@ -54,9 +54,9 @@ object MainForm: TMainForm
           TabOrder = 0
           object EnAllRadio: TRadioButton
             Left = 18
-            Height = 19
+            Height = 18
             Top = 42
-            Width = 112
+            Width = 127
             Caption = 'Все EN [A..Z, a..z]'
             Enabled = False
             OnChange = EnAllRadioChange
@@ -64,9 +64,9 @@ object MainForm: TMainForm
           end
           object EnLowRadio: TRadioButton
             Left = 18
-            Height = 19
+            Height = 18
             Top = 66
-            Width = 127
+            Width = 139
             Caption = ' Малинкие En  [a..z]'
             Enabled = False
             OnChange = EnLowRadioChange
@@ -74,17 +74,17 @@ object MainForm: TMainForm
           end
           object EnHighRadio: TRadioButton
             Left = 18
-            Height = 19
+            Height = 18
             Top = 88
-            Width = 124
+            Width = 133
             Caption = 'Большие EN  [A..Z]'
             TabOrder = 2
           end
           object EngSymbolCheck: TCheckBox
             Left = 38
-            Height = 19
+            Height = 18
             Top = 8
-            Width = 95
+            Width = 102
             Caption = 'Alphabetic EN'
             OnChange = EngSymbolCheckChange
             TabOrder = 3
@@ -101,9 +101,9 @@ object MainForm: TMainForm
           TabOrder = 1
           object RuAllRadio: TRadioButton
             Left = 18
-            Height = 19
+            Height = 18
             Top = 42
-            Width = 113
+            Width = 127
             Caption = 'Все RU [А..Я, а..я]'
             Enabled = False
             OnChange = RuAllRadioChange
@@ -111,9 +111,9 @@ object MainForm: TMainForm
           end
           object RuLowRadio: TRadioButton
             Left = 18
-            Height = 19
+            Height = 18
             Top = 66
-            Width = 126
+            Width = 136
             Caption = ' Малинкие Ru [а..я]'
             Enabled = False
             OnChange = RuLowRadioChange
@@ -121,18 +121,18 @@ object MainForm: TMainForm
           end
           object RuSymbolCheck: TCheckBox
             Left = 38
-            Height = 19
+            Height = 18
             Top = 8
-            Width = 98
+            Width = 106
             Caption = 'Alphabetic RU '
             OnChange = RuSymbolCheckChange
             TabOrder = 2
           end
           object RuHighRadio: TRadioButton
             Left = 18
-            Height = 19
+            Height = 18
             Top = 90
-            Width = 121
+            Width = 130
             Caption = 'Большие RU [А..Я]'
             Enabled = False
             OnChange = RuHighRadioChange
@@ -141,27 +141,27 @@ object MainForm: TMainForm
         end
         object SpecCheck: TCheckBox
           Left = 402
-          Height = 19
+          Height = 18
           Top = 26
-          Width = 169
+          Width = 187
           Caption = 'Special Symbols [! . , @ # { }]'
           OnChange = SpecCheckChange
           TabOrder = 2
         end
         object NumberCheck: TCheckBox
           Left = 402
-          Height = 19
+          Height = 18
           Top = 82
-          Width = 93
+          Width = 100
           Caption = 'Number [1..9]'
           OnChange = NumberCheckChange
           TabOrder = 3
         end
         object AllCheck: TCheckBox
           Left = 586
-          Height = 19
+          Height = 18
           Top = 58
-          Width = 77
+          Width = 82
           Caption = 'All Symbol'
           OnChange = AllCheckChange
           TabOrder = 4
@@ -171,17 +171,17 @@ object MainForm: TMainForm
         Left = 0
         Height = 108
         Top = 154
-        Width = 922
+        Width = 935
         Align = alTop
         Caption = 'Тип Поля'
         ClientHeight = 89
-        ClientWidth = 912
+        ClientWidth = 925
         TabOrder = 1
         object StringRBtn: TRadioButton
           Left = 2
-          Height = 19
+          Height = 18
           Top = 24
-          Width = 114
+          Width = 123
           Caption = 'Строковое Поле '
           Checked = True
           OnChange = StringRBtnChange
@@ -190,54 +190,54 @@ object MainForm: TMainForm
         end
         object EMailRBtn: TRadioButton
           Left = 130
-          Height = 19
+          Height = 18
           Top = 24
-          Width = 54
+          Width = 58
           Caption = 'E-Mail'
           OnChange = EMailRBtnChange
           TabOrder = 0
         end
         object PathRBtn: TRadioButton
           Left = 514
-          Height = 19
+          Height = 18
           Top = 24
-          Width = 78
+          Width = 85
           Caption = 'Path String'
           OnChange = PathRBtnChange
           TabOrder = 1
         end
         object URLRBtn: TRadioButton
           Left = 194
-          Height = 19
+          Height = 18
           Top = 24
-          Width = 41
+          Width = 46
           Caption = 'URL'
           OnChange = URLRBtnChange
           TabOrder = 3
         end
         object ZipRBtn: TRadioButton
           Left = 242
-          Height = 19
+          Height = 18
           Top = 24
-          Width = 148
+          Width = 158
           Caption = 'Zip (Почтовый Индекс)'
           OnChange = ZipRBtnChange
           TabOrder = 4
         end
         object PhoneRBtn: TRadioButton
           Left = 394
-          Height = 19
+          Height = 18
           Top = 24
-          Width = 113
+          Width = 122
           Caption = 'Phone (Телефон)'
           OnChange = PhoneRBtnChange
           TabOrder = 5
         end
         object PhonePlusCheck: TCheckBox
           Left = 394
-          Height = 19
+          Height = 18
           Top = 52
-          Width = 100
+          Width = 108
           Caption = 'Плюс спереди'
           OnChange = PhonePlusCheckChange
           TabOrder = 6
@@ -245,9 +245,9 @@ object MainForm: TMainForm
         end
         object ExistsFileCheck: TCheckBox
           Left = 514
-          Height = 19
+          Height = 18
           Top = 54
-          Width = 123
+          Width = 135
           Caption = 'Файл пресутствует'
           TabOrder = 7
           Visible = False
@@ -255,17 +255,17 @@ object MainForm: TMainForm
       end
       object GenerationGroup: TGroupBox
         Left = 0
-        Height = 270
+        Height = 268
         Top = 262
-        Width = 922
+        Width = 935
         Align = alClient
         Caption = 'Генерация'
-        ClientHeight = 251
-        ClientWidth = 912
+        ClientHeight = 249
+        ClientWidth = 925
         TabOrder = 2
         object MaxSymbolSpin: TSpinEdit
           Left = 2
-          Height = 23
+          Height = 21
           Top = 20
           Width = 66
           MaxValue = 65534
@@ -275,9 +275,9 @@ object MainForm: TMainForm
         end
         object MaxSymbolLabel: TLabel
           Left = 2
-          Height = 15
+          Height = 16
           Top = 4
-          Width = 129
+          Width = 145
           Caption = 'Макс. число Символов'
           ParentColor = False
         end
@@ -323,8 +323,8 @@ object MainForm: TMainForm
     end
     object TabRaznoe: TTabSheet
       Caption = 'Разное'
-      ClientHeight = 532
-      ClientWidth = 922
+      ClientHeight = 530
+      ClientWidth = 935
       object TimerSecGroup: TGroupBox
         Left = 460
         Height = 160
@@ -336,9 +336,9 @@ object MainForm: TMainForm
         TabOrder = 0
         object TimeLabel: TLabel
           Left = 62
-          Height = 72
+          Height = 85
           Top = 16
-          Width = 185
+          Width = 277
           Caption = '0:00:00'
           Font.Height = 72
           Font.Style = [fsBold]
@@ -426,9 +426,9 @@ object MainForm: TMainForm
         end
         object ProcessWatchLabel: TLabel
           Left = 150
-          Height = 15
+          Height = 16
           Top = 392
-          Width = 138
+          Width = 160
           Caption = 'Слежение за процессом:'
           ParentColor = False
         end

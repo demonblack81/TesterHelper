@@ -53,8 +53,8 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="UMain"/>
-        <TopLine Value="129"/>
-        <CursorPos X="22" Y="134"/>
+        <TopLine Value="793"/>
+        <CursorPos X="47" Y="811"/>
         <UsageCount Value="442"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -221,8 +221,8 @@
         <UnitName Value="uMakedPhrases"/>
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="6"/>
-        <TopLine Value="80"/>
-        <CursorPos X="50" Y="94"/>
+        <TopLine Value="59"/>
+        <CursorPos X="61" Y="113"/>
         <UsageCount Value="18"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -244,123 +244,123 @@
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="umakedphrases.pas"/>
-        <Caret Line="127" TopLine="82"/>
+        <Caret Line="94" Column="104" TopLine="82"/>
       </Position1>
       <Position2>
         <Filename Value="umakedphrases.pas"/>
-        <Caret Line="128" TopLine="82"/>
+        <Caret Line="126" TopLine="82"/>
       </Position2>
       <Position3>
         <Filename Value="umakedphrases.pas"/>
-        <Caret Line="130" Column="29" TopLine="82"/>
+        <Caret Line="127" TopLine="82"/>
       </Position3>
       <Position4>
         <Filename Value="umakedphrases.pas"/>
-        <Caret Line="126" TopLine="82"/>
+        <Caret Line="128" TopLine="82"/>
       </Position4>
       <Position5>
         <Filename Value="umakedphrases.pas"/>
-        <Caret Line="127" TopLine="82"/>
+        <Caret Line="132" Column="33" TopLine="82"/>
       </Position5>
       <Position6>
         <Filename Value="umakedphrases.pas"/>
-        <Caret Line="128" TopLine="82"/>
+        <Caret Line="126" TopLine="82"/>
       </Position6>
       <Position7>
         <Filename Value="umakedphrases.pas"/>
-        <Caret Line="94" Column="104" TopLine="82"/>
+        <Caret Line="127" TopLine="82"/>
       </Position7>
       <Position8>
         <Filename Value="umakedphrases.pas"/>
-        <Caret Line="126" TopLine="82"/>
+        <Caret Line="128" TopLine="82"/>
       </Position8>
       <Position9>
         <Filename Value="umakedphrases.pas"/>
-        <Caret Line="127" TopLine="82"/>
+        <Caret Line="129" TopLine="82"/>
       </Position9>
       <Position10>
         <Filename Value="umakedphrases.pas"/>
-        <Caret Line="128" TopLine="82"/>
+        <Caret Line="130" TopLine="82"/>
       </Position10>
       <Position11>
         <Filename Value="umakedphrases.pas"/>
-        <Caret Line="132" Column="33" TopLine="82"/>
+        <Caret Line="131" TopLine="82"/>
       </Position11>
       <Position12>
         <Filename Value="umakedphrases.pas"/>
-        <Caret Line="126" TopLine="82"/>
+        <Caret Line="132" TopLine="82"/>
       </Position12>
       <Position13>
         <Filename Value="umakedphrases.pas"/>
-        <Caret Line="127" TopLine="82"/>
+        <Caret Line="133" TopLine="83"/>
       </Position13>
       <Position14>
-        <Filename Value="umakedphrases.pas"/>
-        <Caret Line="128" TopLine="82"/>
-      </Position14>
-      <Position15>
-        <Filename Value="umakedphrases.pas"/>
-        <Caret Line="129" TopLine="82"/>
-      </Position15>
-      <Position16>
-        <Filename Value="umakedphrases.pas"/>
-        <Caret Line="130" TopLine="82"/>
-      </Position16>
-      <Position17>
-        <Filename Value="umakedphrases.pas"/>
-        <Caret Line="131" TopLine="82"/>
-      </Position17>
-      <Position18>
-        <Filename Value="umakedphrases.pas"/>
-        <Caret Line="132" TopLine="82"/>
-      </Position18>
-      <Position19>
-        <Filename Value="umakedphrases.pas"/>
-        <Caret Line="133" TopLine="83"/>
-      </Position19>
-      <Position20>
         <Filename Value="ufastphrases.pas"/>
         <Caret Line="51" Column="10"/>
-      </Position20>
-      <Position21>
+      </Position14>
+      <Position15>
         <Filename Value="ufastphrases.pas"/>
         <Caret Line="99" Column="57" TopLine="91"/>
-      </Position21>
-      <Position22>
+      </Position15>
+      <Position16>
         <Filename Value="ufastphrases.pas"/>
         <Caret Line="182" Column="20" TopLine="166"/>
-      </Position22>
-      <Position23>
+      </Position16>
+      <Position17>
         <Filename Value="ufastphrases.pas"/>
         <Caret Line="43" Column="15" TopLine="43"/>
-      </Position23>
-      <Position24>
+      </Position17>
+      <Position18>
         <Filename Value="ufastphrases.pas"/>
         <Caret Line="185" Column="50" TopLine="161"/>
-      </Position24>
-      <Position25>
+      </Position18>
+      <Position19>
         <Filename Value="ufastphrases.pas"/>
         <Caret Line="11" Column="17"/>
-      </Position25>
-      <Position26>
+      </Position19>
+      <Position20>
         <Filename Value="umakedphrases.pas"/>
         <Caret Line="46" Column="23"/>
-      </Position26>
-      <Position27>
+      </Position20>
+      <Position21>
         <Filename Value="umakedphrases.pas"/>
         <Caret Line="47" Column="23"/>
-      </Position27>
-      <Position28>
+      </Position21>
+      <Position22>
         <Filename Value="umakedphrases.pas"/>
         <Caret Line="46" Column="23"/>
-      </Position28>
-      <Position29>
+      </Position22>
+      <Position23>
         <Filename Value="umakedphrases.pas"/>
         <Caret Line="48" Column="23" TopLine="48"/>
-      </Position29>
-      <Position30>
+      </Position23>
+      <Position24>
         <Filename Value="umakedphrases.pas"/>
         <Caret Line="104" Column="35" TopLine="51"/>
+      </Position24>
+      <Position25>
+        <Filename Value="umain.pas"/>
+        <Caret Line="231" Column="31" TopLine="100"/>
+      </Position25>
+      <Position26>
+        <Filename Value="umain.pas"/>
+        <Caret Line="808" Column="8" TopLine="777"/>
+      </Position26>
+      <Position27>
+        <Filename Value="umain.pas"/>
+        <Caret Line="155" Column="16" TopLine="155"/>
+      </Position27>
+      <Position28>
+        <Filename Value="umain.pas"/>
+        <Caret Line="919" Column="3" TopLine="911"/>
+      </Position28>
+      <Position29>
+        <Filename Value="umain.pas"/>
+        <Caret Line="912" Column="44" TopLine="906"/>
+      </Position29>
+      <Position30>
+        <Filename Value="umain.pas"/>
+        <Caret Line="815" Column="27" TopLine="1431"/>
       </Position30>
     </JumpHistory>
   </ProjectOptions>
