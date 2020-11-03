@@ -1,5 +1,5 @@
 object MakedPhrasesForm: TMakedPhrasesForm
-  Left = 1520
+  Left = 1519
   Height = 493
   Top = 250
   Width = 810
@@ -17,6 +17,7 @@ object MakedPhrasesForm: TMakedPhrasesForm
     Top = 5
     Width = 800
     ItemHeight = 0
+    MultiSelect = True
     TabOrder = 0
   end
   object CloseFprmBitBtn: TBitBtn
@@ -46,5 +47,14 @@ object MakedPhrasesForm: TMakedPhrasesForm
     Caption = 'Вставить фразу из буфера'
     OnClick = AddPhraseFromClipboardBitBtnClick
     TabOrder = 3
+  end
+  object DeleteBitBtn: TBitBtn
+    Left = 580
+    Height = 30
+    Top = 440
+    Width = 75
+    Caption = 'Удалить'
+    OnClick = DeleteBitBtnClick
+    TabOrder = 4
   end
 end

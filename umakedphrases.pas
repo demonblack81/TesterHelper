@@ -13,11 +13,13 @@ type
 
   TMakedPhrasesForm = class(TForm)
     AddPhraseFromClipboardBitBtn: TBitBtn;
+    DeleteBitBtn: TBitBtn;
     CopySelectedPraseBitBtn: TBitBtn;
     CloseFprmBitBtn: TBitBtn;
     MakedPrasesListBox: TListBox;
     procedure AddPhraseFromClipboardBitBtnClick(Sender: TObject);
     procedure CopySelectedPraseBitBtnClick(Sender: TObject);
+    procedure DeleteBitBtnClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -93,6 +95,13 @@ begin
     TempMemo.SelectAll;
     TempMemo.CopyToClipboard;
   end;
+end;
+
+procedure TMakedPhrasesForm.DeleteBitBtnClick(Sender: TObject);
+begin
+  MakedPrasesListBox.DeleteSelected;
+  SL_MakedPhrases.Clear;
+  SL_MakedPhrases.AddStrings(MakedPrasesListBox.Items);
 end;
 
 
