@@ -35,6 +35,7 @@ type
     procedure EditSpeedButtonClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
+    procedure FormShow(Sender: TObject);
     procedure NewPhrasesToolButtonClick(Sender: TObject);
     procedure SavePhrasesToolButtonClick(Sender: TObject);
     procedure UpPhrasesToolButtonClick(Sender: TObject);
@@ -55,6 +56,7 @@ var
 implementation
 
 {$R *.lfm}
+uses uMain;
 
 { TFastPhrasesForm }
 var
@@ -90,6 +92,12 @@ begin
   FastPhrasesListBox.Items.AddStrings(FastPhrasesList);
 
   CreateButtonOnPanel;
+end;
+
+procedure TFastPhrasesForm.FormShow(Sender: TObject);
+begin
+  FastPhrasesForm.Top := MainForm.top;
+  FastPhrasesForm.Left:= MainForm.Left + MainForm.Width;
 end;
 
 procedure TFastPhrasesForm.NewPhrasesToolButtonClick(Sender: TObject);
@@ -173,7 +181,9 @@ begin
     EditFastPhrasesPanel.Visible:= true;
     FastPhrasesBtnPanel.Visible:=false;
     DeleteButtonFromPanel;
+    EditSpeedButton.Caption:= 'Завершить настройки';
   end else begin
+    EditSpeedButton.Caption:= 'Настройки';
     EditFastPhrasesPanel.Visible:= false;
     CreateButtonOnPanel;
     FastPhrasesBtnPanel.Visible:= true;

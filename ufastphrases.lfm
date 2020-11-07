@@ -1,7 +1,7 @@
 object FastPhrasesForm: TFastPhrasesForm
-  Left = 1751
+  Left = 1550
   Height = 600
-  Top = 420
+  Top = 329
   Width = 230
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
@@ -10,7 +10,8 @@ object FastPhrasesForm: TFastPhrasesForm
   ClientWidth = 230
   OnClose = FormClose
   OnCreate = FormCreate
-  LCLVersion = '2.0.6.0'
+  OnShow = FormShow
+  LCLVersion = '2.0.4.0'
   object FastPhrasesBtnPanel: TPanel
     Left = 5
     Height = 550

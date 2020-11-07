@@ -1,7 +1,7 @@
 object MakedPhrasesForm: TMakedPhrasesForm
-  Left = 1520
+  Left = 710
   Height = 493
-  Top = 250
+  Top = 236
   Width = 810
   Caption = 'Созданные Фразы'
   ClientHeight = 493
@@ -10,7 +10,7 @@ object MakedPhrasesForm: TMakedPhrasesForm
   OnCreate = FormCreate
   OnShow = FormShow
   Position = poMainFormCenter
-  LCLVersion = '2.1.0.0'
+  LCLVersion = '2.0.4.0'
   object MakedPrasesListBox: TListBox
     Left = 5
     Height = 420
@@ -20,7 +20,6 @@ object MakedPhrasesForm: TMakedPhrasesForm
     MultiSelect = True
     ScrollWidth = 798
     TabOrder = 0
-    TopIndex = -1
   end
   object CloseFprmBitBtn: TBitBtn
     Left = 730
@@ -49,5 +48,14 @@ object MakedPhrasesForm: TMakedPhrasesForm
     Caption = 'Вставить фразу из буфера'
     OnClick = AddPhraseFromClipboardBitBtnClick
     TabOrder = 3
+  end
+  object DeleteBitBtnClick: TBitBtn
+    Left = 568
+    Height = 30
+    Top = 440
+    Width = 75
+    Caption = 'Удалить'
+    OnClick = DeleteBitBtnClickClick
+    TabOrder = 4
   end
 end

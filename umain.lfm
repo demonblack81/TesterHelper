@@ -6,16 +6,17 @@ object MainForm: TMainForm
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   Caption = 'TesterHelper'
-  ClientHeight = 600
+  ClientHeight = 580
   ClientWidth = 941
   Menu = MainMenu1
   OnClose = FormClose
   OnCreate = FormCreate
   Position = poScreenCenter
+  LCLVersion = '2.0.4.0'
   object MainStatBar: TStatusBar
     Left = 0
-    Height = 20
-    Top = 580
+    Height = 23
+    Top = 557
     Width = 941
     Panels = <>
   end
@@ -40,7 +41,7 @@ object MainForm: TMainForm
         Align = alTop
         Caption = 'Символы'
         ClientHeight = 134
-        ClientWidth = 920
+        ClientWidth = 918
         TabOrder = 0
         object EngSymbolGroup: TGroupBox
           Left = 2
@@ -49,7 +50,7 @@ object MainForm: TMainForm
           Width = 185
           Caption = 'Английские Символы'
           ClientHeight = 109
-          ClientWidth = 183
+          ClientWidth = 181
           TabOrder = 0
           object EnAllRadio: TRadioButton
             Left = 18
@@ -98,7 +99,7 @@ object MainForm: TMainForm
           Width = 185
           Caption = 'Русские Символы'
           ClientHeight = 109
-          ClientWidth = 183
+          ClientWidth = 181
           TabOrder = 1
           object RuAllRadio: TRadioButton
             Left = 18
@@ -178,7 +179,7 @@ object MainForm: TMainForm
         Align = alTop
         Caption = 'Тип Поля'
         ClientHeight = 88
-        ClientWidth = 920
+        ClientWidth = 918
         TabOrder = 1
         object StringRBtn: TRadioButton
           Left = 2
@@ -264,7 +265,7 @@ object MainForm: TMainForm
         Align = alClient
         Caption = 'Генерация'
         ClientHeight = 250
-        ClientWidth = 920
+        ClientWidth = 918
         TabOrder = 2
         object MaxSymbolSpin: TSpinEdit
           Left = 2
@@ -334,7 +335,7 @@ object MainForm: TMainForm
         Width = 320
         Caption = 'Секундомер'
         ClientHeight = 140
-        ClientWidth = 318
+        ClientWidth = 316
         TabOrder = 0
         object TimeLabel: TLabel
           Left = 62
@@ -372,7 +373,7 @@ object MainForm: TMainForm
         Width = 448
         Caption = 'Proces Info'
         ClientHeight = 508
-        ClientWidth = 446
+        ClientWidth = 444
         TabOrder = 1
         object ProcesInfoView: TListView
           Left = 6
@@ -384,7 +385,7 @@ object MainForm: TMainForm
               AutoSize = True
               Caption = 'Process Name'
               ImageIndex = 0
-              Width = 1
+              Width = 90
             end          
             item
               Caption = 'PID'
@@ -466,8 +467,8 @@ object MainForm: TMainForm
     end
     object TempPhraseTab: TTabSheet
       Caption = 'Шаблоны фраз'
-      ClientHeight = 529
-      ClientWidth = 931
+      ClientHeight = 532
+      ClientWidth = 933
       object BtnWord: TButton
         Left = 813
         Height = 25
@@ -488,34 +489,34 @@ object MainForm: TMainForm
       end
       object LabelSettings: TLabel
         Left = 768
-        Height = 19
+        Height = 15
         Top = 11
-        Width = 74
+        Width = 63
         Caption = 'Настройки:'
         ParentColor = False
       end
       object Label1: TLabel
         Left = 5
-        Height = 19
+        Height = 15
         Top = 11
-        Width = 104
+        Width = 87
         Caption = 'Шаблоны Фраз:'
         ParentColor = False
       end
       object TemplateComboBox: TComboBox
-        Left = 5
-        Height = 30
+        Left = 8
+        Height = 23
         Top = 29
         Width = 627
-        ItemHeight = 0
+        ItemHeight = 15
         OnCloseUp = TemplateComboBoxCloseUp
         TabOrder = 2
       end
       object PhraseMemoLabel: TLabel
         Left = 5
-        Height = 19
+        Height = 15
         Top = 216
-        Width = 154
+        Width = 131
         Caption = 'Сформированая Фраза:'
         ParentColor = False
       end
@@ -530,137 +531,137 @@ object MainForm: TMainForm
       end
       object FirstTempCB: TComboBox
         Left = 5
-        Height = 30
+        Height = 23
         Top = 88
         Width = 200
-        ItemHeight = 0
+        ItemHeight = 15
         TabOrder = 4
         Text = 'FirstTempCB'
       end
       object FirstCBTemplLabel: TLabel
         Left = 5
-        Height = 19
+        Height = 15
         Top = 72
-        Width = 114
+        Width = 96
         Caption = 'FirstCBTemplLabel'
         ParentColor = False
       end
       object SecondCBTemplLabel: TLabel
         Left = 232
-        Height = 19
+        Height = 15
         Top = 69
-        Width = 132
+        Width = 113
         Caption = 'SecondCBTemplLabel'
         ParentColor = False
       end
       object SecondTempCB: TComboBox
         Left = 232
-        Height = 30
+        Height = 23
         Top = 88
         Width = 200
-        ItemHeight = 0
+        ItemHeight = 15
         TabOrder = 5
         Text = 'SecondTempCB'
       end
       object ThirdCBTemplLabel: TLabel
         Left = 456
-        Height = 19
+        Height = 15
         Top = 72
-        Width = 118
+        Width = 101
         Caption = 'ThirdCBTemplLabel'
         ParentColor = False
       end
       object ThirdTempCB: TComboBox
         Left = 456
-        Height = 30
+        Height = 23
         Top = 88
         Width = 200
-        ItemHeight = 0
+        ItemHeight = 15
         TabOrder = 6
         Text = 'ThirdTempCB'
       end
       object FourthCBTemplLabel: TLabel
         Left = 680
-        Height = 19
+        Height = 15
         Top = 69
-        Width = 129
+        Width = 109
         Caption = 'FourthCBTemplLabel'
         ParentColor = False
       end
       object FourthTempCB: TComboBox
         Left = 680
-        Height = 30
+        Height = 23
         Top = 88
         Width = 200
-        ItemHeight = 0
+        ItemHeight = 15
         TabOrder = 7
         Text = 'FourthTempCB'
       end
       object FifthCBTemplLabel: TLabel
         Left = 5
-        Height = 19
+        Height = 15
         Top = 121
-        Width = 115
+        Width = 98
         Caption = 'FifthCBTemplLabel'
         ParentColor = False
       end
       object FifthTempCB: TComboBox
         Left = 5
-        Height = 30
+        Height = 23
         Top = 141
         Width = 200
-        ItemHeight = 0
+        ItemHeight = 15
         TabOrder = 8
         Text = 'FifthTempCB'
       end
       object SixthCBTemplLabel: TLabel
         Left = 232
-        Height = 19
+        Height = 15
         Top = 121
-        Width = 117
+        Width = 100
         Caption = 'SixthCBTemplLabel'
         ParentColor = False
       end
       object SixthTempCB: TComboBox
         Left = 232
-        Height = 30
+        Height = 23
         Top = 141
         Width = 200
-        ItemHeight = 0
+        ItemHeight = 15
         TabOrder = 9
         Text = 'SixthTempCB'
       end
       object SeventhCBTemplLabel: TLabel
         Left = 456
-        Height = 19
+        Height = 15
         Top = 121
-        Width = 137
+        Width = 116
         Caption = 'SeventhCBTemplLabel'
         ParentColor = False
       end
       object SeventhTempCB: TComboBox
         Left = 456
-        Height = 30
+        Height = 23
         Top = 141
         Width = 200
-        ItemHeight = 0
+        ItemHeight = 15
         TabOrder = 10
         Text = 'SeventhTempCB'
       end
       object EigthCBTemplLabel: TLabel
         Left = 680
-        Height = 19
+        Height = 15
         Top = 121
-        Width = 118
+        Width = 101
         Caption = 'EigthCBTemplLabel'
         ParentColor = False
       end
       object EigthTempCB: TComboBox
         Left = 680
-        Height = 30
+        Height = 23
         Top = 141
         Width = 200
-        ItemHeight = 0
+        ItemHeight = 15
         TabOrder = 11
         Text = 'EigthTempCB'
       end
@@ -712,7 +713,7 @@ object MainForm: TMainForm
     end
   end
   object MainMenu1: TMainMenu
-    Left = 616
+    left = 616
     object MenuItem1: TMenuItem
       Caption = 'Файл'
       object MenuClose: TMenuItem
@@ -749,11 +750,11 @@ object MainForm: TMainForm
     Enabled = False
     Interval = 100
     OnTimer = TimerForTimeTimer
-    Left = 576
+    left = 576
   end
   object ProcessWatchwerTimer: TTimer
     Enabled = False
     OnTimer = ProcessWatchwerTimerTimer
-    Left = 536
+    left = 536
   end
 end

@@ -812,6 +812,7 @@ begin
     PhraseMemo.CopyToClipboard;
     MakedPhrasesForm.SL_MakedPhrases.AddStrings(PhraseMemo.Lines);
     PhraseMemo.SetFocus;
+    TemplateComboBoxCloseUp(self);
   end;
 end;
 

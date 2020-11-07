@@ -13,11 +13,13 @@ type
 
   TMakedPhrasesForm = class(TForm)
     AddPhraseFromClipboardBitBtn: TBitBtn;
+    DeleteBitBtnClick: TBitBtn;
     CopySelectedPraseBitBtn: TBitBtn;
     CloseFprmBitBtn: TBitBtn;
     MakedPrasesListBox: TListBox;
     procedure AddPhraseFromClipboardBitBtnClick(Sender: TObject);
     procedure CopySelectedPraseBitBtnClick(Sender: TObject);
+    procedure DeleteBitBtnClickClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -34,6 +36,7 @@ var
 implementation
 
 {$R *.lfm}
+
 
 { TMakedPhrasesForm }
 
@@ -65,13 +68,16 @@ begin
     SL_MakedPhrases.LoadFromFile(StartPath + 'Data/MakedPhrases.txt');
   {$ENDIF}
   MakedPrasesListBox.Items := SL_MakedPhrases;
+  TempMemo := TMemo.Create(self);
+  TempMemo.Parent := MakedPhrasesForm;
+  TempMemo.Left := MakedPhrasesForm.Width + 10;
 end;
 
 procedure TMakedPhrasesForm.FormShow(Sender: TObject);
 begin
   TempMemo := TMemo.Create(self);
   TempMemo.Parent := MakedPhrasesForm;
-  TempMemo.Left := MakedPhrasesForm.Width + 5;
+  TempMemo.Left := MakedPhrasesForm.Width + 10;
   if MakedPrasesListBox.Items.Count <> SL_MakedPhrases.Count then begin
     MakedPrasesListBox.Items.Clear;
     MakedPrasesListBox.Items := SL_MakedPhrases;
@@ -79,14 +85,24 @@ begin
 end;
 
 procedure TMakedPhrasesForm.CopySelectedPraseBitBtnClick(Sender: TObject);
+var SelText: String;
 begin
-  if MakedPrasesListBox.GetSelectedText <> '' then begin
+  SelText := '';
+  SelText := MakedPrasesListBox.GetSelectedText;
+  if SelText <> '' then begin
     if TempMemo.Lines.Count > 0 then TempMemo.Lines.Clear;
-    TempMemo.Lines.Add(MakedPrasesListBox.GetSelectedText);
+    TempMemo.Lines.Add(SelText);
     TempMemo.SetFocus;
     TempMemo.SelectAll;
     TempMemo.CopyToClipboard;
   end;
+end;
+
+procedure TMakedPhrasesForm.DeleteBitBtnClickClick(Sender: TObject);
+begin
+  MakedPrasesListBox.DeleteSelected;
+  SL_MakedPhrases.Clear;
+  SL_MakedPhrases.AddStrings(MakedPrasesListBox.Items);
 end;
 
 procedure TMakedPhrasesForm.FormClose(Sender: TObject;
@@ -108,13 +124,32 @@ begin
   TempMemo.Free;
 end;
 
+
 procedure TMakedPhrasesForm.AddPhraseFromClipboardBitBtnClick(Sender: TObject);
+{$IFDEF UNIX}
+var LastLbstring, LastMemoString: string;
+    CountofString: integer;
+{$ENDIF}
 begin
   if TempMemo.Lines.Count > 0 then TempMemo.Lines.Clear;
+  TempMemo.SetFocus;
   TempMemo.PasteFromClipboard;
-  if MakedPrasesListBox.Items[MakedPrasesListBox.Items.Count-1] = TempMemo.Lines[TempMemo.Lines.Count-1] then begin
-   exit;
-  end;
+  {$IFDEF UNIX}
+    CountofString := 0;
+    CountofString := MakedPrasesListBox.Items.Count;
+    LastLbstring := '';
+    LastLbstring := MakedPrasesListBox.Items[CountofString-1];
+    CountofString := TempMemo.Lines.Count;
+    LastMemoString := '';
+    LastMemoString := TempMemo.Lines[CountofString-1];
+    if LastLbstring = LastMemoString then begin
+       exit;
+    end;
+  {$ELSE}
+   if MakedPrasesListBox.Items[MakedPrasesListBox.Items.Count-1] = TempMemo.Lines[TempMemo.Lines.Count-1] then begin
+      exit;
+   end;
+  {$ENDIF}
   SL_MakedPhrases.AddStrings(TempMemo.Lines);
   MakedPrasesListBox.Items.AddStrings(TempMemo.Lines);
 end;
