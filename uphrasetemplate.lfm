@@ -3,19 +3,19 @@ object PhraseTemplateForm: TPhraseTemplateForm
   Height = 468
   Top = 136
   Width = 900
-  Caption = 'PhraseTemplateForm'
+  Caption = 'Шаблоны фраз'
   ClientHeight = 468
   ClientWidth = 900
   OnCreate = FormCreate
   Position = poOwnerFormCenter
-  LCLVersion = '2.0.6.0'
+  LCLVersion = '2.0.10.0'
   object TamplatePhrasesComboBox: TComboBox
     Left = 10
     Height = 20
     Top = 24
     Width = 700
     Font.CharSet = RUSSIAN_CHARSET
-    Font.Color = clBlack
+    Font.Color = clNone
     Font.Height = -13
     Font.Name = 'Segoe UI'
     Font.Pitch = fpVariable
@@ -124,7 +124,7 @@ object PhraseTemplateForm: TPhraseTemplateForm
     Top = 64
     Width = 880
     Font.CharSet = RUSSIAN_CHARSET
-    Font.Color = clBlack
+    Font.Color = clNone
     Font.Height = -13
     Font.Name = 'Segoe UI'
     Font.Pitch = fpVariable
