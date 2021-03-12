@@ -15,7 +15,6 @@ object PhraseTemplateForm: TPhraseTemplateForm
     Top = 24
     Width = 700
     Font.CharSet = RUSSIAN_CHARSET
-    Font.Color = clNone
     Font.Height = -13
     Font.Name = 'Segoe UI'
     Font.Pitch = fpVariable
@@ -124,7 +123,6 @@ object PhraseTemplateForm: TPhraseTemplateForm
     Top = 64
     Width = 880
     Font.CharSet = RUSSIAN_CHARSET
-    Font.Color = clNone
     Font.Height = -13
     Font.Name = 'Segoe UI'
     Font.Pitch = fpVariable
@@ -138,7 +136,6 @@ object PhraseTemplateForm: TPhraseTemplateForm
     Top = 264
     Width = 700
     Font.CharSet = RUSSIAN_CHARSET
-    Font.Color = clBlack
     Font.Height = -15
     Font.Name = 'Segoe UI'
     Font.Pitch = fpVariable
@@ -154,7 +151,6 @@ object PhraseTemplateForm: TPhraseTemplateForm
     Top = 312
     Width = 700
     Font.CharSet = RUSSIAN_CHARSET
-    Font.Color = clNone
     Font.Height = -15
     Font.Name = 'Segoe UI'
     Font.Pitch = fpVariable

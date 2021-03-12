@@ -91,7 +91,7 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uEditStringsParam"/>
         <EditorIndex Value="3"/>
-        <TopLine Value="48"/>
+        <TopLine Value="39"/>
         <CursorPos X="16" Y="71"/>
         <UsageCount Value="332"/>
         <Loaded Value="True"/>
@@ -115,7 +115,6 @@
         <UnitName Value="uPhraseTemplate"/>
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="4"/>
-        <TopLine Value="63"/>
         <CursorPos X="47" Y="90"/>
         <UsageCount Value="236"/>
         <Loaded Value="True"/>

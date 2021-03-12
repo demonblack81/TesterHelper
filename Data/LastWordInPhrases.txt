@@ -1,5 +1,5 @@
 0
-1
+Samsung Galaxy J5 (7.1.1)<1>Story реализована согласно логике<2>Cafe Merge <3>
 2
 Cafe Merge <1>1.0.4d<2>
 Battle Car<1>1.0.3d<2>

@@ -11,14 +11,13 @@ object StringsParamForm: TStringsParamForm
   OnCreate = FormCreate
   OnKeyUp = FormKeyUp
   Position = poMainFormCenter
-  LCLVersion = '2.0.6.0'
+  LCLVersion = '2.0.10.0'
   object NameListComboBox: TComboBox
     Left = 9
     Height = 20
     Top = 24
     Width = 296
     Font.CharSet = RUSSIAN_CHARSET
-    Font.Color = clBlack
     Font.Height = -13
     Font.Name = 'Segoe UI'
     Font.Pitch = fpVariable
@@ -60,7 +59,6 @@ object StringsParamForm: TStringsParamForm
     Top = 72
     Width = 410
     Font.CharSet = RUSSIAN_CHARSET
-    Font.Color = clBlack
     Font.Height = -15
     Font.Name = 'Segoe UI'
     Font.Pitch = fpVariable
