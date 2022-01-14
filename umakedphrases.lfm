@@ -1,7 +1,7 @@
 object MakedPhrasesForm: TMakedPhrasesForm
-  Left = 710
+  Left = 1618
   Height = 493
-  Top = 236
+  Top = 130
   Width = 810
   Caption = 'Созданные Фразы'
   ClientHeight = 493
@@ -10,7 +10,7 @@ object MakedPhrasesForm: TMakedPhrasesForm
   OnCreate = FormCreate
   OnShow = FormShow
   Position = poMainFormCenter
-  LCLVersion = '2.0.4.0'
+  LCLVersion = '2.0.10.0'
   object MakedPrasesListBox: TListBox
     Left = 5
     Height = 420

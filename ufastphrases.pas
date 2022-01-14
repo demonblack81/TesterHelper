@@ -24,14 +24,14 @@ type
     TempMemo: TMemo;
     EditFastPhrToolBar: TToolBar;
     NewPhrasesToolButton: TToolButton;
+    EditPhraseToolButton: TToolButton;
     UpPhrasesToolButton: TToolButton;
     DownPhrasesToolButton: TToolButton;
     DeletePhrasesToolButton: TToolButton;
     SavePhrasesToolButton: TToolButton;
-    DoneEditToolButton: TToolButton;
     procedure DeletePhrasesToolButtonClick(Sender: TObject);
-    procedure DoneEditToolButtonClick(Sender: TObject);
     procedure DownPhrasesToolButtonClick(Sender: TObject);
+    procedure EditPhraseToolButtonClick(Sender: TObject);
     procedure EditSpeedButtonClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
@@ -201,15 +201,21 @@ begin
   end;
 end;
 
+procedure TFastPhrasesForm.EditPhraseToolButtonClick(Sender: TObject);
+var CurSel: integer;
+    EditWord: string;
+begin
+   if FastPhrasesListBox.SelCount <> 1 then exit;
+   CurSel := GetCurentSelectedItemLB(FastPhrasesListBox);
+   EditWord :=  FastPhrasesListBox.Items[CurSel];
+   if not InputQuery('Редактирование фразы', 'Отридактируйте слова для листа фраз:', EditWord) then exit;
+   if EditWord <> '' then FastPhrasesListBox.Items[CurSel] := EditWord;
+end;
+
 procedure TFastPhrasesForm.DeletePhrasesToolButtonClick(Sender: TObject);
 begin
   if FastPhrasesListBox.SelCount <> 1 then exit;
   FastPhrasesListBox.DeleteSelected;
-end;
-
-procedure TFastPhrasesForm.DoneEditToolButtonClick(Sender: TObject);
-begin
-  FastPhrasesForm.EditSpeedButtonClick(Self);
 end;
 
 procedure TFastPhrasesForm.Clicks(Sender: TObject);

@@ -3,10 +3,10 @@
 2
 Cafe Merge <1>1.0.4d<2>
 Battle Car<1>1.0.3d<2>
-5
+Battle Car<1>1.0.7d<2>
 6
 7
-8
+Samsung Galaxy J5 (7.1.1)<1>PuzzLand<2>1.0.1d<3>Italian<4>Portrait<5>
 iPhone SE (12.1.2)<1>PuzzLand<2>2.9<3>French<4>Landscape Left<5>
 10
 Samsung  Galaxy S9 (9.0)<1>Samsung  Galaxy S9+ (8.0)<2>Samsung Galaxy Tab S2 (6.0.1)<3>Samsung Galaxy Tab S2 (6.0.1)<4>Idle Tycoon<5>0.1.1<6>

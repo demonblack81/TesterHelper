@@ -54,8 +54,8 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="UMain"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="787"/>
-        <CursorPos X="35" Y="815"/>
+        <TopLine Value="76"/>
+        <CursorPos X="3" Y="17"/>
         <UsageCount Value="442"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -64,7 +64,7 @@
         <Filename Value="ugeneration.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="uGeneration"/>
-        <EditorIndex Value="3"/>
+        <EditorIndex Value="4"/>
         <CursorPos X="15" Y="143"/>
         <UsageCount Value="442"/>
         <Loaded Value="True"/>
@@ -79,10 +79,11 @@
       <Unit4>
         <Filename Value="uProcInfo.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="77"/>
-        <CursorPos Y="105"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="186"/>
+        <CursorPos X="102" Y="206"/>
         <UsageCount Value="371"/>
+        <Loaded Value="True"/>
       </Unit4>
       <Unit5>
         <Filename Value="ueditstringsparam.pas"/>
@@ -91,9 +92,8 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uEditStringsParam"/>
-        <EditorIndex Value="4"/>
-        <TopLine Value="48"/>
-        <CursorPos X="16" Y="71"/>
+        <EditorIndex Value="5"/>
+        <CursorPos X="3" Y="17"/>
         <UsageCount Value="332"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -102,7 +102,7 @@
         <Filename Value="ulistoperation.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="uListOperation"/>
-        <EditorIndex Value="6"/>
+        <EditorIndex Value="7"/>
         <CursorPos X="20"/>
         <UsageCount Value="279"/>
         <Loaded Value="True"/>
@@ -114,9 +114,8 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uPhraseTemplate"/>
-        <EditorIndex Value="5"/>
-        <TopLine Value="48"/>
-        <CursorPos Y="87"/>
+        <EditorIndex Value="6"/>
+        <CursorPos X="17" Y="16"/>
         <UsageCount Value="236"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -167,9 +166,8 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uFastPhrases"/>
         <EditorIndex Value="2"/>
-        <TopLine Value="151"/>
-        <CursorPos X="47" Y="184"/>
-        <UsageCount Value="111"/>
+        <CursorPos X="57" Y="17"/>
+        <UsageCount Value="114"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit13>
@@ -220,130 +218,134 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uMakedPhrases"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="91"/>
-        <CursorPos X="52" Y="70"/>
-        <UsageCount Value="22"/>
+        <TopLine Value="90"/>
+        <CursorPos X="60" Y="108"/>
+        <UsageCount Value="23"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit20>
     </Units>
-    <JumpHistory Count="29" HistoryIndex="28">
+    <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
-        <Filename Value="ufastphrases.pas"/>
-        <Caret Line="166" TopLine="143"/>
+        <Filename Value="uphrasetemplate.pas"/>
+        <Caret Line="77" Column="17" TopLine="11"/>
       </Position1>
       <Position2>
-        <Filename Value="ufastphrases.pas"/>
-        <Caret Line="167" TopLine="143"/>
+        <Filename Value="uphrasetemplate.pas"/>
+        <Caret Line="80" Column="24" TopLine="50"/>
       </Position2>
       <Position3>
-        <Filename Value="ufastphrases.pas"/>
-        <Caret Line="144" TopLine="137"/>
+        <Filename Value="uphrasetemplate.pas"/>
+        <Caret Line="79" Column="50" TopLine="52"/>
       </Position3>
       <Position4>
-        <Filename Value="ufastphrases.pas"/>
-        <Caret Line="145" TopLine="137"/>
+        <Filename Value="umain.pas"/>
+        <Caret Line="196" Column="26" TopLine="125"/>
       </Position4>
       <Position5>
-        <Filename Value="ufastphrases.pas"/>
-        <Caret Line="146" TopLine="137"/>
+        <Filename Value="umain.pas"/>
+        <Caret Line="815" Column="5" TopLine="796"/>
       </Position5>
       <Position6>
         <Filename Value="umain.pas"/>
-        <Caret Line="287" Column="42" TopLine="261"/>
+        <Caret Line="918" Column="17" TopLine="911"/>
       </Position6>
       <Position7>
-        <Filename Value="umain.pas"/>
-        <Caret Line="289" Column="42" TopLine="263"/>
+        <Filename Value="ufastphrases.pas"/>
+        <Caret Line="74" Column="16" TopLine="48"/>
       </Position7>
       <Position8>
-        <Filename Value="umain.pas"/>
-        <Caret Line="288" Column="42" TopLine="237"/>
+        <Filename Value="umakedphrases.pas"/>
+        <Caret Line="142" Column="11" TopLine="93"/>
       </Position8>
       <Position9>
-        <Filename Value="umain.pas"/>
-        <Caret Line="289" Column="42" TopLine="255"/>
+        <Filename Value="umakedphrases.pas"/>
+        <Caret Line="124" TopLine="115"/>
       </Position9>
       <Position10>
-        <Filename Value="umain.pas"/>
-        <Caret Line="290" Column="42" TopLine="256"/>
+        <Filename Value="umakedphrases.pas"/>
+        <Caret Line="104" Column="30" TopLine="41"/>
       </Position10>
       <Position11>
-        <Filename Value="umain.pas"/>
-        <Caret Line="292" Column="42" TopLine="258"/>
+        <Filename Value="ufastphrases.pas"/>
+        <Caret Line="184" Column="61" TopLine="56"/>
       </Position11>
       <Position12>
-        <Filename Value="umain.pas"/>
-        <Caret Line="1633" Column="9" TopLine="1622"/>
+        <Filename Value="ufastphrases.pas"/>
+        <Caret Line="186" Column="61" TopLine="152"/>
       </Position12>
       <Position13>
         <Filename Value="umain.pas"/>
-        <Caret Line="1481" Column="42" TopLine="1481"/>
+        <Caret Line="815" Column="35" TopLine="787"/>
       </Position13>
       <Position14>
         <Filename Value="umain.pas"/>
-        <Caret Line="1633" Column="27" TopLine="1631"/>
+        <Caret Line="1558" Column="10" TopLine="1554"/>
       </Position14>
       <Position15>
-        <Filename Value="umain.pas"/>
-        <Caret Line="292" Column="43" TopLine="276"/>
+        <Filename Value="uphrasetemplate.pas"/>
+        <Caret Line="87" TopLine="48"/>
       </Position15>
       <Position16>
         <Filename Value="umain.pas"/>
-        <Caret Line="1633" Column="40" TopLine="1616"/>
+        <Caret Line="1558" Column="12" TopLine="1555"/>
       </Position16>
       <Position17>
-        <Filename Value="umain.pas"/>
-        <Caret Line="290" Column="43" TopLine="264"/>
+        <Filename Value="uphrasetemplate.pas"/>
+        <Caret Line="53" Column="34" TopLine="27"/>
       </Position17>
       <Position18>
         <Filename Value="umain.pas"/>
-        <Caret Line="1676" TopLine="1652"/>
+        <Caret Line="1558" Column="12" TopLine="1555"/>
       </Position18>
       <Position19>
         <Filename Value="umain.pas"/>
-        <Caret Line="1766" TopLine="1764"/>
+        <Caret Line="1574" Column="15" TopLine="1555"/>
       </Position19>
       <Position20>
-        <Filename Value="uphrasetemplate.pas"/>
-        <Caret Line="77" Column="17" TopLine="11"/>
+        <Filename Value="ueditstringsparam.pas"/>
+        <Caret Line="48" Column="25" TopLine="22"/>
       </Position20>
       <Position21>
-        <Filename Value="uphrasetemplate.pas"/>
-        <Caret Line="80" Column="24" TopLine="50"/>
+        <Filename Value="ufastphrases.pas"/>
+        <Caret Line="202" Column="96" TopLine="180"/>
       </Position21>
       <Position22>
-        <Filename Value="uphrasetemplate.pas"/>
-        <Caret Line="79" Column="50" TopLine="52"/>
+        <Filename Value="ufastphrases.pas"/>
+        <Caret Line="225" Column="3" TopLine="183"/>
       </Position22>
       <Position23>
-        <Filename Value="umain.pas"/>
-        <Caret Line="196" Column="26" TopLine="125"/>
+        <Filename Value="ufastphrases.pas"/>
+        <Caret Line="116" Column="2" TopLine="114"/>
       </Position23>
       <Position24>
-        <Filename Value="umain.pas"/>
-        <Caret Line="815" Column="5" TopLine="796"/>
+        <Filename Value="ufastphrases.pas"/>
+        <Caret Line="182" Column="3" TopLine="180"/>
       </Position24>
       <Position25>
-        <Filename Value="umain.pas"/>
-        <Caret Line="918" Column="17" TopLine="911"/>
+        <Filename Value="ufastphrases.pas"/>
+        <Caret Line="225" Column="3" TopLine="180"/>
       </Position25>
       <Position26>
         <Filename Value="ufastphrases.pas"/>
-        <Caret Line="74" Column="16" TopLine="48"/>
+        <Caret Line="182" Column="3" TopLine="183"/>
       </Position26>
       <Position27>
-        <Filename Value="umakedphrases.pas"/>
-        <Caret Line="142" Column="11" TopLine="93"/>
+        <Filename Value="ufastphrases.pas"/>
+        <Caret Line="181" Column="3" TopLine="181"/>
       </Position27>
       <Position28>
-        <Filename Value="umakedphrases.pas"/>
-        <Caret Line="124" TopLine="115"/>
+        <Filename Value="ufastphrases.pas"/>
+        <Caret Line="223" Column="26" TopLine="187"/>
       </Position28>
       <Position29>
-        <Filename Value="umakedphrases.pas"/>
-        <Caret Line="104" Column="30" TopLine="41"/>
+        <Filename Value="ufastphrases.pas"/>
+        <Caret Line="220" Column="5" TopLine="183"/>
       </Position29>
+      <Position30>
+        <Filename Value="umain.pas"/>
+        <Caret Line="1583" Column="18" TopLine="1555"/>
+      </Position30>
     </JumpHistory>
   </ProjectOptions>
   <CompilerOptions>

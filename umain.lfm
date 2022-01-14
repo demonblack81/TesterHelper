@@ -1,7 +1,7 @@
 object MainForm: TMainForm
-  Left = 395
+  Left = 1059
   Height = 600
-  Top = 236
+  Top = 229
   Width = 941
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
@@ -12,7 +12,7 @@ object MainForm: TMainForm
   OnClose = FormClose
   OnCreate = FormCreate
   Position = poScreenCenter
-  LCLVersion = '2.0.4.0'
+  LCLVersion = '2.0.10.0'
   object MainStatBar: TStatusBar
     Left = 0
     Height = 23
@@ -702,10 +702,12 @@ object MainForm: TMainForm
         TabOrder = 15
       end
       object FastPhraseBitBtn: TBitBtn
-        Left = 891
-        Height = 507
-        Top = 11
-        Width = 42
+        Left = 904
+        Height = 522
+        Top = 5
+        Width = 24
+        Align = alRight
+        BorderSpacing.Around = 5
         Caption = '>>'
         OnClick = FastPhraseBitBtnClick
         TabOrder = 16
@@ -713,7 +715,7 @@ object MainForm: TMainForm
     end
   end
   object MainMenu1: TMainMenu
-    left = 616
+    Left = 616
     object MenuItem1: TMenuItem
       Caption = 'Файл'
       object MenuClose: TMenuItem
@@ -750,11 +752,11 @@ object MainForm: TMainForm
     Enabled = False
     Interval = 100
     OnTimer = TimerForTimeTimer
-    left = 576
+    Left = 576
   end
   object ProcessWatchwerTimer: TTimer
     Enabled = False
     OnTimer = ProcessWatchwerTimerTimer
-    left = 536
+    Left = 536
   end
 end
