@@ -24,6 +24,7 @@ type
     TempMemo: TMemo;
     EditFastPhrToolBar: TToolBar;
     NewPhrasesToolButton: TToolButton;
+    EditPhraseToolButton: TToolButton;
     UpPhrasesToolButton: TToolButton;
     DownPhrasesToolButton: TToolButton;
     DeletePhrasesToolButton: TToolButton;
@@ -32,6 +33,7 @@ type
     procedure DeletePhrasesToolButtonClick(Sender: TObject);
     procedure DoneEditToolButtonClick(Sender: TObject);
     procedure DownPhrasesToolButtonClick(Sender: TObject);
+    procedure EditPhraseToolButtonClick(Sender: TObject);
     procedure EditSpeedButtonClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
@@ -198,6 +200,17 @@ begin
    FastPhrasesListBox.Items.Move(CurSel, (CurSel+1));
    FastPhrasesListBox.Selected[CurSel+1] := true;
   end;
+end;
+
+procedure TFastPhrasesForm.EditPhraseToolButtonClick(Sender: TObject);
+var EditWord: string;
+    CurSel: integer;
+begin
+  if FastPhrasesListBox.SelCount <> 1 then exit;
+  CurSel := GetCurentSelectedItemLB(FastPhrasesListBox);
+  EditWord :=  FastPhrasesListBox.Items[CurSel];
+  if not InputQuery('Редактирование фразы', 'Измените фразу для листа фраз:', EditWord) then exit;
+  if EditWord <> '' then FastPhrasesListBox.Items[CurSel] := EditWord;
 end;
 
 procedure TFastPhrasesForm.DeletePhrasesToolButtonClick(Sender: TObject);
