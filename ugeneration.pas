@@ -191,6 +191,7 @@ begin
 end;
 
 procedure FinilazeSymbol;
+//Освобождение обьектов из памяти
 begin
   RuSymbol.Free;
   Inetzone.Free;

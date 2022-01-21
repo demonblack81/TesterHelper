@@ -174,26 +174,28 @@ implementation
 procedure TMainForm.FormCreate(Sender: TObject);
 var err, i: integer;
 begin
- StartPath := ExtractFileDir(ParamStr(0)); // определяем  путь к программе
+ // определяем  путь к программе
+ StartPath := ExtractFileDir(ParamStr(0));
  {$IFDEF WINDOWS}
- if StartPath[Length(StartPath)] <> '\' then begin
-   StartPath := StartPath + '\';
- end; // проверяем есть ли на конце строки "\"
+   // проверяем есть ли на конце строки "\" если нет добовляем
+   if StartPath[Length(StartPath)] <> '\' then begin
+      StartPath := StartPath + '\';
+   end;
  {$ELSE}
    StartPath := ParamStr(0);
    {$IFDEF UNIX}
      err := Pos('TesterHelper.app', StartPath);
      Delete(StartPath, err, (Length(StartPath) - err + 2) );
-  {$ENDIF}
-  {$IFDEF LINUX}
+   {$ENDIF}
+   {$IFDEF LINUX}
      err := Pos('TesterHelper/', StartPath);
      err := err+ 13;
      Delete(StartPath, err, 12 );
-  {$ENDIF}
+   {$ENDIF}
    err := 0;
  {$ENDIF}
  Randomize;
- InitilzationSymbol;
+ InitilzationSymbol; // иницилизация руских символов (делалось из за 2 байтовых руских символов) и инетзон
  UsingSymbol := 0;
  UsingType := 1;
  Secondomer := 0;
@@ -201,6 +203,8 @@ begin
  PageControl.TabIndex := 0;
  WatcherProcessName := '';
  LastProcessMemory := 0;
+
+  // Добавление описания фраз добавления в ComboBox
  {$IFDEF WINDOWS}
   err := LoadDiscriptionInCB((StartPath + 'Phrases\' + '*.*'), TemplateComboBox);
  {$ELSE}
@@ -209,6 +213,8 @@ begin
   if (err < 0) then begin
    ShowMessage('LoadDiscriptionInCB. Файлы в коталоге не найдены');
   end;
+
+  // Чтение последних вставленных слов в фразы
   LastWordInPhrases := TStringList.Create;
   {$IFDEF WINDOWS}
     LastWordInPhrases.LoadFromFile(StartPath + 'Data\LastWordInPhrases.txt');
@@ -231,58 +237,75 @@ end;
 procedure TMainForm.GenerationBtnClick(Sender: TObject);
 begin
  GenerationMemo.Lines.Clear;
+ // Включам кнопку сохранения гененируемого текста
  SaveGenerationBtn.Enabled := True;
+ // Проверяем что мы будем гененрировать
  case (UsingType) of
       1:
        begin
+        //если UsingType = 1 то гененрируесм страку
         GenerationMemo.Lines.Add(GenerationString(MaxSymbolSpin.Value, UsingSymbol));
        end;
 
       2:
        begin
+        //если UsingType = 2 генерируес email
         GenerationMemo.Lines.Add(GenerationEMail(MaxSymbolSpin.Value));
        end;
 
       3:
        begin
+        //если UsingType = 3 гененрируем url
         GenerationMemo.Lines.Add(GenerationUrl(MaxSymbolSpin.Value));
        end;
 
       4:
        begin
+        //если UsingType = 4 гененрируем почтовый индекс
         GenerationMemo.Lines.Add(GenerationZip(MaxSymbolSpin.Value));
        end;
 
       5:
        begin
+        //если UsingType = 5 генерируем телефон
         GenerationMemo.Lines.Add(GenerationPhone(MaxSymbolSpin.Value, PhonePlusCheck.Checked));
        end;
       6:
        begin
+        //если UsingType = 6 генерируем путь на диске
         GenerationMemo.Lines.Add(GenerationPath(ExistsFileCheck.Checked));
        end;
 
       else begin
+       //если UsingType не указан выводим ошибку в мемо
        GenerationMemo.Lines.Add('Неизвестный тип Строки!!!');
       end;
  end;
 end;
 
 procedure TMainForm.MakedPhrMenuItemClick(Sender: TObject);
+// Отображаем форму создания фраз
 begin
   MakedPhrasesForm.ShowModal;
 end;
 
 procedure TMainForm.MakePhraseBitBtnClick(Sender: TObject);
+// Процедура создания фразы при нажати на кнопу "Создать"
 var PosI, i: integer;
     PosStr: string;
 begin
+  //Проверяем есть количество отображаемых комбо боксов
   if CountVisibleCB > 0 then begin
     case CountVisibleCB of
+
       1: begin
+        // Проверяем есть ли текст в комбо боксе, если нет нечего не делаем
         if FirstTempCB.Text = '' then exit;
+
+
         if TempArray[0] < 10 then Delete(TempStr,TempArray[8],10)
         else Delete(TempStr,TempArray[8],11);
+
         Insert(FirstTempCB.Text, TempStr, TempArray[8]);
         LastWordInPhrases[TemplateComboBox.ItemIndex] := FirstTempCB.Text;
       end;
