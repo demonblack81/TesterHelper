@@ -497,7 +497,7 @@ object MainForm: TMainForm
         Left = 5
         Height = 16
         Top = 11
-        Width = 99
+        Width = 100
         Caption = 'Шаблоны Фраз:'
         ParentColor = False
       end

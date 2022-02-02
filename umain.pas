@@ -302,19 +302,25 @@ begin
         // Проверяем есть ли текст в комбо боксе, если нет нечего не делаем
         if FirstTempCB.Text = '' then exit;
 
-
+        // Удаляем из TempStr первый вставляемый тригер
         if TempArray[0] < 10 then Delete(TempStr,TempArray[8],10)
         else Delete(TempStr,TempArray[8],11);
-
+        // вставляем в место тригера текст из комбо бокса
         Insert(FirstTempCB.Text, TempStr, TempArray[8]);
+        // Добавляем вставленный текст в лист для последующей подстановки их при выборе фразы
         LastWordInPhrases[TemplateComboBox.ItemIndex] := FirstTempCB.Text;
       end;
       2: begin
+        // Проверяем есть ли текст в комбо боксах, если нет нечего в одном из них не делаем
         if FirstTempCB.Text = '' then exit;
         if SecondTempCB.Text = '' then exit;
+
+        // Удаляем из TempStr первый вставляемый тригер и вставляем в место тригера текст из комбо бокса
         if TempArray[0] < 10 then Delete(TempStr,TempArray[8],10)
         else Delete(TempStr,TempArray[8],11);
         Insert(FirstTempCB.Text, TempStr, TempArray[8]);
+
+        //Проверем какой тригер идет вторым, отличный от первого или такой же но с добавлением цифры
         PosStr := '<PhTemp' + IntToStr(TempArray[1]) + '/>';
         PosI := Pos(PosStr,TempStr);
         if PosI = 0 then begin
@@ -328,18 +334,25 @@ begin
           end;
         end;
         if PosI <> TempArray[9] then TempArray[9] := PosI;
+        // Удаляем из TempStr второй тригер  и вставляем в место тригера текст из комбо бокса
         Delete(TempStr,TempArray[9],Length(PosStr));
         Insert(SecondTempCB.Text, TempStr, TempArray[9]);
+
+        // Добавляем вставленный текст в лист для последующей подстановки их при выборе фразы
         LastWordInPhrases[TemplateComboBox.ItemIndex] := FirstTempCB.Text + '<1>' + SecondTempCB.Text + '<2>';
       end;
       3: begin
+        // Проверяем есть ли текст в комбо боксе, если нет нечего не делаем
         if FirstTempCB.Text = '' then exit;
         if SecondTempCB.Text = '' then exit;
         if ThirdTempCB.Text = '' then exit;
+
+        // Удаляем из TempStr первый вставляемый тригер и вставляем в место тригера текст из комбо бокса
         if TempArray[0] < 10 then Delete(TempStr,TempArray[8],10)
         else Delete(TempStr,TempArray[8],11);
         Insert(FirstTempCB.Text, TempStr, TempArray[8]);
 
+        // Проверем какой тригер идет вторым, отличный от первого или такой же но с добавлением цифры
         PosStr := '<PhTemp' + IntToStr(TempArray[1]) + '/>';
         PosI := Pos(PosStr,TempStr);
         if PosI = 0 then begin
@@ -353,9 +366,12 @@ begin
           end;
         end;
         if PosI <> TempArray[9] then TempArray[9] := PosI;
+
+        // Удаляем из TempStr второй тригер  и вставляем в место тригера текст из комбо бокса
         Delete(TempStr,TempArray[9],Length(PosStr));
         Insert(SecondTempCB.Text, TempStr, TempArray[9]);
 
+        // Проверем какой тригер идет вторым, отличный от первого или такой же но с добавлением цифры
         PosStr := '<PhTemp' + IntToStr(TempArray[2]) + '/>';
         PosI := Pos(PosStr,TempStr);
         if PosI = 0 then begin
@@ -369,19 +385,27 @@ begin
           end;
         end;
         if PosI <> TempArray[10] then TempArray[10] := PosI;
+
+        // Удаляем из TempStr второй тригер  и вставляем в место тригера текст из комбо бокса
         Delete(TempStr,TempArray[10],Length(PosStr));
         Insert(ThirdTempCB.Text, TempStr, TempArray[10]);
+
+        // Добавляем вставленный текст в лист для последующей подстановки их при выборе фразы
         LastWordInPhrases[TemplateComboBox.ItemIndex] := FirstTempCB.Text + '<1>' + SecondTempCB.Text + '<2>' + ThirdTempCB.Text + '<3>';
       end;
       4: begin
+        // Проверяем есть ли текст в комбо боксе, если нет нечего не делаем
         if FirstTempCB.Text = '' then exit;
         if SecondTempCB.Text = '' then exit;
         if ThirdTempCB.Text = '' then exit;
         if FourthTempCB.Text = '' then exit;
+
+        // Удаляем из TempStr первый вставляемый тригер и вставляем в место тригера текст из комбо бокса
         if TempArray[0] < 10 then Delete(TempStr,TempArray[8],10)
         else Delete(TempStr,TempArray[8],11);
         Insert(FirstTempCB.Text, TempStr, TempArray[8]);
 
+        // Проверем какой тригер идет вторым, отличный от первого или такой же но с добавлением цифры
         PosStr := '<PhTemp' + IntToStr(TempArray[1]) + '/>';
         PosI := Pos(PosStr,TempStr);
         if PosI = 0 then begin
@@ -395,9 +419,12 @@ begin
           end;
         end;
         if PosI <> TempArray[9] then TempArray[9] := PosI;
+
+
         Delete(TempStr,TempArray[9],Length(PosStr));
         Insert(SecondTempCB.Text, TempStr, TempArray[9]);
 
+        // Проверем какой тригер идет вторым, отличный от первого или такой же но с добавлением цифры
         PosStr := '<PhTemp' + IntToStr(TempArray[2]) + '/>';
         PosI := Pos(PosStr,TempStr);
         if PosI = 0 then begin
@@ -411,9 +438,11 @@ begin
           end;
         end;
         if PosI <> TempArray[10] then TempArray[10] := PosI;
+
         Delete(TempStr,TempArray[10],Length(PosStr));
         Insert(ThirdTempCB.Text, TempStr, TempArray[10]);
 
+        // Проверем какой тригер идет вторым, отличный от первого или такой же но с добавлением цифры
         PosStr := '<PhTemp' + IntToStr(TempArray[3]) + '/>';
         PosI := Pos(PosStr,TempStr);
         if PosI = 0 then begin
@@ -432,11 +461,14 @@ begin
         LastWordInPhrases[TemplateComboBox.ItemIndex] := FirstTempCB.Text + '<1>' + SecondTempCB.Text + '<2>' + ThirdTempCB.Text + '<3>'  + FourthTempCB.Text + '<4>';
       end;
       5: begin
+        // Проверяем есть ли текст в комбо боксе, если нет нечего не делаем
         if FirstTempCB.Text = '' then exit;
         if SecondTempCB.Text = '' then exit;
         if ThirdTempCB.Text = '' then exit;
         if FourthTempCB.Text = '' then exit;
         if FifthTempCB.Text = '' then exit;
+
+        // Удаляем из TempStr первый вставляемый тригер и вставляем в место тригера текст из комбо бокса
         if TempArray[0] < 10 then Delete(TempStr,TempArray[8],10)
         else Delete(TempStr,TempArray[8],11);
         Insert(FirstTempCB.Text, TempStr, TempArray[8]);
@@ -507,15 +539,19 @@ begin
         LastWordInPhrases[TemplateComboBox.ItemIndex] := FirstTempCB.Text + '<1>' + SecondTempCB.Text + '<2>' + ThirdTempCB.Text + '<3>'  + FourthTempCB.Text + '<4>' + FifthTempCB.Text + '<5>';
       end;
       6: begin
+        // Проверяем есть ли текст в комбо боксе, если нет нечего не делаем
         if FirstTempCB.Text = '' then exit;
         if SecondTempCB.Text = '' then exit;
         if ThirdTempCB.Text = '' then exit;
         if FourthTempCB.Text = '' then exit;
         if FifthTempCB.Text = '' then exit;
         if SixthTempCB.Text = '' then exit;
+
+        // Удаляем из TempStr первый вставляемый тригер и вставляем в место тригера текст из комбо бокса
         if TempArray[0] < 10 then Delete(TempStr,TempArray[8],10)
         else Delete(TempStr,TempArray[8],11);
         Insert(FirstTempCB.Text, TempStr, TempArray[8]);
+
         PosI := -1;
         PosStr := '<PhTemp' + IntToStr(TempArray[1]) + '/>';
         PosI := pos(PosStr,TempStr);
@@ -603,6 +639,7 @@ begin
         LastWordInPhrases[TemplateComboBox.ItemIndex] := FirstTempCB.Text + '<1>' + SecondTempCB.Text + '<2>' + ThirdTempCB.Text + '<3>'  + FourthTempCB.Text + '<4>' + FifthTempCB.Text + '<5>' + SixthTempCB.Text + '<6>';
       end;
       7: begin
+        // Проверяем есть ли текст в комбо боксе, если нет нечего не делаем
         if FirstTempCB.Text = '' then exit;
         if SecondTempCB.Text = '' then exit;
         if ThirdTempCB.Text = '' then exit;
@@ -610,6 +647,8 @@ begin
         if FifthTempCB.Text = '' then exit;
         if SixthTempCB.Text = '' then exit;
         if SeventhTempCB.Text = '' then exit;
+
+        // Удаляем из TempStr первый вставляемый тригер и вставляем в место тригера текст из комбо бокса
         if TempArray[0] < 10 then Delete(TempStr,TempArray[8],10)
         else Delete(TempStr,TempArray[8],11);
         Insert(FirstTempCB.Text, TempStr, TempArray[8]);
@@ -706,6 +745,7 @@ begin
         LastWordInPhrases[TemplateComboBox.ItemIndex] := FirstTempCB.Text + '<1>' + SecondTempCB.Text + '<2>' + ThirdTempCB.Text + '<3>'  + FourthTempCB.Text + '<4>' + FifthTempCB.Text + '<5>' + SixthTempCB.Text + '<6>' + SeventhTempCB.Text +'<7>';
       end;
       8: begin
+        // Проверяем есть ли текст в комбо боксе, если нет нечего не делаем
         if FirstTempCB.Text = '' then exit;
         if SecondTempCB.Text = '' then exit;
         if ThirdTempCB.Text = '' then exit;
@@ -714,6 +754,8 @@ begin
         if SixthTempCB.Text = '' then exit;
         if SeventhTempCB.Text = '' then exit;
         if EigthTempCB.Text = '' then exit;
+
+        // Удаляем из TempStr первый вставляемый тригер и вставляем в место тригера текст из комбо бокса
         if TempArray[0] < 10 then Delete(TempStr,TempArray[8],10)
         else Delete(TempStr,TempArray[8],11);
         Insert(FirstTempCB.Text, TempStr, TempArray[8]);
