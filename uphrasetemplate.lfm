@@ -1,7 +1,7 @@
 object PhraseTemplateForm: TPhraseTemplateForm
-  Left = 411
+  Left = 588
   Height = 468
-  Top = 136
+  Top = 128
   Width = 900
   Caption = 'Шаблоны фраз'
   ClientHeight = 468
@@ -45,7 +45,7 @@ object PhraseTemplateForm: TPhraseTemplateForm
     Left = 10
     Height = 16
     Top = 94
-    Width = 98
+    Width = 99
     Caption = 'Шаблон фразы:'
     ParentColor = False
   end

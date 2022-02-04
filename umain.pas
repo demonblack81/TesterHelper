@@ -420,7 +420,7 @@ begin
         end;
         if PosI <> TempArray[9] then TempArray[9] := PosI;
 
-
+        // Удаляем из TempStr второй тригер  и вставляем в место тригера текст из комбо бокса
         Delete(TempStr,TempArray[9],Length(PosStr));
         Insert(SecondTempCB.Text, TempStr, TempArray[9]);
 
@@ -439,6 +439,7 @@ begin
         end;
         if PosI <> TempArray[10] then TempArray[10] := PosI;
 
+        // Удаляем из TempStr второй тригер  и вставляем в место тригера текст из комбо бокса
         Delete(TempStr,TempArray[10],Length(PosStr));
         Insert(ThirdTempCB.Text, TempStr, TempArray[10]);
 
@@ -456,8 +457,12 @@ begin
           end;
         end;
         if PosI <> TempArray[11] then TempArray[11] := PosI;
+
+        // Удаляем из TempStr второй тригер  и вставляем в место тригера текст из комбо бокса
         Delete(TempStr,TempArray[11],Length(PosStr));
         Insert(FourthTempCB.Text, TempStr, TempArray[11]);
+
+        // Добавляем вставленный текст в лист для последующей подстановки их при выборе фразы
         LastWordInPhrases[TemplateComboBox.ItemIndex] := FirstTempCB.Text + '<1>' + SecondTempCB.Text + '<2>' + ThirdTempCB.Text + '<3>'  + FourthTempCB.Text + '<4>';
       end;
       5: begin
@@ -473,6 +478,7 @@ begin
         else Delete(TempStr,TempArray[8],11);
         Insert(FirstTempCB.Text, TempStr, TempArray[8]);
 
+        // Проверем какой тригер идет вторым, отличный от первого или такой же но с добавлением цифры
         PosStr := '<PhTemp' + IntToStr(TempArray[1]) + '/>';
         PosI := Pos(PosStr,TempStr);
         if PosI = 0 then begin
@@ -486,9 +492,12 @@ begin
           end;
         end;
         if PosI <> TempArray[9] then TempArray[9] := PosI;
+
+        // Удаляем из TempStr второй тригер  и вставляем в место тригера текст из комбо бокса
         Delete(TempStr,TempArray[9],Length(PosStr));
         Insert(SecondTempCB.Text, TempStr, TempArray[9]);
 
+        // Проверем какой тригер идет вторым, отличный от первого или такой же но с добавлением цифры
         PosStr := '<PhTemp' + IntToStr(TempArray[2]) + '/>';
         PosI := Pos(PosStr,TempStr);
         if PosI = 0 then begin
@@ -502,9 +511,12 @@ begin
           end;
         end;
         if PosI <> TempArray[10] then TempArray[10] := PosI;
+
+        // Удаляем из TempStr второй тригер  и вставляем в место тригера текст из комбо бокс
         Delete(TempStr,TempArray[10],Length(PosStr));
         Insert(ThirdTempCB.Text, TempStr, TempArray[10]);
 
+        // Проверем какой тригер идет вторым, отличный от первого или такой же но с добавлением цифры
         PosStr := '<PhTemp' + IntToStr(TempArray[3]) + '/>';
         PosI := Pos(PosStr,TempStr);
         if PosI = 0 then begin
@@ -518,9 +530,12 @@ begin
           end;
         end;
         if PosI <> TempArray[11] then TempArray[11] := PosI;
+
+        // Удаляем из TempStr второй тригер  и вставляем в место тригера текст из комбо бокс
         Delete(TempStr,TempArray[11],Length(PosStr));
         Insert(FourthTempCB.Text, TempStr, TempArray[11]);
 
+        // Проверем какой тригер идет вторым, отличный от первого или такой же но с добавлением цифры
         PosStr := '<PhTemp' + IntToStr(TempArray[4]) + '/>';
         PosI := Pos(PosStr,TempStr);
         if PosI = 0 then begin
@@ -534,8 +549,12 @@ begin
           end;
         end;
         if PosI <> TempArray[12] then TempArray[12] := PosI;
+
+        // Удаляем из TempStr второй тригер  и вставляем в место тригера текст из комбо бокс
         Delete(TempStr,TempArray[12],Length(PosStr));
         Insert(FifthTempCB.Text, TempStr, TempArray[12]);
+
+        // Добавляем вставленный текст в лист для последующей подстановки их при выборе фразы
         LastWordInPhrases[TemplateComboBox.ItemIndex] := FirstTempCB.Text + '<1>' + SecondTempCB.Text + '<2>' + ThirdTempCB.Text + '<3>'  + FourthTempCB.Text + '<4>' + FifthTempCB.Text + '<5>';
       end;
       6: begin
@@ -552,6 +571,7 @@ begin
         else Delete(TempStr,TempArray[8],11);
         Insert(FirstTempCB.Text, TempStr, TempArray[8]);
 
+        // Проверем какой тригер идет вторым, отличный от первого или такой же но с добавлением цифры
         PosI := -1;
         PosStr := '<PhTemp' + IntToStr(TempArray[1]) + '/>';
         PosI := pos(PosStr,TempStr);
@@ -566,9 +586,12 @@ begin
           end;
         end;
         if PosI <> TempArray[9] then TempArray[9] := PosI;
+
+        // Удаляем из TempStr второй тригер  и вставляем в место тригера текст из комбо бокс
         Delete(TempStr,TempArray[9],Length(PosStr));
         Insert(SecondTempCB.Text, TempStr, TempArray[9]);
 
+        // Проверем какой тригер идет вторым, отличный от первого или такой же но с добавлением цифры
         PosI := -1;
         PosStr := '<PhTemp' + IntToStr(TempArray[2]) + '/>';
         PosI := Pos(PosStr,TempStr);
@@ -583,9 +606,12 @@ begin
           end;
         end;
         if PosI <> TempArray[10] then TempArray[10] := PosI;
+
+        // Удаляем из TempStr второй тригер  и вставляем в место тригера текст из комбо бокс
         Delete(TempStr,TempArray[10],Length(PosStr));
         Insert(ThirdTempCB.Text, TempStr, TempArray[10]);
 
+        // Проверем какой тригер идет вторым, отличный от первого или такой же но с добавлением цифры
         PosI := -1;
         PosStr := '<PhTemp' + IntToStr(TempArray[3]) + '/>';
         PosI := Pos(PosStr,TempStr);
@@ -600,9 +626,12 @@ begin
           end;
         end;
         if PosI <> TempArray[11] then TempArray[11] := PosI;
+
+        // Удаляем из TempStr второй тригер  и вставляем в место тригера текст из комбо бокс
         Delete(TempStr,TempArray[11],Length(PosStr));
         Insert(FourthTempCB.Text, TempStr, TempArray[11]);
 
+        // Проверем какой тригер идет вторым, отличный от первого или такой же но с добавлением цифры
         PosI := -1;
         PosStr := '<PhTemp' + IntToStr(TempArray[4]) + '/>';
         PosI := Pos(PosStr,TempStr);
@@ -617,9 +646,12 @@ begin
           end;
         end;
         if PosI <> TempArray[12] then TempArray[12] := PosI;
+
+        // Удаляем из TempStr второй тригер  и вставляем в место тригера текст из комбо бокс
         Delete(TempStr,TempArray[12],Length(PosStr));
         Insert(FifthTempCB.Text, TempStr, TempArray[12]);
 
+        // Проверем какой тригер идет вторым, отличный от первого или такой же но с добавлением цифры
         PosI := -1;
         PosStr := '<PhTemp' + IntToStr(TempArray[5]) + '/>';
         PosI := Pos(PosStr,TempStr);
@@ -634,8 +666,12 @@ begin
           end;
         end;
         if PosI <> TempArray[13] then TempArray[13] := PosI;
+
+        // Удаляем из TempStr второй тригер  и вставляем в место тригера текст из комбо бокс
         Delete(TempStr,TempArray[13],Length(PosStr));
         Insert(SixthTempCB.Text, TempStr, TempArray[13]);
+
+        // Добавляем вставленный текст в лист для последующей подстановки их при выборе фразы
         LastWordInPhrases[TemplateComboBox.ItemIndex] := FirstTempCB.Text + '<1>' + SecondTempCB.Text + '<2>' + ThirdTempCB.Text + '<3>'  + FourthTempCB.Text + '<4>' + FifthTempCB.Text + '<5>' + SixthTempCB.Text + '<6>';
       end;
       7: begin
@@ -653,6 +689,7 @@ begin
         else Delete(TempStr,TempArray[8],11);
         Insert(FirstTempCB.Text, TempStr, TempArray[8]);
 
+        // Проверем какой тригер идет вторым, отличный от первого или такой же но с добавлением цифры
         PosStr := '<PhTemp' + IntToStr(TempArray[1]) + '/>';
         PosI := Pos(PosStr,TempStr);
         if PosI = 0 then begin
@@ -665,9 +702,12 @@ begin
           end;
         end;
         if PosI <> TempArray[9] then TempArray[9] := PosI;
+
+        // Удаляем из TempStr второй тригер  и вставляем в место тригера текст из комбо бокс
         Delete(TempStr,TempArray[9],Length(PosStr));
         Insert(SecondTempCB.Text, TempStr, TempArray[9]);
 
+        // Проверем какой тригер идет вторым, отличный от первого или такой же но с добавлением цифры
         PosStr := '<PhTemp' + IntToStr(TempArray[2]) + '/>';
         PosI := Pos(PosStr,TempStr);
         if PosI = 0 then begin
@@ -680,9 +720,12 @@ begin
           end;
         end;
         if PosI <> TempArray[10] then TempArray[10] := PosI;
+
+        // Удаляем из TempStr второй тригер  и вставляем в место тригера текст из комбо бокс
         Delete(TempStr,TempArray[10],Length(PosStr));
         Insert(ThirdTempCB.Text, TempStr, TempArray[10]);
 
+        // Проверем какой тригер идет вторым, отличный от первого или такой же но с добавлением цифры
         PosStr := '<PhTemp' + IntToStr(TempArray[3]) + '/>';
         PosI := Pos(PosStr,TempStr);
         if PosI = 0 then begin
@@ -695,9 +738,12 @@ begin
           end;
         end;
         if PosI <> TempArray[11] then TempArray[11] := PosI;
+
+        // Удаляем из TempStr второй тригер  и вставляем в место тригера текст из комбо бокс
         Delete(TempStr,TempArray[11],Length(PosStr));
         Insert(FourthTempCB.Text, TempStr, TempArray[11]);
 
+        // Проверем какой тригер идет вторым, отличный от первого или такой же но с добавлением цифры
         PosStr := '<PhTemp' + IntToStr(TempArray[4]) + '/>';
         PosI := Pos(PosStr,TempStr);
         if PosI = 0 then begin
@@ -710,9 +756,12 @@ begin
           end;
         end;
         if PosI <> TempArray[12] then TempArray[12] := PosI;
+
+        // Удаляем из TempStr второй тригер  и вставляем в место тригера текст из комбо бокс
         Delete(TempStr,TempArray[12],Length(PosStr));
         Insert(FifthTempCB.Text, TempStr, TempArray[12]);
 
+        // Проверем какой тригер идет вторым, отличный от первого или такой же но с добавлением цифры
         PosStr := '<PhTemp' + IntToStr(TempArray[5]) + '/>';
         PosI := Pos(PosStr,TempStr);
         if PosI = 0 then begin
@@ -725,9 +774,12 @@ begin
           end;
         end;
         if PosI <> TempArray[13] then TempArray[13] := PosI;
+
+        // Удаляем из TempStr второй тригер  и вставляем в место тригера текст из комбо бокс
         Delete(TempStr,TempArray[13],Length(PosStr));
         Insert(SixthTempCB.Text, TempStr, TempArray[13]);
 
+        // Проверем какой тригер идет вторым, отличный от первого или такой же но с добавлением цифры
         PosStr := '<PhTemp' + IntToStr(TempArray[6]) + '/>';
         PosI := Pos(PosStr,TempStr);
         if PosI = 0 then begin
@@ -740,8 +792,12 @@ begin
           end;
         end;
         if PosI <> TempArray[14] then TempArray[14] := PosI;
+
+        // Удаляем из TempStr второй тригер  и вставляем в место тригера текст из комбо бокс
         Delete(TempStr,TempArray[14],Length(PosStr));
         Insert(SeventhTempCB.Text, TempStr, TempArray[14]);
+
+        // Добавляем вставленный текст в лист для последующей подстановки их при выборе фразы
         LastWordInPhrases[TemplateComboBox.ItemIndex] := FirstTempCB.Text + '<1>' + SecondTempCB.Text + '<2>' + ThirdTempCB.Text + '<3>'  + FourthTempCB.Text + '<4>' + FifthTempCB.Text + '<5>' + SixthTempCB.Text + '<6>' + SeventhTempCB.Text +'<7>';
       end;
       8: begin
@@ -760,6 +816,7 @@ begin
         else Delete(TempStr,TempArray[8],11);
         Insert(FirstTempCB.Text, TempStr, TempArray[8]);
 
+        // Проверем какой тригер идет вторым, отличный от первого или такой же но с добавлением цифры
         PosStr := '<PhTemp' + IntToStr(TempArray[1]) + '/>';
         PosI := Pos(PosStr,TempStr);
         if PosI = 0 then begin
@@ -772,9 +829,12 @@ begin
           end;
         end;
         if PosI <> TempArray[9] then TempArray[9] := PosI;
+
+        // Удаляем из TempStr второй тригер  и вставляем в место тригера текст из комбо бокс
         Delete(TempStr,TempArray[9],Length(PosStr));
         Insert(SecondTempCB.Text, TempStr, TempArray[9]);
 
+        // Проверем какой тригер идет вторым, отличный от первого или такой же но с добавлением цифры
         PosStr := '<PhTemp' + IntToStr(TempArray[2]) + '/>';
         PosI := Pos(PosStr,TempStr);
         if PosI = 0 then begin
@@ -787,9 +847,12 @@ begin
           end;
         end;
         if PosI <> TempArray[10] then TempArray[10] := PosI;
+
+        // Удаляем из TempStr второй тригер  и вставляем в место тригера текст из комбо бокс
         Delete(TempStr,TempArray[10],Length(PosStr));
         Insert(ThirdTempCB.Text, TempStr, TempArray[10]);
 
+        // Проверем какой тригер идет вторым, отличный от первого или такой же но с добавлением цифры
         PosStr := '<PhTemp' + IntToStr(TempArray[3]) + '/>';
         PosI := Pos(PosStr,TempStr);
         if PosI = 0 then begin
@@ -802,9 +865,12 @@ begin
           end;
         end;
         if PosI <> TempArray[11] then TempArray[11] := PosI;
+
+        // Удаляем из TempStr второй тригер  и вставляем в место тригера текст из комбо бокс
         Delete(TempStr,TempArray[11],Length(PosStr));
         Insert(FourthTempCB.Text, TempStr, TempArray[11]);
 
+        // Проверем какой тригер идет вторым, отличный от первого или такой же но с добавлением цифры
         PosStr := '<PhTemp' + IntToStr(TempArray[4]) + '/>';
         PosI := Pos(PosStr,TempStr);
         if PosI = 0 then begin
@@ -817,9 +883,12 @@ begin
           end;
         end;
         if PosI <> TempArray[12] then TempArray[12] := PosI;
+
+        // Удаляем из TempStr второй тригер  и вставляем в место тригера текст из комбо бокс
         Delete(TempStr,TempArray[12],Length(PosStr));
         Insert(FifthTempCB.Text, TempStr, TempArray[12]);
 
+        // Проверем какой тригер идет вторым, отличный от первого или такой же но с добавлением цифры
         PosStr := '<PhTemp' + IntToStr(TempArray[5]) + '/>';
         PosI := Pos(PosStr,TempStr);
         if PosI = 0 then begin
@@ -832,9 +901,12 @@ begin
           end;
         end;
         if PosI <> TempArray[13] then TempArray[13] := PosI;
+
+        // Удаляем из TempStr второй тригер  и вставляем в место тригера текст из комбо бокс
         Delete(TempStr,TempArray[13],Length(PosStr));
         Insert(SixthTempCB.Text, TempStr, TempArray[13]);
 
+        // Проверем какой тригер идет вторым, отличный от первого или такой же но с добавлением цифры
         PosStr := '<PhTemp' + IntToStr(TempArray[6]) + '/>';
         PosI := Pos(PosStr,TempStr);
         if PosI = 0 then begin
@@ -847,9 +919,12 @@ begin
           end;
         end;
         if PosI <> TempArray[14] then TempArray[14] := PosI;
+
+        // Удаляем из TempStr второй тригер  и вставляем в место тригера текст из комбо бокс
         Delete(TempStr,TempArray[14],Length(PosStr));
         Insert(SeventhTempCB.Text, TempStr, TempArray[14]);
 
+        // Проверем какой тригер идет вторым, отличный от первого или такой же но с добавлением цифры
         PosStr := '<PhTemp' + IntToStr(TempArray[7]) + '/>';
         PosI := Pos(PosStr,TempStr);
         if PosI = 0 then begin
@@ -862,26 +937,39 @@ begin
           end;
         end;
         if PosI <> TempArray[15] then TempArray[15] := PosI;
+
+        // Удаляем из TempStr второй тригер  и вставляем в место тригера текст из комбо бокс
         Delete(TempStr,TempArray[15],Length(PosStr));
         Insert(EigthTempCB.Text, TempStr, TempArray[15]);
+
+        // Добавляем вставленный текст в лист для последующей подстановки их при выборе фразы
         LastWordInPhrases[TemplateComboBox.ItemIndex] := FirstTempCB.Text + '<1>' + SecondTempCB.Text + '<2>' + ThirdTempCB.Text + '<3>'  + FourthTempCB.Text + '<4>' + FifthTempCB.Text + '<5>' + SixthTempCB.Text + '<6>' + SeventhTempCB.Text +'<7>'+ EigthTempCB.Text + '<8>';
       end;
       else begin
+        //Отображаем ошибку
         ShowMessage('MakePhraseBitBtnClick. Неправльное количество CountVisibleCB: ' + IntToStr(CountVisibleCB));
       end;
     end;
+    // удаляем лишнее пробелы из получившейся фразы
     TempStr := Trim(TempStr);
+
+    // Очищаем мемо перед вставкой, втавляем и капируем в буфер обмена фразу
     PhraseMemo.Lines.Clear;
     PhraseMemo.Lines.Add(TempStr);
+    PhraseMemo.SetFocus;
     PhraseMemo.SelectAll;
     PhraseMemo.CopyToClipboard;
+
+    // добавляем фразу в окно сделанных фараз
     MakedPhrasesForm.SL_MakedPhrases.AddStrings(PhraseMemo.Lines);
-    PhraseMemo.SetFocus;
+
+    //Вызываем процедуру закрытия комбо бокса с списком фраз
     TemplateComboBoxCloseUp(self);
   end;
 end;
 
 procedure TMainForm.OpenGenerationBtnClick(Sender: TObject);
+// Процедура открытия последней генерации стороки
 begin
  {$IFDEF WINDOWS}
   GenerationMemo.Lines.LoadFromFile(StartPath+ '\Generation\genstr.txt');
@@ -891,11 +979,13 @@ begin
 end;
 
 procedure TMainForm.PhrasesMenuItemClick(Sender: TObject);
+// Процедура открытия окна создания фраз из меню
 begin
   MainForm.BtnPhraseClick(Self);
 end;
 
 procedure TMainForm.ProcesInfoViewDblClick(Sender: TObject);
+// Win: Процедура запуска слежения за процесс на придмет утечки памяти
 begin
  if ProcesInfoView.Selected <> nil then begin
   WatcherProcessName := ProcesInfoView.Selected.Caption;

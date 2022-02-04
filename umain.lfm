@@ -1,7 +1,7 @@
 object MainForm: TMainForm
-  Left = 395
+  Left = 444
   Height = 600
-  Top = 236
+  Top = 266
   Width = 941
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
@@ -737,7 +737,7 @@ object MainForm: TMainForm
         OnClick = PhrasesMenuItemClick
       end
       object MakedPhrMenuItem: TMenuItem
-        Caption = 'MakedPhrMenuItem'
+        Caption = 'Созданные фразы'
         ShortCut = 16453
         OnClick = MakedPhrMenuItemClick
       end
