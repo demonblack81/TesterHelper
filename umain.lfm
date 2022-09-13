@@ -56,7 +56,7 @@ object MainForm: TMainForm
             Left = 18
             Height = 18
             Top = 42
-            Width = 127
+            Width = 131
             Caption = 'Все EN [A..Z, a..z]'
             Enabled = False
             OnChange = EnAllRadioChange
@@ -66,7 +66,7 @@ object MainForm: TMainForm
             Left = 18
             Height = 18
             Top = 66
-            Width = 139
+            Width = 143
             Caption = ' Малинкие En  [a..z]'
             Enabled = False
             OnChange = EnLowRadioChange
@@ -76,7 +76,7 @@ object MainForm: TMainForm
             Left = 18
             Height = 18
             Top = 88
-            Width = 133
+            Width = 137
             Caption = 'Большие EN  [A..Z]'
             TabOrder = 2
           end
@@ -84,7 +84,7 @@ object MainForm: TMainForm
             Left = 38
             Height = 18
             Top = 8
-            Width = 102
+            Width = 106
             Caption = 'Alphabetic EN'
             OnChange = EngSymbolCheckChange
             TabOrder = 3
@@ -103,7 +103,7 @@ object MainForm: TMainForm
             Left = 18
             Height = 18
             Top = 42
-            Width = 127
+            Width = 131
             Caption = 'Все RU [А..Я, а..я]'
             Enabled = False
             OnChange = RuAllRadioChange
@@ -113,7 +113,7 @@ object MainForm: TMainForm
             Left = 18
             Height = 18
             Top = 66
-            Width = 136
+            Width = 140
             Caption = ' Малинкие Ru [а..я]'
             Enabled = False
             OnChange = RuLowRadioChange
@@ -123,7 +123,7 @@ object MainForm: TMainForm
             Left = 38
             Height = 18
             Top = 8
-            Width = 106
+            Width = 110
             Caption = 'Alphabetic RU '
             OnChange = RuSymbolCheckChange
             TabOrder = 2
@@ -132,7 +132,7 @@ object MainForm: TMainForm
             Left = 18
             Height = 18
             Top = 90
-            Width = 130
+            Width = 134
             Caption = 'Большие RU [А..Я]'
             Enabled = False
             OnChange = RuHighRadioChange
@@ -143,7 +143,7 @@ object MainForm: TMainForm
           Left = 402
           Height = 18
           Top = 26
-          Width = 187
+          Width = 191
           Caption = 'Special Symbols [! . , @ # { }]'
           OnChange = SpecCheckChange
           TabOrder = 2
@@ -152,7 +152,7 @@ object MainForm: TMainForm
           Left = 402
           Height = 18
           Top = 82
-          Width = 100
+          Width = 104
           Caption = 'Number [1..9]'
           OnChange = NumberCheckChange
           TabOrder = 3
@@ -161,7 +161,7 @@ object MainForm: TMainForm
           Left = 586
           Height = 18
           Top = 58
-          Width = 82
+          Width = 86
           Caption = 'All Symbol'
           OnChange = AllCheckChange
           TabOrder = 4
@@ -181,7 +181,7 @@ object MainForm: TMainForm
           Left = 2
           Height = 18
           Top = 24
-          Width = 123
+          Width = 127
           Caption = 'Строковое Поле '
           Checked = True
           OnChange = StringRBtnChange
@@ -192,7 +192,7 @@ object MainForm: TMainForm
           Left = 130
           Height = 18
           Top = 24
-          Width = 58
+          Width = 62
           Caption = 'E-Mail'
           OnChange = EMailRBtnChange
           TabOrder = 0
@@ -201,7 +201,7 @@ object MainForm: TMainForm
           Left = 514
           Height = 18
           Top = 24
-          Width = 85
+          Width = 89
           Caption = 'Path String'
           OnChange = PathRBtnChange
           TabOrder = 1
@@ -210,7 +210,7 @@ object MainForm: TMainForm
           Left = 194
           Height = 18
           Top = 24
-          Width = 46
+          Width = 50
           Caption = 'URL'
           OnChange = URLRBtnChange
           TabOrder = 3
@@ -219,7 +219,7 @@ object MainForm: TMainForm
           Left = 242
           Height = 18
           Top = 24
-          Width = 158
+          Width = 163
           Caption = 'Zip (Почтовый Индекс)'
           OnChange = ZipRBtnChange
           TabOrder = 4
@@ -228,7 +228,7 @@ object MainForm: TMainForm
           Left = 394
           Height = 18
           Top = 24
-          Width = 122
+          Width = 126
           Caption = 'Phone (Телефон)'
           OnChange = PhoneRBtnChange
           TabOrder = 5
@@ -237,7 +237,7 @@ object MainForm: TMainForm
           Left = 394
           Height = 18
           Top = 52
-          Width = 108
+          Width = 112
           Caption = 'Плюс спереди'
           OnChange = PhonePlusCheckChange
           TabOrder = 6
@@ -247,7 +247,7 @@ object MainForm: TMainForm
           Left = 514
           Height = 18
           Top = 54
-          Width = 135
+          Width = 139
           Caption = 'Файл пресутствует'
           TabOrder = 7
           Visible = False
@@ -338,7 +338,7 @@ object MainForm: TMainForm
           Left = 62
           Height = 85
           Top = 16
-          Width = 277
+          Width = 271
           Caption = '0:00:00'
           Font.Height = 72
           Font.Style = [fsBold]
@@ -452,10 +452,10 @@ object MainForm: TMainForm
           TabOrder = 3
         end
         object CloseProcessBtn: TButton
-          Left = 323
+          Left = 310
           Height = 25
           Top = 346
-          Width = 115
+          Width = 125
           Caption = 'Закрыть Процесс'
           Enabled = False
           OnClick = CloseProcessBtnClick
@@ -544,7 +544,7 @@ object MainForm: TMainForm
         ParentColor = False
       end
       object SecondCBTemplLabel: TLabel
-        Left = 232
+        Left = 235
         Height = 16
         Top = 69
         Width = 133
@@ -552,7 +552,7 @@ object MainForm: TMainForm
         ParentColor = False
       end
       object SecondTempCB: TComboBox
-        Left = 232
+        Left = 235
         Height = 20
         Top = 88
         Width = 200
@@ -612,7 +612,7 @@ object MainForm: TMainForm
         Text = 'FifthTempCB'
       end
       object SixthCBTemplLabel: TLabel
-        Left = 232
+        Left = 235
         Height = 16
         Top = 121
         Width = 117
@@ -620,7 +620,7 @@ object MainForm: TMainForm
         ParentColor = False
       end
       object SixthTempCB: TComboBox
-        Left = 232
+        Left = 235
         Height = 20
         Top = 141
         Width = 200
@@ -705,7 +705,31 @@ object MainForm: TMainForm
         Width = 42
         Caption = '>>'
         OnClick = FastPhraseBitBtnClick
+        TabOrder = 17
+      end
+      object FirstTempBitBtn: TBitBtn
+        Left = 208
+        Height = 26
+        Top = 88
+        Width = 26
+        Layout = blGlyphTop
+        NumGlyphs = 2
+        Images = FastPhrasesForm.FasrPhrasesImageList
+        ImageIndex = 8
+        ImageWidth = 16
         TabOrder = 16
+      end
+      object FifthTempBitBtn1: TBitBtn
+        Left = 208
+        Height = 26
+        Top = 141
+        Width = 26
+        Layout = blGlyphTop
+        NumGlyphs = 2
+        Images = FastPhrasesForm.FasrPhrasesImageList
+        ImageIndex = 8
+        ImageWidth = 16
+        TabOrder = 18
       end
     end
   end

@@ -16,9 +16,11 @@ type
 
   TMainForm = class(TForm)
     AllCheck: TCheckBox;
+    FirstTempBitBtn: TBitBtn;
     FastPhraseBitBtn: TBitBtn;
     BtnPasteFromClipboard: TButton;
     ClearBitBtn: TBitBtn;
+    FifthTempBitBtn1: TBitBtn;
     MakePhraseBitBtn: TBitBtn;
     CopyToClipBitBtn: TBitBtn;
     BtnWord: TButton;
@@ -1001,6 +1003,7 @@ begin
 end;
 
 procedure TMainForm.ProcessWatchwerTimerTimer(Sender: TObject);
+// Срабатывание таймера для логирования процессов
 var LogStr: string;
 begin
   {$IFDEF WINDOWS}
@@ -1010,12 +1013,14 @@ begin
 end;
 
 procedure TMainForm.ResetTimeBtnClick(Sender: TObject);
+// Процедура обнуления счетчика таймера
 begin
   Secondomer := 0;
   TimeLabel.Caption := TimeToStr(Secondomer);
 end;
 
 procedure TMainForm.SaveGenerationBtnClick(Sender: TObject);
+// Нажатие на кнопку сохранения генерации из мемо в файл genstr.txt
 begin
  {$IFDEF WINDOWS}
   GenerationMemo.Lines.SaveToFile(StartPath+ '\Generation\genstr.txt');
@@ -1026,6 +1031,7 @@ begin
 end;
 
 procedure TMainForm.SaveWatcherLogBtnClick(Sender: TObject);
+// Нажатие на кнопку сохранения результатов слежение за процессом
 begin
  if ProcessWatcherMemo.Lines.Count > 0 then begin
   {$IFDEF WINDOWS}
@@ -1040,6 +1046,7 @@ begin
 end;
 
 procedure TMainForm.StartStopBtnClick(Sender: TObject);
+// Нажатие на кнопку старта/завершения запуска таймера
 begin
  if not StartStopBtn.Flat then begin
   StartStopBtn.Flat  := True;
@@ -1053,6 +1060,7 @@ begin
 end;
 
 procedure TMainForm.StopWatchSBtnClick(Sender: TObject);
+// Нажатие на кнопку остановки слежения за процессом
 begin
  if not StopWatchSBtn.Flat then begin
   ProcessWatchwerTimer.Enabled := False;
@@ -1065,14 +1073,18 @@ begin
 end;
 
 procedure TMainForm.TemplateComboBoxCloseUp(Sender: TObject);
+// Выбор нужного шаблона для составления фразы
 var i, j, PosI, ArrPos, iDoubleTemp: integer;
     PosStr: string;
     FileSearch: TSearchRec;
     Attr : integer;
     TempList: TStringList;
 begin
+  // Проверяем что выбранный шаблон есть в списке
   if TemplateComboBox.ItemIndex <> -1 then begin
+    //обнуляем количество видимых комбобоксов
     CountVisibleCB := 0;
+    // создаем темповый StringList
     TempList := TStringList.Create;
     //Скрываем все комбобоксы и очищаем их
     FirstCBTemplLabel.Visible := false;
@@ -1099,6 +1111,7 @@ begin
     EigthCBTemplLabel.Visible := false;
     EigthTempCB.Visible := false;
     EigthTempCB.Clear;
+    // задаем шаблон для поиска файла (только файлы без папок)
     Attr := faAnyFile - faDirectory;
     // Загрузить шаблон из файла
     {$IFDEF WINDOWS}
@@ -1106,6 +1119,7 @@ begin
     {$ELSE}
       PosStr := StartPath + 'Phrases/' +  PhraseTemplateForm.TamplatePhrasesComboBox.items[TemplateComboBox.ItemIndex];
     {$ENDIF}
+    // ищем файл с шаблоном фразы
     if FindFirst(PosStr, Attr, FileSearch) = 0 then begin
       if FileSearch.Size > 0 then begin
         {$IFDEF WINDOWS}
@@ -1118,16 +1132,24 @@ begin
            TempStr := TempList.Text;
          end;
       end else begin
+        // выводим ошибку если файл пустой или отсутствует
        ShowMessage('Выбранный файл пуст.');
       end;
     end;
+    // завершаем поиск файла
     FindClose(FileSearch);
+
+    // Проверяем если строка >2 символов то начинаем ее парсить на предмет шаблоных вставок
     if Length(TempStr) > 2 then begin
+      // обнуляем строку для поиска шаблоных вставок
       PosStr := '';
+      // Обнуляем массив для шаблоных вставок
       for i:= 0 to 15 do begin
         TempArray[i] := 0;
       end;
+      // выставляем переменные для поиска
       j := 0; ArrPos :=  8;
+      //В цикле ищем шаблоны вставок
       for i:= 0 to (StringsParamForm.NameListComboBox.Items.Count - 1) do begin
          PosI := -1;
          PosStr := '<PhTemp' +IntToStr(i)+ '/>';
@@ -1154,14 +1176,19 @@ begin
            PosI := Pos(PosStr, TempStr);
          end;
       end;
+      // Отображаем комбобоксы в соответствии с найдеными шаблонами и заносим в них данные из последней созданной строки
       case CountVisibleCB of
         1: begin
+         // Отображаем первый комбобокс
          FirstCBTemplLabel.Visible := true;
          FirstTempCB.Visible := true;
          FirstCBTemplLabel.Caption := StringsParamForm.NameListComboBox.Items[TempArray[0]];
+
+         // Добавляем текст в комбобокс если шаблон фразы уже использовался
          if LastWordInPhrases[TemplateComboBox.ItemIndex].Length > 2 then begin
            FirstTempCB.Text:= LastWordInPhrases[TemplateComboBox.ItemIndex];
          end;
+         // Подгружаем в лист комбобокса слова из словоря
          {$IFDEF MSWINDOWS}
            FirstTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[0]]);
          {$ELSE}
@@ -1169,11 +1196,15 @@ begin
          {$ENDIF}
         end;
         2: begin
+         // Отображаем первый комбобокс
          FirstCBTemplLabel.Visible := true;
          FirstTempCB.Visible := true;
+         FirstCBTemplLabel.Caption := StringsParamForm.NameListComboBox.Items[TempArray[0]];
+         //Отображаем второй  комбобокс
          SecondCBTemplLabel.Visible := true;
          SecondTempCB.Visible := true;
-         FirstCBTemplLabel.Caption := StringsParamForm.NameListComboBox.Items[TempArray[0]];
+
+         // Добавляем текст в комбобокс если шаблон фразы уже использовался
          if LastWordInPhrases[TemplateComboBox.ItemIndex].Length > 2 then begin
            PosI := Pos('<1>', LastWordInPhrases[TemplateComboBox.ItemIndex]);
            PosStr := Copy(LastWordInPhrases[TemplateComboBox.ItemIndex], 0, (PosI-1));
@@ -1182,6 +1213,7 @@ begin
            PosStr := Copy(LastWordInPhrases[TemplateComboBox.ItemIndex], (PosI + 3), (i-(PosI+3)));
            SecondTempCB.Text:= PosStr;
          end;
+         // Подгружаем в лист комбобокса слова из словоря
          {$IFDEF MSWINDOWS}
           FirstTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[0]]);
          {$ELSE}
@@ -1195,13 +1227,16 @@ begin
          {$ENDIF}
         end;
         3: begin
+         // Отображаем комбобоксы
          FirstCBTemplLabel.Visible := true;
          FirstTempCB.Visible := true;
+         FirstCBTemplLabel.Caption := StringsParamForm.NameListComboBox.Items[TempArray[0]];
          SecondCBTemplLabel.Visible := true;
          SecondTempCB.Visible := true;
          ThirdCBTemplLabel.Visible := true;
          ThirdTempCB.Visible := true;
-         FirstCBTemplLabel.Caption := StringsParamForm.NameListComboBox.Items[TempArray[0]];
+
+         // Добавляем текст в комбобоксы если шаблон фразы уже использовался
          if LastWordInPhrases[TemplateComboBox.ItemIndex].Length > 2 then begin
            PosI := Pos('<1>', LastWordInPhrases[TemplateComboBox.ItemIndex]);
            PosStr := Copy(LastWordInPhrases[TemplateComboBox.ItemIndex], 0, (PosI-1));
@@ -1214,6 +1249,8 @@ begin
            PosStr := Copy(LastWordInPhrases[TemplateComboBox.ItemIndex], (PosI + 3), (i-(PosI+3)));
            ThirdTempCB.Text:= PosStr;
          end;
+
+         // Подгружаем в лист комбобокса слова из словоря
          {$IFDEF MSWINDOWS}
            FirstTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[0]]);
          {$ELSE}
@@ -1233,15 +1270,18 @@ begin
          {$ENDIF}
         end;
         4: begin
+          // Отображаем комбобоксы
          FirstCBTemplLabel.Visible := true;
          FirstTempCB.Visible := true;
+         FirstCBTemplLabel.Caption := StringsParamForm.NameListComboBox.Items[TempArray[0]];
          SecondCBTemplLabel.Visible := true;
          SecondTempCB.Visible := true;
          ThirdCBTemplLabel.Visible := true;
          ThirdTempCB.Visible := true;
          FourthCBTemplLabel.Visible := true;
          FourthTempCB.Visible := true;
-         FirstCBTemplLabel.Caption := StringsParamForm.NameListComboBox.Items[TempArray[0]];
+
+         // Добавляем текст в комбобоксы если шаблон фразы уже использовался
          if LastWordInPhrases[TemplateComboBox.ItemIndex].Length > 2 then begin
            PosI := Pos('<1>', LastWordInPhrases[TemplateComboBox.ItemIndex]);
            PosStr := Copy(LastWordInPhrases[TemplateComboBox.ItemIndex], 0, (PosI-1));
@@ -1258,6 +1298,8 @@ begin
            PosStr := Copy(LastWordInPhrases[TemplateComboBox.ItemIndex], (PosI + 3), (i-(PosI+3)));
            FourthTempCB.Text:= PosStr;
          end;
+
+         // Подгружаем в лист комбобокса слова из словоря
          {$IFDEF MSWINDOWS}
            FirstTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[0]]);
          {$ELSE}
@@ -1283,8 +1325,10 @@ begin
          {$ENDIF}
         end;
         5: begin
+          // Отображаем комбобоксы
          FirstCBTemplLabel.Visible := true;
          FirstTempCB.Visible := true;
+         FirstCBTemplLabel.Caption := StringsParamForm.NameListComboBox.Items[TempArray[0]];
          SecondCBTemplLabel.Visible := true;
          SecondTempCB.Visible := true;
          ThirdCBTemplLabel.Visible := true;
@@ -1293,7 +1337,8 @@ begin
          FourthTempCB.Visible := true;
          FifthCBTemplLabel.Visible := true;
          FifthTempCB.Visible := true;
-         FirstCBTemplLabel.Caption := StringsParamForm.NameListComboBox.Items[TempArray[0]];
+
+         // Добавляем текст в комбобоксы если шаблон фразы уже использовался
          if LastWordInPhrases[TemplateComboBox.ItemIndex].Length > 2 then begin
            PosI := Pos('<1>', LastWordInPhrases[TemplateComboBox.ItemIndex]);
            PosStr := Copy(LastWordInPhrases[TemplateComboBox.ItemIndex], 0, (PosI-1));
@@ -1314,6 +1359,8 @@ begin
            PosStr := Copy(LastWordInPhrases[TemplateComboBox.ItemIndex], (PosI + 3), (i-(PosI+3)));
            FifthTempCB.Text:= PosStr;
          end;
+
+         // Подгружаем в лист комбобокса слова из словоря
          {$IFDEF MSWINDOWS}
            FirstTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[0]]);
          {$ELSE}
@@ -1345,8 +1392,10 @@ begin
          {$ENDIF}
         end;
         6: begin
+          // Отображаем комбобоксы
          FirstCBTemplLabel.Visible := true;
          FirstTempCB.Visible := true;
+         FirstCBTemplLabel.Caption := StringsParamForm.NameListComboBox.Items[TempArray[0]];
          SecondCBTemplLabel.Visible := true;
          SecondTempCB.Visible := true;
          ThirdCBTemplLabel.Visible := true;
@@ -1357,7 +1406,8 @@ begin
          FifthTempCB.Visible := true;
          SixthCBTemplLabel.Visible := true;
          SixthTempCB.Visible := true;
-         FirstCBTemplLabel.Caption := StringsParamForm.NameListComboBox.Items[TempArray[0]];
+
+         // Добавляем текст в комбобоксы если шаблон фразы уже использовался
          if LastWordInPhrases[TemplateComboBox.ItemIndex].Length > 2 then begin
            PosI := Pos('<1>', LastWordInPhrases[TemplateComboBox.ItemIndex]);
            PosStr := Copy(LastWordInPhrases[TemplateComboBox.ItemIndex], 0, (PosI-1));
@@ -1382,6 +1432,8 @@ begin
            PosStr := Copy(LastWordInPhrases[TemplateComboBox.ItemIndex], (PosI + 3), (i-(PosI+3)));
            SixthTempCB.Text:= PosStr;
          end;
+
+         // Подгружаем в лист комбобокса слова из словоря
          {$IFDEF MSWINDOWS}
            FirstTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[0]]);
          {$ELSE}
@@ -1419,8 +1471,10 @@ begin
          {$ENDIF}
         end;
         7: begin
+         // Отображаем комбобоксы
          FirstCBTemplLabel.Visible := true;
          FirstTempCB.Visible := true;
+         FirstCBTemplLabel.Caption := StringsParamForm.NameListComboBox.Items[TempArray[0]];
          SecondCBTemplLabel.Visible := true;
          SecondTempCB.Visible := true;
          ThirdCBTemplLabel.Visible := true;
@@ -1433,6 +1487,8 @@ begin
          SixthTempCB.Visible := true;
          SeventhCBTemplLabel.Visible := true;
          SeventhTempCB.Visible := true;
+
+         // Добавляем текст в комбобоксы если шаблон фразы уже использовался
          if LastWordInPhrases[TemplateComboBox.ItemIndex].Length > 2 then begin
            PosI := Pos('<1>', LastWordInPhrases[TemplateComboBox.ItemIndex]);
            PosStr := Copy(LastWordInPhrases[TemplateComboBox.ItemIndex], 0, (PosI-1));
@@ -1461,6 +1517,8 @@ begin
            PosStr := Copy(LastWordInPhrases[TemplateComboBox.ItemIndex], (PosI + 3), (i-(PosI+3)));
            SeventhTempCB.Text:= PosStr;
          end;
+
+         // Подгружаем в лист комбобокса слова из словоря
          {$IFDEF MSWINDOWS}
            FirstTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[0]]);
          {$ELSE}
@@ -1504,8 +1562,10 @@ begin
          {$ENDIF}
         end;
         8: begin
+         // Отображаем первый комбобокс
          FirstCBTemplLabel.Visible := true;
          FirstTempCB.Visible := true;
+         FirstCBTemplLabel.Caption := StringsParamForm.NameListComboBox.Items[TempArray[0]];
          SecondCBTemplLabel.Visible := true;
          SecondTempCB.Visible := true;
          ThirdCBTemplLabel.Visible := true;
@@ -1520,7 +1580,8 @@ begin
          SeventhTempCB.Visible := true;
          EigthCBTemplLabel.Visible := true;
          EigthTempCB.Visible := true;
-         FirstCBTemplLabel.Caption := StringsParamForm.NameListComboBox.Items[TempArray[0]];
+
+         // Добавляем текст в комбобоксы если шаблон фразы уже использовался
          if LastWordInPhrases[TemplateComboBox.ItemIndex].Length > 2 then begin
            PosI := Pos('<1>', LastWordInPhrases[TemplateComboBox.ItemIndex]);
            PosStr := Copy(LastWordInPhrases[TemplateComboBox.ItemIndex], 0, (PosI-1));
@@ -1553,6 +1614,8 @@ begin
            PosStr := Copy(LastWordInPhrases[TemplateComboBox.ItemIndex], (PosI + 3), (i-(PosI+3)));
            EigthTempCB.Text:= PosStr;
          end;
+
+         // Подгружаем в лист комбобокса слова из словоря
          {$IFDEF MSWINDOWS}
            FirstTempCB.Items.LoadFromFile(StartPath + 'List\' + StringsParamForm.NameListComboBox.Items[TempArray[0]]);
          {$ELSE}
@@ -1602,23 +1665,28 @@ begin
          {$ENDIF}
         end;
         else begin
+         // Если не надо видимых комбо боксов отображаем фразу в мемо
           PhraseMemo.Lines.Add(TempStr);
         end;
       end;
 
     end else begin
+      // Пытаемся вставить данные из строки в мемо и отображаем ошибку
       PhraseMemo.Lines.Clear;
       PhraseMemo.Lines.Add(TempStr);
       PhraseMemo.SelectAll;
       PhraseMemo.CopyToClipboard;
       ShowMessage('Строка шаблона очень маленькая: ' + TempStr);
     end;
+    //Освобождаем память от Stringlist
     TempList.Free;
   end;
 end;
 
 procedure TMainForm.TimerForTimeTimer(Sender: TObject);
+// обработчик таймера
 begin
+  // преобразование отображение времени в удобоваримый фармат
   Secondomer := Secondomer + EncodeTime(00,00,00,TimerForTime.Interval);
   DecodeTime(Secondomer, HH, MM, SS, MS);
   if HH > 0 then begin
@@ -1629,6 +1697,7 @@ begin
 end;
 
 procedure TMainForm.UpdateProcessBtnClick(Sender: TObject);
+// нажатие на кнопку обновление списка процессов
 begin
  {$IFDEF WINDOWS}
   if not FillProcessesList() then begin // Заполняем список процессов
@@ -1639,6 +1708,7 @@ begin
 end;
 
 procedure TMainForm.AllCheckChange(Sender: TObject);
+// вкл/выкл галочки все символы
 begin
   If AllCheck.Checked then begin
     EngSymbolCheck.Checked := True;
@@ -1684,6 +1754,7 @@ begin
 end;
 
 procedure TMainForm.FastPhraseBitBtnClick(Sender: TObject);
+// Нажатие на кнопку >> (<<)
 begin
   //Открытие формы с быстрыми фразами
   if FastPhraseBitBtn.Caption = '>>' then begin
@@ -1697,6 +1768,7 @@ begin
 end;
 
 procedure TMainForm.BtnPasteFromClipboardClick(Sender: TObject);
+// Нажатие на кнопку Вставить из буффера
 begin
   //Кнопка вставки из буфера обмена
   if PhraseMemo.Lines.Count > 0 then begin
@@ -1708,6 +1780,7 @@ begin
 end;
 
 procedure TMainForm.BtnPhraseClick(Sender: TObject);
+// Нажатие на кнопку Фразы для открыия формы для редактирования шаблонов фраз
 var err: integer;
 begin
   if PhraseTemplateForm.ShowModal = mrOK then begin
@@ -1725,17 +1798,20 @@ begin
 end;
 
 procedure TMainForm.BtnWordClick(Sender: TObject);
+// Нажатие на кнопку Слова для открытия формы редактирования слов для шаблонов фраз
 begin
   StringsParamForm.ShowModal;
 end;
 
 procedure TMainForm.ClearBitBtnClick(Sender: TObject);
+// Нажатие на кнопку очищения мемо с фразами
 begin
   if PhraseMemo.Lines.Count = 0 then exit;
   PhraseMemo.Lines.Clear;
 end;
 
 procedure TMainForm.CloseProcessBtnClick(Sender: TObject);
+// нажатие на кнопку завершения процесса
 Var iKillErr: integer;
 begin
  if ProcesInfoView.Selected <> nil then begin
@@ -1762,6 +1838,7 @@ begin
 end;
 
 procedure TMainForm.CopyToClipBitBtnClick(Sender: TObject);
+// Нажатие на кнопку копирование фразы с буффер обмена
 begin
  if PhraseMemo.Lines.Count > 0 then begin
   PhraseMemo.SelectAll;
@@ -1773,6 +1850,7 @@ begin
 end;
 
 procedure TMainForm.NumberCheckChange(Sender: TObject);
+// вкл/выключение галочки цифры
 begin
  if NumberCheck.Checked then begin
    UsingSymbol := UsingSymbol + 1;
@@ -1791,6 +1869,7 @@ begin
 end;
 
 procedure TMainForm.EngSymbolCheckChange(Sender: TObject);
+// вкл/выключение галочки английские символы
 begin
  if EngSymbolCheck.Checked then begin
   EnAllRadio.Enabled := True;
@@ -1809,6 +1888,7 @@ end;
 
 
 procedure TMainForm.EnAllRadioChange(Sender: TObject);
+//
 begin
  if EnAllRadio.Checked then begin
    UsingSymbol := UsingSymbol + 5;

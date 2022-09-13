@@ -38,7 +38,7 @@ object StringsParamForm: TStringsParamForm
   object AddListBtn: TButton
     Left = 328
     Height = 25
-    Top = 22
+    Top = 24
     Width = 91
     Caption = 'Добавить лист'
     OnClick = AddListBtnClick
@@ -127,7 +127,6 @@ object StringsParamForm: TStringsParamForm
       0000000000000000000000FEFFFF00FEFFFF00FEFFFF00FEFFFF000000000000
       0000000000000000000000000000000000000000000000000000
     }
-    Layout = blGlyphTop
     OnClick = AddNameBitBtnClick
     TabOrder = 4
   end
@@ -157,7 +156,6 @@ object StringsParamForm: TStringsParamForm
       1F7C1F7C1F7C1F7C1F7C1F7C1F7C1F7C1F7C1F7C1F7C1F7C1F7C1F7C1F7C1F7C
       1F7C1F7C1F7C
     }
-    Layout = blGlyphTop
     OnClick = DelNameBitBtnClick
     TabOrder = 5
   end
@@ -274,6 +272,7 @@ object StringsParamForm: TStringsParamForm
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000
     }
+    Layout = blGlyphBottom
     OnClick = UpWordBitBtnClick
     TabOrder = 6
   end
@@ -382,6 +381,7 @@ object StringsParamForm: TStringsParamForm
       8080000080008080000080008080000080008000000000000000000000000000
       0000000000000000000000000000000000000000000000000000
     }
+    Layout = blGlyphTop
     OnClick = DownWordBitBtnClick
     TabOrder = 7
   end
@@ -501,6 +501,7 @@ object StringsParamForm: TStringsParamForm
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000
     }
+    Layout = blGlyphBottom
     OnClick = SaveBitBtnClick
     TabOrder = 9
   end
