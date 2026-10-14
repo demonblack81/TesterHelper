@@ -29,6 +29,7 @@ type
     FastPhrasesMenuItem: TMenuItem;
     MakedPhrMenuItem: TMenuItem;
     PhrasesMenuItem: TMenuItem;
+    TabFinalBannerImage: TTabSheet;
     WordsMenuItem: TMenuItem;
     TemplateComboBox: TComboBox;
     FirstTempCB: TComboBox;
