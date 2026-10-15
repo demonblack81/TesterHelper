@@ -8,7 +8,7 @@ uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, Menus,
   ComCtrls, StdCtrls, Spin, ExtCtrls, Buttons, LCLType,
 
-  uGeneration, uProcInfo, uEditStringsParam, uPhraseTemplate, uListOperation, uFastPhrases, uMakedPhrases;
+  uGeneration, uProcInfo, uEditStringsParam, uPhraseTemplate, uListOperation, uFastPhrases, uMakedPhrases, uGenFile;
 
 type
 
@@ -16,11 +16,16 @@ type
 
   TMainForm = class(TForm)
     AllCheck: TCheckBox;
+    BtnChooseFolder: TButton;
+    BtnCreatePicture: TButton;
+    EditFileName: TEdit;
     FirstTempBitBtn: TBitBtn;
     FastPhraseBitBtn: TBitBtn;
     BtnPasteFromClipboard: TButton;
     ClearBitBtn: TBitBtn;
     FifthTempBitBtn1: TBitBtn;
+    Label2: TLabel;
+    LabelChoosenFolder: TLabel;
     MakePhraseBitBtn: TBitBtn;
     CopyToClipBitBtn: TBitBtn;
     BtnWord: TButton;
@@ -104,6 +109,8 @@ type
     MainStatBar: TStatusBar;
     TabGeneration: TTabSheet;
     procedure AllCheckChange(Sender: TObject);
+    procedure BtnChooseFolderClick(Sender: TObject);
+    procedure BtnCreatePictureClick(Sender: TObject);
     procedure FastPhraseBitBtnClick(Sender: TObject);
     procedure BtnPasteFromClipboardClick(Sender: TObject);
     procedure BtnPhraseClick(Sender: TObject);
@@ -160,6 +167,7 @@ type
     TempArray: Array [0..15] of integer;
     CountVisibleCB : integer;
     LastWordInPhrases : TStringList;
+    FileList: TStringList;
   public
     { public declarations }
 
@@ -229,6 +237,7 @@ begin
      LastWordInPhrases.Add(IntToStr(i));
     end;
   end;
+  FileList := TStringList.Create;
 end;
 
 procedure TMainForm.MenuCloseClick(Sender: TObject);
@@ -1754,6 +1763,30 @@ begin
   end;
 end;
 
+procedure TMainForm.BtnChooseFolderClick(Sender: TObject);
+var Dir: string;
+    NewWidth: integer;
+begin
+   Dir:= '';
+   if FileList.Count > 0 then FileList.Clear;
+   if SelectDirectory('Выбрать папку', '', Dir) then
+      LabelChoosenFolder.Caption := Dir;
+   if LabelChoosenFolder.Width > MainForm.Width then
+   begin
+        NewWidth :=  LabelChoosenFolder.Width + 20;
+        MainForm.Width := NewWidth;
+   end;;
+   FileList := FindAllFiles(Dir, '*.*', False);
+   FileList.Sort;
+   BtnCreatePicture.Enabled:= true;
+end;
+
+procedure TMainForm.BtnCreatePictureClick(Sender: TObject);
+begin
+  GenerateFinalPicture(FileList, LabelChoosenFolder.Caption, EditFileName.text);
+  BtnCreatePicture.Enabled:= false;
+end;
+
 procedure TMainForm.FastPhraseBitBtnClick(Sender: TObject);
 // Нажатие на кнопку >> (<<)
 begin
@@ -1929,6 +1962,7 @@ begin
  {$ELSE}
    LastWordInPhrases.SaveToFile(StartPath + 'Data/LastWordInPhrases.txt');
  {$ENDIF}
+ FileList.Free;
 end;
 
 procedure TMainForm.RuSymbolCheckChange(Sender: TObject);

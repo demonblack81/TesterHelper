@@ -731,6 +731,48 @@ object MainForm: TMainForm
     end
     object TabFinalBannerImage: TTabSheet
       Caption = 'Генерация финальной картинка Баннера'
+      ClientHeight = 526
+      ClientWidth = 931
+      object BtnChooseFolder: TButton
+        Left = 410
+        Height = 25
+        Top = 24
+        Width = 120
+        Caption = 'Выбрать папку'
+        TabOrder = 0
+        OnClick = BtnChooseFolderClick
+      end
+      object LabelChoosenFolder: TLabel
+        Left = 280
+        Height = 16
+        Top = 64
+        Width = 120
+        Caption = 'Выбранная Папка: '
+      end
+      object Label2: TLabel
+        Left = 410
+        Height = 16
+        Top = 111
+        Width = 107
+        Caption = 'Нвзвание файла:'
+      end
+      object EditFileName: TEdit
+        Left = 360
+        Height = 21
+        Top = 136
+        Width = 208
+        TabOrder = 1
+        Text = 'Final_'
+      end
+      object BtnCreatePicture: TButton
+        Left = 360
+        Height = 25
+        Top = 176
+        Width = 208
+        Caption = 'Создать финальный файл'
+        TabOrder = 2
+        OnClick = BtnCreatePictureClick
+      end
     end
   end
   object MainMenu1: TMainMenu
